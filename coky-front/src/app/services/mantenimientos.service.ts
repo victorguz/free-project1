@@ -6,12 +6,12 @@ import { Checks } from '../core/checks';
 @Injectable({
   providedIn: 'root'
 })
-export class UsersService {
+export class MantenimientosService {
 
   constructor(private service: Service<UserI>) {
     this.service.ENTITY = new User;
-    this.service.ENTITY_NAME = "users";
-    this.service.API_URL ="http://localhost:8888"
+    this.service.ENTITY_NAME = "maintenances";
+    this.service.API_URL = "http://localhost:8888"
   }
 
 

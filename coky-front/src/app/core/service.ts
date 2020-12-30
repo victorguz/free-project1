@@ -19,7 +19,9 @@ export class Service<T> {
    * Obtiene todos los campos en un rango
    */
   all(limit: number = 100, offset: number = 0) {
-    return this.http.get<any>(`${this.API_URL}/${this.ENTITY_NAME}/all/${limit}/${offset}`).toPromise();
+    // return this.http.get<any>(`${this.API_URL}/${this.ENTITY_NAME}/all/${limit}/${offset}`).toPromise();
+    console.log(`${this.API_URL}/${this.ENTITY_NAME}/`)
+    return this.http.get<any>(`${this.API_URL}/${this.ENTITY_NAME}/`).toPromise();
   }
 
   /**
@@ -45,14 +47,16 @@ export class Service<T> {
    * El método "orderby" devuelve todos los registros, ordenados por columna y dirección (asc, desc). También se puede definir un limit y un offset
    */
   orderby(column: string = "id", order: string = "desc", limit: number = 100, offset: number = 0) {
-    return this.http.get<any>(`${this.API_URL}/${this.ENTITY_NAME}/orderby/${column}/${order}/${limit}/${offset}`).toPromise();
+    console.log(`${this.API_URL}/${this.ENTITY_NAME}/`)
+    return this.http.get<any>(`${this.API_URL}/${this.ENTITY_NAME}/`).toPromise();
+    // return this.http.get<any>(`${this.API_URL}/${this.ENTITY_NAME}/orderby/${column}/${order}/${limit}/${offset}`).toPromise();
   }
 
   /**
    * El método "create" añade una instancia de la entidad a la base de datos
    */
   create(entity: T) {
-    return this.http.post(`${this.API_URL}/${this.ENTITY_NAME}/create/`, entity).toPromise();
+    return this.http.post(`${this.API_URL}/${this.ENTITY_NAME}`, entity).toPromise();
   }
 
   /**

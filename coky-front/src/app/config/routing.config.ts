@@ -56,6 +56,18 @@ const routes: Routes = [
       title: "Registrarse",
     },
   },
+  //Maintenances
+  {
+    path: func.generateRoute('admin', '/maintenances'), component: UsersComponent,
+    data: {
+      roles: ["all"],
+      title: "Mantenimientos",
+      sidebar: {
+        icon: "settings",
+        position: 2,
+      }
+    },
+  },
   //Default
   {
     path: '**', component: NotFoundComponent,
