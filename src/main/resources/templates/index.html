@@ -79,9 +79,19 @@
             </div>
         </div>
 
-        <div class="ui container" style="padding-top: 80px;">
+        <div class="ui container" style="padding-top: 70px;">
+            <div class="ui right aligned grid">
+                <div class="left floated aligned three wide column">
+                    <h1 class="ui header">Mantenimientos</h1>
+                </div>
+                <div class="right floated aligned six wide column">
+                    <button type="submit" class="ui button green icon">
+                        <i class="ui icon plus"></i>
+                    </button>
+                </div>
+            </div>
 
-            <h1 class="ui header">Mantenimientos</h1>
+            <br>
 
             <div class="ui form">
 
@@ -138,6 +148,7 @@
                         </div>
                     </div>
                 </div>
+
                 <br>
 
                 <div class="datatable-container">
@@ -145,7 +156,7 @@
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Código</th>
+                                <th>Tipo</th>
                                 <th>Dpto</th>
                                 <th>Unidad</th>
                                 <th>Expediente</th>
@@ -153,7 +164,12 @@
                                 <th>Descripcion</th>
                                 <th>Observaciones</th>
                                 <th>Clave</th>
-                                <th>Estado</th>
+                                <th>Estado activo</th>
+                                <th>Importe</th>
+                                <th>Inicio Mnt.</th>
+                                <th>Fin Mnt.</th>
+                                <th>Años Prorroga</th>
+                                <th>Estado prorroga</th>
                                 <th>Acciones</th>
                             </tr>
 
@@ -170,6 +186,11 @@
                                 <td th:text="${item.txt_observaciones}"></td>
                                 <td th:text="${item.palabra_clave}"></td>
                                 <td th:text="${item.chk_activo}"></td>
+                                <td th:text="${item.num_importe}"></td>
+                                <td th:text="${item.fe_ini_contrato}"></td>
+                                <td th:text="${item.fe_fin_contrato}"></td>
+                                <td th:text="${item.fe_fin_prorroga}"></td>
+                                <td th:text="${item.chk_prorroga}"></td>
                                 <td>
                                     <a class="ui button icon" th:href="@{/details(id=${item.id_mantenimiento})}">
                                         <i class="ui icon eye"></i>
@@ -180,7 +201,7 @@
                         <tfoot>
                             <tr>
                                 <th>ID</th>
-                                <th>Código</th>
+                                <th>Tipo</th>
                                 <th>Dpto</th>
                                 <th>Unidad</th>
                                 <th>Expediente</th>
@@ -188,7 +209,12 @@
                                 <th>Descripcion</th>
                                 <th>Observaciones</th>
                                 <th>Clave</th>
-                                <th>Estado</th>
+                                <th>Estado activo</th>
+                                <th>Importe</th>
+                                <th>Inicio Mnt.</th>
+                                <th>Fin Mnt.</th>
+                                <th>Años Prorroga</th>
+                                <th>Estado prorroga</th>
                                 <th>Acciones</th>
                             </tr>
                         </tfoot>
