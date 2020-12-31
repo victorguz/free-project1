@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Mantenimientos</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- <link rel="stylesheet" type="text/css" th:href="@{/css/plugins/datatables/dataTables.bootstrap4.min.css}"> -->
+    <script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+</head>
+<link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css">
+<link rel="stylesheet" type="text/css"
+    href="https://cdn.datatables.net/responsive/2.2.6/css/responsive.bootstrap4.min.css">
+<link rel="stylesheet" type="text/css" th:src="@{/css/index.css}">
+
+
+<body>
+
+    <div class="container pt-3 pb-3">
+        <div th:text="${item.txt_descripcion}"></div>
+    </div>
+
+    <script type="text/javascript" th:src="@{/js/plugins/jquery/jquery-3.5.1.js}"></script>
+    <script type="text/javascript" language="javascript"
+        src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" language="javascript"
+        src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js"></script>
+    <script type="text/javascript" language="javascript"
+        src="https://cdn.datatables.net/responsive/2.2.6/js/dataTables.responsive.min.js"></script>
+    <script type="text/javascript" language="javascript"
+        src="https://cdn.datatables.net/responsive/2.2.6/js/responsive.bootstrap4.min.js"></script>
+    <script type="text/javascript" th:src="@{/js/index.js}"></script>
+</body>
+
+</html>
