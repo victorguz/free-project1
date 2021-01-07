@@ -3,7 +3,7 @@ Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, TIPO_PROCEDIMIENTO_ADJUDICADO, COD_DEPARTAMENTO, COD_RESPONSABLE, TXT_DESCRIPCION, TXT_OBSERVACIONES, CHK_ACTIVO, FE_CREA_REG, FE_MODI_REG, COD_MOD_USU, PALABRA_CLAVE)
  Values
    (171, 1, 2, 
-    93, 18, 'Servicio de mantenimiento de los productos software ARTEMIS instalados en la Gerencia de Informática de la Seguridad Social', 
+    93, 18, 'Servicio de mantenimiento de los productos software ARTEMIS instalados en la Gerencia de Informï¿½tica de la Seguridad Social', 
     'No es de la DPS', '1', TO_DATE('11/19/2019 10:35:25', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('03/11/2020 10:06:49', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' Artemis');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, TIPO_PROCEDIMIENTO_ADJUDICADO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, CHK_ACTIVO, FE_CREA_REG, FE_MODI_REG, COD_MOD_USU, PALABRA_CLAVE)
@@ -15,184 +15,187 @@ Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, TIPO_PROCEDIMIENTO_ADJUDICADO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, TXT_OBSERVACIONES, CHK_ACTIVO, FE_CREA_REG, FE_MODI_REG, COD_MOD_USU, PALABRA_CLAVE)
  Values
    (173, 1, 1, 
-    2, 58, 15, 'Prestación de Servicios sobre la Plataforma de Atención Telefónica de la Seguridad Social', 
-    '2 años + 1 prórroga
-01/10/2019 - 30/09/2021 + 1 año prórroga', '1', TO_DATE('11/22/2019 10:48:13', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('02/06/2020 12:10:45', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' Atención Telefónica');
+    2, 58, 15, 'Prestaciï¿½n de Servicios sobre la Plataforma de Atenciï¿½n Telefï¿½nica de la Seguridad Social', 
+    '2 aï¿½os + 1 prï¿½rroga
+
+01/10/2019 - 30/09/2021 + 1 aï¿½o prï¿½rroga', '1', TO_DATE('11/22/2019 10:48:13', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('02/06/2020 12:10:45', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' Atenciï¿½n Telefï¿½nica');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, TIPO_PROCEDIMIENTO_ADJUDICADO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, TXT_OBSERVACIONES, CHK_ACTIVO, FE_CREA_REG, FE_MODI_REG, COD_MOD_USU, PALABRA_CLAVE)
  Values
    (174, 5, 1, 
     2, 91, 1013, 'Mantenimiento del VideoWall', 
-    'toda la información se encuentra en K:\expedientesDPS\expedientesMantenimientos', '1', TO_DATE('12/04/2019 09:28:54', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('03/09/2020 16:43:50', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' Sala de Control');
+    'toda la informaciï¿½n se encuentra en K:\expedientesDPS\expedientesMantenimientos', '1', TO_DATE('12/04/2019 09:28:54', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('03/09/2020 16:43:50', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' Sala de Control');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, TIPO_PROCEDIMIENTO_ADJUDICADO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, TXT_OBSERVACIONES, CHK_ACTIVO, FE_CREA_REG, FE_MODI_REG, COD_MOD_USU, PALABRA_CLAVE)
  Values
    (175, 1, 3, 
     88, 89, 331, 'Licencias de Microsoft Windows Server para entornos no productivos del proyecto EESSI.', 
-    'Rocio 9/10: Adaptado a AM13. Estima adjudicación Noviembre. (Proviene de inversión con ID: 202)', '1', TO_DATE('12/11/2019 13:13:04', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('02/26/2020 12:18:07', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' Microsoft Windows Server');
+    'Rocio 9/10: Adaptado a AM13. Estima adjudicaciï¿½n Noviembre. (Proviene de inversiï¿½n con ID: 202)', '1', TO_DATE('12/11/2019 13:13:04', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('02/26/2020 12:18:07', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' Microsoft Windows Server');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, TIPO_PROCEDIMIENTO_ADJUDICADO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, TXT_OBSERVACIONES, CHK_ACTIVO, FE_CREA_REG, FE_MODI_REG, COD_MOD_USU, PALABRA_CLAVE)
  Values
    (176, 1, 3, 
-    3, 101, 17, 'Renovación de la infraestructura de red SAN (4 switch FICON) para el entorno Mainframe', 
-    'Anteriormente:2204590,96
-Peris 3/10 Racionalización ha devuelto para adecuar a AM 13 Rocio 9/10 En revisión claves, enviarán a Patrimonio. Han anulado crédito. (Proviene de inversión con ID: 233)', '1', TO_DATE('12/13/2019 09:40:46', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('12/13/2019 09:43:19', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' red SAN');
+    3, 101, 17, 'Renovaciï¿½n de la infraestructura de red SAN (4 switch FICON) para el entorno Mainframe', 
+    'Anteriormente:2204590,96
+
+Peris 3/10 Racionalizaciï¿½n ha devuelto para adecuar a AM 13 Rocio 9/10 En revisiï¿½n claves, enviarï¿½n a Patrimonio. Han anulado crï¿½dito. (Proviene de inversiï¿½n con ID: 233)', '1', TO_DATE('12/13/2019 09:40:46', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('12/13/2019 09:43:19', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' red SAN');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, TXT_OBSERVACIONES, CHK_ACTIVO, FE_CREA_REG, FE_MODI_REG, COD_MOD_USU, PALABRA_CLAVE)
  Values
    (177, 1, 
-    2, 91, 32, 'Adquisición licencias de Dragon Naturally Speaking Professional', 
-    'Cantidad:8 Garantía: 1 año.
-Es del Servicio Jurídico. (Proviene de inversión con ID: 286)', '1', TO_DATE('01/09/2020 13:17:38', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('01/09/2020 13:24:00', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' Dragon');
+    2, 91, 32, 'Adquisiciï¿½n licencias de Dragon Naturally Speaking Professional', 
+    'Cantidad:8 Garantï¿½a: 1 aï¿½o.
+
+Es del Servicio Jurï¿½dico. (Proviene de inversiï¿½n con ID: 286)', '1', TO_DATE('01/09/2020 13:17:38', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('01/09/2020 13:24:00', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' Dragon');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, TXT_OBSERVACIONES, CHK_ACTIVO, FE_CREA_REG, FE_MODI_REG, COD_MOD_USU, PALABRA_CLAVE)
  Values
    (178, 2, 
     88, 89, 19, 'Servidores Sparc T7 y S7 para diferentes servicios de la GISS', 
-    '(Proviene de inversión con ID: 66)', '1', TO_DATE('01/14/2020 08:51:29', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('01/14/2020 12:03:09', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' Sparc T7 y S7');
+    '(Proviene de inversiï¿½n con ID: 66)', '1', TO_DATE('01/14/2020 08:51:29', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('01/14/2020 12:03:09', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' Sparc T7 y S7');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, TXT_OBSERVACIONES, CHK_ACTIVO, FE_CREA_REG, FE_MODI_REG, COD_MOD_USU, PALABRA_CLAVE)
  Values
    (179, 2, 
-    2, 58, 8, 'Adquisición de servidores X86 para diferentes servicios de la GISS. Renovación de los Blade de los CPDs.', 
-    'Servidores tipo Blade (72) para el CPD principal y para el CPD secundario. Servidores x64. Hoja RRHH (Proviene de inversión con ID: 146)', '1', TO_DATE('01/14/2020 09:26:02', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('01/14/2020 12:03:15', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' servidores X86');
+    2, 58, 8, 'Adquisiciï¿½n de servidores X86 para diferentes servicios de la GISS. Renovaciï¿½n de los Blade de los CPDs.', 
+    'Servidores tipo Blade (72) para el CPD principal y para el CPD secundario. Servidores x64. Hoja RRHH (Proviene de inversiï¿½n con ID: 146)', '1', TO_DATE('01/14/2020 09:26:02', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('01/14/2020 12:03:15', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' servidores X86');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, TXT_OBSERVACIONES, CHK_ACTIVO, FE_CREA_REG, FE_MODI_REG, COD_MOD_USU, PALABRA_CLAVE)
  Values
    (180, 2, 
-    88, 89, 331, 'Renovación Del Equipamiento De La Red De Almacenamiento (San) Para Sistemas Abiertos', 
-    'Renovación de SAN Corporativa, recibido en 2018 (Proviene de inversión con ID: 76)', '1', TO_DATE('01/14/2020 09:36:15', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('01/14/2020 12:03:22', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' SAN');
+    88, 89, 331, 'Renovaciï¿½n Del Equipamiento De La Red De Almacenamiento (San) Para Sistemas Abiertos', 
+    'Renovaciï¿½n de SAN Corporativa, recibido en 2018 (Proviene de inversiï¿½n con ID: 76)', '1', TO_DATE('01/14/2020 09:36:15', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('01/14/2020 12:03:22', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' SAN');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, TXT_OBSERVACIONES, CHK_ACTIVO, FE_CREA_REG, FE_MODI_REG, COD_MOD_USU, PALABRA_CLAVE)
  Values
    (181, 2, 
-    93, 98, 20, 'Contratación Centralizada Para La Renovación De Los Equipos Hsm De La Seguridad Social', 
-    'Novell  Zenworks endpoint security management (Proviene de inversión con ID: 40)', '1', TO_DATE('01/14/2020 09:49:07', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('01/14/2020 12:03:27', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' HSM');
+    93, 98, 20, 'Contrataciï¿½n Centralizada Para La Renovaciï¿½n De Los Equipos Hsm De La Seguridad Social', 
+    'Novell  Zenworks endpoint security management (Proviene de inversiï¿½n con ID: 40)', '1', TO_DATE('01/14/2020 09:49:07', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('01/14/2020 12:03:27', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' HSM');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, TXT_OBSERVACIONES, CHK_ACTIVO, FE_CREA_REG, FE_MODI_REG, COD_MOD_USU, PALABRA_CLAVE)
  Values
    (182, 2, 
-    2, 58, 15, 'Suministro De Electrónica De Red Para Sscc Del INSS', 
-    'Adquisición de Electrónica de red SSCC del INSS (Proviene de inversión con ID: 75)', '1', TO_DATE('01/14/2020 09:54:48', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('01/17/2020 08:53:12', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' Electrónica de red');
+    2, 58, 15, 'Suministro De Electrï¿½nica De Red Para Sscc Del INSS', 
+    'Adquisiciï¿½n de Electrï¿½nica de red SSCC del INSS (Proviene de inversiï¿½n con ID: 75)', '1', TO_DATE('01/14/2020 09:54:48', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('01/17/2020 08:53:12', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' Electrï¿½nica de red');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, TXT_OBSERVACIONES, CHK_ACTIVO, FE_CREA_REG, FE_MODI_REG, COD_MOD_USU, PALABRA_CLAVE)
  Values
    (183, 2, 
-    93, 98, 20, 'Renovación cortafuegos perimetrales primer nivel', 
-    '(Proviene de inversión con ID: 130)', '1', TO_DATE('01/14/2020 10:03:55', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('01/14/2020 13:31:59', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' cortafuegos perimetrales');
+    93, 98, 20, 'Renovaciï¿½n cortafuegos perimetrales primer nivel', 
+    '(Proviene de inversiï¿½n con ID: 130)', '1', TO_DATE('01/14/2020 10:03:55', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('01/14/2020 13:31:59', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' cortafuegos perimetrales');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, TXT_OBSERVACIONES, CHK_ACTIVO, FE_CREA_REG, FE_MODI_REG, COD_MOD_USU, PALABRA_CLAVE)
  Values
    (184, 2, 
     88, 89, 331, 'Adquisicion Servidores Tipo Blade Y Electronica Enclosure', 
-    '(Proviene de inversión con ID: 62)', '1', TO_DATE('01/14/2020 10:08:23', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('01/14/2020 12:03:43', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' Enclosure');
+    '(Proviene de inversiï¿½n con ID: 62)', '1', TO_DATE('01/14/2020 10:08:23', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('01/14/2020 12:03:43', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' Enclosure');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, TXT_OBSERVACIONES, CHK_ACTIVO, FE_CREA_REG, FE_MODI_REG, COD_MOD_USU, PALABRA_CLAVE)
  Values
    (185, 2, 
-    88, 89, 19, 'Adquisición De Un Sistema Nas Para Entornos No Productivos En La Giss', 
-    'Finalizada - SIN SEGUIMIENTO (Proviene de inversión con ID: 47)', '1', TO_DATE('01/14/2020 10:15:00', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('01/14/2020 12:03:48', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' NAS');
+    88, 89, 19, 'Adquisiciï¿½n De Un Sistema Nas Para Entornos No Productivos En La Giss', 
+    'Finalizada - SIN SEGUIMIENTO (Proviene de inversiï¿½n con ID: 47)', '1', TO_DATE('01/14/2020 10:15:00', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('01/14/2020 12:03:48', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' NAS');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, TXT_OBSERVACIONES, CHK_ACTIVO, FE_CREA_REG, FE_MODI_REG, COD_MOD_USU, PALABRA_CLAVE)
  Values
    (186, 2, 
-    93, 98, 20, 'Adquisición sistema de Gateway SMTP para la plataforma de Red SARA', 
-    '(Proviene de inversión con ID: 131)', '1', TO_DATE('01/14/2020 10:20:00', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('01/14/2020 12:03:53', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' Gateway SMTP');
+    93, 98, 20, 'Adquisiciï¿½n sistema de Gateway SMTP para la plataforma de Red SARA', 
+    '(Proviene de inversiï¿½n con ID: 131)', '1', TO_DATE('01/14/2020 10:20:00', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('01/14/2020 12:03:53', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' Gateway SMTP');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, TXT_OBSERVACIONES, CHK_ACTIVO, FE_CREA_REG, FE_MODI_REG, COD_MOD_USU, PALABRA_CLAVE)
  Values
    (187, 2, 
-    88, 21, 22, 'Plataforma  Elastic Cloud Storage (Ecs) Entorno No Producción', 
-    'entorno de NO PRODUCCIÓN con ECS que sustituye a CENTERA. (Proviene de inversión con ID: 83)', '1', TO_DATE('01/14/2020 10:23:23', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('01/14/2020 12:03:59', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' Elastic Cloud Storage (Ecs)');
+    88, 21, 22, 'Plataforma  Elastic Cloud Storage (Ecs) Entorno No Producciï¿½n', 
+    'entorno de NO PRODUCCIï¿½N con ECS que sustituye a CENTERA. (Proviene de inversiï¿½n con ID: 83)', '1', TO_DATE('01/14/2020 10:23:23', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('01/14/2020 12:03:59', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' Elastic Cloud Storage (Ecs)');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, TXT_OBSERVACIONES, CHK_ACTIVO, FE_CREA_REG, FE_MODI_REG, COD_MOD_USU, PALABRA_CLAVE)
  Values
    (188, 2, 
-    88, 21, 22, 'Ampliación del entorno de backup de producción mediante un repositorio TIER 2', 
-    'Instalación requerida, material recibido: correo Belén 09/09/2020 (Proviene de inversión con ID: 261)', '1', TO_DATE('01/14/2020 10:26:44', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('01/14/2020 12:04:05', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' TIER 2');
+    88, 21, 22, 'Ampliaciï¿½n del entorno de backup de producciï¿½n mediante un repositorio TIER 2', 
+    'Instalaciï¿½n requerida, material recibido: correo Belï¿½n 09/09/2020 (Proviene de inversiï¿½n con ID: 261)', '1', TO_DATE('01/14/2020 10:26:44', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('01/14/2020 12:04:05', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' TIER 2');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, TXT_OBSERVACIONES, CHK_ACTIVO, FE_CREA_REG, FE_MODI_REG, COD_MOD_USU, PALABRA_CLAVE)
  Values
    (189, 2, 
     88, 89, 331, 'Memoria EESI. Servidores Blade HP Proliant BL460C EESSI', 
-    'servidores Blade  para EESI. Recibido en Septiembre de 2018 (Proviene de inversión con ID: 85)', '1', TO_DATE('01/14/2020 10:32:38', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('01/14/2020 12:04:09', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' Proliant');
+    'servidores Blade  para EESI. Recibido en Septiembre de 2018 (Proviene de inversiï¿½n con ID: 85)', '1', TO_DATE('01/14/2020 10:32:38', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('01/14/2020 12:04:09', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' Proliant');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, TXT_OBSERVACIONES, CHK_ACTIVO, FE_CREA_REG, FE_MODI_REG, COD_MOD_USU, PALABRA_CLAVE)
  Values
    (190, 2, 
-    2, 58, 8, 'Procedimiento Contratación Centralizada Para La Adquisición De Electrónica De Red Para Oficinas Finales De La Seguridad Social (Swiches)', 
-    '(Proviene de inversión con ID: 42)', '1', TO_DATE('01/14/2020 11:42:56', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('01/14/2020 12:04:14', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' Electrónica De Red');
+    2, 58, 8, 'Procedimiento Contrataciï¿½n Centralizada Para La Adquisiciï¿½n De Electrï¿½nica De Red Para Oficinas Finales De La Seguridad Social (Swiches)', 
+    '(Proviene de inversiï¿½n con ID: 42)', '1', TO_DATE('01/14/2020 11:42:56', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('01/14/2020 12:04:14', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' Electrï¿½nica De Red');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, TXT_OBSERVACIONES, CHK_ACTIVO, FE_CREA_REG, FE_MODI_REG, COD_MOD_USU, PALABRA_CLAVE)
  Values
    (191, 2, 
-    93, 98, 20, 'Renovación De Hw Y Suscripciones De Los Sistemas Proxy De Navagación De La Ss', 
-    'Infraestructura para potenciar la seguridad perimetral.  BLUECOAT (Proviene de inversión con ID: 11)', '1', TO_DATE('01/14/2020 11:53:30', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('01/14/2020 12:04:19', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' Sistemas Proxy');
+    93, 98, 20, 'Renovaciï¿½n De Hw Y Suscripciones De Los Sistemas Proxy De Navagaciï¿½n De La Ss', 
+    'Infraestructura para potenciar la seguridad perimetral.  BLUECOAT (Proviene de inversiï¿½n con ID: 11)', '1', TO_DATE('01/14/2020 11:53:30', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('01/14/2020 12:04:19', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' Sistemas Proxy');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, TXT_OBSERVACIONES, CHK_ACTIVO, FE_CREA_REG, FE_MODI_REG, COD_MOD_USU, PALABRA_CLAVE)
  Values
    (192, 2, 
-    2, 58, 8, 'Proxy inverso para acceso al portal de Conexiones Externas, Terminador de túneles VPN para Conexiones Externas', 
-    'Terminador de túneles VPN para Conexiones Externas. Hoja RRHH (Proviene de inversión con ID: 151)', '1', TO_DATE('01/14/2020 11:59:00', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('01/14/2020 12:01:03', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' Terminador de túneles VPN');
+    2, 58, 8, 'Proxy inverso para acceso al portal de Conexiones Externas, Terminador de tï¿½neles VPN para Conexiones Externas', 
+    'Terminador de tï¿½neles VPN para Conexiones Externas. Hoja RRHH (Proviene de inversiï¿½n con ID: 151)', '1', TO_DATE('01/14/2020 11:59:00', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('01/14/2020 12:01:03', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' Terminador de tï¿½neles VPN');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, TXT_OBSERVACIONES, CHK_ACTIVO, FE_CREA_REG, FE_MODI_REG, COD_MOD_USU, PALABRA_CLAVE)
  Values
    (193, 2, 
-    93, 98, 20, 'Renovación De Cortafuegos Perimetrales Para La Conexión A Internet De La Seguridad Social', 
-    '(Proviene de inversión con ID: 45)', '1', TO_DATE('01/14/2020 12:07:07', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('01/14/2020 12:10:56', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' Cortafuegos');
+    93, 98, 20, 'Renovaciï¿½n De Cortafuegos Perimetrales Para La Conexiï¿½n A Internet De La Seguridad Social', 
+    '(Proviene de inversiï¿½n con ID: 45)', '1', TO_DATE('01/14/2020 12:07:07', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('01/14/2020 12:10:56', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' Cortafuegos');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, TXT_OBSERVACIONES, CHK_ACTIVO, FE_CREA_REG, FE_MODI_REG, COD_MOD_USU, PALABRA_CLAVE)
  Values
    (194, 2, 
-    2, 58, 15, 'Renovación de electrónica de red CISCO en SS.CC.', 
-    'En ejecución (Hoja RRHH) (Proviene de inversión con ID: 153)', '1', TO_DATE('01/14/2020 12:19:28', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('01/14/2020 12:22:59', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' red CISCO');
+    2, 58, 15, 'Renovaciï¿½n de electrï¿½nica de red CISCO en SS.CC.', 
+    'En ejecuciï¿½n (Hoja RRHH) (Proviene de inversiï¿½n con ID: 153)', '1', TO_DATE('01/14/2020 12:19:28', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('01/14/2020 12:22:59', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' red CISCO');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, TXT_OBSERVACIONES, CHK_ACTIVO, FE_CREA_REG, FE_MODI_REG, COD_MOD_USU, PALABRA_CLAVE)
  Values
    (195, 2, 
-    2, 58, 8, 'Electrónica de red para redundancia del entorno de usuarios tunelizados.', 
-    'Instalación requerida. Recibido en septiembre de 2018 (Proviene de inversión con ID: 149)', '1', TO_DATE('01/14/2020 12:26:41', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('01/14/2020 12:28:07', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' redundancia del entorno');
+    2, 58, 8, 'Electrï¿½nica de red para redundancia del entorno de usuarios tunelizados.', 
+    'Instalaciï¿½n requerida. Recibido en septiembre de 2018 (Proviene de inversiï¿½n con ID: 149)', '1', TO_DATE('01/14/2020 12:26:41', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('01/14/2020 12:28:07', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' redundancia del entorno');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, TXT_OBSERVACIONES, CHK_ACTIVO, FE_CREA_REG, FE_MODI_REG, COD_MOD_USU, PALABRA_CLAVE)
  Values
    (196, 2, 
-    2, 58, 15, 'Firewall Para Centro De Respaldo. Cortafuegos para protección del acceso de usuarios internos al CPD de Torrejón', 
-    'FIREWALL de Intranet para el CPD secundario de GISS. Cortafuegos (Proviene de inversión con ID: 16)', '1', TO_DATE('01/14/2020 12:34:20', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('01/14/2020 12:35:59', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' Cortafuegos CPD Torrejón');
+    2, 58, 15, 'Firewall Para Centro De Respaldo. Cortafuegos para protecciï¿½n del acceso de usuarios internos al CPD de Torrejï¿½n', 
+    'FIREWALL de Intranet para el CPD secundario de GISS. Cortafuegos (Proviene de inversiï¿½n con ID: 16)', '1', TO_DATE('01/14/2020 12:34:20', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('01/14/2020 12:35:59', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' Cortafuegos CPD Torrejï¿½n');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, TXT_OBSERVACIONES, CHK_ACTIVO, FE_CREA_REG, FE_MODI_REG, COD_MOD_USU, PALABRA_CLAVE)
  Values
    (197, 2, 
-    3, 101, 17, 'Renovación Cabinas Almacenamiento en Host', 
-    'VSP del entorno mainframe (Proviene de inversión con ID: 143)', '1', TO_DATE('01/14/2020 12:49:02', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('01/14/2020 12:51:50', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' Cabinas');
+    3, 101, 17, 'Renovaciï¿½n Cabinas Almacenamiento en Host', 
+    'VSP del entorno mainframe (Proviene de inversiï¿½n con ID: 143)', '1', TO_DATE('01/14/2020 12:49:02', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('01/14/2020 12:51:50', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' Cabinas');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, TXT_OBSERVACIONES, CHK_ACTIVO, FE_CREA_REG, FE_MODI_REG, COD_MOD_USU, PALABRA_CLAVE)
  Values
    (198, 2, 
     88, 21, 22, 'cabinas de almacenamiento USP-V del entorno Open', 
-    'dado a IPM porque HP no se presentó (Proviene de inversión con ID: 170)', '1', TO_DATE('01/14/2020 13:03:32', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('01/14/2020 13:08:10', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' cabinas USP-V');
+    'dado a IPM porque HP no se presentï¿½ (Proviene de inversiï¿½n con ID: 170)', '1', TO_DATE('01/14/2020 13:03:32', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('01/14/2020 13:08:10', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' cabinas USP-V');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, TXT_OBSERVACIONES, CHK_ACTIVO, FE_CREA_REG, FE_MODI_REG, COD_MOD_USU, PALABRA_CLAVE)
  Values
    (199, 2, 
-    3, 101, 17, 'Ampliación Almacenamiento segundo nivel robótica Host', 
-    'Ampliación de la infraestructura de la robótica del mainframe. (Proviene de inversión con ID: 134)', '1', TO_DATE('01/14/2020 13:14:29', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('01/14/2020 13:32:17', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' robótica Host');
+    3, 101, 17, 'Ampliaciï¿½n Almacenamiento segundo nivel robï¿½tica Host', 
+    'Ampliaciï¿½n de la infraestructura de la robï¿½tica del mainframe. (Proviene de inversiï¿½n con ID: 134)', '1', TO_DATE('01/14/2020 13:14:29', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('01/14/2020 13:32:17', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' robï¿½tica Host');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, TXT_OBSERVACIONES, CHK_ACTIVO, FE_CREA_REG, FE_MODI_REG, COD_MOD_USU, PALABRA_CLAVE)
  Values
    (200, 2, 
     88, 21, 22, 'Almacenamiento Para Exchange. 2 cabinas de almacenamiento para el entorno de correo', 
-    'Nov16- Memoria-Adquisición de dos cabinas de almacenamiento para el entorno de correo (Proviene de inversión con ID: 4)', '1', TO_DATE('01/14/2020 13:24:06', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('01/15/2020 09:15:02', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' Correo');
+    'Nov16- Memoria-Adquisiciï¿½n de dos cabinas de almacenamiento para el entorno de correo (Proviene de inversiï¿½n con ID: 4)', '1', TO_DATE('01/14/2020 13:24:06', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('01/15/2020 09:15:02', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' Correo');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, TXT_OBSERVACIONES, CHK_ACTIVO, FE_CREA_REG, FE_MODI_REG, COD_MOD_USU, PALABRA_CLAVE)
  Values
    (201, 2, 
     2, 91, 1695, 'Sistemas de backup para DDPP', 
-    'APPLIANCE VERITAS NETBACKUP. Proveine de ID: 155 que se ha cerrado a petición de DSIP y Colegiados. repositorios de backup para DDPP y SSCC (Proviene de inversión con ID: 166)', '1', TO_DATE('01/14/2020 13:29:29', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('01/14/2020 13:31:12', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' Sistemas de backup');
+    'APPLIANCE VERITAS NETBACKUP. Proveine de ID: 155 que se ha cerrado a peticiï¿½n de DSIP y Colegiados. repositorios de backup para DDPP y SSCC (Proviene de inversiï¿½n con ID: 166)', '1', TO_DATE('01/14/2020 13:29:29', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('01/14/2020 13:31:12', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' Sistemas de backup');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_EXPEDIENTE, COD_CONTRATO, TIPO_PROCEDIMIENTO_ADJUDICADO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, DES_EMPRESA, NUM_IMPORTE, FE_INI_CONTRATO, FE_FIN_CONTRATO, CHK_PRORROGA, FE_FIN_PRORROGA, TXT_OBSERVACIONES, CHK_ACTIVO, FE_MODI_REG, COD_MOD_USU)
  Values
    (1, 1, '41/2016/00177', '7110/17G', 1, 
-    4, 88, 18, 'Equipamiento físico correspondiente a los equipos de control de presencia Instalados en las oficinas de la S.S.', 'INFORMATICA EL CORTE INGLES', 
+    4, 88, 18, 'Equipamiento fï¿½sico correspondiente a los equipos de control de presencia Instalados en las oficinas de la S.S.', 'INFORMATICA EL CORTE INGLES', 
     132500, TO_DATE('04/10/2015 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('04/09/2016 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), '1', 
     TO_DATE('04/09/2017 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), 'EN TRAMITE 41/2016/0177                              (1/12/2017- 30/11/2018) informado SEJU', '0', TO_DATE('01/03/2019 09:57:28', 'MM/DD/YYYY HH24:MI:SS'), '99GU5677');
 Insert into GOYA.MANTENIMIENTO
@@ -201,7 +204,7 @@ Insert into GOYA.MANTENIMIENTO
    (2, 1, '41/2013/00011', '7113/17G', 1, 
     93, 15, 440, 'Mto sw y servicios profesionales de la firma VMWARE, con destino GISS', 'Ibermatica SA', 
     1331851, TO_DATE('07/04/2014 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('07/03/2016 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), '1', TO_DATE('07/04/2016 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), 
-    TO_DATE('07/03/2017 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), 'Web no prorrogable, Cmad prorrogable 1 año', '1', TO_DATE('03/12/2020 13:41:50', 'MM/DD/YYYY HH24:MI:SS'), 
+    TO_DATE('07/03/2017 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), 'Web no prorrogable, Cmad prorrogable 1 aï¿½o', '1', TO_DATE('03/12/2020 13:41:50', 'MM/DD/YYYY HH24:MI:SS'), 
     '99GU7196', ' VMWARE');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_CONTRATO, TIPO_PROCEDIMIENTO_ADJUDICADO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, DES_EMPRESA, FE_FIN_CONTRATO, CHK_PRORROGA, TXT_OBSERVACIONES, CHK_ACTIVO, FE_MODI_REG, COD_MOD_USU, PALABRA_CLAVE)
@@ -209,15 +212,18 @@ Insert into GOYA.MANTENIMIENTO
    (3, 8, '7302/13', 1, 
     93, 15, 440, 'Plataforma de gestion documental con destino a la GISS. DOCUMENTUM', 'DOCUMENTUM', 
     TO_DATE('06/30/2017 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), '1', 
-    '24-02-2020-Rocio.-Revcision SEJU. OOCC Adapta documentacion segun observaciones SEJU Se reenvia 25-02
-29/01-> Cerrato: "En Gestion SEJU"
-17/01/20-> Director firma-envio Doc Tecnico a Org Colegiados.
+    '24-02-2020-Rocio.-Revcision SEJU. OOCC Adapta documentacion segun observaciones SEJU Se reenvia 25-02
+
+29/01-> Cerrato: "En Gestion SEJU"
+
+17/01/20-> Director firma-envio Doc Tecnico a Org Colegiados.
+
 En Cotec el importe era 160000; pero doc Tecnico del 17/01/20 es 260000 y con IVA 314600', '1', TO_DATE('04/07/2020 10:00:26', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' Documentum');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_CONTRATO, TIPO_PROCEDIMIENTO_ADJUDICADO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, FE_FIN_CONTRATO, CHK_PRORROGA, CHK_ACTIVO, FE_MODI_REG, COD_MOD_USU)
  Values
    (5, 1, '7114/16G', 2, 
-    93, 15, 440, 'Ampliación de capacidad de la plataforma Teradata y servicio de mantenimiento de la plataforma y de servicios profesionales de soporte', 
+    93, 15, 440, 'Ampliaciï¿½n de capacidad de la plataforma Teradata y servicio de mantenimiento de la plataforma y de servicios profesionales de soporte', 
     TO_DATE('07/27/2017 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), '0', '1', TO_DATE('01/13/2020 15:29:34', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_CONTRATO, TXT_DESCRIPCION, FE_FIN_CONTRATO, CHK_PRORROGA, CHK_ACTIVO, FE_MODI_REG, COD_MOD_USU)
@@ -230,7 +236,8 @@ Insert into GOYA.MANTENIMIENTO
    (8, 8, '41/2015/00025', '7104/16G', 1, 
     2, 91, 1013, 'Mto. Licencias Software de Novell..  NetiQ y Attachmante De Microfocus', 'Tecnocom Esp. Solutions SLU', 
     1232950, TO_DATE('01/01/2016 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('12/31/2016 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), '1', TO_DATE('01/01/2017 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), 
-    TO_DATE('12/31/2017 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), '4-02-2020-Rocio. Contratacion. Informe Favorable SEJU. Oendiente firma memoria definitic!va.
+    TO_DATE('12/31/2017 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), '4-02-2020-Rocio. Contratacion. Informe Favorable SEJU. Oendiente firma memoria definitic!va.
+
 29/01-> Cerrato: "En Gestion SEJU"', '1', TO_DATE('04/07/2020 09:58:45', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_EXPEDIENTE, COD_CONTRATO, TIPO_PROCEDIMIENTO_ADJUDICADO, COD_DEPARTAMENTO, COD_UNIDAD, TXT_DESCRIPCION, DES_EMPRESA, NUM_IMPORTE, FE_INI_CONTRATO, FE_FIN_CONTRATO, CHK_PRORROGA, FE_INI_PRORROGA, FE_FIN_PRORROGA, TXT_OBSERVACIONES, CHK_ACTIVO, FE_MODI_REG, COD_MOD_USU)
@@ -238,14 +245,15 @@ Insert into GOYA.MANTENIMIENTO
    (9, 1, '41/2016/00113', '7106/17G', 1, 
     4, 88, 'Mto productos Software control ciclo de vida SERENA', 'Serena Software Europe LTD', 
     353195.89, TO_DATE('01/28/2017 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('01/27/2018 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), '1', TO_DATE('01/28/2018 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), 
-    TO_DATE('01/27/2019 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), 'comprobar si el Dpto es correcto.  Esto parece de preexplotación', '0', TO_DATE('01/03/2019 10:04:10', 'MM/DD/YYYY HH24:MI:SS'), '99GU5677');
+    TO_DATE('01/27/2019 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), 'comprobar si el Dpto es correcto.  Esto parece de preexplotaciï¿½n', '0', TO_DATE('01/03/2019 10:04:10', 'MM/DD/YYYY HH24:MI:SS'), '99GU5677');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_EXPEDIENTE, COD_CONTRATO, TIPO_PROCEDIMIENTO_ADJUDICADO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, DES_EMPRESA, NUM_IMPORTE, FE_INI_CONTRATO, FE_FIN_CONTRATO, CHK_PRORROGA, FE_INI_PRORROGA, FE_FIN_PRORROGA, TXT_OBSERVACIONES, CHK_ACTIVO, FE_MODI_REG, COD_MOD_USU)
  Values
    (10, 1, '41/2016/00114', '7105/17G', 1, 
-    4, 93, 210, 'Software multiplataforma de datos Neon Shadow Directo', 'Aldebaran Tecnologías de la Información SL', 
+    4, 93, 210, 'Software multiplataforma de datos Neon Shadow Directo', 'Aldebaran Tecnologï¿½as de la Informaciï¿½n SL', 
     223917.84, TO_DATE('02/07/2017 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('02/06/2018 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), '1', TO_DATE('02/07/2018 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), 
-    TO_DATE('02/08/2019 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), 'Sistemas Host + Intranet. revisar departamento y unidad
+    TO_DATE('02/08/2019 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), 'Sistemas Host + Intranet. revisar departamento y unidad
+
 Se va a englobar en Entire X (Software AG)', '1', TO_DATE('06/20/2019 13:00:55', 'MM/DD/YYYY HH24:MI:SS'), '99GU7254');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_EXPEDIENTE, COD_CONTRATO, TIPO_PROCEDIMIENTO_ADJUDICADO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, DES_EMPRESA, NUM_IMPORTE, FE_INI_CONTRATO, FE_FIN_CONTRATO, CHK_PRORROGA, FE_INI_PRORROGA, FE_FIN_PRORROGA, CHK_ACTIVO, FE_MODI_REG, COD_MOD_USU, PALABRA_CLAVE)
@@ -258,21 +266,21 @@ Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_EXPEDIENTE, COD_CONTRATO, TIPO_PROCEDIMIENTO_ADJUDICADO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, DES_EMPRESA, NUM_IMPORTE, FE_INI_CONTRATO, FE_FIN_CONTRATO, CHK_PRORROGA, FE_INI_PRORROGA, FE_FIN_PRORROGA, CHK_ACTIVO, FE_MODI_REG, COD_MOD_USU)
  Values
    (12, 8, '41/2016/00115', '7108/17G', 1, 
-    93, 15, 440, 'Mto software CA WILLY INTROSCOPE', 'Informática El Corte Inglés', 
+    93, 15, 440, 'Mto software CA WILLY INTROSCOPE', 'Informï¿½tica El Corte Inglï¿½s', 
     215895, TO_DATE('02/16/2017 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('02/15/2018 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), '1', TO_DATE('02/16/2018 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), 
     TO_DATE('02/15/2019 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), '1', TO_DATE('03/03/2020 12:24:13', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_EXPEDIENTE, COD_CONTRATO, TIPO_PROCEDIMIENTO_ADJUDICADO, COD_DEPARTAMENTO, COD_UNIDAD, TXT_DESCRIPCION, DES_EMPRESA, NUM_IMPORTE, FE_INI_CONTRATO, FE_FIN_CONTRATO, CHK_PRORROGA, FE_INI_PRORROGA, FE_FIN_PRORROGA, TXT_OBSERVACIONES, CHK_ACTIVO, FE_MODI_REG, COD_MOD_USU)
  Values
    (13, 1, '41/2016/00111', '7101/17G', 1, 
-    2, 91, 'Mto del producto software Preton Saber', 'Informática El Corte Inglés', 
+    2, 91, 'Mto del producto software Preton Saber', 'Informï¿½tica El Corte Inglï¿½s', 
     135350, TO_DATE('03/10/2017 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('03/09/2018 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), '1', TO_DATE('03/08/2019 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), 
     TO_DATE('03/09/2019 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), 'No va a renovarse', '0', TO_DATE('01/03/2019 10:53:32', 'MM/DD/YYYY HH24:MI:SS'), '99GU5677');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_EXPEDIENTE, COD_CONTRATO, TIPO_PROCEDIMIENTO_ADJUDICADO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, DES_EMPRESA, NUM_IMPORTE, FE_INI_CONTRATO, FE_FIN_CONTRATO, CHK_PRORROGA, FE_INI_PRORROGA, FE_FIN_PRORROGA, TXT_OBSERVACIONES, CHK_ACTIVO, FE_MODI_REG, COD_MOD_USU)
  Values
    (14, 1, '41/2016/00112', '7103/17G', 1, 
-    2, 91, 1013, 'Herramienta Software Interact de gestión del servicio al usuario final', 'Aldebaran Tecnologías de la Información SL', 
+    2, 91, 1013, 'Herramienta Software Interact de gestiï¿½n del servicio al usuario final', 'Aldebaran Tecnologï¿½as de la Informaciï¿½n SL', 
     208800, TO_DATE('03/10/2017 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('03/09/2018 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), '1', TO_DATE('03/10/2018 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), 
     TO_DATE('03/09/2019 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), 'NO SE VA A RENOVAR', '0', TO_DATE('01/03/2019 10:52:21', 'MM/DD/YYYY HH24:MI:SS'), '99GU5677');
 Insert into GOYA.MANTENIMIENTO
@@ -286,28 +294,28 @@ Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_EXPEDIENTE, COD_CONTRATO, TIPO_PROCEDIMIENTO_ADJUDICADO, COD_DEPARTAMENTO, TXT_DESCRIPCION, DES_EMPRESA, NUM_IMPORTE, FE_INI_CONTRATO, FE_FIN_CONTRATO, CHK_PRORROGA, TXT_OBSERVACIONES, CHK_ACTIVO, FE_MODI_REG, COD_MOD_USU)
  Values
    (16, 1, '41/2016/00064', '7115/16G', 1, 
-    4, 'Actualización, mantenimiento y ampliación del software simulación de carga HPE Quality Center', 'Taysa', 
+    4, 'Actualizaciï¿½n, mantenimiento y ampliaciï¿½n del software simulaciï¿½n de carga HPE Quality Center', 'Taysa', 
     879998, TO_DATE('02/15/2017 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('02/14/2019 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), '1', 
-    'Servicios: 24 meses.     Sum: 6 meses. Revisar la prorroga no está claro cuando empieza.  ¿Testing?', '0', TO_DATE('01/03/2019 09:56:04', 'MM/DD/YYYY HH24:MI:SS'), '99GU5677');
+    'Servicios: 24 meses.     Sum: 6 meses. Revisar la prorroga no estï¿½ claro cuando empieza.  ï¿½Testing?', '0', TO_DATE('01/03/2019 09:56:04', 'MM/DD/YYYY HH24:MI:SS'), '99GU5677');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_EXPEDIENTE, COD_CONTRATO, TIPO_PROCEDIMIENTO_ADJUDICADO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, DES_EMPRESA, NUM_IMPORTE, FE_INI_CONTRATO, FE_FIN_CONTRATO, CHK_PRORROGA, FE_INI_PRORROGA, FE_FIN_PRORROGA, TXT_OBSERVACIONES, CHK_ACTIVO, FE_MODI_REG, COD_MOD_USU)
  Values
    (17, 1, '41/2014/00106', '7116/15G', 1, 
     2, 90, 1017, 'Soporte Tecnico productos Microsoft', 'HEWLETT PACKARD', 
     142604.8, TO_DATE('10/01/2015 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('09/30/2016 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), '1', TO_DATE('10/01/2016 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), 
-    TO_DATE('09/30/2017 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), 'Contrato de amplicación hasta fin de año Popuesto en COTEC Septiembre 2017. 41/2017/169. ', '0', TO_DATE('06/19/2019 09:55:25', 'MM/DD/YYYY HH24:MI:SS'), '99GU7254');
+    TO_DATE('09/30/2017 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), 'Contrato de amplicaciï¿½n hasta fin de aï¿½o Popuesto en COTEC Septiembre 2017. 41/2017/169. ', '0', TO_DATE('06/19/2019 09:55:25', 'MM/DD/YYYY HH24:MI:SS'), '99GU7254');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_EXPEDIENTE, COD_CONTRATO, TIPO_PROCEDIMIENTO_ADJUDICADO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, DES_EMPRESA, NUM_IMPORTE, FE_INI_CONTRATO, FE_FIN_CONTRATO, CHK_PRORROGA, FE_INI_PRORROGA, FE_FIN_PRORROGA, TXT_OBSERVACIONES, CHK_ACTIVO, FE_MODI_REG, COD_MOD_USU)
  Values
    (18, 7, '41/2013/00097', '7106/14G Lote1', 1, 
-    2, 58, 8, 'Servicios de telecomunicaciones. L1: Red multiservicio: datos, voz e internet. L2: Telefonía móvil y servicios asociados', 'Telefonica España SA', 
+    2, 58, 8, 'Servicios de telecomunicaciones. L1: Red multiservicio: datos, voz e internet. L2: Telefonï¿½a mï¿½vil y servicios asociados', 'Telefonica Espaï¿½a SA', 
     39200000, TO_DATE('10/01/2014 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('09/30/2017 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), '1', TO_DATE('10/01/2017 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), 
     TO_DATE('09/30/2018 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), '41/2016/00107 Retirado.Porroga al contrato aprobada en COTEC Julio 2017', '1', TO_DATE('03/03/2020 12:24:33', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_EXPEDIENTE, COD_CONTRATO, TIPO_PROCEDIMIENTO_ADJUDICADO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, DES_EMPRESA, NUM_IMPORTE, FE_INI_CONTRATO, FE_FIN_CONTRATO, CHK_PRORROGA, FE_INI_PRORROGA, FE_FIN_PRORROGA, TXT_OBSERVACIONES, CHK_ACTIVO, FE_MODI_REG, COD_MOD_USU)
  Values
    (19, 1, '41/2013/00097', '7106/14G Lote2', 1, 
-    2, 58, 8, 'Servicios de Telecomunicaciones de la SS, Telefonía Móvil y Servicios Asociados.', 'Telefonica España SA', 
+    2, 58, 8, 'Servicios de Telecomunicaciones de la SS, Telefonï¿½a Mï¿½vil y Servicios Asociados.', 'Telefonica Espaï¿½a SA', 
     4308201, TO_DATE('10/01/2014 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('09/30/2017 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), '1', TO_DATE('10/01/2017 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), 
     TO_DATE('09/30/2018 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), '41/2016/00107 Retirado.Porroga al contrato aprobada en COTEC Julio 2017', '0', TO_DATE('03/23/2018 13:11:35', 'MM/DD/YYYY HH24:MI:SS'), '99GU5677');
 Insert into GOYA.MANTENIMIENTO
@@ -323,7 +331,8 @@ Insert into GOYA.MANTENIMIENTO
    (21, 1, '41/2015/00142', '7105/16G', 1, 
     2, 58, 8, 'Equipamiento red comunicaciones y seguridad. LOTE 1: COMUNICACIONES', 'Tecnocom Esp. Solutions SLU', 
     898000, TO_DATE('08/22/2016 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('08/21/2017 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), '1', TO_DATE('08/20/2017 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), 
-    TO_DATE('08/21/2018 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), '19/06/2019 -> Mto 2 años + 2 años de prórroga
+    TO_DATE('08/21/2018 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), '19/06/2019 -> Mto 2 aï¿½os + 2 aï¿½os de prï¿½rroga
+
 Lote 1, ver Mantenimiento ID - 163 para Lote 2', '1', TO_DATE('09/17/2019 15:38:06', 'MM/DD/YYYY HH24:MI:SS'), 
     '99GU7196', ' red comunicaciones');
 Insert into GOYA.MANTENIMIENTO
@@ -337,7 +346,7 @@ Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_EXPEDIENTE, COD_CONTRATO, TIPO_PROCEDIMIENTO_ADJUDICADO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, DES_EMPRESA, NUM_IMPORTE, FE_INI_CONTRATO, FE_FIN_CONTRATO, CHK_PRORROGA, FE_INI_PRORROGA, FE_FIN_PRORROGA, CHK_ACTIVO, FE_MODI_REG, COD_MOD_USU)
  Values
    (23, 1, '41/2015/00152', '7107/16G', 1, 
-    2, 91, 1013, 'Escáneres de Sistemas Documentales', 'IECISA S.A.', 
+    2, 91, 1013, 'Escï¿½neres de Sistemas Documentales', 'IECISA S.A.', 
     1219942.5, TO_DATE('08/20/2016 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('08/19/2017 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), '1', TO_DATE('08/20/2017 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), 
     TO_DATE('08/19/2018 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), '0', TO_DATE('01/03/2019 10:51:52', 'MM/DD/YYYY HH24:MI:SS'), '99GU5677');
 Insert into GOYA.MANTENIMIENTO
@@ -346,7 +355,8 @@ Insert into GOYA.MANTENIMIENTO
    (24, 1, '41/2015/00153', '7108/16G', 1, 
     88, 89, 331, 'Mto Servidores Sparc y Blade con SO Solaris', 'FUJITSU', 
     1705000, TO_DATE('08/22/2016 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('08/21/2017 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), '1', TO_DATE('08/22/2017 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), 
-    TO_DATE('08/21/2018 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), '24-02-2020-Rocio.-Fin plazo presentacion: 13/marz. Mesa eco: 25/mar
+    TO_DATE('08/21/2018 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), '24-02-2020-Rocio.-Fin plazo presentacion: 13/marz. Mesa eco: 25/mar
+
 Cerrato 11/12/19: "25/11/19 enviado a SEJU, devuelto por actualizaciones legales. Se vuelve a enviar en esta fecha"', '1', TO_DATE('04/16/2020 10:02:38', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_EXPEDIENTE, COD_CONTRATO, TIPO_PROCEDIMIENTO_ADJUDICADO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, DES_EMPRESA, NUM_IMPORTE, FE_INI_CONTRATO, FE_FIN_CONTRATO, CHK_PRORROGA, FE_INI_PRORROGA, FE_FIN_PRORROGA, TXT_OBSERVACIONES, CHK_ACTIVO, FE_MODI_REG, COD_MOD_USU)
@@ -354,8 +364,9 @@ Insert into GOYA.MANTENIMIENTO
    (25, 4, '41/2015/00154', '7109/16G', 1, 
     88, 89, 331, 'Mantenimiento de los sistemas Blade HP instalados en las Entidades Gestoras y Servicios Comunes de la Seguridad Social', 'ECONOCOM OSIATIS S.A.', 
     425374.72, TO_DATE('05/27/2017 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('05/28/2018 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), '1', TO_DATE('05/29/2018 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), 
-    TO_DATE('05/28/2019 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), 'levantado suspensión
-12/06/2019 Por adjudicar. 1 + 1 año de prórroga. Cambiara inicio de mto', '1', TO_DATE('03/03/2020 12:23:35', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196');
+    TO_DATE('05/28/2019 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), 'levantado suspensiï¿½n
+
+12/06/2019 Por adjudicar. 1 + 1 aï¿½o de prï¿½rroga. Cambiara inicio de mto', '1', TO_DATE('03/03/2020 12:23:35', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_EXPEDIENTE, COD_CONTRATO, TIPO_PROCEDIMIENTO_ADJUDICADO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, DES_EMPRESA, NUM_IMPORTE, FE_INI_CONTRATO, FE_FIN_CONTRATO, CHK_PRORROGA, FE_INI_PRORROGA, FE_FIN_PRORROGA, TXT_OBSERVACIONES, CHK_ACTIVO, FE_MODI_REG, COD_MOD_USU, PALABRA_CLAVE)
  Values
@@ -368,7 +379,7 @@ Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_EXPEDIENTE, COD_CONTRATO, TIPO_PROCEDIMIENTO_ADJUDICADO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, DES_EMPRESA, NUM_IMPORTE, FE_INI_CONTRATO, FE_FIN_CONTRATO, CHK_PRORROGA, FE_INI_PRORROGA, FE_FIN_PRORROGA, TXT_OBSERVACIONES, CHK_ACTIVO, FE_MODI_REG, COD_MOD_USU, PALABRA_CLAVE)
  Values
    (27, 1, '41/2015/00156', '7111/16G', 1, 
-    88, 21, 22, 'Mto Almacenamiento EMC', 'INTERNACIONAL, PERIFÉRICOS Y MEMORIAS S.L.U.', 
+    88, 21, 22, 'Mto Almacenamiento EMC', 'INTERNACIONAL, PERIFï¿½RICOS Y MEMORIAS S.L.U.', 
     465000, TO_DATE('08/20/2016 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('08/19/2017 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), '1', TO_DATE('08/20/2017 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), 
     TO_DATE('08/19/2018 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), '24-02-2020-Rocio.-Fin plazo presentacion: 28/feb. Mesa eco: 11/mar. 02/04-> act web', '1', TO_DATE('04/16/2020 10:31:04', 'MM/DD/YYYY HH24:MI:SS'), 
     '99GU7196', ' EMC');
@@ -376,9 +387,10 @@ Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_EXPEDIENTE, COD_CONTRATO, TIPO_PROCEDIMIENTO_ADJUDICADO, TXT_DESCRIPCION, DES_EMPRESA, NUM_IMPORTE, FE_INI_CONTRATO, FE_FIN_CONTRATO, CHK_PRORROGA, FE_INI_PRORROGA, FE_FIN_PRORROGA, TXT_OBSERVACIONES, CHK_ACTIVO, FE_MODI_REG, COD_MOD_USU)
  Values
    (28, 1, '41/2015/00009', '7118/15G', 1, 
-    'Mantenimiento de los equipos microinformáticos de la S.S.', 'INFOREIN', 
+    'Mantenimiento de los equipos microinformï¿½ticos de la S.S.', 'INFOREIN', 
     2195000, TO_DATE('08/20/2015 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('08/19/2016 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), '1', TO_DATE('08/20/2016 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), 
-    TO_DATE('08/19/2017 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), 'Propuesta en COTEC Junio 2017  41/2017/0048.   24 meses desde 20/08/2017. Prorroga 2 años. Pte SEJU
+    TO_DATE('08/19/2017 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), 'Propuesta en COTEC Junio 2017  41/2017/0048.   24 meses desde 20/08/2017. Prorroga 2 aï¿½os. Pte SEJU
+
 revisar departamento.  Creo que igual es de Larry', '0', TO_DATE('01/03/2019 12:00:29', 'MM/DD/YYYY HH24:MI:SS'), '99GU5677');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_EXPEDIENTE, COD_CONTRATO, TIPO_PROCEDIMIENTO_ADJUDICADO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, DES_EMPRESA, NUM_IMPORTE, FE_INI_CONTRATO, FE_FIN_CONTRATO, CHK_PRORROGA, FE_INI_PRORROGA, FE_FIN_PRORROGA, TXT_OBSERVACIONES, CHK_ACTIVO, FE_MODI_REG, COD_MOD_USU)
@@ -399,12 +411,15 @@ Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_EXPEDIENTE, COD_CONTRATO, TIPO_PROCEDIMIENTO_ADJUDICADO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, DES_EMPRESA, NUM_IMPORTE, CHK_PRORROGA, TXT_OBSERVACIONES, CHK_ACTIVO, FE_MODI_REG, COD_MOD_USU)
  Values
    (33, 1, '41/2016/00192', '6613/17G', 3, 
-    93, 98, 18, 'Actualización, ampliación y Mto del software de la firma SYMANTEC DCS', 'DELL COMPUTER', 
+    93, 98, 18, 'Actualizaciï¿½n, ampliaciï¿½n y Mto del software de la firma SYMANTEC DCS', 'DELL COMPUTER', 
     971193.3, '0', 
-    'Incluye un nuevo BlueCoat y renovación suscripciones.
-interviene Gamero + Pablo + Jesus. 03/06/2019: 3 años de garantía + 1 de prorroga.
-Incluye: Suministro nuevo proxy adicioanal a los 3 existentes + Suscripción 3 años licencia nuevo entorno navegación remota + Actualización licencias DCSA-Server Edition 
-Incluye: Suministro nuevo proxy adicioanal a los 3 existentes + Suscripción 3 años licencia nuevo entorno navegación remota + Actualización licencias DCSA-Server Edition', '1', TO_DATE('01/13/2020 15:35:12', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196');
+    'Incluye un nuevo BlueCoat y renovaciï¿½n suscripciones.
+
+interviene Gamero + Pablo + Jesus. 03/06/2019: 3 aï¿½os de garantï¿½a + 1 de prorroga.
+
+Incluye: Suministro nuevo proxy adicioanal a los 3 existentes + Suscripciï¿½n 3 aï¿½os licencia nuevo entorno navegaciï¿½n remota + Actualizaciï¿½n licencias DCSA-Server Edition 
+
+Incluye: Suministro nuevo proxy adicioanal a los 3 existentes + Suscripciï¿½n 3 aï¿½os licencia nuevo entorno navegaciï¿½n remota + Actualizaciï¿½n licencias DCSA-Server Edition', '1', TO_DATE('01/13/2020 15:35:12', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_EXPEDIENTE, COD_CONTRATO, TIPO_PROCEDIMIENTO_ADJUDICADO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, DES_EMPRESA, NUM_IMPORTE, FE_INI_CONTRATO, FE_FIN_CONTRATO, CHK_PRORROGA, FE_INI_PRORROGA, FE_FIN_PRORROGA, CHK_ACTIVO, FE_MODI_REG, COD_MOD_USU, PALABRA_CLAVE)
  Values
@@ -416,7 +431,7 @@ Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_EXPEDIENTE, COD_CONTRATO, TIPO_PROCEDIMIENTO_ADJUDICADO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, DES_EMPRESA, NUM_IMPORTE, FE_INI_CONTRATO, FE_FIN_CONTRATO, CHK_PRORROGA, FE_INI_PRORROGA, FE_FIN_PRORROGA, TXT_OBSERVACIONES, CHK_ACTIVO, FE_MODI_REG, COD_MOD_USU)
  Values
    (35, 1, '41/2015/0001', '5119/14G', 5, 
-    4, 88, 18, 'Mto sistemas de seguridad infraestructura de clave pública PKI y sistema SIAVAL', 'Sistemas Informaticos Abiertos SA', 
+    4, 88, 18, 'Mto sistemas de seguridad infraestructura de clave pï¿½blica PKI y sistema SIAVAL', 'Sistemas Informaticos Abiertos SA', 
     1134648.32, TO_DATE('11/19/2014 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('11/18/2015 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), '1', TO_DATE('11/19/2016 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), 
     TO_DATE('11/18/2017 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), 'Propuesto en COTEC marzo 2017 41/2017/0054', '0', TO_DATE('01/03/2019 10:08:40', 'MM/DD/YYYY HH24:MI:SS'), '99GU5677');
 Insert into GOYA.MANTENIMIENTO
@@ -430,22 +445,22 @@ Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_EXPEDIENTE, COD_CONTRATO, TIPO_PROCEDIMIENTO_ADJUDICADO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, DES_EMPRESA, NUM_IMPORTE, FE_INI_CONTRATO, FE_FIN_CONTRATO, CHK_PRORROGA, FE_INI_PRORROGA, FE_FIN_PRORROGA, CHK_ACTIVO, FE_MODI_REG, COD_MOD_USU, PALABRA_CLAVE)
  Values
    (38, 1, '41/2016/00003', '4605/16G', 2, 
-    3, 101, 210, 'Sistema gestor de impresión VPS', 'Levi, Ray and Shoup Inc. Suc. Esp', 
+    3, 101, 210, 'Sistema gestor de impresiï¿½n VPS', 'Levi, Ray and Shoup Inc. Suc. Esp', 
     535276.06, TO_DATE('07/01/2016 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('06/30/2017 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), '1', TO_DATE('07/01/2017 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), 
     TO_DATE('06/30/2018 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), '1', TO_DATE('01/13/2020 15:35:53', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' VPS');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_EXPEDIENTE, COD_CONTRATO, TIPO_PROCEDIMIENTO_ADJUDICADO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, DES_EMPRESA, NUM_IMPORTE, FE_INI_CONTRATO, FE_FIN_CONTRATO, CHK_PRORROGA, FE_INI_PRORROGA, FE_FIN_PRORROGA, TXT_OBSERVACIONES, CHK_ACTIVO, FE_MODI_REG, COD_MOD_USU, PALABRA_CLAVE)
  Values
    (39, 8, '41/2016/00122', '5102/17G', 2, 
-    2, 91, 1695, 'Mto sistema impresión distribuido Saint', 'M3 Informática S.L.', 
+    2, 91, 1695, 'Mto sistema impresiï¿½n distribuido Saint', 'M3 Informï¿½tica S.L.', 
     473367, TO_DATE('02/17/2017 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('02/16/2018 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), '1', TO_DATE('02/17/2018 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), 
-    TO_DATE('02/16/2019 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), 'Cerrato 29/01-> "Planificado". (suponemos Renovación)', '1', TO_DATE('03/04/2020 10:30:29', 'MM/DD/YYYY HH24:MI:SS'), 
+    TO_DATE('02/16/2019 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), 'Cerrato 29/01-> "Planificado". (suponemos Renovaciï¿½n)', '1', TO_DATE('03/04/2020 10:30:29', 'MM/DD/YYYY HH24:MI:SS'), 
     '99GU2790', ' SAINT');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_EXPEDIENTE, COD_CONTRATO, TIPO_PROCEDIMIENTO_ADJUDICADO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, DES_EMPRESA, NUM_IMPORTE, FE_INI_CONTRATO, FE_FIN_CONTRATO, CHK_PRORROGA, TXT_OBSERVACIONES, CHK_ACTIVO, FE_MODI_REG, COD_MOD_USU)
  Values
    (40, 1, '41/2016/00123', '5109/17G', 2, 
-    4, 88, 18, 'Mto Sistemas Gesitión Documental (INVESDOC)', 'Informática El Corte Inglés', 
+    4, 88, 18, 'Mto Sistemas Gesitiï¿½n Documental (INVESDOC)', 'Informï¿½tica El Corte Inglï¿½s', 
     518100, TO_DATE('02/03/2017 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('02/02/2018 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), '1', 
     'revisar perido de prorroga.  revisar Dpto y unidad', '0', TO_DATE('01/03/2019 10:10:12', 'MM/DD/YYYY HH24:MI:SS'), '99GU5677');
 Insert into GOYA.MANTENIMIENTO
@@ -459,7 +474,7 @@ Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_EXPEDIENTE, COD_CONTRATO, TIPO_PROCEDIMIENTO_ADJUDICADO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, DES_EMPRESA, NUM_IMPORTE, FE_INI_CONTRATO, FE_FIN_CONTRATO, CHK_PRORROGA, CHK_ACTIVO, FE_MODI_REG, COD_MOD_USU)
  Values
    (42, 8, '41/2016/00125', '5104/17G', 2, 
-    2, 90, 1017, 'Actualización y Mto licencias ANYQUEUE en redes NT', 'Levi, Ray and Shoup Inc. Suc. Esp', 
+    2, 90, 1017, 'Actualizaciï¿½n y Mto licencias ANYQUEUE en redes NT', 'Levi, Ray and Shoup Inc. Suc. Esp', 
     25261.35, TO_DATE('02/18/2017 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('02/17/2018 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), '1', 
     '1', TO_DATE('03/11/2020 10:11:14', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196');
 Insert into GOYA.MANTENIMIENTO
@@ -468,7 +483,8 @@ Insert into GOYA.MANTENIMIENTO
    (43, 4, '41/2016/00126', '5105/17G', 1, 
     3, 56, 210, 'Mantenimiento de equipos pre y post proceso para impresion laser de alto rendimiento Hunkeler. Bobinadora y rebobinadora', 'Impryma SL', 
     23723.8, TO_DATE('03/13/2017 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('03/12/2018 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), '1', TO_DATE('03/13/2018 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), 
-    TO_DATE('03/12/2019 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), '29/01-> Cerrato: "Esta en Revision". DPS revisando equipos que seran necesarios
+    TO_DATE('03/12/2019 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), '29/01-> Cerrato: "Esta en Revision". DPS revisando equipos que seran necesarios
+
 ', '1', TO_DATE('04/07/2020 10:30:13', 'MM/DD/YYYY HH24:MI:SS'), 
     '99GU7196', ' HUNKELER');
 Insert into GOYA.MANTENIMIENTO
@@ -477,28 +493,29 @@ Insert into GOYA.MANTENIMIENTO
    (44, 1, '41/2016/00033', '4606/16G', 2, 
     88, 89, 19, 'Mto licencias Cobol de Micro Focus', 'Micro Focus SLU', 
     39764.73, TO_DATE('01/01/2015 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('12/31/2015 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), '1', TO_DATE('01/01/2016 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), 
-    TO_DATE('12/31/2016 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), '24-02-2020-Rocio.-Revcisión SEJU.Observaciones SEJU Procedimiento negociado.En elaboración para volver a enviar 
-29/01-> Cerrato: "En Gestión SEJU"', '1', TO_DATE('03/02/2020 15:58:42', 'MM/DD/YYYY HH24:MI:SS'), 
+    TO_DATE('12/31/2016 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), '24-02-2020-Rocio.-Revcisiï¿½n SEJU.Observaciones SEJU Procedimiento negociado.En elaboraciï¿½n para volver a enviar 
+
+29/01-> Cerrato: "En Gestiï¿½n SEJU"', '1', TO_DATE('03/02/2020 15:58:42', 'MM/DD/YYYY HH24:MI:SS'), 
     '99GU7196', ' Cobol');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_EXPEDIENTE, COD_CONTRATO, TIPO_PROCEDIMIENTO_ADJUDICADO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, DES_EMPRESA, NUM_IMPORTE, FE_INI_CONTRATO, FE_FIN_CONTRATO, CHK_PRORROGA, FE_INI_PRORROGA, FE_FIN_PRORROGA, CHK_ACTIVO, FE_MODI_REG, COD_MOD_USU, PALABRA_CLAVE)
  Values
    (45, 4, '41/2016/00127', '5107/17G', 2, 
-    3, 56, 30, 'Mantenimiento de impresoras Océ VS 6500 y Océ Jet Stream 1000', 'Canon Esp', 
+    3, 56, 30, 'Mantenimiento de impresoras Ocï¿½ VS 6500 y Ocï¿½ Jet Stream 1000', 'Canon Esp', 
     390515, TO_DATE('01/01/2015 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('12/31/2015 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), '1', TO_DATE('01/01/2016 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), 
-    TO_DATE('12/31/2016 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), '1', TO_DATE('03/11/2020 10:13:59', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' impresoras Océ');
+    TO_DATE('12/31/2016 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), '1', TO_DATE('03/11/2020 10:13:59', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' impresoras Ocï¿½');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_EXPEDIENTE, COD_CONTRATO, TIPO_PROCEDIMIENTO_ADJUDICADO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, DES_EMPRESA, NUM_IMPORTE, FE_INI_CONTRATO, FE_FIN_CONTRATO, CHK_PRORROGA, FE_INI_PRORROGA, FE_FIN_PRORROGA, CHK_ACTIVO, FE_MODI_REG, COD_MOD_USU, PALABRA_CLAVE)
  Values
    (46, 8, '41/2016/00128', '5111/17G', 2, 
-    3, 20, 210, 'Mantenimiento de diversos productos sw de la empresa BANTEC', 'Bantec Ibérica SA', 
+    3, 20, 210, 'Mantenimiento de diversos productos sw de la empresa BANTEC', 'Bantec Ibï¿½rica SA', 
     58573.9, TO_DATE('01/12/2017 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('01/11/2018 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), '1', TO_DATE('01/12/2018 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), 
     TO_DATE('01/11/2019 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), '1', TO_DATE('04/07/2020 10:34:36', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' BANTEC');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_EXPEDIENTE, COD_CONTRATO, TIPO_PROCEDIMIENTO_ADJUDICADO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, DES_EMPRESA, NUM_IMPORTE, FE_INI_CONTRATO, FE_FIN_CONTRATO, CHK_PRORROGA, FE_INI_PRORROGA, FE_FIN_PRORROGA, TXT_OBSERVACIONES, CHK_ACTIVO, FE_MODI_REG, COD_MOD_USU, PALABRA_CLAVE)
  Values
    (47, 4, '41/2016/00032', '5102/16G', 1, 
-    3, 20, 210, 'Mantenimiento de dos escaneres de altas prestaciones para captura de documentos para la plataforma de digitalización.  Torrejón', 'GESTDOC MARJE, S.L.', 
+    3, 20, 210, 'Mantenimiento de dos escaneres de altas prestaciones para captura de documentos para la plataforma de digitalizaciï¿½n.  Torrejï¿½n', 'GESTDOC MARJE, S.L.', 
     39740, TO_DATE('07/01/2016 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('06/30/2017 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), '1', TO_DATE('01/01/2018 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), 
     TO_DATE('12/31/2018 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), 'Arenas 14/01/20-> Promotor: "RRHH"', '1', TO_DATE('03/11/2020 10:10:20', 'MM/DD/YYYY HH24:MI:SS'), 
     '99GU7196', ' escaneres de altas prestaciones');
@@ -506,22 +523,23 @@ Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_EXPEDIENTE, TIPO_PROCEDIMIENTO_ADJUDICADO, TXT_DESCRIPCION, DES_EMPRESA, NUM_IMPORTE, TXT_OBSERVACIONES, CHK_ACTIVO, FE_MODI_REG, COD_MOD_USU)
  Values
    (49, 1, '41/2016/00096', 3, 
-    'Contratación centralizada para la ampliación de licencias y actualización de versión de Remedy', 'FUJITSU TECHNOLOGY SOLUTIONS SAU', 
-    1758929.67, 'Hablarlo con Logística', '0', TO_DATE('01/17/2018 08:09:16', 'MM/DD/YYYY HH24:MI:SS'), '99GU5677');
+    'Contrataciï¿½n centralizada para la ampliaciï¿½n de licencias y actualizaciï¿½n de versiï¿½n de Remedy', 'FUJITSU TECHNOLOGY SOLUTIONS SAU', 
+    1758929.67, 'Hablarlo con Logï¿½stica', '0', TO_DATE('01/17/2018 08:09:16', 'MM/DD/YYYY HH24:MI:SS'), '99GU5677');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_EXPEDIENTE, COD_CONTRATO, TIPO_PROCEDIMIENTO_ADJUDICADO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, DES_EMPRESA, NUM_IMPORTE, FE_INI_CONTRATO, FE_FIN_CONTRATO, CHK_PRORROGA, FE_INI_PRORROGA, FE_FIN_PRORROGA, TXT_OBSERVACIONES, CHK_ACTIVO, FE_MODI_REG, COD_MOD_USU, PALABRA_CLAVE)
  Values
    (51, 3, '41/2017/00010', '5001/17G', 5, 
     88, 89, 331, 'HW , SW de mainframe y ssaa y Mto SW base, mto sw base mainframe  (utilidades y servicios IBM) - OIO', 'IBM', 
     68800000, TO_DATE('07/01/2017 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('06/30/2020 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), '1', TO_DATE('07/01/2020 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), 
-    TO_DATE('06/30/2021 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), '29/01-> Cerrato: "Memoria elaborada. En revision"
+    TO_DATE('06/30/2021 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), '29/01-> Cerrato: "Memoria elaborada. En revision"
+
 Tivoli solo hasta 31/12/2021', '1', TO_DATE('04/07/2020 10:48:23', 'MM/DD/YYYY HH24:MI:SS'), 
     '99GU7196', ' IBM,OIO');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_EXPEDIENTE, COD_CONTRATO, TIPO_PROCEDIMIENTO_ADJUDICADO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, NUM_IMPORTE, FE_INI_CONTRATO, FE_FIN_CONTRATO, CHK_PRORROGA, FE_INI_PRORROGA, FE_FIN_PRORROGA, TXT_OBSERVACIONES, CHK_ACTIVO, FE_MODI_REG, COD_MOD_USU)
  Values
    (52, 1, '41/2016/00176', '7109/17G', 2, 
-    4, 88, 18, 'Actualización y soporte de los productos software Rochade', 
+    4, 88, 18, 'Actualizaciï¿½n y soporte de los productos software Rochade', 
     99173, TO_DATE('04/10/2015 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('04/09/2016 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), '1', TO_DATE('04/10/2016 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), 
     TO_DATE('04/09/2017 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), 'Desierta. No se ha presentado nadie', '1', TO_DATE('06/12/2019 10:44:42', 'MM/DD/YYYY HH24:MI:SS'), '99GU7254');
 Insert into GOYA.MANTENIMIENTO
@@ -530,15 +548,17 @@ Insert into GOYA.MANTENIMIENTO
    (53, 3, '41/2014/00066', '5107/15G', 5, 
     3, 101, 210, 'Contrato plurianual de suministro y mantenimiento Software AG', 'Software AG Esp. S.A.', 
     15975940.87, TO_DATE('01/01/2015 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('12/31/2017 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), '0', 
-    'El plazo de los servicios de mantenimiento, soporte y consultoria sera de tres años y el del
-suministro de 12 meses, desde el 1/01/2018. Es prorroglable pero no sé si es 1 o 2 años', '1', TO_DATE('03/03/2020 12:23:00', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196');
+    'El plazo de los servicios de mantenimiento, soporte y consultoria sera de tres aï¿½os y el del
+
+suministro de 12 meses, desde el 1/01/2018. Es prorroglable pero no sï¿½ si es 1 o 2 aï¿½os', '1', TO_DATE('03/03/2020 12:23:00', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_EXPEDIENTE, COD_CONTRATO, TIPO_PROCEDIMIENTO_ADJUDICADO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, DES_EMPRESA, NUM_IMPORTE, FE_INI_CONTRATO, FE_FIN_CONTRATO, CHK_PRORROGA, TXT_OBSERVACIONES, CHK_ACTIVO, FE_MODI_REG, COD_MOD_USU)
  Values
    (54, 1, '41/2016/00152', '3102/17G', 4, 
     3, 19, 6, 'Mto Productos New Test Iplabel', 'Sistemas Informaticos Abiertos SA', 
     17994.99, TO_DATE('01/01/2017 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('12/31/2017 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), '0', 
-    'En elaboración, enero 2019 va a salir por abierto. De momento por la cantidad desorbitada no se ha vuelto a pedir.Con la nueva plataforma de gestión se queda obsoleto. Se va a reemplazar por la herramienta de Plataforma de Gestión
+    'En elaboraciï¿½n, enero 2019 va a salir por abierto. De momento por la cantidad desorbitada no se ha vuelto a pedir.Con la nueva plataforma de gestiï¿½n se queda obsoleto. Se va a reemplazar por la herramienta de Plataforma de Gestiï¿½n
+
 ', '0', TO_DATE('11/14/2019 09:14:22', 'MM/DD/YYYY HH24:MI:SS'), '99GU7254');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_EXPEDIENTE, TIPO_PROCEDIMIENTO_ADJUDICADO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, DES_EMPRESA, NUM_IMPORTE, FE_INI_CONTRATO, FE_FIN_CONTRATO, TXT_OBSERVACIONES, CHK_ACTIVO, FE_MODI_REG, COD_MOD_USU, PALABRA_CLAVE)
@@ -546,34 +566,35 @@ Insert into GOYA.MANTENIMIENTO
    (55, 8, '41/2016/00165', 4, 
     88, 21, 22, 'Cxto Menor: Mto sistema Rimage 2000I', 'DUPLICACIONES ALIGRO, S.L.U', 
     1938, TO_DATE('01/01/2017 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('12/31/2017 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), 
-    '29/01-> Cerrato: "Formalizada renovación 31/12/20"', '1', TO_DATE('03/09/2020 15:31:28', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' RIMAGE');
+    '29/01-> Cerrato: "Formalizada renovaciï¿½n 31/12/20"', '1', TO_DATE('03/09/2020 15:31:28', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' RIMAGE');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, TIPO_PROCEDIMIENTO_ADJUDICADO, COD_DEPARTAMENTO, TXT_DESCRIPCION, NUM_IMPORTE, FE_INI_CONTRATO, CHK_PRORROGA, TXT_OBSERVACIONES, CHK_ACTIVO, FE_MODI_REG, COD_MOD_USU)
  Values
    (56, 1, 4, 
-    4, 'Servicios profesionales de gestión de dominios de internet de la S.S', 
-    5000, TO_DATE('01/01/2017 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), '0', 'No es de DPS.  Es de la gente de comunicación corporativa', '0', TO_DATE('01/17/2018 11:56:47', 'MM/DD/YYYY HH24:MI:SS'), '99GU5677');
+    4, 'Servicios profesionales de gestiï¿½n de dominios de internet de la S.S', 
+    5000, TO_DATE('01/01/2017 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), '0', 'No es de DPS.  Es de la gente de comunicaciï¿½n corporativa', '0', TO_DATE('01/17/2018 11:56:47', 'MM/DD/YYYY HH24:MI:SS'), '99GU5677');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_EXPEDIENTE, TIPO_PROCEDIMIENTO_ADJUDICADO, COD_DEPARTAMENTO, COD_UNIDAD, TXT_DESCRIPCION, DES_EMPRESA, NUM_IMPORTE, FE_INI_CONTRATO, FE_FIN_CONTRATO, CHK_PRORROGA, TXT_OBSERVACIONES, CHK_ACTIVO, FE_MODI_REG, COD_MOD_USU)
  Values
    (57, 1, '41/2016/00215', 4, 
-    2, 91, 'Renovación de la suscripción de 9 licencias Autodesk Design Suite Premium', 'SEYS CAD SYSTEM', 
+    2, 91, 'Renovaciï¿½n de la suscripciï¿½n de 9 licencias Autodesk Design Suite Premium', 'SEYS CAD SYSTEM', 
     7671.42, TO_DATE('03/29/2017 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('03/28/2018 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), '0', 
     'No creo que sea de la DPS', '0', TO_DATE('01/03/2019 10:49:35', 'MM/DD/YYYY HH24:MI:SS'), '99GU5677');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_EXPEDIENTE, TIPO_PROCEDIMIENTO_ADJUDICADO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, DES_EMPRESA, NUM_IMPORTE, FE_INI_CONTRATO, FE_FIN_CONTRATO, CHK_PRORROGA, TXT_OBSERVACIONES, CHK_ACTIVO, FE_MODI_REG, COD_MOD_USU, PALABRA_CLAVE)
  Values
    (58, 8, '41/2016/00166', 2, 
-    88, 89, 331, 'Sistema de gestión de redes de bibliotecas Absysnet', 'BARATZ SERVICIOS DE TELEDOCUMENTACION SA', 
+    88, 89, 331, 'Sistema de gestiï¿½n de redes de bibliotecas Absysnet', 'BARATZ SERVICIOS DE TELEDOCUMENTACION SA', 
     9478.4, TO_DATE('01/01/2017 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('12/31/2017 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), '0', 
-    '24-02-2020-Rocio.-Revcisión SEJU. OOCC -. Observaciones SEJU Procedimiento Negociado. En elaboración para volver a enviar.
-29/01-> Cerrato: "En Gestión SEJU"', '1', TO_DATE('03/03/2020 12:13:02', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' absysnet');
+    '24-02-2020-Rocio.-Revcisiï¿½n SEJU. OOCC -. Observaciones SEJU Procedimiento Negociado. En elaboraciï¿½n para volver a enviar.
+
+29/01-> Cerrato: "En Gestiï¿½n SEJU"', '1', TO_DATE('03/03/2020 12:13:02', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' absysnet');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_EXPEDIENTE, TIPO_PROCEDIMIENTO_ADJUDICADO, TXT_DESCRIPCION, DES_EMPRESA, NUM_IMPORTE, FE_INI_CONTRATO, FE_FIN_CONTRATO, CHK_PRORROGA, TXT_OBSERVACIONES, CHK_ACTIVO, FE_MODI_REG, COD_MOD_USU)
  Values
    (59, 1, '41/2016/00167', 4, 
-    'Renovación mantenimiento licencias IDEA', 'CASEWARE IDEA B.V', 
-    17999, TO_DATE('01/01/2017 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('12/31/2017 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), '0', '5 licencias para Intervención y Auditorias Contables (no es nuestro)', '0', TO_DATE('01/03/2019 09:40:47', 'MM/DD/YYYY HH24:MI:SS'), '99GU5677');
+    'Renovaciï¿½n mantenimiento licencias IDEA', 'CASEWARE IDEA B.V', 
+    17999, TO_DATE('01/01/2017 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('12/31/2017 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), '0', '5 licencias para Intervenciï¿½n y Auditorias Contables (no es nuestro)', '0', TO_DATE('01/03/2019 09:40:47', 'MM/DD/YYYY HH24:MI:SS'), '99GU5677');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_EXPEDIENTE, COD_CONTRATO, TIPO_PROCEDIMIENTO_ADJUDICADO, TXT_DESCRIPCION, DES_EMPRESA, NUM_IMPORTE, FE_INI_CONTRATO, FE_FIN_CONTRATO, CHK_PRORROGA, FE_INI_PRORROGA, FE_FIN_PRORROGA, CHK_ACTIVO, FE_MODI_REG, COD_MOD_USU)
  Values
@@ -585,29 +606,30 @@ Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_EXPEDIENTE, TIPO_PROCEDIMIENTO_ADJUDICADO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, DES_EMPRESA, NUM_IMPORTE, FE_INI_CONTRATO, FE_FIN_CONTRATO, CHK_PRORROGA, CHK_ACTIVO, FE_MODI_REG, COD_MOD_USU, PALABRA_CLAVE)
  Values
    (62, 8, '41/2017/00029', 1, 
-    2, 91, 1695, 'contratación de la actualización, mantenimiento y supervisión de replicaciones del software Amos Business Suite', 'COMPUTERS Y C AEROMARINE S.A.', 
+    2, 91, 1695, 'contrataciï¿½n de la actualizaciï¿½n, mantenimiento y supervisiï¿½n de replicaciones del software Amos Business Suite', 'COMPUTERS Y C AEROMARINE S.A.', 
     8092.15, TO_DATE('04/12/2017 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('04/11/2018 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), '0', 
     '1', TO_DATE('03/11/2020 10:16:41', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' Amos');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_EXPEDIENTE, COD_CONTRATO, TIPO_PROCEDIMIENTO_ADJUDICADO, TXT_DESCRIPCION, DES_EMPRESA, NUM_IMPORTE, FE_INI_CONTRATO, FE_FIN_CONTRATO, CHK_PRORROGA, TXT_OBSERVACIONES, CHK_ACTIVO, FE_MODI_REG, COD_MOD_USU)
  Values
    (63, 1, '41/2016/00095', '3138/16G', 4, 
-    'Actualización de licencias Presto con destino a la Oficina Técnica de la Tesorería General de la Seguridad Social', 'MP-sys SL', 
-    4084.8, TO_DATE('07/14/2016 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('07/13/2017 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), '0', 'revisar DPTO.. ¿Tesosrería?', '0', TO_DATE('05/22/2018 09:27:03', 'MM/DD/YYYY HH24:MI:SS'), '99GU5677');
+    'Actualizaciï¿½n de licencias Presto con destino a la Oficina Tï¿½cnica de la Tesorerï¿½a General de la Seguridad Social', 'MP-sys SL', 
+    4084.8, TO_DATE('07/14/2016 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('07/13/2017 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), '0', 'revisar DPTO.. ï¿½Tesosrerï¿½a?', '0', TO_DATE('05/22/2018 09:27:03', 'MM/DD/YYYY HH24:MI:SS'), '99GU5677');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_EXPEDIENTE, COD_CONTRATO, TIPO_PROCEDIMIENTO_ADJUDICADO, TXT_DESCRIPCION, DES_EMPRESA, NUM_IMPORTE, CHK_PRORROGA, TXT_OBSERVACIONES, CHK_ACTIVO, FE_MODI_REG, COD_MOD_USU)
  Values
    (64, 1, '41/2017/0014', '3119/17G', 4, 
-    'Contrato menor para la renovación de la suscripción de licencias CYPE', 'CYPE', 
-    3284, '0', 'revisa DPTO y cumplimentar fechas.  Software de ingeniaría   TGSS.  ¿Cartera de proyectos?', '0', TO_DATE('05/17/2018 13:23:58', 'MM/DD/YYYY HH24:MI:SS'), '99GU5677');
+    'Contrato menor para la renovaciï¿½n de la suscripciï¿½n de licencias CYPE', 'CYPE', 
+    3284, '0', 'revisa DPTO y cumplimentar fechas.  Software de ingeniarï¿½a   TGSS.  ï¿½Cartera de proyectos?', '0', TO_DATE('05/17/2018 13:23:58', 'MM/DD/YYYY HH24:MI:SS'), '99GU5677');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_EXPEDIENTE, TIPO_PROCEDIMIENTO_ADJUDICADO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, DES_EMPRESA, NUM_IMPORTE, FE_INI_CONTRATO, FE_FIN_CONTRATO, CHK_PRORROGA, TXT_OBSERVACIONES, CHK_ACTIVO, FE_MODI_REG, COD_MOD_USU, PALABRA_CLAVE)
  Values
    (66, 8, '41/2016/00171', 1, 
     2, 58, 15, 'Cxto Menor: Mantenimiento productos FLUKE NETWORKS GISS y del software MG-SOFT MIB BROWSER', 'ADLER', 
     6039, TO_DATE('01/01/2017 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('12/31/2017 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), '0', 
-    '24-02-2020-Rocio.-Revisión SEJU OOCC - Revisadas observaciones. Se ha detectado que los equipos se incluyeron por Logistica en contrato equipos de comunicaciones adjudicado a Indra ´- Minsait .    SE DEBERIA POR TANTO ANULAR.
-29/01-> Cerrato: "En Gestión SEJU"', '1', TO_DATE('03/09/2020 15:36:47', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' FLUKE');
+    '24-02-2020-Rocio.-Revisiï¿½n SEJU OOCC - Revisadas observaciones. Se ha detectado que los equipos se incluyeron por Logistica en contrato equipos de comunicaciones adjudicado a Indra ï¿½- Minsait .    SE DEBERIA POR TANTO ANULAR.
+
+29/01-> Cerrato: "En Gestiï¿½n SEJU"', '1', TO_DATE('03/09/2020 15:36:47', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' FLUKE');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, TIPO_PROCEDIMIENTO_ADJUDICADO, COD_DEPARTAMENTO, TXT_DESCRIPCION, DES_EMPRESA, NUM_IMPORTE, FE_INI_CONTRATO, FE_FIN_CONTRATO, CHK_PRORROGA, TXT_OBSERVACIONES, CHK_ACTIVO, FE_MODI_REG, COD_MOD_USU)
  Values
@@ -625,25 +647,28 @@ Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_EXPEDIENTE, TIPO_PROCEDIMIENTO_ADJUDICADO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, DES_EMPRESA, NUM_IMPORTE, FE_INI_CONTRATO, FE_FIN_CONTRATO, CHK_PRORROGA, TXT_OBSERVACIONES, CHK_ACTIVO, FE_MODI_REG, COD_MOD_USU)
  Values
    (71, 1, '41/2016/00163', 1, 
-    2, 91, 1013, 'Actualización de la plataforma de gestión de dispositivos móviles MDM incluye "Aquisición de 400  licencias Mobileiron Platinium"', 'Sistemas Informaticos Abiertos SA', 
+    2, 91, 1013, 'Actualizaciï¿½n de la plataforma de gestiï¿½n de dispositivos mï¿½viles MDM incluye "Aquisiciï¿½n de 400  licencias Mobileiron Platinium"', 'Sistemas Informaticos Abiertos SA', 
     16089.97, TO_DATE('11/27/2016 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('11/26/2017 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), '0', 
-    'MobileIron Enterprise Mobility Management 1000 licencias
-07/06/2019 --> Creo que está englobado en la adquisición MDM
+    'MobileIron Enterprise Mobility Management 1000 licencias
+
+07/06/2019 --> Creo que estï¿½ englobado en la adquisiciï¿½n MDM
+
 19/07/2019 --> fusionada con la inversion ID - >26', '1', TO_DATE('09/25/2019 08:54:49', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_EXPEDIENTE, COD_CONTRATO, TIPO_PROCEDIMIENTO_ADJUDICADO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, DES_EMPRESA, NUM_IMPORTE, FE_INI_CONTRATO, FE_FIN_CONTRATO, CHK_PRORROGA, TXT_OBSERVACIONES, CHK_ACTIVO, FE_MODI_REG, COD_MOD_USU, PALABRA_CLAVE)
  Values
    (73, 8, '41/2017/0078', '3124/17G', 1, 
-    3, 56, 210, 'Actualización y mantenimiento del software INSPIRE', 'CANON', 
+    3, 56, 210, 'Actualizaciï¿½n y mantenimiento del software INSPIRE', 'CANON', 
     17850, TO_DATE('05/01/2017 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('12/31/2017 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), '0', 
-    '
+    '
+
 ', '1', TO_DATE('03/03/2020 15:02:11', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' Inspire');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_EXPEDIENTE, COD_CONTRATO, TIPO_PROCEDIMIENTO_ADJUDICADO, TXT_DESCRIPCION, DES_EMPRESA, NUM_IMPORTE, CHK_PRORROGA, TXT_OBSERVACIONES, CHK_ACTIVO, FE_MODI_REG, COD_MOD_USU)
  Values
    (77, 1, '41/2017/0056', '3508/17G', 8, 
-    'Contrato menor para la adquisición de un software de gestión de pantallas.', 'MPELECTRONICS', 
-    180, '0', '¿es un salvapantallas ?  . Esto tien pinta de adquisición, no mantenimiento y no e sla DPS', '0', TO_DATE('01/03/2019 09:41:14', 'MM/DD/YYYY HH24:MI:SS'), '99GU5677');
+    'Contrato menor para la adquisiciï¿½n de un software de gestiï¿½n de pantallas.', 'MPELECTRONICS', 
+    180, '0', 'ï¿½es un salvapantallas ?  . Esto tien pinta de adquisiciï¿½n, no mantenimiento y no e sla DPS', '0', TO_DATE('01/03/2019 09:41:14', 'MM/DD/YYYY HH24:MI:SS'), '99GU5677');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_EXPEDIENTE, COD_CONTRATO, TIPO_PROCEDIMIENTO_ADJUDICADO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, DES_EMPRESA, NUM_IMPORTE, FE_INI_CONTRATO, CHK_PRORROGA, TXT_OBSERVACIONES, CHK_ACTIVO, FE_MODI_REG, COD_MOD_USU)
  Values
@@ -655,45 +680,46 @@ Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_CONTRATO, TXT_DESCRIPCION, FE_FIN_CONTRATO, CHK_PRORROGA, TXT_OBSERVACIONES, CHK_ACTIVO, FE_MODI_REG, COD_MOD_USU)
  Values
    (86, 1, '7103/13G', 
-    'Servicio de traducción y localización para la internacionalización y adaptación multilingüe de la Web, plataforma de gestión y sistemas de contenidos actuales de la Web de la Seguridad Social', TO_DATE('08/27/2017 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), '0', 'No parece de DPS, si acaso intranet   ¿Portales   GAyCD?', '0', TO_DATE('01/03/2019 09:41:32', 'MM/DD/YYYY HH24:MI:SS'), '99GU5677');
+    'Servicio de traducciï¿½n y localizaciï¿½n para la internacionalizaciï¿½n y adaptaciï¿½n multilingï¿½e de la Web, plataforma de gestiï¿½n y sistemas de contenidos actuales de la Web de la Seguridad Social', TO_DATE('08/27/2017 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), '0', 'No parece de DPS, si acaso intranet   ï¿½Portales   GAyCD?', '0', TO_DATE('01/03/2019 09:41:32', 'MM/DD/YYYY HH24:MI:SS'), '99GU5677');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_CONTRATO, TXT_DESCRIPCION, FE_FIN_CONTRATO, CHK_PRORROGA, TXT_OBSERVACIONES, CHK_ACTIVO, FE_MODI_REG, COD_MOD_USU)
  Values
    (103, 1, '5117/17G', 
-    'Licencia de uso de la herramienta Teanmate para cien usuarios, con destino a la GISS', TO_DATE('12/22/2018 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), '1', 'Para Intervención y Auditorias Contables (no es nuestro)', '0', TO_DATE('01/03/2019 09:41:56', 'MM/DD/YYYY HH24:MI:SS'), '99GU5677');
+    'Licencia de uso de la herramienta Teanmate para cien usuarios, con destino a la GISS', TO_DATE('12/22/2018 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), '1', 'Para Intervenciï¿½n y Auditorias Contables (no es nuestro)', '0', TO_DATE('01/03/2019 09:41:56', 'MM/DD/YYYY HH24:MI:SS'), '99GU5677');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_EXPEDIENTE, COD_CONTRATO, TIPO_PROCEDIMIENTO_ADJUDICADO, TXT_DESCRIPCION, DES_EMPRESA, NUM_IMPORTE, FE_INI_CONTRATO, FE_FIN_CONTRATO, CHK_PRORROGA, TXT_OBSERVACIONES, CHK_ACTIVO, FE_MODI_REG, COD_MOD_USU)
  Values
    (104, 2, '41/2013/00096', '7302/14G', 1, 
-    'Suministro herramientas de software para estudio patrones de comportamiento y fraude en los servicios de implantación', 'SAS INSTITUTE SAU', 
-    812500, TO_DATE('09/02/2014 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('06/01/2015 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), '1', '¿desarrollo TGSS?', '0', TO_DATE('01/03/2019 09:42:17', 'MM/DD/YYYY HH24:MI:SS'), '99GU5677');
+    'Suministro herramientas de software para estudio patrones de comportamiento y fraude en los servicios de implantaciï¿½n', 'SAS INSTITUTE SAU', 
+    812500, TO_DATE('09/02/2014 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('06/01/2015 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), '1', 'ï¿½desarrollo TGSS?', '0', TO_DATE('01/03/2019 09:42:17', 'MM/DD/YYYY HH24:MI:SS'), '99GU5677');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_EXPEDIENTE, COD_CONTRATO, TIPO_PROCEDIMIENTO_ADJUDICADO, COD_DEPARTAMENTO, TXT_DESCRIPCION, DES_EMPRESA, NUM_IMPORTE, FE_INI_CONTRATO, FE_FIN_CONTRATO, CHK_PRORROGA, TXT_OBSERVACIONES, CHK_ACTIVO, FE_MODI_REG, COD_MOD_USU)
  Values
    (106, 2, '41/2013/00023', '7304/13G', 1, 
-    4, 'Adquisición solución corporativa procesamiento paralelo masivo, para consultas masivas y analisis de datos de la EEGG y Servicios Comunes SS', 'TERADATA IBERIA SL', 
+    4, 'Adquisiciï¿½n soluciï¿½n corporativa procesamiento paralelo masivo, para consultas masivas y analisis de datos de la EEGG y Servicios Comunes SS', 'TERADATA IBERIA SL', 
     1799284, TO_DATE('05/05/2014 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('06/05/2014 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), '1', 
-    'Garantía 36 Meses(05/06/2017)
+    'Garantï¿½a 36 Meses(05/06/2017)
+
 ', '0', TO_DATE('01/03/2019 09:56:32', 'MM/DD/YYYY HH24:MI:SS'), '99GU5677');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_EXPEDIENTE, COD_CONTRATO, TIPO_PROCEDIMIENTO_ADJUDICADO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, DES_EMPRESA, NUM_IMPORTE, FE_INI_CONTRATO, FE_FIN_CONTRATO, CHK_PRORROGA, TXT_OBSERVACIONES, CHK_ACTIVO, FE_MODI_REG, COD_MOD_USU)
  Values
    (107, 2, '41/2013/00048', '7309/13G', 1, 
-    4, 93, 20, 'Adquisición software IPS Aplication control y URL, Filtering para firewalls checkpoint', 'Telefonica Soluciones de Informatica y comunicaciones SAU', 
+    4, 93, 20, 'Adquisiciï¿½n software IPS Aplication control y URL, Filtering para firewalls checkpoint', 'Telefonica Soluciones de Informatica y comunicaciones SAU', 
     43723, TO_DATE('02/04/2014 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('03/04/2014 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), '1', 
-    'En Garantía 1 año   hasta (04/03/2015)', '0', TO_DATE('01/03/2019 10:20:09', 'MM/DD/YYYY HH24:MI:SS'), '99GU5677');
+    'En Garantï¿½a 1 aï¿½o   hasta (04/03/2015)', '0', TO_DATE('01/03/2019 10:20:09', 'MM/DD/YYYY HH24:MI:SS'), '99GU5677');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_EXPEDIENTE, COD_CONTRATO, TIPO_PROCEDIMIENTO_ADJUDICADO, COD_DEPARTAMENTO, COD_UNIDAD, TXT_DESCRIPCION, DES_EMPRESA, NUM_IMPORTE, FE_INI_CONTRATO, FE_FIN_CONTRATO, CHK_PRORROGA, CHK_ACTIVO, FE_MODI_REG, COD_MOD_USU)
  Values
    (108, 2, '41/2013/00086', '4601/14G', 2, 
-    4, 93, 'Ampliación sistema Z de IBM', 'IBM S.A.', 
+    4, 93, 'Ampliaciï¿½n sistema Z de IBM', 'IBM S.A.', 
     1489621, TO_DATE('12/30/2013 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('01/30/2014 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), '0', 
     '0', TO_DATE('01/03/2019 10:19:48', 'MM/DD/YYYY HH24:MI:SS'), '99GU5677');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_EXPEDIENTE, COD_CONTRATO, TIPO_PROCEDIMIENTO_ADJUDICADO, COD_DEPARTAMENTO, COD_UNIDAD, TXT_DESCRIPCION, DES_EMPRESA, NUM_IMPORTE, FE_INI_CONTRATO, CHK_PRORROGA, CHK_ACTIVO, FE_MODI_REG, COD_MOD_USU)
  Values
    (109, 2, '41/2013/00106', '4602/14G', 5, 
-    4, 93, 'Suministro Licencias HyperPau y Hdp Almacenamiento 3º copia del Centro de Respaldo', 'Informática El Corte Inglés', 
+    4, 93, 'Suministro Licencias HyperPau y Hdp Almacenamiento 3ï¿½ copia del Centro de Respaldo', 'Informï¿½tica El Corte Inglï¿½s', 
     72000, TO_DATE('01/29/2014 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), '0', '0', TO_DATE('01/17/2018 09:45:15', 'MM/DD/YYYY HH24:MI:SS'), '99GU5677');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_EXPEDIENTE, COD_CONTRATO, TIPO_PROCEDIMIENTO_ADJUDICADO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, DES_EMPRESA, NUM_IMPORTE, FE_INI_CONTRATO, TXT_OBSERVACIONES, CHK_ACTIVO, FE_MODI_REG, COD_MOD_USU)
@@ -719,84 +745,92 @@ Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_EXPEDIENTE, COD_CONTRATO, TIPO_PROCEDIMIENTO_ADJUDICADO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, DES_EMPRESA, NUM_IMPORTE, FE_INI_CONTRATO, TXT_OBSERVACIONES, CHK_ACTIVO, FE_MODI_REG, COD_MOD_USU)
  Values
    (115, 2, '41/2014/00098', '4603/15 G', 5, 
-    4, 88, 18, 'Ampliación de la plataforma de procesamiento paralelo de consultas masivas basada en tecnología Teradata.', 'TERADATA IBERIA SL', 
+    4, 88, 18, 'Ampliaciï¿½n de la plataforma de procesamiento paralelo de consultas masivas basada en tecnologï¿½a Teradata.', 'TERADATA IBERIA SL', 
     39500, TO_DATE('03/04/2015 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), 
-    'Todo el equ¡pamiento tanto hardware como software objeto del presente contrato pasará a formar parte de la plataforma Teradata 
+    'Todo el equï¿½pamiento tanto hardware como software objeto del presente contrato pasarï¿½ a formar parte de la plataforma Teradata 
+
 posiblemente caducado', '0', TO_DATE('01/17/2018 08:07:45', 'MM/DD/YYYY HH24:MI:SS'), '99GU5677');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_EXPEDIENTE, COD_CONTRATO, TIPO_PROCEDIMIENTO_ADJUDICADO, COD_DEPARTAMENTO, COD_RESPONSABLE, TXT_DESCRIPCION, DES_EMPRESA, NUM_IMPORTE, FE_INI_CONTRATO, FE_FIN_CONTRATO, CHK_PRORROGA, TXT_OBSERVACIONES, CHK_ACTIVO, FE_MODI_REG, COD_MOD_USU)
  Values
    (116, 2, '41/2014/00097', '4602/15G', 5, 
-    3, 6, 'Material para actualización del sistema videowall', 'Informática El Corte Inglés', 
+    3, 6, 'Material para actualizaciï¿½n del sistema videowall', 'Informï¿½tica El Corte Inglï¿½s', 
     33950, TO_DATE('03/11/2015 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('04/11/2018 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), '0', 
-    'Garantia 3 años( hasta fecha fin). No renovación', '0', TO_DATE('03/23/2018 12:13:07', 'MM/DD/YYYY HH24:MI:SS'), '99GU5677');
+    'Garantia 3 aï¿½os( hasta fecha fin). No renovaciï¿½n', '0', TO_DATE('03/23/2018 12:13:07', 'MM/DD/YYYY HH24:MI:SS'), '99GU5677');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_CONTRATO, TIPO_PROCEDIMIENTO_ADJUDICADO, COD_DEPARTAMENTO, COD_RESPONSABLE, TXT_DESCRIPCION, CHK_PRORROGA, FE_FIN_PRORROGA, TXT_OBSERVACIONES, CHK_ACTIVO, FE_CREA_REG, FE_MODI_REG, COD_MOD_USU, PALABRA_CLAVE)
  Values
    (119, 7, '7202/18G', 1, 
-    3, 210, 'Servicios de operación, gestión y soporte técnico de los sistemas de información de la GISS
+    3, 210, 'Servicios de operaciï¿½n, gestiï¿½n y soporte tï¿½cnico de los sistemas de informaciï¿½n de la GISS
+
 ', 
-    '1', TO_DATE('10/30/2018 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), 'Pliego de AT y SG
+    '1', TO_DATE('10/30/2018 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), 'Pliego de AT y SG
+
 ', '1', TO_DATE('10/03/2017 17:52:59', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('03/11/2020 10:09:32', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' Pliego AT, SG');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, TIPO_PROCEDIMIENTO_ADJUDICADO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, CHK_PRORROGA, CHK_ACTIVO, FE_CREA_REG, FE_MODI_REG, COD_MOD_USU)
  Values
    (120, 1, 1, 
-    3, 56, 6, 'Mantenimiento integral de equipos XEROX VIPPS (antes VIDEP), IGDSP(antes IG· DPS), X650S(antes CF65) y 700EF', 
+    3, 56, 6, 'Mantenimiento integral de equipos XEROX VIPPS (antes VIDEP), IGDSP(antes IGï¿½ DPS), X650S(antes CF65) y 700EF', 
     '0', '1', TO_DATE('10/03/2017 17:53:57', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('06/12/2019 10:17:21', 'MM/DD/YYYY HH24:MI:SS'), '99GU7254');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, TIPO_PROCEDIMIENTO_ADJUDICADO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, CHK_PRORROGA, TXT_OBSERVACIONES, CHK_ACTIVO, FE_CREA_REG, FE_MODI_REG, COD_MOD_USU, PALABRA_CLAVE)
  Values
    (121, 8, 2, 
     3, 56, 30, 'Software DIEGISS (Canon)', 
-    '0', '24-02-2020-Rocio.-Revcisión SEJU. OOCC -. Observaciones SEJU Procedimiento Negociado. En elaboración para volver a enviar.
-17/01/20-> Director firma-envío Doc Técnico a Org Colegiados
-29/01-> Cerrato: "En Gestión SEJU"
+    '0', '24-02-2020-Rocio.-Revcisiï¿½n SEJU. OOCC -. Observaciones SEJU Procedimiento Negociado. En elaboraciï¿½n para volver a enviar.
+
+17/01/20-> Director firma-envï¿½o Doc Tï¿½cnico a Org Colegiados
+
+29/01-> Cerrato: "En Gestiï¿½n SEJU"
+
 Cotec 07/10/10: "Verificar si es necesario"', '1', TO_DATE('10/03/2017 17:54:47', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('03/03/2020 12:13:15', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' DIEGISS');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_CONTRATO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, FE_INI_CONTRATO, FE_FIN_CONTRATO, CHK_PRORROGA, TXT_OBSERVACIONES, CHK_ACTIVO, FE_CREA_REG, FE_MODI_REG, COD_MOD_USU)
  Values
    (123, 2, '7601/18G', 
-    3, 56, 30, 'Suministro Tinta Para Sistema De Impresión Marca Océ JetStream 1000', 
-    TO_DATE('01/01/2018 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('12/31/2018 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), '0', 'Está incluido en el mto de impresoras Océ VS 6500 y OCE JetStream 1000 (ID 45). Tenia sólo 11 meses', '0', TO_DATE('10/04/2017 09:45:26', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('07/23/2019 12:38:08', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196');
+    3, 56, 30, 'Suministro Tinta Para Sistema De Impresiï¿½n Marca Ocï¿½ JetStream 1000', 
+    TO_DATE('01/01/2018 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('12/31/2018 00:00:00', 'MM/DD/YYYY HH24:MI:SS'), '0', 'Estï¿½ incluido en el mto de impresoras Ocï¿½ VS 6500 y OCE JetStream 1000 (ID 45). Tenia sï¿½lo 11 meses', '0', TO_DATE('10/04/2017 09:45:26', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('07/23/2019 12:38:08', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_EXPEDIENTE, TIPO_PROCEDIMIENTO_ADJUDICADO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, CHK_PRORROGA, TXT_OBSERVACIONES, CHK_ACTIVO, FE_CREA_REG, FE_MODI_REG, COD_MOD_USU, PALABRA_CLAVE)
  Values
    (124, 8, '41/2017/00112', 1, 
     3, 101, 210, 'Mantenimiento de software de  CA Technologies', 
-    '0', '29/01-> Cerrato: "Esta en Innovacion"
-Cerrato 12/11/19: "Gedeon a Innovacion el 07/10/19. Estado "Lista para iniciar trabajo".
+    '0', '29/01-> Cerrato: "Esta en Innovacion"
+
+Cerrato 12/11/19: "Gedeon a Innovacion el 07/10/19. Estado "Lista para iniciar trabajo".
+
 ', '1', TO_DATE('10/04/2017 10:13:22', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('04/07/2020 10:02:23', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' CA Technologies');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_EXPEDIENTE, TIPO_PROCEDIMIENTO_ADJUDICADO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, CHK_PRORROGA, TXT_OBSERVACIONES, CHK_ACTIVO, FE_CREA_REG, FE_MODI_REG, COD_MOD_USU)
  Values
    (125, 2, '41/2017/00025', 2, 
-    88, 89, 331, 'Renovación de suscripciones Redhat', 
-    '0', 'Unificado con el Mto - 154. Decía 1 año de renovación, pero no llegó.', '1', TO_DATE('10/04/2017 10:34:30', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('01/13/2020 15:39:11', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196');
+    88, 89, 331, 'Renovaciï¿½n de suscripciones Redhat', 
+    '0', 'Unificado con el Mto - 154. Decï¿½a 1 aï¿½o de renovaciï¿½n, pero no llegï¿½.', '1', TO_DATE('10/04/2017 10:34:30', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('01/13/2020 15:39:11', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_EXPEDIENTE, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, DES_EMPRESA, NUM_IMPORTE, CHK_PRORROGA, TXT_OBSERVACIONES, CHK_ACTIVO, FE_CREA_REG, FE_MODI_REG, COD_MOD_USU)
  Values
    (126, 1, '41/2017/00127', 
-    4, 88, 331, 'Procedimiento Negociado Único Proveedor Para La Contratación Del Mantenimiento De Módulos Adicionales  SAS', 'SAS', 
+    4, 88, 331, 'Procedimiento Negociado ï¿½nico Proveedor Para La Contrataciï¿½n Del Mantenimiento De Mï¿½dulos Adicionales  SAS', 'SAS', 
     146397.48, '0', 'Propuesto en COTEC Junio 2017. No tengo muy claro que sea el mimsmo que el 60', '0', TO_DATE('10/04/2017 10:38:55', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('01/29/2018 12:28:29', 'MM/DD/YYYY HH24:MI:SS'), '99GU5677');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, TIPO_PROCEDIMIENTO_ADJUDICADO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, CHK_PRORROGA, TXT_OBSERVACIONES, CHK_ACTIVO, FE_CREA_REG, FE_MODI_REG, COD_MOD_USU)
  Values
    (128, 2, 2, 
     2, 91, 32, 'Licencias Del Software  Igrafx Flow Charter', 
-    '0', 'Dice Pablo que ellos SÓLO lo instalan, es del Centro de Desarrollo', '1', TO_DATE('10/04/2017 11:33:12', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('06/21/2019 12:18:25', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196');
+    '0', 'Dice Pablo que ellos Sï¿½LO lo instalan, es del Centro de Desarrollo', '1', TO_DATE('10/04/2017 11:33:12', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('06/21/2019 12:18:25', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, TIPO_PROCEDIMIENTO_ADJUDICADO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, CHK_PRORROGA, TXT_OBSERVACIONES, CHK_ACTIVO, FE_CREA_REG, FE_MODI_REG, COD_MOD_USU)
  Values
    (129, 1, 1, 
     3, 32, 6, 'Mantenimiento de Control-M', 
-    '0', 'VER ID= 150. Cuando caduque se unificará con el.  Colabora Sistemas Abiertos', '1', TO_DATE('10/04/2017 11:59:54', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('07/23/2019 12:39:11', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196');
+    '0', 'VER ID= 150. Cuando caduque se unificarï¿½ con el.  Colabora Sistemas Abiertos', '1', TO_DATE('10/04/2017 11:59:54', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('07/23/2019 12:39:11', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, TIPO_PROCEDIMIENTO_ADJUDICADO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, CHK_PRORROGA, TXT_OBSERVACIONES, CHK_ACTIVO, FE_CREA_REG, FE_MODI_REG, COD_MOD_USU)
  Values
    (130, 2, 4, 
-    3, 56, 30, 'Contratación Del Suministro De Tóner Y Revelador', 
-    '0', 'Revisar si es un Mto o una inversión anual.  Pilar saiz no lo ha metido en los Mtos de 2019', '0', TO_DATE('10/04/2017 12:01:34', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('06/12/2019 09:20:54', 'MM/DD/YYYY HH24:MI:SS'), '99GU7254');
+    3, 56, 30, 'Contrataciï¿½n Del Suministro De Tï¿½ner Y Revelador', 
+    '0', 'Revisar si es un Mto o una inversiï¿½n anual.  Pilar saiz no lo ha metido en los Mtos de 2019', '0', TO_DATE('10/04/2017 12:01:34', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('06/12/2019 09:20:54', 'MM/DD/YYYY HH24:MI:SS'), '99GU7254');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, CHK_PRORROGA, TXT_OBSERVACIONES, CHK_ACTIVO, FE_CREA_REG, FE_MODI_REG, COD_MOD_USU)
  Values
@@ -807,15 +841,16 @@ Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_EXPEDIENTE, TIPO_PROCEDIMIENTO_ADJUDICADO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, NUM_IMPORTE, CHK_PRORROGA, TXT_OBSERVACIONES, CHK_ACTIVO, FE_CREA_REG, FE_MODI_REG, COD_MOD_USU, PALABRA_CLAVE)
  Values
    (135, 8, '41/2017/00235', 1, 
-    93, 98, 18, 'Mto plataforma Microstrategy de la GISS y servicios de soporte de sistemas y adquisición de servicios Microstategy para desarrollo. Lote1-Plataforma', 
+    93, 98, 18, 'Mto plataforma Microstrategy de la GISS y servicios de soporte de sistemas y adquisiciï¿½n de servicios Microstategy para desarrollo. Lote1-Plataforma', 
     166376, '0', 
-    'Hay dos partes 18/7111/1 -> Plataforma. 18/7111/2 -> Servicios profesionales
-1 año no renovable', '1', TO_DATE('11/16/2017 13:08:01', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('03/11/2020 10:15:28', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' Microstrategy');
+    'Hay dos partes 18/7111/1 -> Plataforma. 18/7111/2 -> Servicios profesionales
+
+1 aï¿½o no renovable', '1', TO_DATE('11/16/2017 13:08:01', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('03/11/2020 10:15:28', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' Microstrategy');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, TIPO_PROCEDIMIENTO_ADJUDICADO, TXT_DESCRIPCION, TXT_OBSERVACIONES, CHK_ACTIVO, FE_CREA_REG, FE_MODI_REG, COD_MOD_USU)
  Values
    (136, 1, 1, 
-    'Soporte y mantenimiento plataforma DCIM', 'Es de Gestión de infrastucturas (Dirección de RRHH)', '0', TO_DATE('12/13/2017 14:46:57', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('09/12/2018 12:02:31', 'MM/DD/YYYY HH24:MI:SS'), '99GU5677');
+    'Soporte y mantenimiento plataforma DCIM', 'Es de Gestiï¿½n de infrastucturas (Direcciï¿½n de RRHH)', '0', TO_DATE('12/13/2017 14:46:57', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('09/12/2018 12:02:31', 'MM/DD/YYYY HH24:MI:SS'), '99GU5677');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, CHK_ACTIVO, FE_CREA_REG, FE_MODI_REG, COD_MOD_USU)
  Values
@@ -826,7 +861,8 @@ Insert into GOYA.MANTENIMIENTO
  Values
    (138, 1, 3, 
     88, 21, 22, 'Mto del software de la firma VERITAS (Licencias de Netbackup, Enterprise Vault, Infoscale)', 
-    'Tiene conjunto con Sistemas distribuidos y corporativos
+    'Tiene conjunto con Sistemas distribuidos y corporativos
+
 Netbackup, Enterprise Vault, Infoscale', '1', TO_DATE('01/18/2018 12:53:35', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('11/05/2019 17:40:53', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, TIPO_PROCEDIMIENTO_ADJUDICADO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, CHK_ACTIVO, FE_CREA_REG, FE_MODI_REG, COD_MOD_USU, PALABRA_CLAVE)
@@ -838,13 +874,13 @@ Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, TIPO_PROCEDIMIENTO_ADJUDICADO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, TXT_OBSERVACIONES, CHK_ACTIVO, FE_CREA_REG, FE_MODI_REG, COD_MOD_USU)
  Values
    (142, 2, 4, 
-    4, 93, 22, 'la adquisición de CDs, para realizar la grabación de documentación en soporte informático que se remite a la Comisión Ejecutiva y Consejo General del INSS.', 
-    'Es adquisición', '0', TO_DATE('02/15/2018 09:03:21', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('06/18/2019 11:33:10', 'MM/DD/YYYY HH24:MI:SS'), '99GU7254');
+    4, 93, 22, 'la adquisiciï¿½n de CDs, para realizar la grabaciï¿½n de documentaciï¿½n en soporte informï¿½tico que se remite a la Comisiï¿½n Ejecutiva y Consejo General del INSS.', 
+    'Es adquisiciï¿½n', '0', TO_DATE('02/15/2018 09:03:21', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('06/18/2019 11:33:10', 'MM/DD/YYYY HH24:MI:SS'), '99GU7254');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, TIPO_PROCEDIMIENTO_ADJUDICADO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, TXT_OBSERVACIONES, CHK_ACTIVO, FE_CREA_REG, FE_MODI_REG, COD_MOD_USU)
  Values
    (143, 1, 4, 
-    2, 58, 15, 'Software de reconocimiento vocal de la cita previa telefónica del INSS.  Nuance', 
+    2, 58, 15, 'Software de reconocimiento vocal de la cita previa telefï¿½nica del INSS.  Nuance', 
     'Call center. GesteUau. Genesys', '0', TO_DATE('02/15/2018 09:44:50', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('06/18/2019 11:37:41', 'MM/DD/YYYY HH24:MI:SS'), '99GU7254');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, TIPO_PROCEDIMIENTO_ADJUDICADO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, TXT_OBSERVACIONES, CHK_ACTIVO, FE_CREA_REG, FE_MODI_REG, COD_MOD_USU, PALABRA_CLAVE)
@@ -867,19 +903,19 @@ Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, CHK_ACTIVO, FE_CREA_REG, FE_MODI_REG, COD_MOD_USU)
  Values
    (149, 1, 
-    2, 90, 1017, 'Estadísticas de Unifed Communicacion Analytics', '1', TO_DATE('01/03/2019 11:09:34', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('01/03/2019 11:09:34', 'MM/DD/YYYY HH24:MI:SS'), '99GU5677');
+    2, 90, 1017, 'Estadï¿½sticas de Unifed Communicacion Analytics', '1', TO_DATE('01/03/2019 11:09:34', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('01/03/2019 11:09:34', 'MM/DD/YYYY HH24:MI:SS'), '99GU5677');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, TIPO_PROCEDIMIENTO_ADJUDICADO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, TXT_OBSERVACIONES, CHK_ACTIVO, FE_CREA_REG, FE_MODI_REG, COD_MOD_USU)
  Values
    (150, 8, 1, 
     88, 89, 18, 'Productos de  BMC', 
-    'Unificación en el mantenimiento de productos del proyecto actualización del control-M, CONTROL-M + BSA ( bladelogic server autentication) + Control-D para sustitución de CA-Dispatch y VPS. También participa Enrique Gamero.', '1', TO_DATE('02/26/2019 08:31:12', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('03/09/2020 10:38:22', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196');
+    'Unificaciï¿½n en el mantenimiento de productos del proyecto actualizaciï¿½n del control-M, CONTROL-M + BSA ( bladelogic server autentication) + Control-D para sustituciï¿½n de CA-Dispatch y VPS. Tambiï¿½n participa Enrique Gamero.', '1', TO_DATE('02/26/2019 08:31:12', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('03/09/2020 10:38:22', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, TIPO_PROCEDIMIENTO_ADJUDICADO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, TXT_OBSERVACIONES, CHK_ACTIVO, FE_CREA_REG, FE_MODI_REG, COD_MOD_USU)
  Values
    (151, 1, 2, 
-    93, 98, 18, 'Actualización y mantenimiento y soporte premium de licencias SAS con destino a la GISS.', 
-    'Dos años + 1 prórroga. Verificar inicio de mto', '1', TO_DATE('06/06/2019 13:13:53', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('01/13/2020 15:40:09', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196');
+    93, 98, 18, 'Actualizaciï¿½n y mantenimiento y soporte premium de licencias SAS con destino a la GISS.', 
+    'Dos aï¿½os + 1 prï¿½rroga. Verificar inicio de mto', '1', TO_DATE('06/06/2019 13:13:53', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('01/13/2020 15:40:09', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, TIPO_PROCEDIMIENTO_ADJUDICADO, COD_DEPARTAMENTO, COD_UNIDAD, TXT_DESCRIPCION, TXT_OBSERVACIONES, CHK_ACTIVO, FE_CREA_REG, FE_MODI_REG, COD_MOD_USU)
  Values
@@ -890,29 +926,32 @@ Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, TIPO_PROCEDIMIENTO_ADJUDICADO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, TXT_OBSERVACIONES, CHK_ACTIVO, FE_CREA_REG, FE_MODI_REG, COD_MOD_USU, PALABRA_CLAVE)
  Values
    (153, 5, 3, 
-    93, 98, 20, 'Mantenimiento software/hardware y renovación suscripciones cortafuegos CheckPoint', 
-    '24-02-2020-Rocio.-probado 30 enero
-29/01-> Cerrato: "En DGRCC"
-Belén 22/01/20: Correo Peris: "En fase de adjudicación en DGRCC. Pendiente firma Gerente e Interventor"
-11-02-2020 Susana.-Hemos recibido el contrato de Telefónica 6626/19, 41/2019/00113, Licencias de Prevención de amenazas y mantenimiento Checkpoint.', '1', TO_DATE('06/14/2019 10:48:59', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('03/11/2020 10:17:48', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' CheckPoint');
+    93, 98, 20, 'Mantenimiento software/hardware y renovaciï¿½n suscripciones cortafuegos CheckPoint', 
+    '24-02-2020-Rocio.-probado 30 enero
+
+29/01-> Cerrato: "En DGRCC"
+
+Belï¿½n 22/01/20: Correo Peris: "En fase de adjudicaciï¿½n en DGRCC. Pendiente firma Gerente e Interventor"
+
+11-02-2020 Susana.-Hemos recibido el contrato de Telefï¿½nica 6626/19, 41/2019/00113, Licencias de Prevenciï¿½n de amenazas y mantenimiento Checkpoint.', '1', TO_DATE('06/14/2019 10:48:59', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('03/11/2020 10:17:48', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' CheckPoint');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, TIPO_PROCEDIMIENTO_ADJUDICADO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, TXT_OBSERVACIONES, CHK_ACTIVO, FE_CREA_REG, FE_MODI_REG, COD_MOD_USU, PALABRA_CLAVE)
  Values
    (154, 1, 1, 
-    88, 89, 331, 'Ampliación y Renovación de Suscripciones Red Hat para SSAA centralizados.', 
-    'Unión en un sólo Contrato, los cxtos: 5120/17 -> expiran 29/01/2019.  7305/16 -> Expiran el 29/08/2019. 6503/17 -> Expiran El 17/12/2020. 2 años, no prórroga, desde 30/08/2019 o fecha de formalización. 2 años, no prorrogable.', '1', TO_DATE('06/18/2019 12:52:27', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('10/30/2019 13:27:58', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' Red Hat');
+    88, 89, 331, 'Ampliaciï¿½n y Renovaciï¿½n de Suscripciones Red Hat para SSAA centralizados.', 
+    'Uniï¿½n en un sï¿½lo Contrato, los cxtos: 5120/17 -> expiran 29/01/2019.  7305/16 -> Expiran el 29/08/2019. 6503/17 -> Expiran El 17/12/2020. 2 aï¿½os, no prï¿½rroga, desde 30/08/2019 o fecha de formalizaciï¿½n. 2 aï¿½os, no prorrogable.', '1', TO_DATE('06/18/2019 12:52:27', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('10/30/2019 13:27:58', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' Red Hat');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, TIPO_PROCEDIMIENTO_ADJUDICADO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, TXT_OBSERVACIONES, CHK_ACTIVO, FE_CREA_REG, FE_MODI_REG, COD_MOD_USU, PALABRA_CLAVE)
  Values
    (155, 7, 1, 
-    2, 58, 15, 'Servicio de envío de mensajes cortos SMS de la Seguridad Social Exp 7110/18', 
-    'Viene de la inversión de 2017 finalizada. (ID. 79)', '1', TO_DATE('07/09/2019 13:35:28', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('03/03/2020 12:23:14', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' SMS');
+    2, 58, 15, 'Servicio de envï¿½o de mensajes cortos SMS de la Seguridad Social Exp 7110/18', 
+    'Viene de la inversiï¿½n de 2017 finalizada. (ID. 79)', '1', TO_DATE('07/09/2019 13:35:28', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('03/03/2020 12:23:14', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' SMS');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, TIPO_PROCEDIMIENTO_ADJUDICADO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, TXT_OBSERVACIONES, CHK_ACTIVO, FE_CREA_REG, FE_MODI_REG, COD_MOD_USU, PALABRA_CLAVE)
  Values
    (156, 1, 1, 
-    3, 56, 30, 'Adquisición de equipamiento de impresión en frío de alta velocidad', 
-    'Proviene de la inversión finalizada con ID: 203  Año->2018. Es del INSS, Colaboración con otra dirección', '1', TO_DATE('07/19/2019 10:18:11', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('03/10/2020 08:55:34', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' impresión en frío');
+    3, 56, 30, 'Adquisiciï¿½n de equipamiento de impresiï¿½n en frï¿½o de alta velocidad', 
+    'Proviene de la inversiï¿½n finalizada con ID: 203  Aï¿½o->2018. Es del INSS, Colaboraciï¿½n con otra direcciï¿½n', '1', TO_DATE('07/19/2019 10:18:11', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('03/10/2020 08:55:34', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' impresiï¿½n en frï¿½o');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, TIPO_PROCEDIMIENTO_ADJUDICADO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, TXT_OBSERVACIONES, CHK_ACTIVO, FE_CREA_REG, FE_MODI_REG, COD_MOD_USU, PALABRA_CLAVE)
  Values
@@ -924,26 +963,27 @@ Insert into GOYA.MANTENIMIENTO
  Values
    (158, 2, 1, 
     3, 56, 30, 'Suministro de tres impresoras de altas prestaciones y Canon de uso', 
-    'Proviene de inversión ID->255
-1+1 año ejecución de servicios y 6 meses para suministros. L1: Sum impresora  hoja suelta full-color para renovar el equipo Xerox Docucolor 6060 (GISS). L2: Suministro de una impresora de producción digital con clasificador grapador (TGSS). L3:  Sum impresora producción digital con plegador clasificador y grapador (TGSS)', '1', TO_DATE('07/19/2019 11:45:08', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('02/26/2020 12:43:35', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' tres impresoras');
+    'Proviene de inversiï¿½n ID->255
+
+1+1 aï¿½o ejecuciï¿½n de servicios y 6 meses para suministros. L1: Sum impresora  hoja suelta full-color para renovar el equipo Xerox Docucolor 6060 (GISS). L2: Suministro de una impresora de producciï¿½n digital con clasificador grapador (TGSS). L3:  Sum impresora producciï¿½n digital con plegador clasificador y grapador (TGSS)', '1', TO_DATE('07/19/2019 11:45:08', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('02/26/2020 12:43:35', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' tres impresoras');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, TIPO_PROCEDIMIENTO_ADJUDICADO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, TXT_OBSERVACIONES, CHK_ACTIVO, FE_CREA_REG, FE_MODI_REG, COD_MOD_USU, PALABRA_CLAVE)
  Values
    (159, 9, 1, 
-    2, 90, 331, 'Licencias SUSE Linux y Suse-HA y ampliación licencias de Filr e iPrint para movilidad', 
-    'Proviene de la inversión ID -> 29', '1', TO_DATE('07/19/2019 11:55:04', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('03/03/2020 12:27:18', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' Filr e iPrint');
+    2, 90, 331, 'Licencias SUSE Linux y Suse-HA y ampliaciï¿½n licencias de Filr e iPrint para movilidad', 
+    'Proviene de la inversiï¿½n ID -> 29', '1', TO_DATE('07/19/2019 11:55:04', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('03/03/2020 12:27:18', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' Filr e iPrint');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, TIPO_PROCEDIMIENTO_ADJUDICADO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, TXT_OBSERVACIONES, CHK_ACTIVO, FE_CREA_REG, FE_MODI_REG, COD_MOD_USU, PALABRA_CLAVE)
  Values
    (160, 2, 1, 
-    93, 98, 210, 'Auditoría y certificación de servicios de confianza de la Gerencia de informática de la Seguridad Social de acuerdo con Reglamento eIDAS para el periódo 2019-2021', 
-    'Proviene de inversion ID -> 198 (Solicitante Raúl Merinero que estaba en Sistemas Corporativos)', '1', TO_DATE('07/19/2019 12:24:22', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('07/19/2019 12:26:15', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' eIDAS');
+    93, 98, 210, 'Auditorï¿½a y certificaciï¿½n de servicios de confianza de la Gerencia de informï¿½tica de la Seguridad Social de acuerdo con Reglamento eIDAS para el periï¿½do 2019-2021', 
+    'Proviene de inversion ID -> 198 (Solicitante Raï¿½l Merinero que estaba en Sistemas Corporativos)', '1', TO_DATE('07/19/2019 12:24:22', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('07/19/2019 12:26:15', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' eIDAS');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, TIPO_PROCEDIMIENTO_ADJUDICADO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, TXT_OBSERVACIONES, CHK_ACTIVO, FE_CREA_REG, FE_MODI_REG, COD_MOD_USU, PALABRA_CLAVE)
  Values
    (161, 9, 4, 
-    88, 19, 331, 'Contrato menor para la renovación de las licencias de la herramienta de robotización (RPA) Blue Prism', 
-    'Correo Belén 17/01/20: Centro Normalización hace petición a Org Colegiados de 3 licencias. Mantenimiento de 2 licencias (1 año).', '1', TO_DATE('07/19/2019 12:33:42', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('03/09/2020 17:30:29', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' Blue Prism');
+    88, 19, 331, 'Contrato menor para la renovaciï¿½n de las licencias de la herramienta de robotizaciï¿½n (RPA) Blue Prism', 
+    'Correo Belï¿½n 17/01/20: Centro Normalizaciï¿½n hace peticiï¿½n a Org Colegiados de 3 licencias. Mantenimiento de 2 licencias (1 aï¿½o).', '1', TO_DATE('07/19/2019 12:33:42', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('03/09/2020 17:30:29', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' Blue Prism');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, TIPO_PROCEDIMIENTO_ADJUDICADO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, CHK_ACTIVO, FE_CREA_REG, FE_MODI_REG, COD_MOD_USU, PALABRA_CLAVE)
  Values
@@ -955,20 +995,21 @@ Insert into GOYA.MANTENIMIENTO
  Values
    (163, 1, 1, 
     2, 58, 8, 'Equipamiento red comunicaciones y seguridad. LOTE 2: SEGURIDAD', 
-    'Arenas 14/01/20: "Mto en curso mediante actas de continuidad"
+    'Arenas 14/01/20: "Mto en curso mediante actas de continuidad"
+
 ', '1', TO_DATE('09/17/2019 15:00:36', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('03/02/2020 15:58:10', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' red comunicaciones');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, TIPO_PROCEDIMIENTO_ADJUDICADO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, CHK_ACTIVO, FE_CREA_REG, FE_MODI_REG, COD_MOD_USU, PALABRA_CLAVE)
  Values
    (164, 8, 1, 
-    88, 19, 331, 'Mto sistema de Gestión Documental INVESDOC (SARTIDO)', 
+    88, 19, 331, 'Mto sistema de Gestiï¿½n Documental INVESDOC (SARTIDO)', 
     '1', TO_DATE('09/19/2019 13:48:05', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('03/11/2020 10:17:00', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' INVESDOC');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, TIPO_PROCEDIMIENTO_ADJUDICADO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, TXT_OBSERVACIONES, CHK_ACTIVO, FE_CREA_REG, FE_MODI_REG, COD_MOD_USU, PALABRA_CLAVE)
  Values
    (165, 4, 1, 
     88, 21, 22, 'Mto Almacenamiento varios (NetApp y Veritas)', 
-    'Disposición adicional', '1', TO_DATE('09/20/2019 08:43:49', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('03/03/2020 12:25:32', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' NetApp');
+    'Disposiciï¿½n adicional', '1', TO_DATE('09/20/2019 08:43:49', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('03/03/2020 12:25:32', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' NetApp');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, TIPO_PROCEDIMIENTO_ADJUDICADO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, TXT_OBSERVACIONES, CHK_ACTIVO, FE_CREA_REG, FE_MODI_REG, COD_MOD_USU, PALABRA_CLAVE)
  Values
@@ -991,8 +1032,8 @@ Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, TIPO_PROCEDIMIENTO_ADJUDICADO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, CHK_ACTIVO, FE_CREA_REG, FE_MODI_REG, COD_MOD_USU, PALABRA_CLAVE)
  Values
    (169, 1, 1, 
-    2, 91, 32, 'Mto por dos años de los equipos Microinformáticos de la Seguridad social', 
-    '1', TO_DATE('11/19/2019 09:51:41', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('11/19/2019 09:58:12', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' equipos Microinformáticos');
+    2, 91, 32, 'Mto por dos aï¿½os de los equipos Microinformï¿½ticos de la Seguridad social', 
+    '1', TO_DATE('11/19/2019 09:51:41', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('11/19/2019 09:58:12', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' equipos Microinformï¿½ticos');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, TIPO_PROCEDIMIENTO_ADJUDICADO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, CHK_ACTIVO, FE_CREA_REG, FE_MODI_REG, COD_MOD_USU, PALABRA_CLAVE)
  Values
@@ -1003,142 +1044,150 @@ Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, TXT_OBSERVACIONES, CHK_ACTIVO, FE_CREA_REG, FE_MODI_REG, COD_MOD_USU, PALABRA_CLAVE)
  Values
    (202, 2, 
-    93, 98, 18, 'Balanceadores De Carga Para Producción Orcasitas-Torrejon Cpds Activo-Activo Intranet E Internet', 
-    'Balanceador de carga para el CPD secundario (Proviene de inversión con ID: 15)', '1', TO_DATE('01/14/2020 14:45:22', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('01/17/2020 08:50:11', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' Balanceadores');
+    93, 98, 18, 'Balanceadores De Carga Para Producciï¿½n Orcasitas-Torrejon Cpds Activo-Activo Intranet E Internet', 
+    'Balanceador de carga para el CPD secundario (Proviene de inversiï¿½n con ID: 15)', '1', TO_DATE('01/14/2020 14:45:22', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('01/17/2020 08:50:11', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' Balanceadores');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, TXT_OBSERVACIONES, CHK_ACTIVO, FE_CREA_REG, FE_MODI_REG, COD_MOD_USU, PALABRA_CLAVE)
  Values
    (203, 5, 
-    2, 91, 1695, 'Adquisición De Una Plataforma De Virtualización De Escritorios Para El Desarrollo Gestionado', 
-    '(Proviene de inversión con ID: 39)', '1', TO_DATE('01/14/2020 14:52:49', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('03/03/2020 12:21:22', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' Virtualización de Escritorios');
+    2, 91, 1695, 'Adquisiciï¿½n De Una Plataforma De Virtualizaciï¿½n De Escritorios Para El Desarrollo Gestionado', 
+    '(Proviene de inversiï¿½n con ID: 39)', '1', TO_DATE('01/14/2020 14:52:49', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('03/03/2020 12:21:22', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' Virtualizaciï¿½n de Escritorios');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, TXT_OBSERVACIONES, CHK_ACTIVO, FE_CREA_REG, FE_MODI_REG, COD_MOD_USU, PALABRA_CLAVE)
  Values
    (204, 2, 
-    2, 58, 15, 'Electrónica De Red Nexus (Pod) Para Usuarios Tunelizados En Cpd De Orcasitas Y Torrejón', 
-    'NO HAY ADQUISICIÓN.Contratación centralizada para la adquisición de electrónica de red para el entorno de conexión de usuarios (Proviene de inversión con ID: 14)', '1', TO_DATE('01/14/2020 14:58:33', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('02/03/2020 07:42:22', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' Nexus (Pod)');
+    2, 58, 15, 'Electrï¿½nica De Red Nexus (Pod) Para Usuarios Tunelizados En Cpd De Orcasitas Y Torrejï¿½n', 
+    'NO HAY ADQUISICIï¿½N.Contrataciï¿½n centralizada para la adquisiciï¿½n de electrï¿½nica de red para el entorno de conexiï¿½n de usuarios (Proviene de inversiï¿½n con ID: 14)', '1', TO_DATE('01/14/2020 14:58:33', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('02/03/2020 07:42:22', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' Nexus (Pod)');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, TXT_OBSERVACIONES, CHK_ACTIVO, FE_CREA_REG, FE_MODI_REG, COD_MOD_USU, PALABRA_CLAVE)
  Values
    (205, 2, 
-    88, 89, 19, 'Adquisición de enclosures y servidores blade. FUSION: Adquisición Infraestructura Servidores Blade Para Centralización + Adquisición 9 Servidores Tipo Blade + Servidores Blade  64x Para Normalización', 
-    '16 servidores.. se funde en la inversion 64 Contrato: 6655/17G (Proviene de inversión con ID: 25)', '1', TO_DATE('01/14/2020 15:05:37', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('01/14/2020 15:44:20', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' enclosures y servidores blade');
+    88, 89, 19, 'Adquisiciï¿½n de enclosures y servidores blade. FUSION: Adquisiciï¿½n Infraestructura Servidores Blade Para Centralizaciï¿½n + Adquisiciï¿½n 9 Servidores Tipo Blade + Servidores Blade  64x Para Normalizaciï¿½n', 
+    '16 servidores.. se funde en la inversion 64 Contrato: 6655/17G (Proviene de inversiï¿½n con ID: 25)', '1', TO_DATE('01/14/2020 15:05:37', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('01/14/2020 15:44:20', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' enclosures y servidores blade');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, TXT_OBSERVACIONES, CHK_ACTIVO, FE_CREA_REG, FE_MODI_REG, COD_MOD_USU, PALABRA_CLAVE)
  Values
    (206, 2, 
-    88, 21, 22, 'Renovación De Las Cabinas De Almacenamiento Vsp Del Entorno Open', 
-    'G800 (Proviene de inversión con ID: 56)', '1', TO_DATE('01/14/2020 15:08:59', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('01/14/2020 15:10:41', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' Vsp');
+    88, 21, 22, 'Renovaciï¿½n De Las Cabinas De Almacenamiento Vsp Del Entorno Open', 
+    'G800 (Proviene de inversiï¿½n con ID: 56)', '1', TO_DATE('01/14/2020 15:08:59', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('01/14/2020 15:10:41', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' Vsp');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, TXT_OBSERVACIONES, CHK_ACTIVO, FE_CREA_REG, FE_MODI_REG, COD_MOD_USU, PALABRA_CLAVE)
  Values
    (207, 2, 
-    88, 21, 22, 'Adquisición De Una Cabina De Almacenamiento Para El Entorno De No Producción', 
-    'G400 (Proviene de inversión con ID: 54)', '1', TO_DATE('01/14/2020 15:36:04', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('01/14/2020 15:37:35', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' Cabina');
+    88, 21, 22, 'Adquisiciï¿½n De Una Cabina De Almacenamiento Para El Entorno De No Producciï¿½n', 
+    'G400 (Proviene de inversiï¿½n con ID: 54)', '1', TO_DATE('01/14/2020 15:36:04', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('01/14/2020 15:37:35', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' Cabina');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, TXT_OBSERVACIONES, CHK_ACTIVO, FE_CREA_REG, FE_MODI_REG, COD_MOD_USU, PALABRA_CLAVE)
  Values
    (208, 2, 
-    3, 56, 30, 'Adquisición De Un Sistema De Impresión Full Color A Doble Cara  En Papel Continuo Para Ayuda Y Backup Del Actual Sistema', 
-    'Impresora Océ JetStream 1000 (Proviene de inversión con ID: 6)', '1', TO_DATE('01/14/2020 15:52:35', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('01/14/2020 15:54:28', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' Full Color');
+    3, 56, 30, 'Adquisiciï¿½n De Un Sistema De Impresiï¿½n Full Color A Doble Cara  En Papel Continuo Para Ayuda Y Backup Del Actual Sistema', 
+    'Impresora Ocï¿½ JetStream 1000 (Proviene de inversiï¿½n con ID: 6)', '1', TO_DATE('01/14/2020 15:52:35', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('01/14/2020 15:54:28', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' Full Color');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, TXT_OBSERVACIONES, CHK_ACTIVO, FE_CREA_REG, FE_MODI_REG, COD_MOD_USU, PALABRA_CLAVE)
  Values
    (211, 1, 
-    88, 21, 22, 'Compra por evolución Tecnológica HNAS en Entorno de Producción y adaptación entorno NAS en No Producción. Entorno de fichero de la GISS', 
-    'Garantía: 3 años (Proviene de inversión con ID: 280)', '1', TO_DATE('02/07/2020 08:55:59', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('03/05/2020 09:51:48', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' HNAS');
+    88, 21, 22, 'Compra por evoluciï¿½n Tecnolï¿½gica HNAS en Entorno de Producciï¿½n y adaptaciï¿½n entorno NAS en No Producciï¿½n. Entorno de fichero de la GISS', 
+    'Garantï¿½a: 3 aï¿½os (Proviene de inversiï¿½n con ID: 280)', '1', TO_DATE('02/07/2020 08:55:59', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('03/05/2020 09:51:48', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' HNAS');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, TIPO_PROCEDIMIENTO_ADJUDICADO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, TXT_OBSERVACIONES, CHK_ACTIVO, FE_CREA_REG, FE_MODI_REG, COD_MOD_USU, PALABRA_CLAVE)
  Values
    (212, 1, 3, 
-    88, 21, 22, 'Plataforma de Archivado ECS y Balanceador de carga en el Entorno de Producción (Evolución Tecnológica)', 
-    'Peris 3/10: Racionalización ha devuelto para adecuar a AM 13 (Proviene de inversión con ID: 264)', '1', TO_DATE('02/10/2020 14:31:31', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('02/10/2020 14:36:47', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' BALANCEADOR');
+    88, 21, 22, 'Plataforma de Archivado ECS y Balanceador de carga en el Entorno de Producciï¿½n (Evoluciï¿½n Tecnolï¿½gica)', 
+    'Peris 3/10: Racionalizaciï¿½n ha devuelto para adecuar a AM 13 (Proviene de inversiï¿½n con ID: 264)', '1', TO_DATE('02/10/2020 14:31:31', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('02/10/2020 14:36:47', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' BALANCEADOR');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, TIPO_PROCEDIMIENTO_ADJUDICADO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, TXT_OBSERVACIONES, CHK_ACTIVO, FE_CREA_REG, FE_MODI_REG, COD_MOD_USU, PALABRA_CLAVE)
  Values
    (213, 1, 3, 
-    88, 89, 293, 'Nueva infraestructura Intel x86 entorno producción Intranet. Suministro servidores x86 entorno producción Intranet', 
-    'Garantía 3 años.  Cant: 50 servidores Blade, 30 para CPD principal y 20 para CPD secundario. Infraestructura Intel 86 (Proviene de inversión con ID: 281)', '1', TO_DATE('02/10/2020 14:40:46', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('02/14/2020 09:16:35', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' x86');
+    88, 89, 293, 'Nueva infraestructura Intel x86 entorno producciï¿½n Intranet. Suministro servidores x86 entorno producciï¿½n Intranet', 
+    'Garantï¿½a 3 aï¿½os.  Cant: 50 servidores Blade, 30 para CPD principal y 20 para CPD secundario. Infraestructura Intel 86 (Proviene de inversiï¿½n con ID: 281)', '1', TO_DATE('02/10/2020 14:40:46', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('02/14/2020 09:16:35', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' x86');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, TIPO_PROCEDIMIENTO_ADJUDICADO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, TXT_OBSERVACIONES, CHK_ACTIVO, FE_CREA_REG, FE_MODI_REG, COD_MOD_USU, PALABRA_CLAVE)
  Values
    (214, 1, 3, 
-    2, 58, 15, 'suministro de suscripciones de licencias prevención de amenazas Palo Alto', 
-    'Cantidad 2,  CPD de la GISS.  Mto 3 años. Referencial (01/06/2019-30/05/2022).Abiertas ofertas 11 de nov (ver email 12/11/2019) (Proviene de inversión con ID: 205)', '1', TO_DATE('02/12/2020 13:06:41', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('02/12/2020 13:17:01', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' Palo Alto');
+    2, 58, 15, 'suministro de suscripciones de licencias prevenciï¿½n de amenazas Palo Alto', 
+    'Cantidad 2,  CPD de la GISS.  Mto 3 aï¿½os. Referencial (01/06/2019-30/05/2022).Abiertas ofertas 11 de nov (ver email 12/11/2019) (Proviene de inversiï¿½n con ID: 205)', '1', TO_DATE('02/12/2020 13:06:41', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('02/12/2020 13:17:01', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' Palo Alto');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, TIPO_PROCEDIMIENTO_ADJUDICADO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, TXT_OBSERVACIONES, CHK_ACTIVO, FE_CREA_REG, FE_MODI_REG, COD_MOD_USU, PALABRA_CLAVE)
  Values
    (215, 1, 3, 
-    2, 58, 15, 'Adquisición de equipamiento de transceivers de 10 Gbps para ampliación de la capacidad de conectividad IP en los CPS de GISS', 
-    '352 transceivers modelo CISCO NEXUS SFP-10G-SR
-Garantía 3 años (Proviene de inversión con ID: 276)', '1', TO_DATE('02/20/2020 14:12:58', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('02/20/2020 14:16:13', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' Transceivers');
+    2, 58, 15, 'Adquisiciï¿½n de equipamiento de transceivers de 10 Gbps para ampliaciï¿½n de la capacidad de conectividad IP en los CPS de GISS', 
+    '352 transceivers modelo CISCO NEXUS SFP-10G-SR
+
+Garantï¿½a 3 aï¿½os (Proviene de inversiï¿½n con ID: 276)', '1', TO_DATE('02/20/2020 14:12:58', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('02/20/2020 14:16:13', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' Transceivers');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, TIPO_PROCEDIMIENTO_ADJUDICADO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, TXT_OBSERVACIONES, CHK_ACTIVO, FE_CREA_REG, FE_MODI_REG, COD_MOD_USU, PALABRA_CLAVE)
  Values
    (216, 1, 3, 
-    93, 98, 20, 'Adquisición cortafuegos para la red de gestión en la plataforma Internet', 
-    'Garantía 5 años. COTEC 7/10 AM10. Pedir Prescripciones Técnicas. (Proviene de inversión con ID: 285)', '1', TO_DATE('02/20/2020 14:23:36', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('03/09/2020 10:44:27', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' Cortafuegos Internet');
+    93, 98, 20, 'Adquisiciï¿½n cortafuegos para la red de gestiï¿½n en la plataforma Internet', 
+    'Garantï¿½a 5 aï¿½os. COTEC 7/10 AM10. Pedir Prescripciones Tï¿½cnicas. (Proviene de inversiï¿½n con ID: 285)', '1', TO_DATE('02/20/2020 14:23:36', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('03/09/2020 10:44:27', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' Cortafuegos Internet');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, TIPO_PROCEDIMIENTO_ADJUDICADO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, TXT_OBSERVACIONES, CHK_ACTIVO, FE_CREA_REG, FE_MODI_REG, COD_MOD_USU, PALABRA_CLAVE)
  Values
    (217, 7, 4, 
-    93, 98, 20, 'Contratación  NIC dominio seg-social.gob.es', 
-    'Cerrato 29/01->En trámite cxto menor, Dominios', '1', TO_DATE('02/26/2020 09:51:31', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('03/03/2020 12:17:12', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' NIC');
+    93, 98, 20, 'Contrataciï¿½n  NIC dominio seg-social.gob.es', 
+    'Cerrato 29/01->En trï¿½mite cxto menor, Dominios', '1', TO_DATE('02/26/2020 09:51:31', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('03/03/2020 12:17:12', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' NIC');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, TIPO_PROCEDIMIENTO_ADJUDICADO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, TXT_OBSERVACIONES, CHK_ACTIVO, FE_CREA_REG, FE_MODI_REG, COD_MOD_USU, PALABRA_CLAVE)
  Values
    (218, 8, 1, 
-    93, 98, 18, 'Mto plataforma Microstrategy de la GISS y servicios de soporte de sistemas y adquisición de servicios Microstategy para desarrollo. Lote2 - Servicios profesionales', 
+    93, 98, 18, 'Mto plataforma Microstrategy de la GISS y servicios de soporte de sistemas y adquisiciï¿½n de servicios Microstategy para desarrollo. Lote2 - Servicios profesionales', 
     'Hay dos partes 18/7111/1 - > Plataforma. 18/7111/2 -> Servicios profesionales', '1', TO_DATE('03/04/2020 10:09:43', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('03/11/2020 10:15:37', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' Microstrategy');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, TXT_OBSERVACIONES, CHK_ACTIVO, FE_CREA_REG, FE_MODI_REG, COD_MOD_USU, PALABRA_CLAVE)
  Values
    (219, 1, 
-    88, 19, 331, 'Plataforma de Gestión de control y monitorización de los elementos de la infraestructura de red.', 
-    '08/08/2019 -> cambio memoria al AM 10/2018. Sustituye a Tivoli(IBM), NetIQ(Microfocus), NewTest(IP-Label). 3 años garantía. Hasta 1 año implantación. Ha llegado la adjudicación del contrato. (Proviene de inversión con ID: 213)', '1', TO_DATE('03/09/2020 10:03:07', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('03/09/2020 10:36:13', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' Monitorización');
+    88, 19, 331, 'Plataforma de Gestiï¿½n de control y monitorizaciï¿½n de los elementos de la infraestructura de red.', 
+    '08/08/2019 -> cambio memoria al AM 10/2018. Sustituye a Tivoli(IBM), NetIQ(Microfocus), NewTest(IP-Label). 3 aï¿½os garantï¿½a. Hasta 1 aï¿½o implantaciï¿½n. Ha llegado la adjudicaciï¿½n del contrato. (Proviene de inversiï¿½n con ID: 213)', '1', TO_DATE('03/09/2020 10:03:07', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('03/09/2020 10:36:13', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' Monitorizaciï¿½n');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, TXT_OBSERVACIONES, CHK_ACTIVO, FE_CREA_REG, FE_MODI_REG, COD_MOD_USU, PALABRA_CLAVE)
  Values
    (220, 1, 
-    2, 58, 15, 'Ampliación del sistema de videoconferencia Fase II', 
-    'Expediente desistido en 2018
-Rocío 9/10 Adaptado a AM10. Convocada licitación y en plazo de presentación de ofertas.Ha llegado la adjudicación del contrato. (Proviene de inversión con ID: 245)', '1', TO_DATE('03/09/2020 10:15:31', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('03/09/2020 10:36:26', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' Fase II');
+    2, 58, 15, 'Ampliaciï¿½n del sistema de videoconferencia Fase II', 
+    'Expediente desistido en 2018
+
+Rocï¿½o 9/10 Adaptado a AM10. Convocada licitaciï¿½n y en plazo de presentaciï¿½n de ofertas.Ha llegado la adjudicaciï¿½n del contrato. (Proviene de inversiï¿½n con ID: 245)', '1', TO_DATE('03/09/2020 10:15:31', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('03/09/2020 10:36:26', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' Fase II');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, TXT_OBSERVACIONES, CHK_ACTIVO, FE_CREA_REG, FE_MODI_REG, COD_MOD_USU, PALABRA_CLAVE)
  Values
    (221, 1, 
-    2, 58, 15, 'Adquisición electrónica de red  2019 para DDPP y SSCC de Seguridad Social (Renovación electrónica CISCO Obsoleta)', 
-    'Obsoleta en 2018: 1.000.000 ¿ (aprox.) y Electrónica para GISS.AM10. Nuevo documento licitación. COTEC sep.
-Rocio 09/10: "Adaptado a AM10. Convocada licitación y en plazo de presentación".
-Ha llegado la adjudicación del contrato.
- (Proviene de inversión con ID: 219)', '1', TO_DATE('03/09/2020 10:29:59', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('03/09/2020 10:36:38', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' Electrónica de red');
+    2, 58, 15, 'Adquisiciï¿½n electrï¿½nica de red  2019 para DDPP y SSCC de Seguridad Social (Renovaciï¿½n electrï¿½nica CISCO Obsoleta)', 
+    'Obsoleta en 2018: 1.000.000 ï¿½ (aprox.) y Electrï¿½nica para GISS.AM10. Nuevo documento licitaciï¿½n. COTEC sep.
+
+Rocio 09/10: "Adaptado a AM10. Convocada licitaciï¿½n y en plazo de presentaciï¿½n".
+
+Ha llegado la adjudicaciï¿½n del contrato.
+
+ (Proviene de inversiï¿½n con ID: 219)', '1', TO_DATE('03/09/2020 10:29:59', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('03/09/2020 10:36:38', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' Electrï¿½nica de red');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, TIPO_PROCEDIMIENTO_ADJUDICADO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, TXT_OBSERVACIONES, CHK_ACTIVO, FE_CREA_REG, FE_MODI_REG, COD_MOD_USU, PALABRA_CLAVE)
  Values
    (222, 1, 1, 
-    2, 91, 32, 'Adquisición licencias de Corel Draw Graphics Suite y QuarkXpress', 
-    '27 licencias de Corel Draw Graphics Suite de Corel Corporation en su última edición y versión. 5 licencias de QuarkXpress de Quark Inc en su última versión (Proviene de inversión con ID: 268)', '1', TO_DATE('03/11/2020 14:03:46', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('03/11/2020 14:09:31', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' Corel Draw');
+    2, 91, 32, 'Adquisiciï¿½n licencias de Corel Draw Graphics Suite y QuarkXpress', 
+    '27 licencias de Corel Draw Graphics Suite de Corel Corporation en su ï¿½ltima ediciï¿½n y versiï¿½n. 5 licencias de QuarkXpress de Quark Inc en su ï¿½ltima versiï¿½n (Proviene de inversiï¿½n con ID: 268)', '1', TO_DATE('03/11/2020 14:03:46', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('03/11/2020 14:09:31', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' Corel Draw');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, TIPO_PROCEDIMIENTO_ADJUDICADO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, TXT_OBSERVACIONES, CHK_ACTIVO, FE_CREA_REG, FE_MODI_REG, COD_MOD_USU, PALABRA_CLAVE)
  Values
    (223, 1, 1, 
     2, 91, 1695, 'Adquisicion de licencias editor PDF. 1800 licencias. Ampliado a 3600 licencias', 
-    'Se pedirá el 50% y pasa a 190.000¿ (484000 ¿)
-Necesidades a nivel Nacional y obsolescencia de las versiones actuales, ampliación a 3600 licencias
-Hoja Rocío 09/10: "Revisión SEJU, enviado 4/10/19 (Proviene de inversión con ID: 241)', '1', TO_DATE('03/12/2020 13:47:47', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('03/12/2020 13:53:43', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' PDF');
+    'Se pedirï¿½ el 50% y pasa a 190.000ï¿½ (484000 ï¿½)
+
+Necesidades a nivel Nacional y obsolescencia de las versiones actuales, ampliaciï¿½n a 3600 licencias
+
+Hoja Rocï¿½o 09/10: "Revisiï¿½n SEJU, enviado 4/10/19 (Proviene de inversiï¿½n con ID: 241)', '1', TO_DATE('03/12/2020 13:47:47', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('03/12/2020 13:53:43', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' PDF');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, TIPO_PROCEDIMIENTO_ADJUDICADO, COD_DEPARTAMENTO, COD_UNIDAD, TXT_DESCRIPCION, TXT_OBSERVACIONES, CHK_ACTIVO, FE_CREA_REG, FE_MODI_REG, COD_MOD_USU, PALABRA_CLAVE)
  Values
    (224, 1, 3, 
-    93, 98, 'Adquisición de sistema de Autenticación por Segundo Factor', 
-    'Instalación requerida (Proviene de inversión con ID: 275)', '1', TO_DATE('03/17/2020 13:07:11', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('03/17/2020 13:15:08', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' Autenticación');
+    93, 98, 'Adquisiciï¿½n de sistema de Autenticaciï¿½n por Segundo Factor', 
+    'Instalaciï¿½n requerida (Proviene de inversiï¿½n con ID: 275)', '1', TO_DATE('03/17/2020 13:07:11', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('03/17/2020 13:15:08', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' Autenticaciï¿½n');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, TXT_OBSERVACIONES, CHK_ACTIVO, FE_CREA_REG, FE_MODI_REG, COD_MOD_USU, PALABRA_CLAVE)
  Values
    (225, 1, 
-    88, 89, 331, 'Suscripción de licencias software que permita la automatización de procesos (software robotización RPA) y servicios de puesta en marcha y traspaso de conocmiento.', 
-    'Cantidad: 51, 3 años( suscripción trianual con renovación anual por 300.000 ¿).Aprobado SEJU. Preparando documentación para Autorización Ministerial
-Rocío 09/10: Intervención ha puesto un reparo en la fiscalización. Están modificando (Proviene de inversión con ID: 259)', '1', TO_DATE('03/17/2020 14:15:33', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('03/17/2020 14:44:19', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' Automatización de procesos');
+    88, 89, 331, 'Suscripciï¿½n de licencias software que permita la automatizaciï¿½n de procesos (software robotizaciï¿½n RPA) y servicios de puesta en marcha y traspaso de conocmiento.', 
+    'Cantidad: 51, 3 aï¿½os( suscripciï¿½n trianual con renovaciï¿½n anual por 300.000 ï¿½).Aprobado SEJU. Preparando documentaciï¿½n para Autorizaciï¿½n Ministerial
+
+Rocï¿½o 09/10: Intervenciï¿½n ha puesto un reparo en la fiscalizaciï¿½n. Estï¿½n modificando (Proviene de inversiï¿½n con ID: 259)', '1', TO_DATE('03/17/2020 14:15:33', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('03/17/2020 14:44:19', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' Automatizaciï¿½n de procesos');
 Insert into GOYA.MANTENIMIENTO
    (ID_MANTENIMIENTO, COD_TIPO_MTO, COD_DEPARTAMENTO, COD_UNIDAD, COD_RESPONSABLE, TXT_DESCRIPCION, TXT_OBSERVACIONES, CHK_ACTIVO, FE_CREA_REG, FE_MODI_REG, COD_MOD_USU, PALABRA_CLAVE)
  Values

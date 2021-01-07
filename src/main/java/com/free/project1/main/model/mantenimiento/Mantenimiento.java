@@ -1,10 +1,14 @@
 package com.free.project1.main.model.mantenimiento;
 
 import java.util.Date;
- 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity(name = "MANTENIMIENTO")
 public class Mantenimiento {
@@ -75,10 +79,11 @@ public class Mantenimiento {
     @Column(name = "PALABRA_CLAVE", length = 2000)
     String palabra_clave;// VARCHAR(2000)
 
+    @OneToMany(mappedBy = "mantenimiento", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    List<DetalleMantenimiento> detalles;
+
     public Mantenimiento() {
     }
-
-   
 
     public int getId_mantenimiento() {
         return this.id_mantenimiento;
@@ -254,6 +259,31 @@ public class Mantenimiento {
 
     public void setPalabra_clave(String palabra_clave) {
         this.palabra_clave = palabra_clave;
+    }
+
+    public List<DetalleMantenimiento> getDetalles() {
+        return this.detalles;
+    }
+
+    public void setDetalles(List<DetalleMantenimiento> detalles) {
+        this.detalles = detalles;
+    }
+
+    @Override
+    public String toString() {
+        return "{" + " id_mantenimiento:'" + getId_mantenimiento() + "'" + ", cod_tipo_mto:'" + getCod_tipo_mto() + "'"
+                + ", cod_expediente:'" + getCod_expediente() + "'" + ", cod_contrato:'" + getCod_contrato() + "'"
+                + ", tipo_procedimiento_adjudicado:'" + getTipo_procedimiento_adjudicado() + "'"
+                + ", cod_departamento:'" + getCod_departamento() + "'" + ", cod_unidad:'" + getCod_unidad() + "'"
+                + ", cod_responsable:'" + getCod_responsable() + "'" + ", txt_descripcion:'" + getTxt_descripcion()
+                + "'" + ", des_empresa:'" + getDes_empresa() + "'" + ", num_importe:'" + getNum_importe() + "'"
+                + ", fe_ini_contrato:'" + getFe_ini_contrato() + "'" + ", fe_fin_contrato:'" + getFe_fin_contrato()
+                + "'" + ", chk_prorroga:'" + getChk_prorroga() + "'" + ", fe_ini_prorroga:'" + getFe_ini_prorroga()
+                + "'" + ", fe_fin_prorroga:'" + getFe_fin_prorroga() + "'" + ", txt_observaciones:'"
+                + getTxt_observaciones() + "'" + ", chk_activo:'" + getChk_activo() + "'" + ", fe_crea_reg:'"
+                + getFe_crea_reg() + "'" + ", fe_modi_reg:'" + getFe_modi_reg() + "'" + ", cod_mod_usu:'"
+                + getCod_mod_usu() + "'" + ", palabra_clave:'" + getPalabra_clave() + "'" + ", detalles:'"
+                + getDetalles() + "'" + "}";
     }
 
 }

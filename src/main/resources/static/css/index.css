@@ -1,3 +1,64 @@
-.gap {
-    gap: 16px !important;
-}
+ body {
+     position: relative;
+     width: 100vw;
+     height: fit-content;
+     min-height: 100vh;
+     margin: 0;
+     padding: 0;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+ }
+
+ footer,
+ .footer {
+     width: 100%;
+ }
+
+ .contenedor {
+     display: flex;
+     flex-direction: column;
+     justify-content: space-around;
+     align-items: center;
+     width: 100%;
+     min-height: 100%;
+ }
+
+ table thead tr th input,
+ table tfoot tr th input {
+     max-width: 50%;
+ }
+
+ .flex-between {
+     display: flex !important;
+     flex-direction: row;
+     flex-flow: wrap;
+     align-items: center;
+     justify-content: space-between;
+
+     width: 100% !important;
+
+ }
+
+ .fields .field label {
+     margin-top: 3px !important;
+ }
+
+ @media (max-width:1280px) {
+     .fields {
+         flex-flow: wrap;
+         padding: 7px 1rem;
+     }
+
+ }
+
+ @media (max-width:992px) {
+     .container {
+         margin: 0 !important;
+         width: 100% !important;
+     }
+ }
+
+ @media (max-width:768px) {}
+
+ @media (max-width:480px) {}

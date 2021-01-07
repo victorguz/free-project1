@@ -1,68 +1,89 @@
-$(document).ready(function () {
-    $('.ui.dropdown').dropdown()
-    $('.ui.checkbox').checkbox()
-
-    $('#datatable tfoot th').each(function () {
-        var title = $(this).text();
-        if (!title.includes("Acciones")) {
-            $(this).addClass("ui form field");
-            $(this).html('<input type="text" placeholder="' + title + '" class="input-' + title + '"/>');
+const urlAll = document.querySelector(".all-url").value;
+const urlDetails = document.querySelector(".details-url").value;
+let page = 0;
+let perPage = 100;
+let total = 0;
+let columns = [
+    // {
+    //     title: "#",
+    //     render: function (undefined, filter, data, meta) {
+    //         return meta.row;
+    //     }
+    // },
+    { name: "Id", title: "Id", data: "id_mantenimiento" },
+    { name: "Tipo", title: "Tipo", data: "cod_tipo_mto" },
+    { name: "Dpto", title: "Dpto", data: "cod_departamento" },
+    { name: "Unidad", title: "Unidad", data: "cod_unidad" },
+    { name: "Expediente", title: "Expediente", data: "cod_expediente" },
+    { name: "Contrato", title: "Contrato", data: "cod_contrato" },
+    { name: "Descripción", title: "Descripción", data: "txt_descripcion" },
+    { name: "Observaciones", title: "Observaciones", data: "txt_observaciones" },
+    { name: "Palabra clave", title: "Palabra clave", data: "palabra_clave" },
+    { name: "Estado activo", title: "Estado activo", data: "chk_activo" },
+    { name: "Importe", title: "Importe", data: "num_importe" },
+    {
+        name: "Inicio Mnt.",
+        title: "Inicio Mnt.",
+        render: function (undefined, filter, data, meta) {
+            return dateFormat(data.fe_ini_contrato)
         }
-    });
-
-    var table = $('#datatable').DataTable({
-        lengthChange: false,
-        buttons: ['copy', 'excel', 'pdf', 'colvis'],
-        initComplete: function () {
-            // Apply the search
-            this.api().columns().every(function () {
-                var that = this;
-
-                $('input', this.footer()).on('keyup change clear input', function () {
-                    if (that.search() !== this.value) {
-                        if (this.value) {
-                            that.search('^' + this.value + '$', true, true).draw();
-                        } else {
-                            that.search(this.value).draw();
-                        }
-                    }
-                });
-            });
-        },
-        "columnDefs": [
-            {
-                width: '40px',
-                targets: [0],
-
-
-            },
-            {
-                targets: [1, 2, 3, 4, 5, 7, 8, 9, 10, 11, 12, 13, 14],
-                visible: false,
-
-            },
-        ],
-
-    });
-
-    table.buttons().container()
-        .appendTo($('div.eight.column:eq(0)', table.table().container()));
-    function searchOnColumn(column, value) {
-        if (value != null && value != undefined && value != -1) {
-            table.columns(column).search(`^${value}$`, true, false).draw()
-        } else {
-            table.columns(column).search("").draw()
+    },
+    {
+        name: "Fin Mnt.",
+        title: "Fin Mnt.",
+        render: function (undefined, filter, data, meta) {
+            return dateFormat(data.fe_fin_contrato)
+        }
+    },
+    {
+        name: "Años prorroga",
+        title: "Años prorroga",
+        render: function (undefined, filter, data, meta) {
+            let date = timeAgo(data.fe_fin_prorroga);
+            if (date) {
+                date = (date.includes("hace") ? "Vencido " : "Vence ") + date;
+                // meta.settings.setAttribute("data-content", data.fe_fin_prorroga)
+            }
+            return date;
+        }
+    },
+    {
+        name: "Estado prorroga",
+        title: "Estado prorroga",
+        data: "chk_prorroga"
+    },
+    {
+        name: "Acciones",
+        title: "Acciones",
+        render: function (undefined, filter, data, meta) {
+            return `<a class="ui button icon" href="${getUrl(urlDetails, { id: data.id_mantenimiento })}">
+                        <i class="ui icon eye"></i>
+                    </a>`;
         }
     }
+];
+let columnDefs = [
+    { targets: 0, width: '40px' },
+    { targets: [0, 6, 7, 15], visible: true },
+    { targets: '_all', visible: false }
+]
 
-    $(".column_filter select").on('change', function () {
-        console.log($(this).attr("data-column"), $(this).val())
-        searchOnColumn($(this).attr("data-column"), $(this).val())
-    })
+// <a class="ui button icon" th:href="@{/details(id=${item.id_mantenimiento})}">
+//     <i class="ui icon eye"></i>
+// </a>
+$(document).ready(function () {
 
-    $(".hidden.column_filter").on('change click', function () {
-        console.log($(this).attr("data-column"), $(this).val())
-        searchOnColumn($(this).attr("data-column"), $(this).val())
-    })
+    $.ajax({
+        url: getUrl(urlAll, { page: page, perPage: perPage }),
+        success: function (data) {
+            console.log(data);
+            setDataTable(data, columns, columnDefs)
+        }
+    });
 
+    $('.ui.dropdown').dropdown()
+    $('.ui.checkbox').checkbox()
+    // $('.custom-popup').popup()
 });
+
+

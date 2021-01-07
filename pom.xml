@@ -8,8 +8,8 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.free.project1</groupId>
-	<artifactId>free</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<artifactId>free-maintenaces</artifactId>
+	<version>1.0</version>
 	<packaging>war</packaging>
 	<name>free</name>
 	<description>Demo project for Spring Boot</description>

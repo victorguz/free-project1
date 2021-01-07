@@ -4,7 +4,12 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity(name = "DETALLE_MANTENIMIENTO")
 public class DetalleMantenimiento {
@@ -13,8 +18,13 @@ public class DetalleMantenimiento {
     @Column(name = "ID_DETALLE_MTO", nullable = false)
     int id_detalle_mto;// NUMBER NOT NULL
 
-    @Column(name = "ID_MANTENIMIENTO", nullable = false)
-    int id_mantenimiento;// NUMBER NOT NULL
+    // @Column(name = "ID_MANTENIMIENTO", nullable = false)
+    // int id_mantenimiento;// NUMBER NOT NULL
+
+    @JsonIgnore
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "ID_MANTENIMIENTO")
+    Mantenimiento mantenimiento;
 
     @Column(name = "COD_ESTADO_MTO", nullable = false)
     int cod_estado_mto;// NUMBER NOT NULL
@@ -23,7 +33,7 @@ public class DetalleMantenimiento {
     String des_empresa;// VARCHAR(255)
 
     @Column(name = "NUM_IMPORTE")
-    double num_importe;// NUMBER(12,2)
+    String num_importe;// NUMBER(12,2)
 
     @Column(name = "FE_INI_CONTRATO")
     Date fe_ini_contrato;// DATE
@@ -59,10 +69,10 @@ public class DetalleMantenimiento {
     String cod_mod_usu;// VARCHAR(8)
 
     @Column(name = "COD_ESTADONUEVOEXP")
-    int cod_estadonuevoexp;// NUMBER
+    String cod_estadonuevoexp;// NUMBER
 
     @Column(name = "AÑOSPRORROGA")
-    int añosprorroga;// NUMBER
+    String añosprorroga;// NUMBER
 
     @Column(name = "FE_SOL_ADQ")
     Date fe_sol_adq;// DATE
@@ -119,58 +129,15 @@ public class DetalleMantenimiento {
     Date fe_adjudicacionformalizacion;// DATE
 
     @Column(name = "NUM_IMPORTE_CONTRATACION")
-    double num_importe_contratacion;// NUMBER(11,2)
+    String num_importe_contratacion;// NUMBER(11,2)
 
     @Column(name = "COD_ESTADO_RRHH")
-    int cod_estado_rrhh; // NUMBER
+    String cod_estado_rrhh; // NUMBER
 
     @Column(name = "FE_FORMALIZACION")
     Date fe_formalizacion;// DATE
 
-
     public DetalleMantenimiento() {
-    }
-
-    public DetalleMantenimiento(int id_detalle_mto, int id_mantenimiento, int cod_estado_mto, String des_empresa, double num_importe, Date fe_ini_contrato, Date fe_fin_contrato, Character chk_prorroga, Date fe_ini_prorroga, Date fe_fin_prorroga, String cod_expediente, String cod_contrato, Character chk_activo, Date fe_crea_reg, Date fe_modi_reg, String cod_mod_usu, int cod_estadonuevoexp, int añosprorroga, Date fe_sol_adq, Date fe_env_org_col, Date fe_recp_mem, Date fe_env_val, Date fe_recp_val, Date fe_ultdia_valmem, Date fe_mem_val, Date fe_tram_cotec, Date fe_ultdia_ofertas, Date fe_recp_ofertas, Date fe_aviso_jefes, Date fe_aviso_ofertasvalidadas, Date fe_respuesta_ofertas, Date fe_ult_diaexpdate, Date fe_inimto_garantia_prevista, Date fe_finmto_garantia_prevista, Date fe_informevalidacion, Date fe_adjudicacionformalizacion, double num_importe_contratacion, int cod_estado_rrhh, Date fe_formalizacion) {
-        this.id_detalle_mto = id_detalle_mto;
-        this.id_mantenimiento = id_mantenimiento;
-        this.cod_estado_mto = cod_estado_mto;
-        this.des_empresa = des_empresa;
-        this.num_importe = num_importe;
-        this.fe_ini_contrato = fe_ini_contrato;
-        this.fe_fin_contrato = fe_fin_contrato;
-        this.chk_prorroga = chk_prorroga;
-        this.fe_ini_prorroga = fe_ini_prorroga;
-        this.fe_fin_prorroga = fe_fin_prorroga;
-        this.cod_expediente = cod_expediente;
-        this.cod_contrato = cod_contrato;
-        this.chk_activo = chk_activo;
-        this.fe_crea_reg = fe_crea_reg;
-        this.fe_modi_reg = fe_modi_reg;
-        this.cod_mod_usu = cod_mod_usu;
-        this.cod_estadonuevoexp = cod_estadonuevoexp;
-        this.añosprorroga = añosprorroga;
-        this.fe_sol_adq = fe_sol_adq;
-        this.fe_env_org_col = fe_env_org_col;
-        this.fe_recp_mem = fe_recp_mem;
-        this.fe_env_val = fe_env_val;
-        this.fe_recp_val = fe_recp_val;
-        this.fe_ultdia_valmem = fe_ultdia_valmem;
-        this.fe_mem_val = fe_mem_val;
-        this.fe_tram_cotec = fe_tram_cotec;
-        this.fe_ultdia_ofertas = fe_ultdia_ofertas;
-        this.fe_recp_ofertas = fe_recp_ofertas;
-        this.fe_aviso_jefes = fe_aviso_jefes;
-        this.fe_aviso_ofertasvalidadas = fe_aviso_ofertasvalidadas;
-        this.fe_respuesta_ofertas = fe_respuesta_ofertas;
-        this.fe_ult_diaexpdate = fe_ult_diaexpdate;
-        this.fe_inimto_garantia_prevista = fe_inimto_garantia_prevista;
-        this.fe_finmto_garantia_prevista = fe_finmto_garantia_prevista;
-        this.fe_informevalidacion = fe_informevalidacion;
-        this.fe_adjudicacionformalizacion = fe_adjudicacionformalizacion;
-        this.num_importe_contratacion = num_importe_contratacion;
-        this.cod_estado_rrhh = cod_estado_rrhh;
-        this.fe_formalizacion = fe_formalizacion;
     }
 
     public int getId_detalle_mto() {
@@ -181,12 +148,12 @@ public class DetalleMantenimiento {
         this.id_detalle_mto = id_detalle_mto;
     }
 
-    public int getId_mantenimiento() {
-        return this.id_mantenimiento;
+    public Mantenimiento getMantenimiento() {
+        return this.mantenimiento;
     }
 
-    public void setId_mantenimiento(int id_mantenimiento) {
-        this.id_mantenimiento = id_mantenimiento;
+    public void setMantenimiento(Mantenimiento mantenimiento) {
+        this.mantenimiento = mantenimiento;
     }
 
     public int getCod_estado_mto() {
@@ -205,11 +172,11 @@ public class DetalleMantenimiento {
         this.des_empresa = des_empresa;
     }
 
-    public double getNum_importe() {
+    public String getNum_importe() {
         return this.num_importe;
     }
 
-    public void setNum_importe(double num_importe) {
+    public void setNum_importe(String num_importe) {
         this.num_importe = num_importe;
     }
 
@@ -301,19 +268,19 @@ public class DetalleMantenimiento {
         this.cod_mod_usu = cod_mod_usu;
     }
 
-    public int getCod_estadonuevoexp() {
+    public String getCod_estadonuevoexp() {
         return this.cod_estadonuevoexp;
     }
 
-    public void setCod_estadonuevoexp(int cod_estadonuevoexp) {
+    public void setCod_estadonuevoexp(String cod_estadonuevoexp) {
         this.cod_estadonuevoexp = cod_estadonuevoexp;
     }
 
-    public int getAñosprorroga() {
+    public String getAñosprorroga() {
         return this.añosprorroga;
     }
 
-    public void setAñosprorroga(int añosprorroga) {
+    public void setAñosprorroga(String añosprorroga) {
         this.añosprorroga = añosprorroga;
     }
 
@@ -461,19 +428,19 @@ public class DetalleMantenimiento {
         this.fe_adjudicacionformalizacion = fe_adjudicacionformalizacion;
     }
 
-    public double getNum_importe_contratacion() {
+    public String getNum_importe_contratacion() {
         return this.num_importe_contratacion;
     }
 
-    public void setNum_importe_contratacion(double num_importe_contratacion) {
+    public void setNum_importe_contratacion(String num_importe_contratacion) {
         this.num_importe_contratacion = num_importe_contratacion;
     }
 
-    public int getCod_estado_rrhh() {
+    public String getCod_estado_rrhh() {
         return this.cod_estado_rrhh;
     }
 
-    public void setCod_estado_rrhh(int cod_estado_rrhh) {
+    public void setCod_estado_rrhh(String cod_estado_rrhh) {
         this.cod_estado_rrhh = cod_estado_rrhh;
     }
 
@@ -483,6 +450,32 @@ public class DetalleMantenimiento {
 
     public void setFe_formalizacion(Date fe_formalizacion) {
         this.fe_formalizacion = fe_formalizacion;
+    }
+
+    @Override
+    public String toString() {
+        return "{" + " 'id_detalle_mto':'" + getId_detalle_mto() + "'" + ", 'cod_estado_mto':'" + getCod_estado_mto() + "'"
+                + ", 'des_empresa':'" + getDes_empresa() + "'" + ", 'num_importe':'" + getNum_importe() + "'"
+                + ", 'fe_ini_contrato':'" + getFe_ini_contrato() + "'" + ", 'fe_fin_contrato':'" + getFe_fin_contrato()
+                + "'" + ", 'chk_prorroga':'" + getChk_prorroga() + "'" + ", 'fe_ini_prorroga':'" + getFe_ini_prorroga()
+                + "'" + ", 'fe_fin_prorroga':'" + getFe_fin_prorroga() + "'" + ", 'cod_expediente':'" + getCod_expediente()
+                + "'" + ", 'cod_contrato':'" + getCod_contrato() + "'" + ", 'chk_activo':'" + getChk_activo() + "'"
+                + ", 'fe_crea_reg':'" + getFe_crea_reg() + "'" + ", 'fe_modi_reg':'" + getFe_modi_reg() + "'"
+                + ", 'cod_mod_usu':'" + getCod_mod_usu() + "'" + ", 'cod_estadonuevoexp':'" + getCod_estadonuevoexp() + "'"
+                + ", 'añosprorroga':'" + getAñosprorroga() + "'" + ", 'fe_sol_adq':'" + getFe_sol_adq() + "'"
+                + ", 'fe_env_org_col':'" + getFe_env_org_col() + "'" + ", 'fe_recp_mem':'" + getFe_recp_mem() + "'"
+                + ", 'fe_env_val':'" + getFe_env_val() + "'" + ", 'fe_recp_val':'" + getFe_recp_val() + "'"
+                + ", 'fe_ultdia_valmem':'" + getFe_ultdia_valmem() + "'" + ", 'fe_mem_val':'" + getFe_mem_val() + "'"
+                + ", 'fe_tram_cotec':'" + getFe_tram_cotec() + "'" + ", 'fe_ultdia_ofertas':'" + getFe_ultdia_ofertas()
+                + "'" + ", 'fe_recp_ofertas':'" + getFe_recp_ofertas() + "'" + ", 'fe_aviso_jefes':'" + getFe_aviso_jefes()
+                + "'" + ", 'fe_aviso_ofertasvalidadas':'" + getFe_aviso_ofertasvalidadas() + "'"
+                + ", 'fe_respuesta_ofertas':'" + getFe_respuesta_ofertas() + "'" + ", 'fe_ult_diaexpdate':'"
+                + getFe_ult_diaexpdate() + "'" + ", 'fe_inimto_garantia_prevista':'" + getFe_inimto_garantia_prevista()
+                + "'" + ", 'fe_finmto_garantia_prevista':'" + getFe_finmto_garantia_prevista() + "'"
+                + ", 'fe_informevalidacion':'" + getFe_informevalidacion() + "'" + ", 'fe_adjudicacionformalizacion':'"
+                + getFe_adjudicacionformalizacion() + "'" + ", 'num_importe_contratacion':'"
+                + getNum_importe_contratacion() + "'" + ", 'cod_estado_rrhh':'" + getCod_estado_rrhh() + "'"
+                + ", 'fe_formalizacion':'" + getFe_formalizacion() + "'" + "}";
     }
 
 }
