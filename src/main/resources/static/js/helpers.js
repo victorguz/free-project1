@@ -1,5 +1,6 @@
 
-function setDataTable(data, columns, columnDefs = [], actionWithRow = null, buttons = [], order = [], elementId = "datatable") {
+function setDataTable(data, columns, columnDefs = [], actionWithRow = null,
+    buttons = [], order = [], elementId = "datatable") {
 
     let table = $('#' + elementId).DataTable({
         data: data,
@@ -11,14 +12,8 @@ function setDataTable(data, columns, columnDefs = [], actionWithRow = null, butt
         scrollX: true,
         order: order
     });
-    if (typeof actionWithRow === "string") {
-        $('#datatable tbody').on('click', 'tr', function () {
-            var data = table.row(this).data();
-            console.log(data)
-            window.location.href = getUrl(actionWithRow, { id: data.id_mantenimiento })
-        });
-    } else if (typeof actionWithRow === 'function') {
-        $('#datatable tbody').on('click', 'tr', function (e) {
+    if (typeof actionWithRow === 'function') {
+        $('#' + elementId + ' tbody').on('dblclick', 'tr', function (e) {
             e.preventDefault();
             actionWithRow(table.row(this).data())
         });

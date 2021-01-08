@@ -46,6 +46,16 @@ const columns = [
         title: "Estado prorroga",
         data: "chk_prorroga"
     },
+    {
+        name: "Acciones",
+        title: "Acciones",
+        render: function (undefined, filter, data, meta) {
+            return `
+            <a href="${getUrl(urlDetails, { id: data.id_mantenimiento })}" class="ui button icon">
+                <i class="ui icon eye"></i>
+            </a>`;
+        }
+    },
 ];
 const buttons = [
     {
@@ -70,7 +80,7 @@ const buttons = [
 ]
 const columnDefs = [
     { targets: 0, width: '40px' },
-    { targets: [0, 6, 7], visible: true },
+    { targets: [0, 6, 7, 15], visible: true },
     { targets: '_all', visible: false }
 ]
 
@@ -93,14 +103,20 @@ $(document).ready(function () {
     $("[data-content]").popup()
 });
 
+const rowFunction = function (data) {
+    // console.log(data)
+    // window.location.href = getUrl(urlDetails, { id: data.id_mantenimiento })
+}
+
 function load() {
     $.ajax({
         url: getUrl(urlAll, { page: page, perPage: perPage }),
         success: function (data) {
             if (!datatable) {
-                datatable = setDataTable(data, columns, columnDefs, urlDetails)
+                datatable = setDataTable(data, columns, columnDefs, rowFunction, buttons)
             }
         }
     });
 }
+
 

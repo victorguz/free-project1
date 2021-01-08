@@ -92,7 +92,7 @@ const order = [[1, "desc"]]
 
 const rowFunction = function (data) {
     setModalDetailsData(data);
-    $("[modal-details]").modal("show");
+    $(".modal-details").modal("show");
 }
 
 $(document).ready(function () {
@@ -118,7 +118,6 @@ $(document).ready(function () {
     $('.ui.dropdown').dropdown()
     $('.ui.checkbox').checkbox()
     $('.menu .item').tab();
-    $("[modal-mnt]").modal()
     setMethods()
 });
 
