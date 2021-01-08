@@ -1,62 +1,73 @@
-function setDataTable(data, columns = [], columnDefs = [], buttons = [
-    {
-        text: 'Columnas',
-        extend: 'colvis',
-    },
-    {
-        text: '<i class="print icon"></i>Impr. PDF',
-        extend: 'print',
-        exportOptions: {
-            columns: ':visible'
-        }
-    },
-    {
-        text: '<i class="file excel outline icon"></i>Excel',
-        extend: 'excelHtml5',
-        exportOptions: {
-            columns: ':visible'
-        }
-    },
 
-    {
-        text: '<i class="file excel icon"></i>Crystal',
-        extend: 'excelHtml5',
-        exportOptions: {
-            columns: [
+function setDataTable(data, columns, columnDefs = [], actionWithRow = null, buttons = [], order = [], elementId = "datatable") {
 
-            ]
-        }
-    },
-]) {
-
-    var table = $('#datatable').DataTable({
+    let table = $('#' + elementId).DataTable({
         data: data,
         columns: columns,
         columnDefs: columnDefs,
         lengthChange: false,
         buttons: buttons,
+        pageLength: 10,
+        scrollX: true,
+        order: order
     });
+    if (typeof actionWithRow === "string") {
+        $('#datatable tbody').on('click', 'tr', function () {
+            var data = table.row(this).data();
+            console.log(data)
+            window.location.href = getUrl(actionWithRow, { id: data.id_mantenimiento })
+        });
+    } else if (typeof actionWithRow === 'function') {
+        $('#datatable tbody').on('click', 'tr', function (e) {
+            e.preventDefault();
+            actionWithRow(table.row(this).data())
+        });
+    }
 
+    //Ocultar barra de busqueda por defecto
+    $("#datatable_filter").hide()
+
+    //Poner los botones encima de la tabla
     table.buttons().container().appendTo($('div.eight.column:eq(0)', table.table().container()));
 
+    /**
+     * Busca en las columnas de la tabla si se entrega una columna
+     * @param {*} column 
+     * @param {*} value 
+     */
     function searchOnColumn(column, value) {
-        if (value != null && value != undefined && value != -1 && value != "") {
-            table.columns(column).search(`^${value}$`, true, false).draw()
+        if (column != null && column != undefined && column != -1 && column != "") {
+            if (value != null && value != undefined && value != -1 && value != "") {
+                console.log(column, value)
+                table.columns(column).search(`^${value}$`, true, false).draw()
+            } else {
+                table.columns(column).search("").draw()
+            }
         } else {
-            console.log(column, value)
-            table.columns(column).search("").draw()
+            if (value != null && value != undefined && value != -1 && value != "") {
+                table.search(value, true, true).draw()
+            } else {
+                table.search("").draw()
+            }
         }
     }
 
-    $(".column_filter select").on('change', function () {
+    //Los elementos con el parámetro data-column son quienes realizan búsquedas
+    $("[data-column]").on('keyup change clear input click', function () {
         searchOnColumn($(this).attr("data-column"), $(this).val())
     })
-    $(".input.column_filter").on('keyup change clear input', function () {
-        searchOnColumn($(this).attr("data-column"), $(this).val())
-    })
-    $(".hidden.column_filter").on('change click', function () {
-        searchOnColumn($(this).attr("data-column"), $(this).val())
-    })
+
+    // $(".column_filter select").on('change', function () {
+    //     searchOnColumn($(this).attr("data-column"), $(this).val())
+    // })
+    // $(".input.column_filter").on('keyup change clear input', function () {
+    //     searchOnColumn($(this).attr("data-column"), $(this).val(), true)
+    // })
+    // $(".hidden.column_filter").on('change click', function () {
+    //     searchOnColumn($(this).attr("data-column"), $(this).val())
+    // })
+
+    return table;
 }
 
 
@@ -262,6 +273,7 @@ function getRequest(url, data, headers = {}) {
 }
 
 function dateFormat(string) {
+    string = string == "null" ? null : string;
     if (string) {
         let date = new Date(Date.parse(string));
         return date.getFullYear() + "/" + (date.getMonth() < 10 ? '0' : '') + date.getMonth() + "/" + (date.getDate() < 10 ? '0' : '') + date.getDate()
@@ -271,7 +283,7 @@ function dateFormat(string) {
 
 function moneyFormat(number) {
     if (number) {
-        var formatter = new Intl.NumberFormat('es-CO', {
+        let formatter = new Intl.NumberFormat('es-CO', {
             style: 'currency',
             currency: 'COP',
 

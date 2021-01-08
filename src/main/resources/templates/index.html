@@ -10,6 +10,9 @@
     <link rel="stylesheet" type="text/css" th:href="@{/plugins/semantic-ui/semantic.min.css}">
     <link rel="stylesheet" type="text/css" th:href="@{/css/index.css}">
 
+    <script type="text/javascript" language="javascript" th:src="@{/plugins/jquery/jquery-3.5.1.js}">
+    </script>
+    <script type="text/javascript" language="javascript" th:src="@{/plugins/semantic-ui/semantic.min.js}"></script>
 
 </head>
 
@@ -32,7 +35,7 @@
                     <h1 class="ui header">Mantenimientos</h1>
                 </div>
                 <div>
-                    <select class="ui dropdown search column_filter" data-column="2">
+                    <select class="ui dropdown" select-quantity>
                         <option value="">Cantidad de resultados</option>
                         <option value="100" selected>100 Resultados</option>
                         <option value="300">300 Resultados</option>
@@ -50,11 +53,16 @@
             <br>
 
             <div class="ui form">
-                <h3 class="ui header dividing">Flitros</h3>
-                <div class="two fields">
+                <h4 class="ui header dividing">Flitros generales</h4>
+                <div class="two fields" style="margin-bottom: 0;">
+                    <div class="field">
+                        <label>Por texto</label>
+                        <input type="text" class="input column_filter" placeholder="Texto" data-column="-1"
+                            data-content="Búsqueda por texto en todas las columnas.">
+                    </div>
                     <div class="field">
                         <label>Por departamento</label>
-                        <select class="ui dropdown search column_filter" data-column="2">
+                        <select class="ui dropdown column_filter" data-column="2">
                             <option value="">Seleccione un departamento</option>
                             <option value="-1" selected>Todos</option>
                             <option value="2">Departamento #2</option>
@@ -102,12 +110,36 @@
                             </div>
                         </div>
                     </div>
+                </div>
+                <div class="two fields">
+                    <div class="field">
+                        <label>Por expediente</label>
+                        <input type="text" class="input column_filter" placeholder="Expediente" data-column="4"
+                            data-content="Búsqueda en la columna 'expediente'">
+                    </div>
+                    <div class="field">
+                        <label>Por contrato</label>
+                        <input type="text" class="input column_filter" placeholder="Contrato" data-column="5"
+                            data-content="Búsqueda en la columna 'contrato'">
+                    </div>
+                    <div class="field">
+                        <label>Por palabra clave</label>
+                        <input type="text" class="input column_filter" placeholder="Palabra clave" data-column=""
+                            data-content="Búsqueda en la columna 'palabra clave'">
+                    </div>
                     <div class="field">
                         <label>&nbsp</label>
-                        <button class="ui fluid button">
-                            <i class="ui icon filter"></i>
-                            Búsqueda exhaustiva
-                        </button>
+                        <div class="ui buttons fluid">
+                            <button class="ui icon button" style="white-space: nowrap;" full-search-button data-content="Realiza una búsqueda directamente en la base de datos, 
+                                teniendo en cuenta todos los filtros seleccionados.">
+                                <i class="ui icon filter"></i>
+                                Búsqueda mejorada
+                            </button>
+                            <button class="ui button icon grey button-busqueda"
+                                data-content="Elimina los filtros y devuelve la consulta al estado inicial.">
+                                <i class="ui icon undo"></i>
+                            </button>
+                        </div>
                     </div>
 
                 </div>
@@ -116,14 +148,7 @@
                 <input type="hidden" class="details-url" th:value="${details_url}">
 
                 <div class="datatable-container">
-                    <!-- <h4 class="ui header dividing">Filtros de búsqueda</h4>
-                    <div class="two fields">
-                        <div class="field">
-                            <label>Por id</label>
-                            <input type="text" class="input column_filter" placeholder="Id" data-column="0">
-                        </div>
-                    </div> -->
-                    <table class="ui celled table" style="width:100%" id="datatable"></table>
+                    <table class="ui selectable celled table" style="width:100%" id="datatable"></table>
                 </div>
 
             </div>
@@ -139,9 +164,7 @@
         </footer>
     </div>
 
-    <script type="text/javascript" language="javascript" th:src="@{/plugins/jquery/jquery-3.5.1.js}">
-    </script>
-    <script type="text/javascript" language="javascript" th:src="@{/plugins/semantic-ui/semantic.min.js}"></script>
+
     <script type="text/javascript" language="javascript"
         th:src="@{/plugins/datatables/js/jquery.dataTables.min.js}"></script>
     <script type="text/javascript" language="javascript"
@@ -164,6 +187,7 @@
     </script>
     <script type="text/javascript" language="javascript" th:src="@{/js/index.js}">
     </script>
+
 </body>
 
 </html>

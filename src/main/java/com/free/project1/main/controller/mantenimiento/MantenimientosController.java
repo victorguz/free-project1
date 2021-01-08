@@ -38,6 +38,7 @@ public class MantenimientosController {
     @GetMapping("/")
     public String home(Model model) {
         model.addAttribute("details_url", "/details");
+        model.addAttribute("search_url", "/search");
         model.addAttribute("add_url", "/add");
         model.addAttribute("all_url", "/api/maintenances/all");
         return "index";
@@ -46,7 +47,6 @@ public class MantenimientosController {
     @GetMapping("/details")
     public String details(Model model, @RequestParam int id) {
         var x = mnt.findById(id).get();
-        model.addAttribute("details_url", "/allDetails");
         model.addAttribute("update_url", "/update");
         model.addAttribute("add_url", "/add");
         model.addAttribute("mnt", x);

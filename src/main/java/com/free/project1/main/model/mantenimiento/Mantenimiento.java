@@ -8,7 +8,9 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 @Entity(name = "MANTENIMIENTO")
 public class Mantenimiento {
@@ -16,8 +18,12 @@ public class Mantenimiento {
     @Column(name = "ID_MANTENIMIENTO")
     int id_mantenimiento;// NUMBER NOT NULL,
 
-    @Column(nullable = false)
-    String cod_tipo_mto;// NUMBER NOT NULL,
+    @OneToOne
+    @JoinColumn(name = "COD_TIPO_MTO", nullable = false)
+    TipoMantenimiento tipo;
+
+    // @Column(nullable = false)
+    // String cod_tipo_mto;// NUMBER NOT NULL,
 
     @Column(name = "COD_EXPEDIENTE", length = 25)
     String cod_expediente;// VARCHAR(25),
@@ -93,12 +99,12 @@ public class Mantenimiento {
         this.id_mantenimiento = id_mantenimiento;
     }
 
-    public String getCod_tipo_mto() {
-        return this.cod_tipo_mto;
+    public TipoMantenimiento getTipo() {
+        return this.tipo;
     }
 
-    public void setCod_tipo_mto(String cod_tipo_mto) {
-        this.cod_tipo_mto = cod_tipo_mto;
+    public void setTipo(TipoMantenimiento tipo) {
+        this.tipo = tipo;
     }
 
     public String getCod_expediente() {
@@ -271,18 +277,18 @@ public class Mantenimiento {
 
     @Override
     public String toString() {
-        return "{" + " id_mantenimiento:'" + getId_mantenimiento() + "'" + ", cod_tipo_mto:'" + getCod_tipo_mto() + "'"
-                + ", cod_expediente:'" + getCod_expediente() + "'" + ", cod_contrato:'" + getCod_contrato() + "'"
-                + ", tipo_procedimiento_adjudicado:'" + getTipo_procedimiento_adjudicado() + "'"
-                + ", cod_departamento:'" + getCod_departamento() + "'" + ", cod_unidad:'" + getCod_unidad() + "'"
-                + ", cod_responsable:'" + getCod_responsable() + "'" + ", txt_descripcion:'" + getTxt_descripcion()
-                + "'" + ", des_empresa:'" + getDes_empresa() + "'" + ", num_importe:'" + getNum_importe() + "'"
-                + ", fe_ini_contrato:'" + getFe_ini_contrato() + "'" + ", fe_fin_contrato:'" + getFe_fin_contrato()
-                + "'" + ", chk_prorroga:'" + getChk_prorroga() + "'" + ", fe_ini_prorroga:'" + getFe_ini_prorroga()
-                + "'" + ", fe_fin_prorroga:'" + getFe_fin_prorroga() + "'" + ", txt_observaciones:'"
-                + getTxt_observaciones() + "'" + ", chk_activo:'" + getChk_activo() + "'" + ", fe_crea_reg:'"
-                + getFe_crea_reg() + "'" + ", fe_modi_reg:'" + getFe_modi_reg() + "'" + ", cod_mod_usu:'"
-                + getCod_mod_usu() + "'" + ", palabra_clave:'" + getPalabra_clave() + "'" + ", detalles:'"
+        return "{" + " 'id_mantenimiento':'" + getId_mantenimiento() + "'" + ", 'tipo':'" + getTipo() + "'"
+                + ", 'cod_expediente':'" + getCod_expediente() + "'" + ", 'cod_contrato':'" + getCod_contrato() + "'"
+                + ", 'tipo_procedimiento_adjudicado':'" + getTipo_procedimiento_adjudicado() + "'"
+                + ", 'cod_departamento':'" + getCod_departamento() + "'" + ", 'cod_unidad':'" + getCod_unidad() + "'"
+                + ", 'cod_responsable':'" + getCod_responsable() + "'" + ", 'txt_descripcion':'" + getTxt_descripcion()
+                + "'" + ", 'des_empresa':'" + getDes_empresa() + "'" + ", 'num_importe':'" + getNum_importe() + "'"
+                + ", 'fe_ini_contrato':'" + getFe_ini_contrato() + "'" + ", 'fe_fin_contrato':'" + getFe_fin_contrato()
+                + "'" + ", 'chk_prorroga':'" + getChk_prorroga() + "'" + ", 'fe_ini_prorroga':'" + getFe_ini_prorroga()
+                + "'" + ", 'fe_fin_prorroga':'" + getFe_fin_prorroga() + "'" + ", 'txt_observaciones':'"
+                + getTxt_observaciones() + "'" + ", 'chk_activo':'" + getChk_activo() + "'" + ", 'fe_crea_reg':'"
+                + getFe_crea_reg() + "'" + ", 'fe_modi_reg':'" + getFe_modi_reg() + "'" + ", 'cod_mod_usu':'"
+                + getCod_mod_usu() + "'" + ", 'palabra_clave':'" + getPalabra_clave() + "'" + ", 'detalles':'"
                 + getDetalles() + "'" + "}";
     }
 

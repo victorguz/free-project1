@@ -10,6 +10,14 @@
     <link rel="stylesheet" type="text/css" th:href="@{/plugins/semantic-ui/semantic.min.css}">
     <link rel="stylesheet" type="text/css" th:href="@{/css/index.css}">
 
+    <!-- Fomantic UI -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.8.7/semantic.min.css"
+        integrity="sha512-g/MzOGVPy3OQ4ej1U+qe4D/xhLwUn5l5xL0Fa7gdC258ZWVJQGwsbIR47SWMpRxSPjD0tfu/xkilTy+Lhrl3xg=="
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.8.7/components/calendar.min.css"
+        integrity="sha512-6Uiu6jE6G5bBZTppPVXR3bFF5Gl+A0m5H7JPr/rF2ScuyH+y5dy6a0GcXJY2kpTJ9JmyyXXaTN3Fl8t/i95BCg=="
+        crossorigin="anonymous" /> -->
+
 </head>
 
 <body>
@@ -36,10 +44,27 @@
                         <i class="ui icon plus"></i>
                         Nuevo
                     </a> -->
-                    <a th:href="@{${update_url}}" class="ui button blue icon">
+                    <a class="ui button blue icon" button-save-mnt>
                         <i class="edit outline icon"></i>
                         Guardar cambios
                     </a>
+
+                    <div class="ui mini modal" modal-mnt>
+                        <div class="header">
+                            Advertencia
+                        </div>
+                        <div class="content">
+                            <p>¿Seguro que quieres guardar estos cambios?</p>
+                        </div>
+                        <div class="actions">
+                            <div class="ui primary approve icon button">
+                                <i class="ui icon save"></i>
+                                Guardar cambios
+                            </div>
+                            <div class="ui cancel button">Aún no</div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
 
@@ -49,14 +74,15 @@
                 <div class="two fields">
                     <div class="field">
                         <label>Tipo</label>
-                        <select class="ui dropdown search column_filter" data-column="2">
+                        <select class="ui dropdown">
                             <option th:each="tipo : ${tipos}" th:value="${tipo.id_tipo_mto}"
-                                th:text="${tipo.des_tipo_mto}"></option>
+                                th:text="${tipo.des_tipo_mto}" th:selected="${mnt.tipo.id_tipo_mto==tipo.id_tipo_mto}">
+                            </option>
                         </select>
                     </div>
                     <div class="field">
                         <label>Procedimiento</label>
-                        <select class="ui dropdown search column_filter" data-column="2">
+                        <select class="ui dropdown">
                             <option value="">Procedimiento</option>
                             <option value="0">Procedimiento #0</option>
                             <option value="1">Procedimiento #1</option>
@@ -67,7 +93,7 @@
                     </div>
                     <div class="field">
                         <label>Departamento</label>
-                        <select class="ui dropdown search column_filter" data-column="2">
+                        <select class="ui dropdown">
                             <option value="">Departamento</option>
                             <option value="2">Departamento #2</option>
                             <option value="3">Departamento #3</option>
@@ -78,7 +104,7 @@
                     </div>
                     <div class="field">
                         <label>Unidad</label>
-                        <select class="ui dropdown column_filter" data-column="3">
+                        <select class="ui dropdown">
                             <option value="">Unidad</option>
                             <option value="15">Unidad #15</option>
                             <option value="88">Unidad #88</option>
@@ -89,28 +115,34 @@
                     </div>
                 </div>
 
-                <div class="field">
-                    <label>Solicitante:</label>
-                    <select class="ui dropdown column_filter" data-column="3">
-                        <option value="">Solicitante</option>
-                        <option value="0">Solicitante #0</option>
-                        <option value="1">Solicitante #1</option>
-                        <option value="2">Solicitante #2</option>
-                        <option value="3">Solicitante #3</option>
-                        <option value="4">Solicitante #4</option>
-                    </select>
+                <div class="two fields">
+                    <div class="field">
+                        <label>Solicitante:</label>
+                        <select class="ui dropdown">
+                            <option value="">Solicitante</option>
+                            <option value="0">Solicitante #0</option>
+                            <option value="1">Solicitante #1</option>
+                            <option value="2">Solicitante #2</option>
+                            <option value="3">Solicitante #3</option>
+                            <option value="4">Solicitante #4</option>
+                        </select>
+                    </div>
+                    <div class="field">
+                        <label>Palabra clave</label>
+                        <input type="text" placeholder="Palabra clave" th:value="${mnt.palabra_clave}">
+                    </div>
                 </div>
 
                 <div class="field">
                     <label>Descripción:</label>
-                    <textarea name="descripcion" id="descripcion" rows="3" maxlength="2000"
-                        placeholder="Descripción"></textarea>
+                    <textarea name="descripcion" id="descripcion" rows="3" maxlength="2000" placeholder="Descripción"
+                        th:text="${mnt.txt_descripcion}"></textarea>
                 </div>
 
                 <div class="field">
                     <label>Observaciones:</label>
-                    <textarea name="descripcion" id="descripcion" rows="5" maxlength="2000"
-                        placeholder="Descripción"></textarea>
+                    <textarea name="observaciones" id="observaciones" rows="5" maxlength="2000"
+                        placeholder="Observaciones" th:text="${mnt.txt_observaciones}"></textarea>
                 </div>
 
                 <div th:each="item: ${mnt.detalles}">
@@ -118,14 +150,229 @@
                 </div>
 
                 <div class="datatable-container">
+
                     <h3 class="ui header dividing">Detalles</h3>
-                    <table class="ui celled table" style="width:100%" id="datatable">
+
+                    <table class="ui selectable celled table" style="width:100%" id="details_datatable">
                     </table>
+
+                    <div class="ui modal" modal-details>
+                        <i class="close icon"></i>
+                        <div class="header" modal-header>Detalles #{id}</div>
+                        <div class="content ui form">
+                            <div class="ui top attached tabular menu" style="overflow-x: auto; overflow-y: hidden;">
+                                <a class="item google-drive-opener active" data-tab="uno">Datos geneales</a>
+                                <a class="item google-drive-opener" data-tab="dos">Control de memorias</a>
+                                <a class="item google-drive-opener" data-tab="tres">Control de ofertas</a>
+                                <a class="item google-drive-opener" data-tab="cuatro">Control de garantías, adjudicación
+                                    y
+                                    formalización</a>
+                                <a class="item google-drive-opener" data-tab="cinco">Tabla de datos e impresión</a>
+                            </div>
+                            <div class="ui bottom attached tab segment active" data-tab="uno">
+                                <div class="two fields">
+                                    <div class="field">
+                                        <label>Estado</label>
+                                        <select class="ui dropdown">
+                                            <option value="">Estado</option>
+                                            <option value="0">Estado #0</option>
+                                            <option value="1">Estado #1</option>
+                                            <option value="2">Estado #2</option>
+                                            <option value="3">Estado #3</option>
+                                            <option value="4">Estado #4</option>
+                                        </select>
+                                    </div>
+                                    <div class="field">
+                                        <label>Estado nuevo expediente</label>
+                                        <select class="ui dropdown">
+                                            <option value="">Estado n. expediente</option>
+                                            <option value="0">Estado #0</option>
+                                            <option value="1">Estado #1</option>
+                                            <option value="2">Estado #2</option>
+                                            <option value="3">Estado #3</option>
+                                            <option value="4">Estado #4</option>
+                                        </select>
+                                    </div>
+                                    <div class="field">
+                                        <label>Estado RRHH</label>
+                                        <select class="ui dropdown">
+                                            <option value="">Estado RRHH</option>
+                                            <option value="0">Estado #0</option>
+                                            <option value="1">Estado #1</option>
+                                            <option value="2">Estado #2</option>
+                                            <option value="3">Estado #3</option>
+                                            <option value="4">Estado #4</option>
+                                        </select>
+                                    </div>
+                                    <div class="field">
+                                        <label>Prorrogable</label>
+                                        <select class="ui dropdown">
+                                            <option value="">Prorrogable</option>
+                                            <option value="0">No</option>
+                                            <option value="1">Si</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="two fields">
+                                    <div class="field">
+                                        <label>Inicio contrato</label>
+                                        <input type="date" placeholder="Inicio contrato">
+                                    </div>
+                                    <div class="field">
+                                        <label>Fin contrato</label>
+                                        <input type="date" placeholder="Fin contrato">
+                                    </div>
+                                    <div class="field">
+                                        <label>Inicio prorroga</label>
+                                        <input type="date" placeholder="Inicio prorroga">
+                                    </div>
+                                    <div class="field">
+                                        <label>Fin prorroga</label>
+                                        <input type="date" placeholder="Fin prorroga">
+                                    </div>
+                                </div>
+
+                                <div class="two fields">
+                                    <div class="field">
+                                        <label>Presupuesto base</label>
+                                        <input type="number" min="0" placeholder="Presupuesto base">
+                                    </div>
+                                    <div class="field">
+                                        <label>Importe adjudicado</label>
+                                        <input type="number" min="0" placeholder="Importe adjudicado">
+                                    </div>
+                                    <div class="field">
+                                        <label>Expediente</label>
+                                        <input type="text" placeholder="Expediente">
+                                    </div>
+                                    <div class="field">
+                                        <label>Contrato</label>
+                                        <input type="text" placeholder="Contrato">
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <label>Empresa adjudicada</label>
+                                    <input type="text" placeholder="Empresa adjudicada">
+                                </div>
+                            </div>
+
+                            <div class="ui bottom attached tab segment" data-tab="dos">
+                                <div class="two fields">
+                                    <div class="field">
+                                        <label>Solicitud adquisición</label>
+                                        <input type="date" placeholder="Solicitud adquisición">
+                                    </div>
+                                    <div class="field">
+                                        <label>Envío org. colegiados</label>
+                                        <input type="date" placeholder="Envío org. colegiados">
+                                    </div>
+                                    <div class="field">
+                                        <label>Recepción de memoria</label>
+                                        <input type="date" placeholder="Recepción de memoria">
+                                    </div>
+                                    <div class="field">
+                                        <label>Envío validación responsable</label>
+                                        <input type="date" placeholder="Envío validación responsable">
+                                    </div>
+                                </div>
+                                <div class="two fields">
+                                    <div class="field">
+                                        <label>Recepción validación responsable</label>
+                                        <input type="date" placeholder="Recepción validación responsable">
+                                    </div>
+                                    <div class="field">
+                                        <label>Último día de validación</label>
+                                        <input type="date" placeholder="Último día de validación">
+                                    </div>
+                                    <div class="field">
+                                        <label>Memoria validada (Memorias Tec)</label>
+                                        <input type="date" placeholder="Memoria validada">
+                                    </div>
+                                    <div class="field">
+                                        <label>Terminación en COTEC</label>
+                                        <input type="date" placeholder="Terminación en COTEC">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ui bottom attached tab segment" data-tab="tres">
+                                <div class="two fields">
+                                    <div class="field">
+                                        <label>Último día presentación ofertas</label>
+                                        <input type="date" placeholder="Último día presentación ofertas">
+                                    </div>
+                                    <div class="field">
+                                        <label>Recepción de ofertas</label>
+                                        <input type="date" placeholder="Recepción de ofertas">
+                                    </div>
+                                    <div class="field">
+                                        <label>Aviso a jefes</label>
+                                        <input type="date" placeholder="Aviso a jefes">
+                                    </div>
+                                    <div class="field">
+                                        <label>Aviso ofertas validadas</label>
+                                        <input type="date" placeholder="Aviso ofertas validadas">
+                                    </div>
+                                </div>
+                                <div class="two fields">
+                                    <div class="field">
+                                        <label>Respuesta de oferta</label>
+                                        <input type="date" placeholder="Respuesta de oferta">
+                                    </div>
+                                    <div class="field">
+                                        <label>Último día de validación</label>
+                                        <input type="date" placeholder="Último día de validación">
+                                    </div>
+                                    <div class="field">
+                                        <label>Informe de validación</label>
+                                        <input type="date" placeholder="Informe de validación">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ui bottom attached tab segment" data-tab="cuatro">
+                                <h5 class="ui header dividing">Fechas control de garantías</h5>
+                                <div class="two fields">
+                                    <div class="field">
+                                        <label>Inicio Mto/Garantía prevista</label>
+                                        <input type="date" placeholder="Inicio Mto/Garantía prevista">
+                                    </div>
+                                    <div class="field">
+                                        <label>Fin Mto/Garantía prevista</label>
+                                        <input type="date" placeholder="Fin Mto/Garantía prevista">
+                                    </div>
+                                </div>
+                                <h5 class="ui header dividing">Fechas control de adjudicación y formalización</h5>
+                                <div class="two fields">
+                                    <div class="field">
+                                        <label>Fecha adjudicación</label>
+                                        <input type="date" placeholder="Fecha adjudicación">
+                                    </div>
+                                    <div class="field">
+                                        <label>Fecha formalización</label>
+                                        <input type="date" placeholder="Fecha formalización">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ui bottom attached tab segment" data-tab="cinco">
+                                <!-- <table class="ui selectable celled table" style="width:100%" id="details_datatable2">
+                                </table> -->
+                            </div>
+                        </div>
+                        <div class="actions">
+                            <div class="ui primary approve button">
+                                <i class="save icon"></i>
+                                Guardar cambios
+                            </div>
+                            <div class="ui cancel button">Cancelar</div>
+                        </div>
+                    </div>
+
                 </div>
 
             </div>
 
         </div>
+
         <br>
         <br>
 
@@ -160,12 +407,18 @@
     </script>
     <script type="text/javascript" language="javascript" th:src="@{/plugins/datatables/js/buttons.colVis.min.js}">
     </script>
+    <!-- Fomantic UI -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.8.7/components/calendar.min.js"
+        integrity="sha512-LYWG+gpXidl3z8q6oCIACEMa4JKaMaxeszqqPYmqzS17DTXK07CIGrdaL+FIA8bz4EJYcUOGotI3DBueas913w=="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.8.7/semantic.min.js"
+        integrity="sha512-1Nyd5H4Aad+OyvVfUOkO/jWPCrEvYIsQENdnVXt1+Jjc4NoJw28nyRdrpOCyFH4uvR3JmH/5WmfX1MJk2ZlhgQ=="
+        crossorigin="anonymous"></script> -->
+    <!-- Self -->
     <script type="text/javascript" language="javascript" th:src="@{/js/helpers.js}">
     </script>
     <script type="text/javascript" language="javascript" th:src="@{/js/details.js}">
     </script>
-
-
 </body>
 
 </html>

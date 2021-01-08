@@ -91,9 +91,7 @@ public class TipoMantenimiento {
 
     @Override
     public String toString() {
-        return "{" + " id_tipo_mto='" + getId_tipo_mto() + "'" + ", des_tipo_mto='" + getDes_tipo_mto() + "'"
-                + ", chk_activo='" + getChk_activo() + "'" + ", fe_crea_reg='" + getFe_crea_reg() + "'"
-                + ", fe_modi_reg='" + getFe_modi_reg() + "'" + ", cod_mod_usu='" + getCod_mod_usu() + "'" + "}";
+        return getDes_tipo_mto();
     }
 
 }

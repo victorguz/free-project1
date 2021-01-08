@@ -2,12 +2,14 @@ package com.free.project1.main.model.mantenimiento;
 
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -26,8 +28,13 @@ public class DetalleMantenimiento {
     @JoinColumn(name = "ID_MANTENIMIENTO")
     Mantenimiento mantenimiento;
 
-    @Column(name = "COD_ESTADO_MTO", nullable = false)
-    int cod_estado_mto;// NUMBER NOT NULL
+    // @JsonIgnore
+    @OneToOne
+    @JoinColumn(name = "COD_ESTADO_MTO", nullable = false)
+    EstadoMantenimiento estado;
+
+    // @Column(name = "COD_ESTADO_MTO", nullable = false)
+    // int cod_estado_mto;// NUMBER NOT NULL
 
     @Column(name = "DES_EMPRESA")
     String des_empresa;// VARCHAR(255)
@@ -156,12 +163,12 @@ public class DetalleMantenimiento {
         this.mantenimiento = mantenimiento;
     }
 
-    public int getCod_estado_mto() {
-        return this.cod_estado_mto;
+    public EstadoMantenimiento getEstado() {
+        return this.estado;
     }
 
-    public void setCod_estado_mto(int cod_estado_mto) {
-        this.cod_estado_mto = cod_estado_mto;
+    public void setEstado(EstadoMantenimiento estado) {
+        this.estado = estado;
     }
 
     public String getDes_empresa() {
@@ -454,28 +461,28 @@ public class DetalleMantenimiento {
 
     @Override
     public String toString() {
-        return "{" + " 'id_detalle_mto':'" + getId_detalle_mto() + "'" + ", 'cod_estado_mto':'" + getCod_estado_mto() + "'"
+        return "{" + " 'id_detalle_mto':'" + getId_detalle_mto() + "'" + ", 'estado':'" + getEstado() + "'"
                 + ", 'des_empresa':'" + getDes_empresa() + "'" + ", 'num_importe':'" + getNum_importe() + "'"
                 + ", 'fe_ini_contrato':'" + getFe_ini_contrato() + "'" + ", 'fe_fin_contrato':'" + getFe_fin_contrato()
                 + "'" + ", 'chk_prorroga':'" + getChk_prorroga() + "'" + ", 'fe_ini_prorroga':'" + getFe_ini_prorroga()
-                + "'" + ", 'fe_fin_prorroga':'" + getFe_fin_prorroga() + "'" + ", 'cod_expediente':'" + getCod_expediente()
-                + "'" + ", 'cod_contrato':'" + getCod_contrato() + "'" + ", 'chk_activo':'" + getChk_activo() + "'"
-                + ", 'fe_crea_reg':'" + getFe_crea_reg() + "'" + ", 'fe_modi_reg':'" + getFe_modi_reg() + "'"
-                + ", 'cod_mod_usu':'" + getCod_mod_usu() + "'" + ", 'cod_estadonuevoexp':'" + getCod_estadonuevoexp() + "'"
-                + ", 'añosprorroga':'" + getAñosprorroga() + "'" + ", 'fe_sol_adq':'" + getFe_sol_adq() + "'"
-                + ", 'fe_env_org_col':'" + getFe_env_org_col() + "'" + ", 'fe_recp_mem':'" + getFe_recp_mem() + "'"
-                + ", 'fe_env_val':'" + getFe_env_val() + "'" + ", 'fe_recp_val':'" + getFe_recp_val() + "'"
-                + ", 'fe_ultdia_valmem':'" + getFe_ultdia_valmem() + "'" + ", 'fe_mem_val':'" + getFe_mem_val() + "'"
-                + ", 'fe_tram_cotec':'" + getFe_tram_cotec() + "'" + ", 'fe_ultdia_ofertas':'" + getFe_ultdia_ofertas()
-                + "'" + ", 'fe_recp_ofertas':'" + getFe_recp_ofertas() + "'" + ", 'fe_aviso_jefes':'" + getFe_aviso_jefes()
-                + "'" + ", 'fe_aviso_ofertasvalidadas':'" + getFe_aviso_ofertasvalidadas() + "'"
-                + ", 'fe_respuesta_ofertas':'" + getFe_respuesta_ofertas() + "'" + ", 'fe_ult_diaexpdate':'"
-                + getFe_ult_diaexpdate() + "'" + ", 'fe_inimto_garantia_prevista':'" + getFe_inimto_garantia_prevista()
-                + "'" + ", 'fe_finmto_garantia_prevista':'" + getFe_finmto_garantia_prevista() + "'"
-                + ", 'fe_informevalidacion':'" + getFe_informevalidacion() + "'" + ", 'fe_adjudicacionformalizacion':'"
-                + getFe_adjudicacionformalizacion() + "'" + ", 'num_importe_contratacion':'"
-                + getNum_importe_contratacion() + "'" + ", 'cod_estado_rrhh':'" + getCod_estado_rrhh() + "'"
-                + ", 'fe_formalizacion':'" + getFe_formalizacion() + "'" + "}";
+                + "'" + ", 'fe_fin_prorroga':'" + getFe_fin_prorroga() + "'" + ", 'cod_expediente':'"
+                + getCod_expediente() + "'" + ", 'cod_contrato':'" + getCod_contrato() + "'" + ", 'chk_activo':'"
+                + getChk_activo() + "'" + ", 'fe_crea_reg':'" + getFe_crea_reg() + "'" + ", 'fe_modi_reg':'"
+                + getFe_modi_reg() + "'" + ", 'cod_mod_usu':'" + getCod_mod_usu() + "'" + ", 'cod_estadonuevoexp':'"
+                + getCod_estadonuevoexp() + "'" + ", 'añosprorroga':'" + getAñosprorroga() + "'" + ", 'fe_sol_adq':'"
+                + getFe_sol_adq() + "'" + ", 'fe_env_org_col':'" + getFe_env_org_col() + "'" + ", 'fe_recp_mem':'"
+                + getFe_recp_mem() + "'" + ", 'fe_env_val':'" + getFe_env_val() + "'" + ", 'fe_recp_val':'"
+                + getFe_recp_val() + "'" + ", 'fe_ultdia_valmem':'" + getFe_ultdia_valmem() + "'" + ", 'fe_mem_val':'"
+                + getFe_mem_val() + "'" + ", 'fe_tram_cotec':'" + getFe_tram_cotec() + "'" + ", 'fe_ultdia_ofertas':'"
+                + getFe_ultdia_ofertas() + "'" + ", 'fe_recp_ofertas':'" + getFe_recp_ofertas() + "'"
+                + ", 'fe_aviso_jefes':'" + getFe_aviso_jefes() + "'" + ", 'fe_aviso_ofertasvalidadas':'"
+                + getFe_aviso_ofertasvalidadas() + "'" + ", 'fe_respuesta_ofertas':'" + getFe_respuesta_ofertas() + "'"
+                + ", 'fe_ult_diaexpdate':'" + getFe_ult_diaexpdate() + "'" + ", 'fe_inimto_garantia_prevista':'"
+                + getFe_inimto_garantia_prevista() + "'" + ", 'fe_finmto_garantia_prevista':'"
+                + getFe_finmto_garantia_prevista() + "'" + ", 'fe_informevalidacion':'" + getFe_informevalidacion()
+                + "'" + ", 'fe_adjudicacionformalizacion':'" + getFe_adjudicacionformalizacion() + "'"
+                + ", 'num_importe_contratacion':'" + getNum_importe_contratacion() + "'" + ", 'cod_estado_rrhh':'"
+                + getCod_estado_rrhh() + "'" + ", 'fe_formalizacion':'" + getFe_formalizacion() + "'" + "}";
     }
 
 }

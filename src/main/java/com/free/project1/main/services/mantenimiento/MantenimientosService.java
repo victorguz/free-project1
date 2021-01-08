@@ -33,11 +33,12 @@ public class MantenimientosService {
         return imnt.findAll(limit).getContent();
     }
 
-    @GetMapping("/allDetails")
-    public List<Mantenimiento> allDetails(@RequestParam int id, @RequestParam int page, @RequestParam int perPage) {
-        var limit = PageRequest.of(page, perPage);
-        return imnt.findAll(limit).getContent();
-    }
+    // @GetMapping("/search")
+    // public List<Mantenimiento> search(@RequestParam String texto, @RequestParam int dpto, @RequestParam int unidad,
+    //         @RequestParam int page, @RequestParam int perPage) {
+    //     var limit = PageRequest.of(page, perPage);
+    //     return imnt.findAll(limit).getContent();
+    // }
 
     @PostMapping
     public void create(@RequestBody Mantenimiento maintenance) {

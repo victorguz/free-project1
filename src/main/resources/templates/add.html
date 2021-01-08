@@ -45,7 +45,7 @@
                 <div class="two fields">
                     <div class="field">
                         <label>Por departamento</label>
-                        <select class="ui dropdown search column_filter" data-column="2">
+                        <select class="ui dropdown column_filter" data-column="2">
                             <option value="">Seleccione un departamento</option>
                             <option value="-1" selected>Todos</option>
                             <option value="2">Departamento #2</option>
@@ -99,7 +99,7 @@
                 <input type="hidden" class="details-url" th:value="${details_url}">
 
                 <div class="datatable-container">
-                    <table class="ui celled table" style="width:100%" id="datatable"></table>
+                    <table class="ui selectable celled table" style="width:100%" id="datatable"></table>
                 </div>
 
             </div>
