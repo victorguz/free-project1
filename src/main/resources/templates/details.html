@@ -23,18 +23,23 @@
 <body>
     <div class="contenedor">
 
-        <div class="ui borderless main menu fixed">
-            <div class="ui text container">
+        <div class="ui segment fixed navbar">
+
+            <div class="ui secondary menu inverted">
                 <div class="header item">
                     <i class="ui icon settings"></i>
                     Nombre aplicación
-
                 </div>
-                <a th:href="@{/}" class="item google-drive-opener">Mantenimientos</a>
+                <a class="item google-drive-opener">
+                    Home
+                </a>
+                <a th:href="@{/}" class="item google-drive-opener">
+                    Mantenimientos
+                </a>
             </div>
         </div>
 
-        <div class="ui container" style="padding-top: 70px;">
+        <div class="ui container" style="padding-top: 10px;">
             <div class="flex-between">
                 <div>
                     <h1 class="ui header" th:text="'Mantenimiento #' + ${mnt.id_mantenimiento}"></h1>
@@ -71,92 +76,93 @@
             <br>
 
             <div class="ui form">
-                <div class="two fields">
-                    <div class="field">
-                        <label>Tipo</label>
-                        <select class="ui dropdown">
-                            <option th:each="tipo : ${tipos}" th:value="${tipo.id_tipo_mto}"
-                                th:text="${tipo.des_tipo_mto}" th:selected="${mnt.tipo.id_tipo_mto==tipo.id_tipo_mto}">
-                            </option>
-                        </select>
+                <div class="ui segment">
+                    <div class="two fields">
+                        <div class="field">
+                            <label>Tipo</label>
+                            <select class="ui dropdown">
+                                <option th:each="tipo : ${tipos}" th:value="${tipo.id_tipo_mto}"
+                                    th:text="${tipo.des_tipo_mto}"
+                                    th:selected="${mnt.tipo.id_tipo_mto==tipo.id_tipo_mto}">
+                                </option>
+                            </select>
+                        </div>
+                        <div class="field">
+                            <label>Procedimiento</label>
+                            <select class="ui dropdown">
+                                <option value="">Procedimiento</option>
+                                <option th:each="proc : ${procedimientos}" th:value="${proc.cod_procedencia}"
+                                    th:text="${proc.des_procedencia}"
+                                    th:selected="${mnt.procedimiento != null && mnt.procedimiento.cod_procedencia==proc.cod_procedencia}">
+                                </option>
+                            </select>
+                        </div>
+                        <div class="field">
+                            <label>Departamento</label>
+                            <select class="ui dropdown">
+                                <option value="">Departamento</option>
+                                <option th:each="dpto : ${dptos}" th:value="${dpto.id_unidad}"
+                                    th:text="${dpto.departamento}"
+                                    th:selected="${mnt.departamento != null && mnt.departamento.id_unidad==dpto.id_unidad}">
+                                </option>
+                            </select>
+
+                        </div>
+                        <div class="field">
+                            <label>Unidad</label>
+                            <select class="ui dropdown">
+                                <option value="">Unidad</option>
+                                <option th:each="unidad : ${unidades}" th:value="${unidad.id_unidad}"
+                                    th:text="${unidad.unidad}"
+                                    th:selected="${mnt.unidad != null && mnt.unidad.id_unidad==unidad.id_unidad}">
+                                </option>
+                            </select>
+                        </div>
                     </div>
-                    <div class="field">
-                        <label>Procedimiento</label>
-                        <select class="ui dropdown">
-                            <option value="">Procedimiento</option>
-                            <option value="0">Procedimiento #0</option>
-                            <option value="1">Procedimiento #1</option>
-                            <option value="2">Procedimiento #2</option>
-                            <option value="3">Procedimiento #3</option>
-                            <option value="4">Procedimiento #4</option>
-                        </select>
+
+                    <div class="two fields">
+                        <div class="field">
+                            <label>Solicitante:</label>
+                            <select class="ui dropdown">
+                                <option value="">Solicitante</option>
+                                <option value="0">Solicitante #0</option>
+                                <option value="1">Solicitante #1</option>
+                                <option value="2">Solicitante #2</option>
+                                <option value="3">Solicitante #3</option>
+                                <option value="4">Solicitante #4</option>
+                            </select>
+                        </div>
+                        <div class="field">
+                            <label>Palabra clave</label>
+                            <input type="text" placeholder="Palabra clave" th:value="${mnt.palabra_clave}">
+                        </div>
                     </div>
+
                     <div class="field">
-                        <label>Departamento</label>
-                        <select class="ui dropdown">
-                            <option value="">Departamento</option>
-                            <option value="2">Departamento #2</option>
-                            <option value="3">Departamento #3</option>
-                            <option value="4">Departamento #4</option>
-                            <option value="88">Departamento #88</option>
-                            <option value="93">Departamento #93</option>
-                        </select>
+                        <label>Descripción:</label>
+                        <textarea name="descripcion" id="descripcion" rows="3" maxlength="2000"
+                            placeholder="Descripción" th:text="${mnt.txt_descripcion}"></textarea>
                     </div>
+
                     <div class="field">
-                        <label>Unidad</label>
-                        <select class="ui dropdown">
-                            <option value="">Unidad</option>
-                            <option value="15">Unidad #15</option>
-                            <option value="88">Unidad #88</option>
-                            <option value="91">Unidad #91</option>
-                            <option value="93">Unidad #93</option>
-                            <option value="101">Unidad #101</option>
-                        </select>
+                        <label>Observaciones:</label>
+                        <textarea name="observaciones" id="observaciones" rows="5" maxlength="2000"
+                            placeholder="Observaciones" th:text="${mnt.txt_observaciones}"></textarea>
+                    </div>
+
+                    <div th:each="item: ${mnt.detalles}">
+                        <input type="hidden" class="input-detalles" th:value="${item.toString()}">
                     </div>
                 </div>
 
-                <div class="two fields">
-                    <div class="field">
-                        <label>Solicitante:</label>
-                        <select class="ui dropdown">
-                            <option value="">Solicitante</option>
-                            <option value="0">Solicitante #0</option>
-                            <option value="1">Solicitante #1</option>
-                            <option value="2">Solicitante #2</option>
-                            <option value="3">Solicitante #3</option>
-                            <option value="4">Solicitante #4</option>
-                        </select>
-                    </div>
-                    <div class="field">
-                        <label>Palabra clave</label>
-                        <input type="text" placeholder="Palabra clave" th:value="${mnt.palabra_clave}">
-                    </div>
-                </div>
-
-                <div class="field">
-                    <label>Descripción:</label>
-                    <textarea name="descripcion" id="descripcion" rows="3" maxlength="2000" placeholder="Descripción"
-                        th:text="${mnt.txt_descripcion}"></textarea>
-                </div>
-
-                <div class="field">
-                    <label>Observaciones:</label>
-                    <textarea name="observaciones" id="observaciones" rows="5" maxlength="2000"
-                        placeholder="Observaciones" th:text="${mnt.txt_observaciones}"></textarea>
-                </div>
-
-                <div th:each="item: ${mnt.detalles}">
-                    <input type="hidden" class="input-detalles" th:value="${item.toString()}">
-                </div>
-
-                <div class="datatable-container">
+                <div class="ui segment datatable-container">
 
                     <h3 class="ui header dividing">Detalles</h3>
 
                     <table class="ui selectable celled table" style="width:100%" id="details_datatable">
                     </table>
 
-                    <form class="ui modal modal-details" >
+                    <form class="ui modal modal-details">
                         <i class="close icon"></i>
                         <div class="header" modal-header>Detalles #{id}</div>
                         <div class="content ui form">

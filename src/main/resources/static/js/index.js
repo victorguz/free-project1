@@ -6,16 +6,35 @@ let perPage = 100;
 let total = 0;
 const columns = [
     { name: "Id", title: "Id", data: "id_mantenimiento" },
-    { name: "Tipo", title: "Tipo", data: "tipo.des_tipo_mto" },
-    { name: "Dpto", title: "Dpto", data: "cod_departamento" },
-    { name: "Unidad", title: "Unidad", data: "cod_unidad" },
-    { name: "Expediente", title: "Expediente", data: "cod_expediente" },
+    {
+        name: "Chk Activo", title: "Chk Activo",
+        render: function (undefined, filter, data, meta) {
+            return data.chk_activo ? "Si" : "No"
+        }
+    },
     { name: "Contrato", title: "Contrato", data: "cod_contrato" },
-    { name: "Descripción", title: "Descripción", data: "txt_descripcion" },
-    { name: "Observaciones", title: "Observaciones", data: "txt_observaciones" },
-    { name: "Palabra clave", title: "Palabra clave", data: "palabra_clave" },
-    { name: "Estado activo", title: "Estado activo", data: "chk_activo" },
-    { name: "Importe", title: "Importe", data: "num_importe" },
+    { name: "Expediente", title: "Expediente", data: "cod_expediente" },
+    { name: "Descripción", title: "Descripción", data: "txt_descripcion", width: '200px' },
+    { name: "Tipo", title: "Tipo", data: "tipo.des_tipo_mto" },
+    {
+        name: "Dpto", title: "Dpto",
+        render: function (undefined, filter, data, meta) {
+            return data.unidad && data.unidad.departamento ? data.unidad.departamento : ""
+        }
+    },
+    {
+        name: "Unidad", title: "Unidad",
+        render: function (undefined, filter, data, meta) {
+            return data.unidad && data.unidad.unidad ? data.unidad.unidad : ""
+        }
+    },
+    {
+        name: "Importe", title: "Importe",
+        render: function (undefined, filter, data, meta) {
+            return moneyFormat(data.num_importe)
+            // return data.num_importe
+        }
+    },
     {
         name: "Inicio Mnt.",
         title: "Inicio Mnt.",
@@ -38,13 +57,24 @@ const columns = [
             if (date) {
                 date = (date.includes("hace") ? "Vencido " : "Vence ") + date;
             }
-            return date;
+            return date ? date : 0;
+        }
+    },
+    { name: "Observaciones", title: "Observaciones", data: "txt_observaciones" },
+    { name: "Palabra clave", title: "Palabra clave", data: "palabra_clave" },
+    {
+        name: "Prorrogable",
+        title: "Prorrogable",
+        render: function (undefined, filter, data, meta) {
+            return data.chk_prorroga ? "Si" : "No";
         }
     },
     {
-        name: "Estado prorroga",
-        title: "Estado prorroga",
-        data: "chk_prorroga"
+        name: "Procedimiento",
+        title: "Procedimiento",
+        render: function (undefined, filter, data, meta) {
+            return data.procedimiento && data.procedimiento.des_procedencia ? data.procedimiento.des_procedencia : "";
+        }
     },
     {
         name: "Acciones",
@@ -57,6 +87,7 @@ const columns = [
         }
     },
 ];
+
 const buttons = [
     {
         text: 'Columnas',
@@ -79,10 +110,16 @@ const buttons = [
 
 ]
 const columnDefs = [
-    { targets: 0, width: '40px' },
-    { targets: [0, 6, 7, 15], visible: true },
-    { targets: '_all', visible: false }
+    // { targets: [4], width: '200px' },
+    { targets: [4], className: "td-width" },
+    { targets: [12, 13, 14, 15], visible: false },
+    { targets: [16], sortable: false }
 ]
+
+const fixedColumns = {
+    leftColumns: 1,
+    rightColumns: 1
+}
 
 let datatable = null;
 
@@ -113,7 +150,7 @@ function load() {
         url: getUrl(urlAll, { page: page, perPage: perPage }),
         success: function (data) {
             if (!datatable) {
-                datatable = setDataTable(data, columns, columnDefs, rowFunction, buttons)
+                datatable = setDataTable(data, columns, columnDefs, rowFunction, buttons, [0, "desc"], "datatable", fixedColumns)
             }
         }
     });

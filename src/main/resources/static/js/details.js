@@ -26,8 +26,18 @@ const columns = [
             return data.chk_prorroga == 1 ? "Sí" : "No"
         }
     },
-    { name: "Inicio prorroga", title: "Inicio prorroga", render: function (undefined, filter, data, meta) { return dateFormat(data.fe_ini_prorroga) } },
-    { name: "Fin prorroga", title: "Fin prorroga", render: function (undefined, filter, data, meta) { return dateFormat(data.fe_fin_prorroga) } },
+    {
+        name: "Inicio prorroga", title: "Inicio prorroga",
+        render: function (undefined, filter, data, meta) {
+            return dateFormat(data.fe_ini_prorroga)
+        }
+    },
+    {
+        name: "Fin prorroga", title: "Fin prorroga",
+        render: function (undefined, filter, data, meta) {
+            return dateFormat(data.fe_fin_prorroga)
+        }
+    },
     // { name: "No. Importe", title: "No. Importe", data: "num_importe" },
     // { name: "Estado activo", title: "Estado activo", data: "chk_activo" },
     // { name: "Cod estado nuevo expediente", title: "Cod estado nuevo expediente", data: "cod_estadonuevoexp" },
@@ -102,8 +112,7 @@ $(document).ready(function () {
             detail = JSON.parse(detail);
             for (const key in detail) {
                 if (Object.hasOwnProperty.call(detail, key)) {
-                    const element = detail[key];
-                    if (element == "null") {
+                    if (detail[key] === "null") {
                         detail[key] == null;
                     }
                 }

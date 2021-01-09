@@ -1,6 +1,6 @@
 
-function setDataTable(data, columns, columnDefs = [], actionWithRow = null,
-    buttons = [], order = [], elementId = "datatable") {
+function setDataTable(data, columns, columnDefs, actionWithRow = null,
+    buttons = [], order = [], elementId = "datatable", fixedColumns = null) {
 
     let table = $('#' + elementId).DataTable({
         data: data,
@@ -10,7 +10,8 @@ function setDataTable(data, columns, columnDefs = [], actionWithRow = null,
         buttons: buttons,
         pageLength: 10,
         scrollX: true,
-        order: order
+        order: order,
+        fixedColumns: fixedColumns
     });
     if (typeof actionWithRow === 'function') {
         $('#' + elementId + ' tbody').on('dblclick', 'tr', function (e) {

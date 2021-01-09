@@ -19,7 +19,23 @@
 <body>
     <div class="contenedor">
 
-        <div class="ui borderless main menu fixed">
+        <div class="ui segment fixed navbar">
+
+            <div class="ui secondary menu inverted">
+                <div class="header item">
+                    <i class="ui icon settings"></i>
+                    Nombre aplicación
+                </div>
+                <a class="item google-drive-opener">
+                    Home
+                </a>
+                <a th:href="@{/}" class="item google-drive-opener active">
+                    Mantenimientos
+                </a>
+            </div>
+        </div>
+
+        <!-- <div class="ui borderless main menu fixed">
             <div class="ui text container">
                 <div class="header item">
                     <i class="ui icon settings"></i>
@@ -27,14 +43,14 @@
                 </div>
                 <a th:href="@{/}" class="item google-drive-opener">Mantenimientos</a>
             </div>
-        </div>
+        </div> -->
 
-        <div class="ui container" style="padding-top: 70px;">
+        <div class="ui container" style="padding-top: 10px;">
             <div class="flex-between">
                 <div>
                     <h1 class="ui header">Mantenimientos</h1>
                 </div>
-                <div>
+                <!-- <div>
                     <select class="ui dropdown" select-quantity>
                         <option value="">Cantidad de resultados</option>
                         <option value="100" selected>100 Resultados</option>
@@ -47,107 +63,105 @@
                         <i class="ui icon plus"></i>
                         Nuevo
                     </a>
-                </div>
+                </div> -->
             </div>
 
             <br>
 
-            <div class="ui form">
-                <h4 class="ui header dividing">Flitros generales</h4>
-                <div class="two fields" style="margin-bottom: 0;">
-                    <div class="field">
-                        <label>Por texto</label>
-                        <input type="text" class="input column_filter" placeholder="Texto" data-column="-1"
-                            data-content="Búsqueda por texto en todas las columnas.">
-                    </div>
-                    <div class="field">
-                        <label>Por departamento</label>
-                        <select class="ui dropdown column_filter" data-column="2">
-                            <option value="">Seleccione un departamento</option>
-                            <option value="-1" selected>Todos</option>
-                            <option value="2">Departamento #2</option>
-                            <option value="3">Departamento #3</option>
-                            <option value="4">Departamento #4</option>
-                            <option value="88">Departamento #88</option>
-                            <option value="93">Departamento #93</option>
-                        </select>
-                    </div>
-                    <div class="field">
-                        <label>Por unidad</label>
-                        <select class="ui dropdown column_filter" data-column="3">
-                            <option value="">Seleccione una unidad</option>
-                            <option value="-1" selected>Todas</option>
-                            <option value="15">Unidad #15</option>
-                            <option value="88">Unidad #88</option>
-                            <option value="91">Unidad #91</option>
-                            <option value="93">Unidad #93</option>
-                            <option value="101">Unidad #101</option>
-                        </select>
-                    </div>
-                    <div class="field">
-                        <label for="fruit">Por estado:</label>
-                        <div class="inline fields" style=" height: 36px;">
-                            <div class="field">
-                                <div class="ui radio checkbox">
-                                    <input type="radio" name="status" tabindex="0" class="hidden column_filter"
-                                        data-column="9" value="1">
-                                    <label>Activos</label>
-                                </div>
-                            </div>
-                            <div class="field">
-                                <div class="ui radio checkbox">
-                                    <input type="radio" name="status" tabindex="0" class="hidden column_filter"
-                                        data-column="9" value="0">
-                                    <label>Inactivos</label>
-                                </div>
-                            </div>
-                            <div class="field">
-                                <div class="ui radio checkbox">
-                                    <input type="radio" name="status" checked="" tabindex="0"
-                                        class="hidden column_filter" data-column="9" value="-1">
-                                    <label>Todos</label>
-                                </div>
-                            </div>
+            <div class="ui form ">
+                <div class="ui segment">
+                    <h4 class="ui header dividing">Flitros generales</h4>
+                    <div class="two fields" style="margin-bottom: 0;">
+                        <div class="field">
+                            <label>Por texto</label>
+                            <input type="text" class="input column_filter" placeholder="Texto" data-column="-1"
+                                data-content="Búsqueda por texto en todas las columnas.">
                         </div>
-                    </div>
-                </div>
-                <div class="two fields">
-                    <div class="field">
-                        <label>Por expediente</label>
-                        <input type="text" class="input column_filter" placeholder="Expediente" data-column="4"
-                            data-content="Búsqueda en la columna 'expediente'">
-                    </div>
-                    <div class="field">
-                        <label>Por contrato</label>
-                        <input type="text" class="input column_filter" placeholder="Contrato" data-column="5"
-                            data-content="Búsqueda en la columna 'contrato'">
-                    </div>
-                    <div class="field">
-                        <label>Por palabra clave</label>
-                        <input type="text" class="input column_filter" placeholder="Palabra clave" data-column=""
-                            data-content="Búsqueda en la columna 'palabra clave'">
-                    </div>
-                    <div class="field">
-                        <label>&nbsp</label>
-                        <div class="ui buttons fluid">
-                            <button class="ui icon button" style="white-space: nowrap;" full-search-button data-content="Realiza una búsqueda directamente en la base de datos, 
-                                teniendo en cuenta todos los filtros seleccionados.">
-                                <i class="ui icon filter"></i>
-                                Búsqueda mejorada
-                            </button>
-                            <button class="ui button icon grey button-busqueda"
-                                data-content="Elimina los filtros y devuelve la consulta al estado inicial.">
-                                <i class="ui icon undo"></i>
-                            </button>
-                        </div>
-                    </div>
+                        <div class="field">
+                            <label>Por departamento</label>
+                            <select class="ui dropdown column_filter" data-column="6">
+                                <option value="">Departamento</option>
+                                <option th:each="dpto : ${dptos}" th:value="${dpto.departamento}"
+                                    th:text="${dpto.departamento}">
+                                </option>
+                            </select>
 
+                        </div>
+                        <div class="field">
+                            <label>Por unidad</label>
+                            <select class="ui dropdown column_filter" data-column="7">
+                                <option value="">Unidad</option>
+                                <option th:each="unidad : ${unidades}" th:value="${unidad.unidad}"
+                                    th:text="${unidad.unidad}">
+                                </option>
+                            </select>
+                        </div>
+                        <div class="field">
+                            <label for="fruit">Por estado:</label>
+                            <div class="inline fields" style=" height: 36px;">
+                                <div class="field">
+                                    <div class="ui radio checkbox">
+                                        <input type="radio" name="status" tabindex="0" class="hidden column_filter"
+                                            data-column="9" value="1">
+                                        <label>Activos</label>
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <div class="ui radio checkbox">
+                                        <input type="radio" name="status" tabindex="0" class="hidden column_filter"
+                                            data-column="9" value="0">
+                                        <label>Inactivos</label>
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <div class="ui radio checkbox">
+                                        <input type="radio" name="status" checked="" tabindex="0"
+                                            class="hidden column_filter" data-column="9" value="-1">
+                                        <label>Todos</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="two fields">
+                        <div class="field">
+                            <label>Por expediente</label>
+                            <input type="text" class="input column_filter" placeholder="Expediente" data-column="4"
+                                data-content="Búsqueda en la columna 'expediente'">
+                        </div>
+                        <div class="field">
+                            <label>Por contrato</label>
+                            <input type="text" class="input column_filter" placeholder="Contrato" data-column="5"
+                                data-content="Búsqueda en la columna 'contrato'">
+                        </div>
+                        <div class="field">
+                            <label>Por palabra clave</label>
+                            <input type="text" class="input column_filter" placeholder="Palabra clave" data-column=""
+                                data-content="Búsqueda en la columna 'palabra clave'">
+                        </div>
+                        <!-- <div class="field">
+                            <label>&nbsp</label>
+                            <div class="ui buttons fluid">
+                                <button class="ui icon button" style="white-space: nowrap;" full-search-button
+                                    data-content="Realiza una búsqueda directamente en la base de datos, 
+                                                    teniendo en cuenta todos los filtros seleccionados.">
+                                    <i class="ui icon filter"></i>
+                                    Búsqueda mejorada
+                                </button>
+                                <button class="ui button icon grey button-busqueda"
+                                    data-content="Elimina los filtros y devuelve la consulta al estado inicial.">
+                                    <i class="ui icon undo"></i>
+                                </button>
+                            </div>
+                        </div> -->
+
+                    </div>
                 </div>
 
                 <input type="hidden" class="all-url" th:value="${all_url}">
                 <input type="hidden" class="details-url" th:value="${details_url}">
 
-                <div class="datatable-container">
+                <div class="ui segment datatable-container">
                     <table class="ui selectable celled table" style="width:100%" id="datatable"></table>
                 </div>
 
@@ -183,6 +197,9 @@
     </script>
     <script type="text/javascript" language="javascript" th:src="@{/plugins/datatables/js/buttons.colVis.min.js}">
     </script>
+    <script type="text/javascript" language="javascript"
+        th:src="@{/plugins/datatables/js/dataTables.fixedColumns.min.js}">
+        </script>
     <script type="text/javascript" language="javascript" th:src="@{/js/helpers.js}">
     </script>
     <script type="text/javascript" language="javascript" th:src="@{/js/index.js}">

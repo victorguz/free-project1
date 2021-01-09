@@ -8,6 +8,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface IMantenimiento extends JpaRepository<Mantenimiento, Integer> {
 
-    // List<Mantenimiento> findAllBycod_departamento(String cod_departamento);
 
 }
