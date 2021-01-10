@@ -81,6 +81,7 @@
                             <label>Por departamento</label>
                             <select class="ui dropdown column_filter" data-column="6">
                                 <option value="">Departamento</option>
+                                <option value="-1" selected>Todos</option>
                                 <option th:each="dpto : ${dptos}" th:value="${dpto.departamento}"
                                     th:text="${dpto.departamento}">
                                 </option>
@@ -91,6 +92,7 @@
                             <label>Por unidad</label>
                             <select class="ui dropdown column_filter" data-column="7">
                                 <option value="">Unidad</option>
+                                <option value="-1" selected>Todas</option>
                                 <option th:each="unidad : ${unidades}" th:value="${unidad.unidad}"
                                     th:text="${unidad.unidad}">
                                 </option>
