@@ -7,6 +7,8 @@ import com.free.project1.main.model.mantenimiento.Mantenimiento;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.Sort.Direction;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -29,16 +31,22 @@ public class MantenimientosService {
 
     @GetMapping("/all")
     public List<Mantenimiento> all(@RequestParam int page, @RequestParam int perPage) {
-        var limit = PageRequest.of(page, perPage);
+        var limit = PageRequest.of(page, perPage, Sort.by(Direction.DESC, "id"));
         return imnt.findAll(limit).getContent();
+        // return imnt.findAllOrderById(perPage);
     }
 
-    // @GetMapping("/search")
-    // public List<Mantenimiento> search(@RequestParam String texto, @RequestParam int dpto, @RequestParam int unidad,
-    //         @RequestParam int page, @RequestParam int perPage) {
-    //     var limit = PageRequest.of(page, perPage);
-    //     return imnt.findAll(limit).getContent();
-    // }
+    @GetMapping("/total")
+    public Long total() {
+        return imnt.count();
+        // return imnt.findAllOrderById(perPage);
+    }
+
+    @GetMapping("/search")
+    public List<Mantenimiento> search() {
+        return imnt.findAll();
+        // return imnt.findAllOrderById(perPage);
+    }
 
     @PostMapping
     public void create(@RequestBody Mantenimiento maintenance) {

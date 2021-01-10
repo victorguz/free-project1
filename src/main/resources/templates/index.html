@@ -50,20 +50,12 @@
                 <div>
                     <h1 class="ui header">Mantenimientos</h1>
                 </div>
-                <!-- <div>
-                    <select class="ui dropdown" select-quantity>
-                        <option value="">Cantidad de resultados</option>
-                        <option value="100" selected>100 Resultados</option>
-                        <option value="300">300 Resultados</option>
-                        <option value="500">500 Resultados</option>
-                        <option value="1000">1000 Resultados</option>
-                    </select>
-
+                <div>
                     <a th:href="@{${add_url}}" class="ui button green icon">
                         <i class="ui icon plus"></i>
                         Nuevo
                     </a>
-                </div> -->
+                </div>
             </div>
 
             <br>
@@ -104,21 +96,21 @@
                                 <div class="field">
                                     <div class="ui radio checkbox">
                                         <input type="radio" name="status" tabindex="0" class="hidden column_filter"
-                                            data-column="9" value="1">
+                                            data-column="1" value="Si">
                                         <label>Activos</label>
                                     </div>
                                 </div>
                                 <div class="field">
                                     <div class="ui radio checkbox">
                                         <input type="radio" name="status" tabindex="0" class="hidden column_filter"
-                                            data-column="9" value="0">
+                                            data-column="1" value="No">
                                         <label>Inactivos</label>
                                     </div>
                                 </div>
                                 <div class="field">
                                     <div class="ui radio checkbox">
                                         <input type="radio" name="status" checked="" tabindex="0"
-                                            class="hidden column_filter" data-column="9" value="-1">
+                                            class="hidden column_filter" data-column="1" value="-1">
                                         <label>Todos</label>
                                     </div>
                                 </div>
@@ -126,16 +118,19 @@
                         </div>
                     </div>
                     <div class="two fields">
-                        <div class="field">
-                            <label>Por expediente</label>
-                            <input type="text" class="input column_filter" placeholder="Expediente" data-column="4"
-                                data-content="Búsqueda en la columna 'expediente'">
-                        </div>
+
                         <div class="field">
                             <label>Por contrato</label>
-                            <input type="text" class="input column_filter" placeholder="Contrato" data-column="5"
+                            <input type="text" class="input column_filter" placeholder="Contrato" data-column="2"
                                 data-content="Búsqueda en la columna 'contrato'">
                         </div>
+
+                        <div class="field">
+                            <label>Por expediente</label>
+                            <input type="text" class="input column_filter" placeholder="Expediente" data-column="3"
+                                data-content="Búsqueda en la columna 'expediente'">
+                        </div>
+
                         <div class="field">
                             <label>Por palabra clave</label>
                             <input type="text" class="input column_filter" placeholder="Palabra clave" data-column=""
@@ -161,10 +156,14 @@
                 </div>
 
                 <input type="hidden" class="all-url" th:value="${all_url}">
+                <input type="hidden" class="total-url" th:value="${total_url}">
                 <input type="hidden" class="details-url" th:value="${details_url}">
 
                 <div class="ui segment datatable-container">
                     <table class="ui selectable celled table" style="width:100%" id="datatable"></table>
+                    <br>
+                    <button class="ui button fluid" loadMoreButton data-content="+ 1000"
+                        data-position="top center">Cargar mas registros</button>
                 </div>
 
             </div>

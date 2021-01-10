@@ -12,13 +12,12 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
-
 @Entity(name = "MANTENIMIENTO")
 public class Mantenimiento {
-    
+
     @Id
     @Column(name = "ID_MANTENIMIENTO")
-    int id_mantenimiento;
+    int id;
 
     @OneToOne
     @JoinColumn(name = "COD_TIPO_MTO", nullable = false)
@@ -30,11 +29,9 @@ public class Mantenimiento {
     @Column(name = "COD_CONTRATO", length = 25)
     String cod_contrato;
 
-    // @Column(name = "TIPO_PROCEDIMIENTO_ADJUDICADO")
-    // String tipo_procedimiento_adjudicado;
     @OneToOne
     @JoinColumn(name = "TIPO_PROCEDIMIENTO_ADJUDICADO", nullable = true)
-    ProcedenciaInversion procedimiento;
+    TipoProcedimientoAdjudicado procedimiento;
 
     @OneToOne
     @JoinColumn(name = "COD_DEPARTAMENTO", nullable = true)
@@ -101,43 +98,12 @@ public class Mantenimiento {
     public Mantenimiento() {
     }
 
-    public Mantenimiento(int id_mantenimiento, TipoMantenimiento tipo, String cod_expediente, String cod_contrato,
-            ProcedenciaInversion procedimiento, Departamento departamento, Unidad unidad, String cod_responsable,
-            String txt_descripcion, String des_empresa, String num_importe, Date fe_ini_contrato, Date fe_fin_contrato,
-            Character chk_prorroga, Date fe_ini_prorroga, Date fe_fin_prorroga, String txt_observaciones,
-            Character chk_activo, Date fe_crea_reg, Date fe_modi_reg, String cod_mod_usu, String palabra_clave,
-            List<DetalleMantenimiento> detalles) {
-        this.id_mantenimiento = id_mantenimiento;
-        this.tipo = tipo;
-        this.cod_expediente = cod_expediente;
-        this.cod_contrato = cod_contrato;
-        this.procedimiento = procedimiento;
-        this.departamento = departamento;
-        this.unidad = unidad;
-        this.cod_responsable = cod_responsable;
-        this.txt_descripcion = txt_descripcion;
-        this.des_empresa = des_empresa;
-        this.num_importe = num_importe;
-        this.fe_ini_contrato = fe_ini_contrato;
-        this.fe_fin_contrato = fe_fin_contrato;
-        this.chk_prorroga = chk_prorroga;
-        this.fe_ini_prorroga = fe_ini_prorroga;
-        this.fe_fin_prorroga = fe_fin_prorroga;
-        this.txt_observaciones = txt_observaciones;
-        this.chk_activo = chk_activo;
-        this.fe_crea_reg = fe_crea_reg;
-        this.fe_modi_reg = fe_modi_reg;
-        this.cod_mod_usu = cod_mod_usu;
-        this.palabra_clave = palabra_clave;
-        this.detalles = detalles;
+    public int getId() {
+        return this.id;
     }
 
-    public int getId_mantenimiento() {
-        return this.id_mantenimiento;
-    }
-
-    public void setId_mantenimiento(int id_mantenimiento) {
-        this.id_mantenimiento = id_mantenimiento;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public TipoMantenimiento getTipo() {
@@ -164,11 +130,11 @@ public class Mantenimiento {
         this.cod_contrato = cod_contrato;
     }
 
-    public ProcedenciaInversion getProcedimiento() {
+    public TipoProcedimientoAdjudicado getProcedimiento() {
         return this.procedimiento;
     }
 
-    public void setProcedimiento(ProcedenciaInversion procedimiento) {
+    public void setProcedimiento(TipoProcedimientoAdjudicado procedimiento) {
         this.procedimiento = procedimiento;
     }
 
@@ -318,12 +284,12 @@ public class Mantenimiento {
 
     @Override
     public String toString() {
-        return "{" + " 'id_mantenimiento':'" + getId_mantenimiento() + "'" + ", 'tipo':'" + getTipo() + "'"
-                + ", 'cod_expediente':'" + getCod_expediente() + "'" + ", 'cod_contrato':'" + getCod_contrato() + "'"
-                + ", 'procedimiento':'" + getProcedimiento() + "'" + ", 'departamento':'" + getDepartamento() + "'"
-                + ", 'unidad':'" + getUnidad() + "'" + ", 'cod_responsable':'" + getCod_responsable() + "'"
-                + ", 'txt_descripcion':'" + getTxt_descripcion() + "'" + ", 'des_empresa':'" + getDes_empresa() + "'"
-                + ", 'num_importe':'" + getNum_importe() + "'" + ", 'fe_ini_contrato':'" + getFe_ini_contrato() + "'"
+        return "{" + " 'id':'" + getId() + "'" + ", 'tipo':'" + getTipo() + "'" + ", 'cod_expediente':'"
+                + getCod_expediente() + "'" + ", 'cod_contrato':'" + getCod_contrato() + "'" + ", 'procedimiento':'"
+                + getProcedimiento() + "'" + ", 'departamento':'" + getDepartamento() + "'" + ", 'unidad':'"
+                + getUnidad() + "'" + ", 'cod_responsable':'" + getCod_responsable() + "'" + ", 'txt_descripcion':'"
+                + getTxt_descripcion() + "'" + ", 'des_empresa':'" + getDes_empresa() + "'" + ", 'num_importe':'"
+                + getNum_importe() + "'" + ", 'fe_ini_contrato':'" + getFe_ini_contrato() + "'"
                 + ", 'fe_fin_contrato':'" + getFe_fin_contrato() + "'" + ", 'chk_prorroga':'" + getChk_prorroga() + "'"
                 + ", 'fe_ini_prorroga':'" + getFe_ini_prorroga() + "'" + ", 'fe_fin_prorroga':'" + getFe_fin_prorroga()
                 + "'" + ", 'txt_observaciones':'" + getTxt_observaciones() + "'" + ", 'chk_activo':'" + getChk_activo()

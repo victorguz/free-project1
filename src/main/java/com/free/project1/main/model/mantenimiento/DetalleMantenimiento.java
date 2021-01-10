@@ -20,21 +20,15 @@ public class DetalleMantenimiento {
     @Column(name = "ID_DETALLE_MTO", nullable = false)
     int id_detalle_mto;// NUMBER NOT NULL
 
-    // @Column(name = "ID_MANTENIMIENTO", nullable = false)
-    // int id_mantenimiento;// NUMBER NOT NULL
 
     @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "ID_MANTENIMIENTO")
     Mantenimiento mantenimiento;
 
-    // @JsonIgnore
     @OneToOne
     @JoinColumn(name = "COD_ESTADO_MTO", nullable = false)
     EstadoMantenimiento estado;
-
-    // @Column(name = "COD_ESTADO_MTO", nullable = false)
-    // int cod_estado_mto;// NUMBER NOT NULL
 
     @Column(name = "DES_EMPRESA")
     String des_empresa;// VARCHAR(255)

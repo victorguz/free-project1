@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-    <title th:text="'Mantenimiento #' + ${mnt.id_mantenimiento}"></title>
+    <title th:text="'Mantenimiento #' + ${mnt.id}"></title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <base th:href="${#httpServletRequest.requestURI}" class="base-url">
     <link rel="stylesheet" type="text/css" th:href="@{/plugins/datatables/css/dataTables.semanticui.min.css}">
@@ -42,14 +42,14 @@
         <div class="ui container" style="padding-top: 10px;">
             <div class="flex-between">
                 <div>
-                    <h1 class="ui header" th:text="'Mantenimiento #' + ${mnt.id_mantenimiento}"></h1>
+                    <h1 class="ui header" th:text="'Mantenimiento #' + ${mnt.id}"></h1>
                 </div>
                 <div>
                     <!-- <a th:href="@{${add_url}}" class="ui button green icon">
                         <i class="ui icon plus"></i>
                         Nuevo
                     </a> -->
-                    <a class="ui button blue icon" button-save-mnt>
+                    <a class="ui button blue icon disabled" button-save-mnt>
                         <i class="edit outline icon"></i>
                         Guardar cambios
                     </a>
@@ -62,7 +62,7 @@
                             <p>¿Seguro que quieres guardar estos cambios?</p>
                         </div>
                         <div class="actions">
-                            <div class="ui primary approve icon button">
+                            <div class="ui primary approve icon button disabled">
                                 <i class="ui icon save"></i>
                                 Guardar cambios
                             </div>
@@ -91,9 +91,9 @@
                             <label>Procedimiento</label>
                             <select class="ui dropdown">
                                 <option value="">Procedimiento</option>
-                                <option th:each="proc : ${procedimientos}" th:value="${proc.cod_procedencia}"
-                                    th:text="${proc.des_procedencia}"
-                                    th:selected="${mnt.procedimiento != null && mnt.procedimiento.cod_procedencia==proc.cod_procedencia}">
+                                <option th:each="proc : ${procedimientos}" th:value="${proc.id_proc_adj}"
+                                    th:text="${proc.des_proc_adj}"
+                                    th:selected="${mnt.procedimiento != null && mnt.procedimiento.id_proc_adj==proc.id_proc_adj}">
                                 </option>
                             </select>
                         </div>
@@ -157,8 +157,23 @@
 
                 <div class="ui segment datatable-container">
 
-                    <h3 class="ui header dividing">Detalles</h3>
+                    <div class="flex-between">
+                        <div>
+                            <h3 class="ui header">Detalles</h3>
+                        </div>
+                        <div>
+                            <!-- <a th:href="@{${add_url}}" class="ui button green icon">
+                                            <i class="ui icon plus"></i>
+                                            Nuevo
+                                        </a> -->
+                            <a class="ui button green icon disabled">
+                                <i class="ui icon plus"></i>
+                                Añadir nuevo detalle
+                            </a>
 
+                        </div>
+                    </div>
+                    <br>
                     <table class="ui selectable celled table" style="width:100%" id="details_datatable">
                     </table>
 
@@ -364,7 +379,7 @@
                             </div>
                         </div>
                         <div class="actions">
-                            <div class="ui primary approve button">
+                            <div class="ui primary approve button disabled">
                                 <i class="save icon"></i>
                                 Guardar cambios
                             </div>

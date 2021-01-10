@@ -1,13 +1,9 @@
 package com.free.project1.main.controller.mantenimiento;
 
-import com.free.project1.main.interfaces.mantenimiento.ICicloMantenimiento;
 import com.free.project1.main.interfaces.mantenimiento.IDepartamento;
-import com.free.project1.main.interfaces.mantenimiento.IDetalleMantenimiento;
-import com.free.project1.main.interfaces.mantenimiento.IEstadoMantenimiento;
 import com.free.project1.main.interfaces.mantenimiento.IMantenimiento;
-import com.free.project1.main.interfaces.mantenimiento.IProcedenciaInversion;
-import com.free.project1.main.interfaces.mantenimiento.IRequiereMantenimiento;
 import com.free.project1.main.interfaces.mantenimiento.ITipoMantenimiento;
+import com.free.project1.main.interfaces.mantenimiento.ITipoProcedimientoAdjudicado;
 import com.free.project1.main.interfaces.mantenimiento.IUnidad;
 
 import org.slf4j.Logger;
@@ -16,7 +12,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -36,7 +31,7 @@ public class MantenimientosController {
     private IUnidad _unidades;
 
     @Autowired
-    private IProcedenciaInversion _procedimientos;
+    private ITipoProcedimientoAdjudicado _procedimientos;
 
     Logger LOG = LoggerFactory.getLogger(MantenimientosController.class);
 
@@ -48,6 +43,7 @@ public class MantenimientosController {
         model.addAttribute("search_url", "/search");
         model.addAttribute("add_url", "/add");
         model.addAttribute("all_url", "/api/maintenances/all");
+        model.addAttribute("total_url", "/api/maintenances/total");
 
         return "index";
     }
@@ -57,16 +53,22 @@ public class MantenimientosController {
         model.addAttribute("dptos", _dptos.findAllByUnidad("NULL"));
         model.addAttribute("unidades", _unidades.buscarUnidades());
         model.addAttribute("procedimientos", _procedimientos.findAll());
+        model.addAttribute("tipos", _tipo_mnt.findAll());
         model.addAttribute("update_url", "/update");
         model.addAttribute("add_url", "/add");
         model.addAttribute("mnt", _mnt.findById(id).get());
-        model.addAttribute("tipos", _tipo_mnt.findAll());
         return "details";
     }
 
-    @PostMapping("/add")
+    @GetMapping("/add")
     public String add(Model model) {
-        return "update";
+        model.addAttribute("dptos", _dptos.findAllByUnidad("NULL"));
+        model.addAttribute("unidades", _unidades.buscarUnidades());
+        model.addAttribute("procedimientos", _procedimientos.findAll());
+        model.addAttribute("tipos", _tipo_mnt.findAll());
+        model.addAttribute("update_url", "/update");
+        model.addAttribute("add_url", "/add");
+        return "add";
     }
 
     @PutMapping("/update")

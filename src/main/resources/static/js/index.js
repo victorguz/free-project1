@@ -1,15 +1,17 @@
 const urlAll = document.querySelector(".all-url").value;
+const urlTotal = document.querySelector(".total-url").value;
 // const urlSearch = document.querySelector(".all-url").value;
 const urlDetails = document.querySelector(".details-url").value;
 let page = 0;
-let perPage = 100;
-let total = 0;
+const perPage = 100000;
+let total;
+const pageLength = 5;
 const columns = [
-    { name: "Id", title: "Id", data: "id_mantenimiento" },
+    { name: "Id", title: "Id", data: "id" },
     {
         name: "Chk Activo", title: "Chk Activo",
         render: function (undefined, filter, data, meta) {
-            return data.chk_activo ? "Si" : "No"
+            return data.chk_activo == 1 ? "Si" : "No"
         }
     },
     { name: "Contrato", title: "Contrato", data: "cod_contrato" },
@@ -73,7 +75,7 @@ const columns = [
         name: "Procedimiento",
         title: "Procedimiento",
         render: function (undefined, filter, data, meta) {
-            return data.procedimiento && data.procedimiento.des_procedencia ? data.procedimiento.des_procedencia : "";
+            return data.procedimiento && data.procedimiento.des_proc_adj ? data.procedimiento.des_proc_adj : "";
         }
     },
     {
@@ -81,7 +83,7 @@ const columns = [
         title: "Acciones",
         render: function (undefined, filter, data, meta) {
             return `
-            <a href="${getUrl(urlDetails, { id: data.id_mantenimiento })}" class="ui button icon">
+            <a href="${getUrl(urlDetails, { id: data.id })}" class="ui button icon">
                 <i class="ui icon eye"></i>
             </a>`;
         }
@@ -112,7 +114,7 @@ const buttons = [
 const columnDefs = [
     // { targets: [4], width: '200px' },
     { targets: [4], className: "td-width" },
-    { targets: [12, 13, 14, 15], visible: false },
+    { targets: [1, 12, 13, 14, 15], visible: false },
     { targets: [16], sortable: false }
 ]
 
@@ -124,16 +126,27 @@ const fixedColumns = {
 let datatable = null;
 
 $(document).ready(function () {
-
+    $.ajax({
+        url: getUrl(urlTotal),
+        success: function (data) {
+            total = data
+        }
+    });
     load();
 
-    $("[select-quantity]").on('change', function () {
-        // page++;
-        perPage = $(this).val();
-        console.log(page, perPage)
-        load()
-    })
+    let loadMoreButton = document.querySelector("[loadMoreButton]");
+    loadMoreButton.addEventListener("click", function (e) {
+        e.preventDefault();
+        page++;
+        if (((page + 1) * perPage) < total || datatable.rows().count() < total) {
+            load()
+        } else {
+            loadMoreButton.textContent = "No hay mas registros";
+            loadMoreButton.setAttribute("disabled", true)
+        }
 
+        
+    })
 
     $('.ui.dropdown').dropdown()
     $('.ui.checkbox').checkbox()
@@ -141,7 +154,6 @@ $(document).ready(function () {
 });
 
 const rowFunction = function (data) {
-    // console.log(data)
     // window.location.href = getUrl(urlDetails, { id: data.id_mantenimiento })
 }
 
@@ -150,7 +162,11 @@ function load() {
         url: getUrl(urlAll, { page: page, perPage: perPage }),
         success: function (data) {
             if (!datatable) {
-                datatable = setDataTable(data, columns, columnDefs, rowFunction, buttons, [0, "desc"], "datatable", fixedColumns)
+                datatable = setDataTable(data, columns, columnDefs, rowFunction, buttons, [0, "desc"], "datatable", fixedColumns, pageLength)
+            } else {
+                data.forEach(element => {
+                    datatable.row.add(element).draw()
+                });
             }
         }
     });

@@ -1,18 +1,22 @@
 
+let table;
 function setDataTable(data, columns, columnDefs, actionWithRow = null,
-    buttons = [], order = [], elementId = "datatable", fixedColumns = null) {
-
-    let table = $('#' + elementId).DataTable({
+    buttons = [], order = [], elementId = "datatable", fixedColumns = null, pageLength = 5) {
+    table = $('#' + elementId).DataTable({
+        processing: true,
         data: data,
         columns: columns,
         columnDefs: columnDefs,
         lengthChange: false,
         buttons: buttons,
-        pageLength: 10,
+        pageLength: pageLength,
+        scrollY: true,
         scrollX: true,
         order: order,
         fixedColumns: fixedColumns
     });
+
+
     if (typeof actionWithRow === 'function') {
         $('#' + elementId + ' tbody').on('dblclick', 'tr', function (e) {
             e.preventDefault();
@@ -34,7 +38,6 @@ function setDataTable(data, columns, columnDefs, actionWithRow = null,
     function searchOnColumn(column, value) {
         if (column != null && column != undefined && column != -1 && column != "") {
             if (value != null && value != undefined && value != -1 && value != "") {
-                console.log(column, value)
                 table.columns(column).search(`^${value}$`, true, false).draw()
             } else {
                 table.columns(column).search("").draw()
@@ -49,19 +52,15 @@ function setDataTable(data, columns, columnDefs, actionWithRow = null,
     }
 
     //Los elementos con el parámetro data-column son quienes realizan búsquedas
-    $("[data-column]").on('keyup change clear input click', function () {
+    $("[data-column]").on('change click', function () {
         searchOnColumn($(this).attr("data-column"), $(this).val())
     })
-
-    // $(".column_filter select").on('change', function () {
-    //     searchOnColumn($(this).attr("data-column"), $(this).val())
-    // })
-    // $(".input.column_filter").on('keyup change clear input', function () {
-    //     searchOnColumn($(this).attr("data-column"), $(this).val(), true)
-    // })
-    // $(".hidden.column_filter").on('change click', function () {
-    //     searchOnColumn($(this).attr("data-column"), $(this).val())
-    // })
+    $("input .column_filter").on('keyup clear', function (e) {
+        if (e.key === 'Enter' || e.keyCode === 13) {
+            searchOnColumn($(this).attr("data-column"), $(this).val())
+            // Do something
+        }
+    })
 
     return table;
 }
@@ -304,6 +303,7 @@ function timeAgo(date) {
         }
 
         const DATE_UNITS = {
+            year: 31536000,
             month: 2629800,
             day: 86400,
             hour: 3600,
@@ -363,5 +363,6 @@ function getUrl(url, getData) {
     } else {
         completeUrl = base + url + dataUrl
     }
+
     return completeUrl;
 }

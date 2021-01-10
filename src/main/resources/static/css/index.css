@@ -29,6 +29,24 @@
      min-width: 200px !important;
  }
 
+ .sorting,
+ .sorting_desc,
+ .sorting_asc,
+ .sorting_disabled {
+     background-color: rgb(0, 128, 128) !important;
+     color: #e6e6e6 !important;
+     /* border: none ; */
+ }
+
+ .dataTables_paginate {
+     display: flex;
+     align-items: center;
+     justify-content: flex-end;
+     flex-flow: wrap;
+     gap: 10px;
+ }
+
+
  .flex-between {
      display: flex !important;
      flex-direction: row;
