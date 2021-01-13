@@ -2,6 +2,7 @@ package com.free.project1.main.controller.mantenimiento;
 
 import com.free.project1.main.interfaces.mantenimiento.IDepartamento;
 import com.free.project1.main.interfaces.mantenimiento.IMantenimiento;
+import com.free.project1.main.interfaces.mantenimiento.IPersonalNew;
 import com.free.project1.main.interfaces.mantenimiento.ITipoMantenimiento;
 import com.free.project1.main.interfaces.mantenimiento.ITipoProcedimientoAdjudicado;
 import com.free.project1.main.interfaces.mantenimiento.IUnidad;
@@ -33,6 +34,9 @@ public class MantenimientosController {
     @Autowired
     private ITipoProcedimientoAdjudicado _procedimientos;
 
+    @Autowired
+    private IPersonalNew _personalnew;
+
     Logger LOG = LoggerFactory.getLogger(MantenimientosController.class);
 
     @GetMapping("/")
@@ -54,6 +58,7 @@ public class MantenimientosController {
         model.addAttribute("unidades", _unidades.buscarUnidades());
         model.addAttribute("procedimientos", _procedimientos.findAll());
         model.addAttribute("tipos", _tipo_mnt.findAll());
+        model.addAttribute("solicitantes", _personalnew.findAll());
         model.addAttribute("update_url", "/update");
         model.addAttribute("add_url", "/add");
         model.addAttribute("mnt", _mnt.findById(id).get());

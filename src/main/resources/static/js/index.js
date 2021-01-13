@@ -9,15 +9,35 @@ const pageLength = 5;
 const columns = [
     { name: "Id", title: "Id", data: "id" },
     {
-        name: "Chk Activo", title: "Chk Activo",
+        name: "Estado", title: "Estado",
         render: function (undefined, filter, data, meta) {
-            return data.chk_activo == 1 ? "Si" : "No"
+            let lastEstado = "";
+            let lastId = 0;
+            data.detalles.forEach(detalle => {
+                if (detalle.id_detalle_mto >= lastId) {
+                    lastId = detalle.id_detalle_mto;
+                    lastEstado = detalle.estado ? detalle.estado.des_estado : ""
+                }
+            });
+            return lastEstado
         }
     },
     { name: "Contrato", title: "Contrato", data: "cod_contrato" },
     { name: "Expediente", title: "Expediente", data: "cod_expediente" },
-    { name: "Descripción", title: "Descripción", data: "txt_descripcion", width: '200px' },
-    { name: "Tipo", title: "Tipo", data: "tipo.des_tipo_mto" },
+    { name: "Descripción", title: "Descripción", data: "txt_descripcion" },
+    {
+        name: "Unidad de seguimiento y ejec Cxto", title: "Unidad de seguimiento y ejec Cxto",
+        data: "txt_descripcion",
+        render: function (undefined, filter, data, meta) {
+            return data.unidad_solicitante_aux && data.unidad_solicitante_aux ? data.unidad_solicitante_aux : ""
+        }
+    },
+    {
+        name: "Tipo", title: "Tipo",
+        render: function (undefined, filter, data, meta) {
+            return data.tipo && data.tipo.des_tipo_mto ? data.tipo.des_tipo_mto : ""
+        }
+    },
     {
         name: "Dpto", title: "Dpto",
         render: function (undefined, filter, data, meta) {
@@ -114,7 +134,7 @@ const buttons = [
 const columnDefs = [
     // { targets: [4], width: '200px' },
     { targets: [4], className: "td-width" },
-    { targets: [1, 12, 13, 14, 15], visible: false },
+    { targets: [12, 13, 14, 15], visible: false },
     { targets: [16], sortable: false }
 ]
 
@@ -145,7 +165,7 @@ $(document).ready(function () {
             loadMoreButton.setAttribute("disabled", true)
         }
 
-        
+
     })
 
     $('.ui.dropdown').dropdown()
@@ -171,5 +191,4 @@ function load() {
         }
     });
 }
-
 

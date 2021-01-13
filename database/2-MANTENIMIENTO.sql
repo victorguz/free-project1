@@ -1201,3 +1201,4 @@ Insert into GOYA.MANTENIMIENTO
     2, 58, 8, 'Suministro de nodos adicionales para la ampliacion de la capacidad de computo de la plataforma VBlock3 de la Gerencia de Informatica de la Seguridad Social.', 
     '(Proviene de inversion con ID: 352)', '1', TO_DATE('04/13/2020 10:20:55', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('04/16/2020 08:36:32', 'MM/DD/YYYY HH24:MI:SS'), '99GU7196', ' VBlock3');
 COMMIT;
+

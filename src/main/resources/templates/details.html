@@ -125,11 +125,10 @@
                             <label>Solicitante:</label>
                             <select class="ui dropdown">
                                 <option value="">Solicitante</option>
-                                <option value="0">Solicitante #0</option>
-                                <option value="1">Solicitante #1</option>
-                                <option value="2">Solicitante #2</option>
-                                <option value="3">Solicitante #3</option>
-                                <option value="4">Solicitante #4</option>
+                                <option th:each="solicitant : ${solicitantes}" th:value="${solicitant.id_personal}"
+                                    th:text="${solicitant.des_nombre} + ${solicitant.des_apellidos}"
+                                    th:selected="${(mnt.solicitante != null && mnt.solicitante.id_personal==solicitant.id_personal)||(mnt.solicitante2 != null && mnt.solicitante2.id_personal==solicitant.id_personal)}">
+                                </option>
                             </select>
                         </div>
                         <div class="field">

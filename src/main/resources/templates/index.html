@@ -71,7 +71,7 @@
                         </div>
                         <div class="field">
                             <label>Por departamento</label>
-                            <select class="ui dropdown column_filter" data-column="6">
+                            <select class="ui dropdown column_filter" data-column="7">
                                 <option value="">Departamento</option>
                                 <option value="-1" selected>Todos</option>
                                 <option th:each="dpto : ${dptos}" th:value="${dpto.departamento}"
@@ -82,7 +82,7 @@
                         </div>
                         <div class="field">
                             <label>Por unidad</label>
-                            <select class="ui dropdown column_filter" data-column="7">
+                            <select class="ui dropdown column_filter" data-column="8">
                                 <option value="">Unidad</option>
                                 <option value="-1" selected>Todas</option>
                                 <option th:each="unidad : ${unidades}" th:value="${unidad.unidad}"
@@ -96,14 +96,15 @@
                                 <div class="field">
                                     <div class="ui radio checkbox">
                                         <input type="radio" name="status" tabindex="0" class="hidden column_filter"
-                                            data-column="1" value="Si">
+                                            data-column="1"
+                                            value="(En\svigor)|(En\srenovaci[óoOÓ]n)|(Indeterminado)|(En\sgarant[íiÍI]a)|(Prorrogado)|(Desierto)">
                                         <label>Activos</label>
                                     </div>
                                 </div>
                                 <div class="field">
                                     <div class="ui radio checkbox">
                                         <input type="radio" name="status" tabindex="0" class="hidden column_filter"
-                                            data-column="1" value="No">
+                                            data-column="1" value="Caducado">
                                         <label>Inactivos</label>
                                     </div>
                                 </div>

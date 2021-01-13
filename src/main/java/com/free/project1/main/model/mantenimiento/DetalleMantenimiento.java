@@ -2,7 +2,6 @@ package com.free.project1.main.model.mantenimiento;
 
 import java.util.Date;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -19,7 +18,6 @@ public class DetalleMantenimiento {
     @Id
     @Column(name = "ID_DETALLE_MTO", nullable = false)
     int id_detalle_mto;// NUMBER NOT NULL
-
 
     @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)

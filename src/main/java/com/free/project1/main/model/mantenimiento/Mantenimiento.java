@@ -41,12 +41,6 @@ public class Mantenimiento {
     @JoinColumn(name = "COD_UNIDAD", nullable = true)
     Unidad unidad;
 
-    // @Column(name = "COD_DEPARTAMENTO")
-    // String cod_departamento;
-
-    // @Column(name = "COD_UNIDAD")
-    // String cod_unidad;
-
     @Column(name = "COD_RESPONSABLE")
     String cod_responsable;
 
@@ -92,10 +86,66 @@ public class Mantenimiento {
     @Column(name = "PALABRA_CLAVE", length = 2000)
     String palabra_clave;
 
+    @Column(name = "UNIDAD_SOLICITANTE_AUX", length = 2000)
+    String unidad_solicitante_aux;
+
+    // @Column(name = "COD_SILCON_SOLICITANTE_AUX", length = 8)
+    // String cod_silcon_solicitante_aux;
+
+    // @Column(name = "COD_SILCON_SOLICITANTE_AUX2", length = 8)
+    // String cod_silcon_solicitante_aux2;
+
+    @Column(name = "COD_PROCEDENCIA")
+    String cod_procedencia;
+
+    @OneToOne
+    @JoinColumn(name = "COD_SILCON_SOLICITANTE_AUX", nullable = true)
+    PersonalNew solicitante;
+
+    @OneToOne
+    @JoinColumn(name = "COD_SILCON_SOLICITANTE_AUX2", nullable = true)
+    PersonalNew solicitante2;
+
     @OneToMany(mappedBy = "mantenimiento", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     List<DetalleMantenimiento> detalles;
 
     public Mantenimiento() {
+    }
+
+    public Mantenimiento(int id, TipoMantenimiento tipo, String cod_expediente, String cod_contrato,
+            TipoProcedimientoAdjudicado procedimiento, Departamento departamento, Unidad unidad, String cod_responsable,
+            String txt_descripcion, String des_empresa, String num_importe, Date fe_ini_contrato, Date fe_fin_contrato,
+            Character chk_prorroga, Date fe_ini_prorroga, Date fe_fin_prorroga, String txt_observaciones,
+            Character chk_activo, Date fe_crea_reg, Date fe_modi_reg, String cod_mod_usu, String palabra_clave,
+            String unidad_solicitante_aux, String cod_procedencia, PersonalNew solicitante, PersonalNew solicitante2,
+            List<DetalleMantenimiento> detalles) {
+        this.id = id;
+        this.tipo = tipo;
+        this.cod_expediente = cod_expediente;
+        this.cod_contrato = cod_contrato;
+        this.procedimiento = procedimiento;
+        this.departamento = departamento;
+        this.unidad = unidad;
+        this.cod_responsable = cod_responsable;
+        this.txt_descripcion = txt_descripcion;
+        this.des_empresa = des_empresa;
+        this.num_importe = num_importe;
+        this.fe_ini_contrato = fe_ini_contrato;
+        this.fe_fin_contrato = fe_fin_contrato;
+        this.chk_prorroga = chk_prorroga;
+        this.fe_ini_prorroga = fe_ini_prorroga;
+        this.fe_fin_prorroga = fe_fin_prorroga;
+        this.txt_observaciones = txt_observaciones;
+        this.chk_activo = chk_activo;
+        this.fe_crea_reg = fe_crea_reg;
+        this.fe_modi_reg = fe_modi_reg;
+        this.cod_mod_usu = cod_mod_usu;
+        this.palabra_clave = palabra_clave;
+        this.unidad_solicitante_aux = unidad_solicitante_aux;
+        this.cod_procedencia = cod_procedencia;
+        this.solicitante = solicitante;
+        this.solicitante2 = solicitante2;
+        this.detalles = detalles;
     }
 
     public int getId() {
@@ -274,6 +324,38 @@ public class Mantenimiento {
         this.palabra_clave = palabra_clave;
     }
 
+    public String getUnidad_solicitante_aux() {
+        return this.unidad_solicitante_aux;
+    }
+
+    public void setUnidad_solicitante_aux(String unidad_solicitante_aux) {
+        this.unidad_solicitante_aux = unidad_solicitante_aux;
+    }
+
+    public String getCod_procedencia() {
+        return this.cod_procedencia;
+    }
+
+    public void setCod_procedencia(String cod_procedencia) {
+        this.cod_procedencia = cod_procedencia;
+    }
+
+    public PersonalNew getSolicitante() {
+        return this.solicitante;
+    }
+
+    public void setSolicitante(PersonalNew solicitante) {
+        this.solicitante = solicitante;
+    }
+
+    public PersonalNew getSolicitante2() {
+        return this.solicitante2;
+    }
+
+    public void setSolicitante2(PersonalNew solicitante2) {
+        this.solicitante2 = solicitante2;
+    }
+
     public List<DetalleMantenimiento> getDetalles() {
         return this.detalles;
     }
@@ -295,7 +377,9 @@ public class Mantenimiento {
                 + "'" + ", 'txt_observaciones':'" + getTxt_observaciones() + "'" + ", 'chk_activo':'" + getChk_activo()
                 + "'" + ", 'fe_crea_reg':'" + getFe_crea_reg() + "'" + ", 'fe_modi_reg':'" + getFe_modi_reg() + "'"
                 + ", 'cod_mod_usu':'" + getCod_mod_usu() + "'" + ", 'palabra_clave':'" + getPalabra_clave() + "'"
-                + ", 'detalles':'" + getDetalles() + "'" + "}";
+                + ", 'unidad_solicitante_aux':'" + getUnidad_solicitante_aux() + "'" + ", 'cod_procedencia':'"
+                + getCod_procedencia() + "'" + ", 'solicitante':'" + getSolicitante() + "'" + ", 'solicitante2':'"
+                + getSolicitante2() + "'" + ", 'detalles':'" + getDetalles() + "'" + "}";
     }
 
 }

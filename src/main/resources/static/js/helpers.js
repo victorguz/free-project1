@@ -52,9 +52,11 @@ function setDataTable(data, columns, columnDefs, actionWithRow = null,
     }
 
     //Los elementos con el parámetro data-column son quienes realizan búsquedas
+
     $("[data-column]").on('change click', function () {
         searchOnColumn($(this).attr("data-column"), $(this).val())
     })
+
     $("input .column_filter").on('keyup clear', function (e) {
         if (e.key === 'Enter' || e.keyCode === 13) {
             searchOnColumn($(this).attr("data-column"), $(this).val())
