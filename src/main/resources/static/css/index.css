@@ -69,6 +69,19 @@
      color: white;
  }
 
+ /* Datatable row colors */
+ .green-row {
+     background-color: #bce49b;
+ }
+
+ .red-row {
+     background-color: #DB9190;
+ }
+
+ .yellow-row {
+     background-color: #FAC484;
+ }
+
  @media (max-width:1280px) {
      .fields {
          flex-flow: wrap;

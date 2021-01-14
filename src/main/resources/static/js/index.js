@@ -2,24 +2,17 @@ const urlAll = document.querySelector(".all-url").value;
 const urlTotal = document.querySelector(".total-url").value;
 // const urlSearch = document.querySelector(".all-url").value;
 const urlDetails = document.querySelector(".details-url").value;
-let page = 0;
-const perPage = 100000;
 let total;
+let page = 1;
+const perPage = 10000;
 const pageLength = 5;
 const columns = [
     { name: "Id", title: "Id", data: "id" },
     {
         name: "Estado", title: "Estado",
         render: function (undefined, filter, data, meta) {
-            let lastEstado = "";
-            let lastId = 0;
-            data.detalles.forEach(detalle => {
-                if (detalle.id_detalle_mto >= lastId) {
-                    lastId = detalle.id_detalle_mto;
-                    lastEstado = detalle.estado ? detalle.estado.des_estado : ""
-                }
-            });
-            return lastEstado
+            const detail = getLastDetail(data.detalles);
+            return detail && detail.estado && detail.estado.des_estado ? detail.estado.des_estado : "";
         }
     },
     { name: "Contrato", title: "Contrato", data: "cod_contrato" },
@@ -54,7 +47,6 @@ const columns = [
         name: "Importe", title: "Importe",
         render: function (undefined, filter, data, meta) {
             return moneyFormat(data.num_importe)
-            // return data.num_importe
         }
     },
     {
@@ -75,11 +67,8 @@ const columns = [
         name: "Años prorroga",
         title: "Años prorroga",
         render: function (undefined, filter, data, meta) {
-            let date = timeAgo(data.fe_fin_prorroga);
-            if (date) {
-                date = (date.includes("hace") ? "Vencido " : "Vence ") + date;
-            }
-            return date ? date : 0;
+            let date = timeValueAndUnit(data.fe_fin_prorroga);
+            return date && date.unit == "year" && date.value > 0 ? date.value : 0;
         }
     },
     { name: "Observaciones", title: "Observaciones", data: "txt_observaciones" },
@@ -133,9 +122,9 @@ const buttons = [
 ]
 const columnDefs = [
     // { targets: [4], width: '200px' },
-    { targets: [4], className: "td-width" },
-    { targets: [12, 13, 14, 15], visible: false },
-    { targets: [16], sortable: false }
+    { targets: [4, 13], className: "td-width" },
+    { targets: [13, 14, 15, 16], visible: false },
+    { targets: [17], sortable: false }
 ]
 
 const fixedColumns = {
@@ -173,22 +162,44 @@ $(document).ready(function () {
     $("[data-content]").popup()
 });
 
-const rowFunction = function (data) {
-    // window.location.href = getUrl(urlDetails, { id: data.id_mantenimiento })
+const createdRow = function (row, data, dataIndex) {
+    const vencimiento = timeValueAndUnit(data[11])
+    const prorroga = timeValueAndUnit(data[16])
+    console.log(data[0], data[11], data[16], vencimiento, prorroga)
+    if ((vencimiento && vencimiento.unit == "month" && vencimiento.value > 0 && vencimiento.value < 8)
+        || (prorroga && prorroga.unit == "month" && prorroga.value > 0 && prorroga.value < 4)) {
+        row.classList.add("yellow-row")
+    } else if (data[1] == "En vigor") {
+        row.classList.add("green-row")
+    } else if (data[1] == "Caducado") {
+        row.classList.add("red-row")
+    }
 }
-
 function load() {
-    $.ajax({
-        url: getUrl(urlAll, { page: page, perPage: perPage }),
-        success: function (data) {
-            if (!datatable) {
-                datatable = setDataTable(data, columns, columnDefs, rowFunction, buttons, [0, "desc"], "datatable", fixedColumns, pageLength)
-            } else {
+
+    if (!datatable) {
+        datatable = setDataTable(null, null, columnDefs,
+            buttons, [0, "desc"], "datatable", fixedColumns, pageLength, createdRow)
+    } else {
+        $.ajax({
+            url: getUrl(urlAll, { page: page, perPage: perPage }),
+            success: function (data) {
                 data.forEach(element => {
                     datatable.row.add(element).draw()
                 });
             }
-        }
-    });
+        });
+    }
 }
 
+function getLastDetail(details) {
+    let lastId = 0;
+    let detail = null;
+    details.forEach(detalle => {
+        if (detalle.id_detalle_mto >= lastId) {
+            lastId = detalle.id_detalle_mto;
+            detail = detalle
+        }
+    });
+    return detail
+}

@@ -80,72 +80,62 @@
                     <div class="two fields">
                         <div class="field">
                             <label>Tipo</label>
-                            <select class="ui dropdown">
-                                <option th:each="tipo : ${tipos}" th:value="${tipo.id_tipo_mto}"
-                                    th:text="${tipo.des_tipo_mto}"
-                                    th:selected="${mnt.tipo.id_tipo_mto==tipo.id_tipo_mto}">
-                                </option>
-                            </select>
+                            <input type="text" readonly th:value="${mnt.tipo!=null ? mnt.tipo.des_tipo_mto:''}">
                         </div>
                         <div class="field">
                             <label>Procedimiento</label>
-                            <select class="ui dropdown">
-                                <option value="">Procedimiento</option>
-                                <option th:each="proc : ${procedimientos}" th:value="${proc.id_proc_adj}"
-                                    th:text="${proc.des_proc_adj}"
-                                    th:selected="${mnt.procedimiento != null && mnt.procedimiento.id_proc_adj==proc.id_proc_adj}">
-                                </option>
-                            </select>
+                            <input type="text" readonly
+                                th:value="${mnt.procedimiento!=null? mnt.procedimiento.des_proc_adj:''}">
                         </div>
                         <div class="field">
                             <label>Departamento</label>
-                            <select class="ui dropdown">
-                                <option value="">Departamento</option>
-                                <option th:each="dpto : ${dptos}" th:value="${dpto.id_unidad}"
-                                    th:text="${dpto.departamento}"
-                                    th:selected="${mnt.departamento != null && mnt.departamento.id_unidad==dpto.id_unidad}">
-                                </option>
-                            </select>
-
+                            <input type="text" readonly
+                                th:value="${mnt.departamento!=null?mnt.departamento.departamento:''}">
                         </div>
                         <div class="field">
                             <label>Unidad</label>
-                            <select class="ui dropdown">
-                                <option value="">Unidad</option>
-                                <option th:each="unidad : ${unidades}" th:value="${unidad.id_unidad}"
-                                    th:text="${unidad.unidad}"
-                                    th:selected="${mnt.unidad != null && mnt.unidad.id_unidad==unidad.id_unidad}">
-                                </option>
-                            </select>
+                            <input type="text" readonly th:value="${mnt.unidad!=null?mnt.unidad.unidad:''}">
                         </div>
                     </div>
 
                     <div class="two fields">
+
                         <div class="field">
-                            <label>Solicitante:</label>
-                            <select class="ui dropdown">
-                                <option value="">Solicitante</option>
-                                <option th:each="solicitant : ${solicitantes}" th:value="${solicitant.id_personal}"
-                                    th:text="${solicitant.des_nombre} + ${solicitant.des_apellidos}"
-                                    th:selected="${(mnt.solicitante != null && mnt.solicitante.id_personal==solicitant.id_personal)||(mnt.solicitante2 != null && mnt.solicitante2.id_personal==solicitant.id_personal)}">
-                                </option>
-                            </select>
+                            <label>Responsable de área:</label>
+                            <input type="text" readonly th:value="${mnt.unidad!=null?mnt.unidad.unidad:''}">
                         </div>
                         <div class="field">
-                            <label>Palabra clave</label>
-                            <input type="text" placeholder="Palabra clave" th:value="${mnt.palabra_clave}">
+                            <label>Responsable de unidad:</label>
+                            <input type="text" readonly th:value="${mnt.unidad!=null?mnt.unidad.unidad:''}">
                         </div>
+                        <div class="field">
+                            <label>Unidad auxiliar:</label>
+                            <input type="text" readonly th:value="${mnt.unidad!=null?mnt.unidad.unidad:''}">
+                        </div>
+                        <div class="field">
+                            <label>Responsable auxiliar:</label>
+                            <input type="text" readonly th:value="${mnt.unidad!=null?mnt.unidad.unidad:''}">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label>Unidad de seguimiento y ejec. cxto:</label>
+                        <input type="text" readonly
+                            th:value="${mnt.procedencia!=null?mnt.procedencia.des_procedencia:''}">
+                    </div>
+                    <div class="field">
+                        <label>Palabra clave</label>
+                        <input type="text" readonly placeholder="Palabra clave" th:value="${mnt.palabra_clave}">
                     </div>
 
                     <div class="field">
                         <label>Descripción:</label>
-                        <textarea name="descripcion" id="descripcion" rows="3" maxlength="2000"
+                        <textarea name="descripcion" readonly id="descripcion" rows="3" maxlength="2000"
                             placeholder="Descripción" th:text="${mnt.txt_descripcion}"></textarea>
                     </div>
 
                     <div class="field">
                         <label>Observaciones:</label>
-                        <textarea name="observaciones" id="observaciones" rows="5" maxlength="2000"
+                        <textarea name="observaciones" readonly id="observaciones" rows="5" maxlength="2000"
                             placeholder="Observaciones" th:text="${mnt.txt_observaciones}"></textarea>
                     </div>
 
@@ -188,194 +178,8 @@
                                     adjudicación y formalización</a>
                                 <a class="item google-drive-opener" data-tab="cinco">Tabla de datos e impresión</a>
                             </div>
-                            <div class="ui bottom attached tab segment active" data-tab="uno">
-                                <div class="two fields">
-                                    <div class="field">
-                                        <label>Estado</label>
-                                        <select class="ui dropdown">
-                                            <option value="">Estado</option>
-                                            <option value="0">Estado #0</option>
-                                            <option value="1">Estado #1</option>
-                                            <option value="2">Estado #2</option>
-                                            <option value="3">Estado #3</option>
-                                            <option value="4">Estado #4</option>
-                                        </select>
-                                    </div>
-                                    <div class="field">
-                                        <label>Estado nuevo expediente</label>
-                                        <select class="ui dropdown">
-                                            <option value="">Estado n. expediente</option>
-                                            <option value="0">Estado #0</option>
-                                            <option value="1">Estado #1</option>
-                                            <option value="2">Estado #2</option>
-                                            <option value="3">Estado #3</option>
-                                            <option value="4">Estado #4</option>
-                                        </select>
-                                    </div>
-                                    <div class="field">
-                                        <label>Estado RRHH</label>
-                                        <select class="ui dropdown">
-                                            <option value="">Estado RRHH</option>
-                                            <option value="0">Estado #0</option>
-                                            <option value="1">Estado #1</option>
-                                            <option value="2">Estado #2</option>
-                                            <option value="3">Estado #3</option>
-                                            <option value="4">Estado #4</option>
-                                        </select>
-                                    </div>
-                                    <div class="field">
-                                        <label>Prorrogable</label>
-                                        <select class="ui dropdown">
-                                            <option value="">Prorrogable</option>
-                                            <option value="0">No</option>
-                                            <option value="1">Si</option>
-                                        </select>
-                                    </div>
-                                </div>
 
-                                <div class="two fields">
-                                    <div class="field">
-                                        <label>Inicio contrato</label>
-                                        <input type="date" placeholder="Inicio contrato">
-                                    </div>
-                                    <div class="field">
-                                        <label>Fin contrato</label>
-                                        <input type="date" placeholder="Fin contrato">
-                                    </div>
-                                    <div class="field">
-                                        <label>Inicio prorroga</label>
-                                        <input type="date" placeholder="Inicio prorroga">
-                                    </div>
-                                    <div class="field">
-                                        <label>Fin prorroga</label>
-                                        <input type="date" placeholder="Fin prorroga">
-                                    </div>
-                                </div>
 
-                                <div class="two fields">
-                                    <div class="field">
-                                        <label>Presupuesto base</label>
-                                        <input type="number" min="0" placeholder="Presupuesto base">
-                                    </div>
-                                    <div class="field">
-                                        <label>Importe adjudicado</label>
-                                        <input type="number" min="0" placeholder="Importe adjudicado">
-                                    </div>
-                                    <div class="field">
-                                        <label>Expediente</label>
-                                        <input type="text" placeholder="Expediente">
-                                    </div>
-                                    <div class="field">
-                                        <label>Contrato</label>
-                                        <input type="text" placeholder="Contrato">
-                                    </div>
-                                </div>
-                                <div class="field">
-                                    <label>Empresa adjudicada</label>
-                                    <input type="text" placeholder="Empresa adjudicada">
-                                </div>
-                            </div>
-
-                            <div class="ui bottom attached tab segment" data-tab="dos">
-                                <div class="two fields">
-                                    <div class="field">
-                                        <label>Solicitud adquisición</label>
-                                        <input type="date" placeholder="Solicitud adquisición">
-                                    </div>
-                                    <div class="field">
-                                        <label>Envío org. colegiados</label>
-                                        <input type="date" placeholder="Envío org. colegiados">
-                                    </div>
-                                    <div class="field">
-                                        <label>Recepción de memoria</label>
-                                        <input type="date" placeholder="Recepción de memoria">
-                                    </div>
-                                    <div class="field">
-                                        <label>Envío validación responsable</label>
-                                        <input type="date" placeholder="Envío validación responsable">
-                                    </div>
-                                </div>
-                                <div class="two fields">
-                                    <div class="field">
-                                        <label>Recepción validación responsable</label>
-                                        <input type="date" placeholder="Recepción validación responsable">
-                                    </div>
-                                    <div class="field">
-                                        <label>Último día de validación</label>
-                                        <input type="date" placeholder="Último día de validación">
-                                    </div>
-                                    <div class="field">
-                                        <label>Memoria validada (Memorias Tec)</label>
-                                        <input type="date" placeholder="Memoria validada">
-                                    </div>
-                                    <div class="field">
-                                        <label>Terminación en COTEC</label>
-                                        <input type="date" placeholder="Terminación en COTEC">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="ui bottom attached tab segment" data-tab="tres">
-                                <div class="two fields">
-                                    <div class="field">
-                                        <label>Último día presentación ofertas</label>
-                                        <input type="date" placeholder="Último día presentación ofertas">
-                                    </div>
-                                    <div class="field">
-                                        <label>Recepción de ofertas</label>
-                                        <input type="date" placeholder="Recepción de ofertas">
-                                    </div>
-                                    <div class="field">
-                                        <label>Aviso a jefes</label>
-                                        <input type="date" placeholder="Aviso a jefes">
-                                    </div>
-                                    <div class="field">
-                                        <label>Aviso ofertas validadas</label>
-                                        <input type="date" placeholder="Aviso ofertas validadas">
-                                    </div>
-                                </div>
-                                <div class="two fields">
-                                    <div class="field">
-                                        <label>Respuesta de oferta</label>
-                                        <input type="date" placeholder="Respuesta de oferta">
-                                    </div>
-                                    <div class="field">
-                                        <label>Último día de validación</label>
-                                        <input type="date" placeholder="Último día de validación">
-                                    </div>
-                                    <div class="field">
-                                        <label>Informe de validación</label>
-                                        <input type="date" placeholder="Informe de validación">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="ui bottom attached tab segment" data-tab="cuatro">
-                                <h5 class="ui header dividing">Fechas control de garantías</h5>
-                                <div class="two fields">
-                                    <div class="field">
-                                        <label>Inicio Mto/Garantía prevista</label>
-                                        <input type="date" placeholder="Inicio Mto/Garantía prevista">
-                                    </div>
-                                    <div class="field">
-                                        <label>Fin Mto/Garantía prevista</label>
-                                        <input type="date" placeholder="Fin Mto/Garantía prevista">
-                                    </div>
-                                </div>
-                                <h5 class="ui header dividing">Fechas control de adjudicación y formalización</h5>
-                                <div class="two fields">
-                                    <div class="field">
-                                        <label>Fecha adjudicación</label>
-                                        <input type="date" placeholder="Fecha adjudicación">
-                                    </div>
-                                    <div class="field">
-                                        <label>Fecha formalización</label>
-                                        <input type="date" placeholder="Fecha formalización">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="ui bottom attached tab segment" data-tab="cinco">
-                                <!-- <table class="ui selectable celled table" style="width:100%" id="details_datatable2">
-                                </table> -->
-                            </div>
                         </div>
                         <div class="actions">
                             <div class="ui primary approve button disabled">

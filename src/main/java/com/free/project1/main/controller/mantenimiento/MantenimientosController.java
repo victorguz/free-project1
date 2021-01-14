@@ -6,10 +6,15 @@ import com.free.project1.main.interfaces.mantenimiento.IPersonalNew;
 import com.free.project1.main.interfaces.mantenimiento.ITipoMantenimiento;
 import com.free.project1.main.interfaces.mantenimiento.ITipoProcedimientoAdjudicado;
 import com.free.project1.main.interfaces.mantenimiento.IUnidad;
+import com.free.project1.main.model.mantenimiento.view.MantenimientoTableView;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.Sort.Direction;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -41,6 +46,8 @@ public class MantenimientosController {
 
     @GetMapping("/")
     public String home(Model model) {
+        Pageable limit = PageRequest.of(0, 100000, Sort.by(Direction.DESC, "id_mantenimiento"));
+        model.addAttribute("list", MantenimientoTableView.toView(_mnt.findAll(limit).getContent()));
         model.addAttribute("dptos", _dptos.findAllByUnidad("NULL"));
         model.addAttribute("unidades", _unidades.buscarUnidades());
         model.addAttribute("details_url", "/details");
@@ -54,11 +61,6 @@ public class MantenimientosController {
 
     @GetMapping("/details")
     public String details(Model model, @RequestParam int id) {
-        model.addAttribute("dptos", _dptos.findAllByUnidad("NULL"));
-        model.addAttribute("unidades", _unidades.buscarUnidades());
-        model.addAttribute("procedimientos", _procedimientos.findAll());
-        model.addAttribute("tipos", _tipo_mnt.findAll());
-        model.addAttribute("solicitantes", _personalnew.findAll());
         model.addAttribute("update_url", "/update");
         model.addAttribute("add_url", "/add");
         model.addAttribute("mnt", _mnt.findById(id).get());

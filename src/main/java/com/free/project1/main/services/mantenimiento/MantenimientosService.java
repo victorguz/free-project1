@@ -42,13 +42,10 @@ public class MantenimientosService {
     }
 
     @GetMapping("/search")
-    public List<Mantenimiento> search() {
-        return imnt.findAll();
-    }
+    public List<Mantenimiento> search(String text, String dpto, String unidad, String estado, String contrato,
+            String expediente, String keyword) {
 
-    @GetMapping("/getEstado")
-    public String getEstado(@RequestParam int id) {
-        return imnt.getEstado(id);
+        return imnt.findAll();
     }
 
     @PostMapping

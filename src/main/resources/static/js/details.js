@@ -104,6 +104,12 @@ const rowFunction = function (data) {
     setModalDetailsData(data);
     $(".modal-details").modal("show");
 }
+const createdRow = function (row, data, dataIndex) {
+    row.addEventListener("dblclick", function (e) {
+        e.preventDefault();
+        rowFunction(data)
+    })
+}
 
 $(document).ready(function () {
     if (detailsList) {
@@ -120,7 +126,7 @@ $(document).ready(function () {
             details.push(detail)
         });
 
-        setDataTable(details, columns, columnDefs, rowFunction, buttons, order, "details_datatable")
+        setDataTable(details, columns, columnDefs, buttons, order, "details_datatable", null, 10, createdRow)
         setDataTable([], columns, [], null, [], [0, "desc"], "details_datatable2")
     }
 
@@ -139,6 +145,7 @@ function setMethods() {
 }
 
 function setModalDetailsData(data) {
+
     console.log(data)
 }
 

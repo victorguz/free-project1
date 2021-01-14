@@ -161,9 +161,59 @@
                 <input type="hidden" class="details-url" th:value="${details_url}">
 
                 <div class="ui segment datatable-container">
-                    <table class="ui selectable celled table" style="width:100%" id="datatable"></table>
+                    <table class="ui selectable celled table" style="width:100%" id="datatable">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Estado</th>
+                                <th>Contrato</th>
+                                <th>Expediente</th>
+                                <th>Descripción</th>
+                                <th>Unidad de seguimiento y ejec Cxto</th>
+                                <th>Tipo</th>
+                                <th>Dpto</th>
+                                <th>Unidad</th>
+                                <th>Importe</th>
+                                <th>Inicio Mnt.</th>
+                                <th>Fin Mnt.</th>
+                                <th>Años prorroga</th>
+                                <th>Observaciones</th>
+                                <th>Palabra clave</th>
+                                <th>Prorrogable</th>
+                                <th>Fin prorroga</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="mnt : ${list}">
+                                <td th:text="${mnt.id}">Id</td>
+                                <td th:text="${mnt.estado}">Estado</td>
+                                <td th:text="${mnt.cod_contrato}">Contrato</td>
+                                <td th:text="${mnt.cod_expediente}">Expediente</td>
+                                <td th:text="${mnt.txt_descripcion}">Descripción</td>
+                                <td th:text="${mnt.procedencia}">Unidad de seguimiento y ejec Cxto</td>
+                                <td th:text="${mnt.tipo}">Tipo</td>
+                                <td th:text="${mnt.departamento}">Dpto</td>
+                                <td th:text="${mnt.unidad}">Unidad</td>
+                                <td th:text="${mnt.num_importe}">Importe</td>
+                                <td th:text="${mnt.fe_ini_contrato}">Inicio Mnt.</td>
+                                <td th:text="${mnt.fe_fin_contrato}">Fin Mnt.</td>
+                                <td th:text="${mnt.fe_fin_prorroga}">Años prorroga</td>
+                                <td th:text="${mnt.txt_observaciones}">Observaciones</td>
+                                <td th:text="${mnt.palabra_clave}">Palabra clave</td>
+                                <td th:text="${mnt.chk_prorroga}">Prorrogable</td>
+                                <td th:text="${mnt.fe_fin_prorroga}">Fin prorroga</td>
+                                <td>
+                                    <a class="ui button icon" th:href="@{${details_url+'?id='+mnt.id}}" target="_blank">
+                                        <i class="ui icon eye"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+
+                    </table>
                     <br>
-                    <button class="ui button fluid" loadMoreButton data-content="+ 1000"
+                    <button class="ui button fluid" loadMoreButton data-content="+ 10.000"
                         data-position="top center">Cargar mas registros</button>
                 </div>
 

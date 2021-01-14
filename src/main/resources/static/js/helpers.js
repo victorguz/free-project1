@@ -1,25 +1,44 @@
 
 let table;
-function setDataTable(data, columns, columnDefs, actionWithRow = null,
-    buttons = [], order = [], elementId = "datatable", fixedColumns = null, pageLength = 5) {
-    table = $('#' + elementId).DataTable({
-        processing: true,
-        data: data,
-        columns: columns,
-        columnDefs: columnDefs,
-        lengthChange: false,
-        buttons: buttons,
-        pageLength: pageLength,
-        scrollY: true,
-        scrollX: true,
-        order: order,
-        fixedColumns: fixedColumns
-    });
+function setDataTable(data = null, columns, columnDefs,
+    buttons = [], order = [], elementId = "datatable", fixedColumns = null, pageLength = 5, createdRow = null) {
+    if (data == null) {
+        table = $('#' + elementId).DataTable({
+            processing: true,
+            // data: data,
+            // columns: columns,
+            columnDefs: columnDefs,
+            lengthChange: false,
+            buttons: buttons,
+            pageLength: pageLength,
+            // scrollY: true,
+            scrollX: true,
+            order: order,
+            fixedColumns: fixedColumns,
+            createdRow: createdRow
+        });
+    } else {
+        table = $('#' + elementId).DataTable({
+            processing: true,
+            data: data,
+            columns: columns,
+            columnDefs: columnDefs,
+            lengthChange: false,
+            buttons: buttons,
+            pageLength: pageLength,
+            // scrollY: true,
+            scrollX: true,
+            order: order,
+            fixedColumns: fixedColumns,
+            createdRow: createdRow
+        });
+    }
 
 
     if (typeof actionWithRow === 'function') {
         $('#' + elementId + ' tbody').on('dblclick', 'tr', function (e) {
             e.preventDefault();
+            console.log(table.row(this))
             actionWithRow(table.row(this).data())
         });
     }
@@ -273,7 +292,7 @@ function dateFormat(string) {
     string = string == "null" ? null : string;
     if (string) {
         let date = new Date(Date.parse(string));
-        return date.getFullYear() + "/" + (date.getMonth() < 10 ? '0' : '') + date.getMonth() + "/" + (date.getDate() < 10 ? '0' : '') + date.getDate()
+        return date.getFullYear() + "/" + (date.getMonth() < 9 ? '0' : '') + (date.getMonth() + 1) + "/" + (date.getDate() < 10 ? '0' : '') + date.getDate()
     }
     return string;
 }
@@ -345,6 +364,56 @@ function timeAgo(date) {
     return date;
 }
 
+/**
+ * This function returns date on "value" and "unit" format
+ */
+function timeValueAndUnit(date) {
+    if (date) {
+
+        if (typeof date == "string") {
+            date = new Date(date);
+        }
+
+        const DATE_UNITS = {
+            year: 31536000,
+            month: 2629800,
+            day: 86400,
+            hour: 3600,
+            minute: 60,
+            second: 1
+        }
+
+        const isMayor = timestamp => timestamp > Date.now()
+        const getSecondsDiff = timestamp => (Date.now() - timestamp) / 1000
+
+        const getUnitAndValueDate = (secondsElapsed) => {
+
+            secondsElapsed = Math.abs(secondsElapsed);
+
+            for (const [unit, secondsInUnit] of Object.entries(DATE_UNITS)) {
+
+                if (secondsElapsed >= secondsInUnit || unit === "second") {
+
+                    const mayor = isMayor(date)
+
+                    const value = Math.floor(secondsElapsed / secondsInUnit) * (mayor ? 1 : -1)
+
+
+                    return { value, unit }
+                }
+
+            }
+
+        }
+
+        const rtf = new Intl.RelativeTimeFormat("es")
+
+        const secondsElapsed = getSecondsDiff(date)
+        const { value, unit } = getUnitAndValueDate(secondsElapsed)
+        return { value: value, unit: unit }
+    }
+    return date;
+}
 function getUrl(url, getData) {
     const base = document.querySelector("base").href;
     let completeUrl = "";

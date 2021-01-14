@@ -17,97 +17,90 @@ public class Mantenimiento {
 
     @Id
     @Column(name = "ID_MANTENIMIENTO")
-    int id;
+    public int id;
 
     @OneToOne
     @JoinColumn(name = "COD_TIPO_MTO", nullable = false)
-    TipoMantenimiento tipo;
+    public TipoMantenimiento tipo;
 
     @Column(name = "COD_EXPEDIENTE", length = 25)
-    String cod_expediente;
+    public String cod_expediente;
 
     @Column(name = "COD_CONTRATO", length = 25)
-    String cod_contrato;
+    public String cod_contrato;
 
     @OneToOne
     @JoinColumn(name = "TIPO_PROCEDIMIENTO_ADJUDICADO", nullable = true)
-    TipoProcedimientoAdjudicado procedimiento;
+    public TipoProcedimientoAdjudicado procedimiento;
 
     @OneToOne
     @JoinColumn(name = "COD_DEPARTAMENTO", nullable = true)
-    Departamento departamento;
+    public Departamento departamento;
 
     @OneToOne
     @JoinColumn(name = "COD_UNIDAD", nullable = true)
-    Unidad unidad;
+    public Unidad unidad;
 
     @Column(name = "COD_RESPONSABLE")
-    String cod_responsable;
+    public String cod_responsable;
 
     @Column(name = "TXT_DESCRIPCION", length = 2000)
-    String txt_descripcion;
+    public String txt_descripcion;
 
     @Column(name = "DES_EMPRESA", length = 255)
-    String des_empresa;
+    public String des_empresa;
 
     @Column(name = "NUM_IMPORTE", nullable = true)
-    String num_importe;
+    public String num_importe;
 
     @Column(name = "FE_INI_CONTRATO")
-    Date fe_ini_contrato;
+    public Date fe_ini_contrato;
 
     @Column(name = "FE_FIN_CONTRATO")
-    Date fe_fin_contrato;
+    public Date fe_fin_contrato;
 
     @Column(name = "CHK_PRORROGA")
-    Character chk_prorroga;
+    public Character chk_prorroga;
 
     @Column(name = "FE_INI_PRORROGA")
-    Date fe_ini_prorroga;
+    public Date fe_ini_prorroga;
 
     @Column(name = "FE_FIN_PRORROGA")
-    Date fe_fin_prorroga;
+    public Date fe_fin_prorroga;
 
     @Column(name = "TXT_OBSERVACIONES", length = 2000)
-    String txt_observaciones;
+    public String txt_observaciones;
 
     @Column(name = "CHK_ACTIVO")
-    Character chk_activo;
+    public Character chk_activo;
 
     @Column(name = "FE_CREA_REG")
-    Date fe_crea_reg;
+    public Date fe_crea_reg;
 
     @Column(name = "FE_MODI_REG")
-    Date fe_modi_reg;
+    public Date fe_modi_reg;
 
     @Column(name = "COD_MOD_USU", length = 8)
-    String cod_mod_usu;
+    public String cod_mod_usu;
 
     @Column(name = "PALABRA_CLAVE", length = 2000)
-    String palabra_clave;
+    public String palabra_clave;
 
     @Column(name = "UNIDAD_SOLICITANTE_AUX", length = 2000)
-    String unidad_solicitante_aux;
+    public String unidad_solicitante_aux;
 
-    // @Column(name = "COD_SILCON_SOLICITANTE_AUX", length = 8)
-    // String cod_silcon_solicitante_aux;
+    @Column(name = "COD_SILCON_SOLICITANTE_AUX", length = 8)
+    public String cod_silcon_solicitante_aux;
 
-    // @Column(name = "COD_SILCON_SOLICITANTE_AUX2", length = 8)
-    // String cod_silcon_solicitante_aux2;
-
-    @Column(name = "COD_PROCEDENCIA")
-    String cod_procedencia;
+    @Column(name = "COD_SILCON_SOLICITANTE_AUX2", length = 8)
+    public String cod_silcon_solicitante_aux2;
 
     @OneToOne
-    @JoinColumn(name = "COD_SILCON_SOLICITANTE_AUX", nullable = true)
-    PersonalNew solicitante;
-
-    @OneToOne
-    @JoinColumn(name = "COD_SILCON_SOLICITANTE_AUX2", nullable = true)
-    PersonalNew solicitante2;
+    @JoinColumn(name = "COD_PROCEDENCIA", nullable = true)
+    public ProcedenciaInversion procedencia;
 
     @OneToMany(mappedBy = "mantenimiento", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    List<DetalleMantenimiento> detalles;
+    public List<DetalleMantenimiento> detalles;
 
     public Mantenimiento() {
     }
@@ -117,8 +110,8 @@ public class Mantenimiento {
             String txt_descripcion, String des_empresa, String num_importe, Date fe_ini_contrato, Date fe_fin_contrato,
             Character chk_prorroga, Date fe_ini_prorroga, Date fe_fin_prorroga, String txt_observaciones,
             Character chk_activo, Date fe_crea_reg, Date fe_modi_reg, String cod_mod_usu, String palabra_clave,
-            String unidad_solicitante_aux, String cod_procedencia, PersonalNew solicitante, PersonalNew solicitante2,
-            List<DetalleMantenimiento> detalles) {
+            String unidad_solicitante_aux, String cod_silcon_solicitante_aux, String cod_silcon_solicitante_aux2,
+            ProcedenciaInversion procedencia, List<DetalleMantenimiento> detalles) {
         this.id = id;
         this.tipo = tipo;
         this.cod_expediente = cod_expediente;
@@ -142,9 +135,9 @@ public class Mantenimiento {
         this.cod_mod_usu = cod_mod_usu;
         this.palabra_clave = palabra_clave;
         this.unidad_solicitante_aux = unidad_solicitante_aux;
-        this.cod_procedencia = cod_procedencia;
-        this.solicitante = solicitante;
-        this.solicitante2 = solicitante2;
+        this.cod_silcon_solicitante_aux = cod_silcon_solicitante_aux;
+        this.cod_silcon_solicitante_aux2 = cod_silcon_solicitante_aux2;
+        this.procedencia = procedencia;
         this.detalles = detalles;
     }
 
@@ -332,28 +325,28 @@ public class Mantenimiento {
         this.unidad_solicitante_aux = unidad_solicitante_aux;
     }
 
-    public String getCod_procedencia() {
-        return this.cod_procedencia;
+    public String getCod_silcon_solicitante_aux() {
+        return this.cod_silcon_solicitante_aux;
     }
 
-    public void setCod_procedencia(String cod_procedencia) {
-        this.cod_procedencia = cod_procedencia;
+    public void setCod_silcon_solicitante_aux(String cod_silcon_solicitante_aux) {
+        this.cod_silcon_solicitante_aux = cod_silcon_solicitante_aux;
     }
 
-    public PersonalNew getSolicitante() {
-        return this.solicitante;
+    public String getCod_silcon_solicitante_aux2() {
+        return this.cod_silcon_solicitante_aux2;
     }
 
-    public void setSolicitante(PersonalNew solicitante) {
-        this.solicitante = solicitante;
+    public void setCod_silcon_solicitante_aux2(String cod_silcon_solicitante_aux2) {
+        this.cod_silcon_solicitante_aux2 = cod_silcon_solicitante_aux2;
     }
 
-    public PersonalNew getSolicitante2() {
-        return this.solicitante2;
+    public ProcedenciaInversion getProcedencia() {
+        return this.procedencia;
     }
 
-    public void setSolicitante2(PersonalNew solicitante2) {
-        this.solicitante2 = solicitante2;
+    public void setProcedencia(ProcedenciaInversion procedencia) {
+        this.procedencia = procedencia;
     }
 
     public List<DetalleMantenimiento> getDetalles() {
@@ -377,9 +370,10 @@ public class Mantenimiento {
                 + "'" + ", 'txt_observaciones':'" + getTxt_observaciones() + "'" + ", 'chk_activo':'" + getChk_activo()
                 + "'" + ", 'fe_crea_reg':'" + getFe_crea_reg() + "'" + ", 'fe_modi_reg':'" + getFe_modi_reg() + "'"
                 + ", 'cod_mod_usu':'" + getCod_mod_usu() + "'" + ", 'palabra_clave':'" + getPalabra_clave() + "'"
-                + ", 'unidad_solicitante_aux':'" + getUnidad_solicitante_aux() + "'" + ", 'cod_procedencia':'"
-                + getCod_procedencia() + "'" + ", 'solicitante':'" + getSolicitante() + "'" + ", 'solicitante2':'"
-                + getSolicitante2() + "'" + ", 'detalles':'" + getDetalles() + "'" + "}";
+                + ", 'unidad_solicitante_aux':'" + getUnidad_solicitante_aux() + "'"
+                + ", 'cod_silcon_solicitante_aux':'" + getCod_silcon_solicitante_aux() + "'"
+                + ", 'cod_silcon_solicitante_aux2':'" + getCod_silcon_solicitante_aux2() + "'" + ", 'procedencia':'"
+                + getProcedencia() + "'" + ", 'detalles':'" + getDetalles() + "'" + "}";
     }
 
 }
