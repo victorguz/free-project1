@@ -4,7 +4,9 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EntityNotFoundException;
 import javax.persistence.Id;
+import javax.persistence.PostLoad;
 
 @Entity(name = "PERSONAL_NEW")
 public class PersonalNew {
@@ -175,6 +177,10 @@ public class PersonalNew {
 
     public void setDes_apellidos(String des_apellidos) {
         this.des_apellidos = des_apellidos;
+    }
+
+    public String getFullName() {
+        return getDes_nombre() + " " + getDes_apellidos();
     }
 
     public Date getFe_alta() {

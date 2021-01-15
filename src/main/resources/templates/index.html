@@ -7,12 +7,12 @@
     <base th:href="${#httpServletRequest.requestURI}" class="base-url">
     <link rel="stylesheet" type="text/css" th:href="@{/plugins/datatables/css/dataTables.semanticui.min.css}">
     <link rel="stylesheet" type="text/css" th:href="@{/plugins/datatables/css/buttons.semanticui.min.css}">
-    <link rel="stylesheet" type="text/css" th:href="@{/plugins/semantic-ui/semantic.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/plugins/fomantic-ui/semantic.min.css}">
     <link rel="stylesheet" type="text/css" th:href="@{/css/index.css}">
 
     <script type="text/javascript" language="javascript" th:src="@{/plugins/jquery/jquery-3.5.1.js}">
     </script>
-    <script type="text/javascript" language="javascript" th:src="@{/plugins/semantic-ui/semantic.min.js}"></script>
+    <script type="text/javascript" language="javascript" th:src="@{/plugins/fomantic-ui/semantic.min.js}"></script>
 
 </head>
 
@@ -85,8 +85,8 @@
                             <select class="ui dropdown column_filter" data-column="8">
                                 <option value="">Unidad</option>
                                 <option value="-1" selected>Todas</option>
-                                <option th:each="unidad : ${unidades}" th:value="${unidad.unidad}"
-                                    th:text="${unidad.unidad}">
+                                <option th:each="unidad : ${unidades}" th:value="${unidad.descripcion}"
+                                    th:text="${unidad.descripcion}">
                                 </option>
                             </select>
                         </div>
@@ -241,7 +241,6 @@
     <script type="text/javascript" language="javascript"
         th:src="@{/plugins/datatables/js/buttons.semanticui.min.js}"></script>
     <script type="text/javascript" language="javascript" th:src="@{/plugins/datatables/js/jszip.min.js}"></script>
-    <!-- <script type="text/javascript" language="javascript" th:src="@{/plugins/datatables/js/pdfmake.min.js}"></script> -->
     <script type="text/javascript" language="javascript" th:src="@{/plugins/datatables/js/vfs_fonts.js}"></script>
     <script type="text/javascript" language="javascript" th:src="@{/plugins/datatables/js/buttons.html5.min.js}">
     </script>

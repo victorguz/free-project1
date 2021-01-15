@@ -7,16 +7,8 @@
     <base th:href="${#httpServletRequest.requestURI}" class="base-url">
     <link rel="stylesheet" type="text/css" th:href="@{/plugins/datatables/css/dataTables.semanticui.min.css}">
     <link rel="stylesheet" type="text/css" th:href="@{/plugins/datatables/css/buttons.semanticui.min.css}">
-    <link rel="stylesheet" type="text/css" th:href="@{/plugins/semantic-ui/semantic.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/plugins/fomantic-ui/semantic.min.css}">
     <link rel="stylesheet" type="text/css" th:href="@{/css/index.css}">
-
-    <!-- Fomantic UI -->
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.8.7/semantic.min.css"
-        integrity="sha512-g/MzOGVPy3OQ4ej1U+qe4D/xhLwUn5l5xL0Fa7gdC258ZWVJQGwsbIR47SWMpRxSPjD0tfu/xkilTy+Lhrl3xg=="
-        crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.8.7/components/calendar.min.css"
-        integrity="sha512-6Uiu6jE6G5bBZTppPVXR3bFF5Gl+A0m5H7JPr/rF2ScuyH+y5dy6a0GcXJY2kpTJ9JmyyXXaTN3Fl8t/i95BCg=="
-        crossorigin="anonymous" /> -->
 
 </head>
 
@@ -78,70 +70,77 @@
             <div class="ui form">
                 <div class="ui segment">
                     <div class="two fields">
+
+
                         <div class="field">
                             <label>Tipo</label>
-                            <input type="text" readonly th:value="${mnt.tipo!=null ? mnt.tipo.des_tipo_mto:''}">
-                        </div>
-                        <div class="field">
-                            <label>Procedimiento</label>
-                            <input type="text" readonly
-                                th:value="${mnt.procedimiento!=null? mnt.procedimiento.des_proc_adj:''}">
+                            <input type="text" readonly="true" th:value="${mnt.tipo!=null ? mnt.tipo.des_tipo_mto:''}">
                         </div>
                         <div class="field">
                             <label>Departamento</label>
-                            <input type="text" readonly
+                            <input type="text" readonly="true"
                                 th:value="${mnt.departamento!=null?mnt.departamento.departamento:''}">
                         </div>
                         <div class="field">
                             <label>Unidad</label>
-                            <input type="text" readonly th:value="${mnt.unidad!=null?mnt.unidad.unidad:''}">
+                            <input type="text" readonly="true" th:value="${mnt.unidad!=null?mnt.unidad.descripcion:''}">
+                        </div>
+                        <div class="field">
+                            <label>Unidad auxiliar:</label>
+                            <input type="text" readonly="true"
+                                th:value="${mnt.unidad_solicitante_aux!=null?mnt.unidad_solicitante_aux:''}">
                         </div>
                     </div>
 
                     <div class="two fields">
-
+                        <div class="field">
+                            <label>Procedimiento</label>
+                            <input type="text" readonly="true"
+                                th:value="${mnt.procedimiento!=null? mnt.procedimiento.des_proc_adj:''}">
+                        </div>
                         <div class="field">
                             <label>Responsable de área:</label>
-                            <input type="text" readonly th:value="${mnt.unidad!=null?mnt.unidad.unidad:''}">
+                            <input type="text" readonly="true"
+                                th:value="${mnt.responsable_area!=null?mnt.responsable_area.getFullName():''}">
                         </div>
                         <div class="field">
                             <label>Responsable de unidad:</label>
-                            <input type="text" readonly th:value="${mnt.unidad!=null?mnt.unidad.unidad:''}">
-                        </div>
-                        <div class="field">
-                            <label>Unidad auxiliar:</label>
-                            <input type="text" readonly th:value="${mnt.unidad!=null?mnt.unidad.unidad:''}">
+                            <input type="text" readonly="true"
+                                th:value="${mnt.responsable_unidad!=null?mnt.responsable_unidad.getFullName():''}">
                         </div>
                         <div class="field">
                             <label>Responsable auxiliar:</label>
-                            <input type="text" readonly th:value="${mnt.unidad!=null?mnt.unidad.unidad:''}">
+                            <input type="text" readonly="true"
+                                th:value="${mnt.responsable_auxiliar!=null?mnt.responsable_auxiliar.getFullName():''}">
                         </div>
                     </div>
                     <div class="field">
                         <label>Unidad de seguimiento y ejec. cxto:</label>
-                        <input type="text" readonly
+                        <input type="text" readonly="true"
                             th:value="${mnt.procedencia!=null?mnt.procedencia.des_procedencia:''}">
                     </div>
                     <div class="field">
                         <label>Palabra clave</label>
-                        <input type="text" readonly placeholder="Palabra clave" th:value="${mnt.palabra_clave}">
+                        <input type="text" readonly="true" placeholder="Palabra clave" th:value="${mnt.palabra_clave}">
                     </div>
 
                     <div class="field">
                         <label>Descripción:</label>
-                        <textarea name="descripcion" readonly id="descripcion" rows="3" maxlength="2000"
+                        <textarea name="descripcion" id="descripcion" rows="3" maxlength="2000"
                             placeholder="Descripción" th:text="${mnt.txt_descripcion}"></textarea>
                     </div>
 
                     <div class="field">
                         <label>Observaciones:</label>
-                        <textarea name="observaciones" readonly id="observaciones" rows="5" maxlength="2000"
+                        <textarea name="observaciones" id="observaciones" rows="5" maxlength="2000"
                             placeholder="Observaciones" th:text="${mnt.txt_observaciones}"></textarea>
                     </div>
 
                     <div th:each="item: ${mnt.detalles}">
                         <input type="hidden" class="input-detalles" th:value="${item.toString()}">
                     </div>
+
+                    <input type="hidden" class="url-get-detail" th:value="${get_detail_url}">
                 </div>
 
                 <div class="ui segment datatable-container">
@@ -162,13 +161,52 @@
 
                         </div>
                     </div>
-                    <br>
-                    <table class="ui selectable celled table" style="width:100%" id="details_datatable">
-                    </table>
 
+                    <br>
+
+                    <table class="ui selectable celled table" style="width:100%" id="details_datatable">
+
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Estado</th>
+                                <th>Inicio contrato</th>
+                                <th>Fin contrato</th>
+                                <th>Expediente</th>
+                                <th>Contrato</th>
+                                <th>Adjudicado</th>
+                                <th>Prorrogable</th>
+                                <th>Inicio prorroga</th>
+                                <th>Fin Prorroga</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="dtl: ${mnt.detalles}">
+                                <td th:text="${dtl.id_detalle_mto}">Id</td>
+                                <td th:text="${dtl.estado}">Estado</td>
+                                <td th:text="${dtl.fe_ini_contrato}">Inicio contrato</td>
+                                <td th:text="${dtl.fe_fin_contrato}">Fin contrato</td>
+                                <td th:text="${dtl.cod_expediente}">Expediente</td>
+                                <td th:text="${dtl.cod_contrato}">Contrato</td>
+                                <td th:text="${dtl.des_empresa}">Adjudicado</td>
+                                <td th:text="${dtl.chk_prorroga}" class="boolean">Prorrogable</td>
+                                <td th:text="${dtl.fe_ini_prorroga}">Inicio prorroga</td>
+                                <td th:text="${dtl.fe_fin_prorroga}">Fin Prorroga</td>
+                                <td>
+                                    <button class="ui button icon" th:button-modal-details="${dtl.id_detalle_mto}">
+                                        <i class="icon eye"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="ui dimmer inverted">
+                        <div class="ui text loader">Cargando</div>
+                    </div>
                     <form class="ui modal modal-details">
                         <i class="close icon"></i>
-                        <div class="header" modal-header>Detalles #{id}</div>
+                        <div class="header" modal-details-header>Detalles #{id}</div>
                         <div class="content ui form">
                             <div class="ui top attached tabular menu" style="overflow-x: auto; overflow-y: hidden;">
                                 <a class="item google-drive-opener active" data-tab="uno">Datos geneales</a>
@@ -179,7 +217,7 @@
                                 <a class="item google-drive-opener" data-tab="cinco">Tabla de datos e impresión</a>
                             </div>
 
-
+                            <div class="tabs-detail-container"></div>
                         </div>
                         <div class="actions">
                             <div class="ui primary approve button disabled">
@@ -211,7 +249,7 @@
 
     <script type="text/javascript" language="javascript" th:src="@{/plugins/jquery/jquery-3.5.1.js}">
     </script>
-    <script type="text/javascript" language="javascript" th:src="@{/plugins/semantic-ui/semantic.min.js}"></script>
+    <script type="text/javascript" language="javascript" th:src="@{/plugins/fomantic-ui/semantic.min.js}"></script>
     <script type="text/javascript" language="javascript"
         th:src="@{/plugins/datatables/js/jquery.dataTables.min.js}"></script>
     <script type="text/javascript" language="javascript"
@@ -222,7 +260,6 @@
     <script type="text/javascript" language="javascript"
         th:src="@{/plugins/datatables/js/buttons.semanticui.min.js}"></script>
     <script type="text/javascript" language="javascript" th:src="@{/plugins/datatables/js/jszip.min.js}"></script>
-    <!-- <script type="text/javascript" language="javascript" th:src="@{/plugins/datatables/js/pdfmake.min.js}"></script> -->
     <script type="text/javascript" language="javascript" th:src="@{/plugins/datatables/js/vfs_fonts.js}"></script>
     <script type="text/javascript" language="javascript" th:src="@{/plugins/datatables/js/buttons.html5.min.js}">
     </script>
@@ -230,13 +267,6 @@
     </script>
     <script type="text/javascript" language="javascript" th:src="@{/plugins/datatables/js/buttons.colVis.min.js}">
     </script>
-    <!-- Fomantic UI -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.8.7/components/calendar.min.js"
-        integrity="sha512-LYWG+gpXidl3z8q6oCIACEMa4JKaMaxeszqqPYmqzS17DTXK07CIGrdaL+FIA8bz4EJYcUOGotI3DBueas913w=="
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.8.7/semantic.min.js"
-        integrity="sha512-1Nyd5H4Aad+OyvVfUOkO/jWPCrEvYIsQENdnVXt1+Jjc4NoJw28nyRdrpOCyFH4uvR3JmH/5WmfX1MJk2ZlhgQ=="
-        crossorigin="anonymous"></script> -->
     <!-- Self -->
     <script type="text/javascript" language="javascript" th:src="@{/js/helpers.js}">
     </script>

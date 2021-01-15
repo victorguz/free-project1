@@ -15,7 +15,7 @@ public class MantenimientoTableView {
     public String id;
     public String cod_expediente;
     public String cod_contrato;
-    public String cod_responsable;
+    public String responsable_area;
     public String txt_descripcion;
     public String des_empresa;
     public String num_importe;
@@ -30,11 +30,10 @@ public class MantenimientoTableView {
     public String fe_modi_reg;
     public String cod_mod_usu;
     public String palabra_clave;
-    public String unidad_cod_silcon_solicitante_aux_aux;
     public String procedencia;
     public String estado;
-    public String cod_silcon_solicitante_aux;
-    public String cod_silcon_solicitante_aux2;
+    public String responsable_unidad;
+    public String responsable_auxiliar;
     List<DetalleMantenimiento> detalles;
     public String tipo;
     public String departamento;
@@ -47,7 +46,7 @@ public class MantenimientoTableView {
         this.id = mnt.id + "";
         this.cod_expediente = mnt.cod_expediente;
         this.cod_contrato = mnt.cod_contrato;
-        this.cod_responsable = mnt.cod_responsable;
+        this.responsable_area = mnt.responsable_area == null ? "" : mnt.responsable_area.getFullName();
         this.txt_descripcion = mnt.txt_descripcion;
         this.des_empresa = mnt.des_empresa;
         this.num_importe = mnt.num_importe;
@@ -62,17 +61,14 @@ public class MantenimientoTableView {
         this.fe_modi_reg = processDate(mnt.fe_modi_reg);
         this.cod_mod_usu = mnt.cod_mod_usu;
         this.palabra_clave = mnt.palabra_clave;
-        this.cod_silcon_solicitante_aux = mnt.cod_silcon_solicitante_aux;
+        this.responsable_unidad = mnt.responsable_unidad == null ? "" : mnt.responsable_unidad.getFullName();
+        this.responsable_auxiliar = mnt.responsable_auxiliar == null ? "" : mnt.responsable_auxiliar.getFullName();
         this.procedencia = mnt.procedencia == null ? "" : mnt.procedencia.getDes_procedencia();
-
-        this.cod_silcon_solicitante_aux = mnt.cod_silcon_solicitante_aux;
-
-        this.cod_silcon_solicitante_aux2 = mnt.cod_silcon_solicitante_aux2;
 
         this.detalles = mnt.detalles;
         this.tipo = mnt.tipo == null ? "" : mnt.tipo.getDes_tipo_mto();
         this.departamento = mnt.departamento == null ? "" : mnt.departamento.getDepartamento();
-        this.unidad = mnt.unidad == null ? "" : mnt.unidad.getUnidad();
+        this.unidad = mnt.unidad == null ? "" : mnt.unidad.getDescripcion();
         this.estado = processEstado();
         this.num_importe = processCurrency();
     }
@@ -101,12 +97,12 @@ public class MantenimientoTableView {
         this.cod_contrato = cod_contrato;
     }
 
-    public String getCod_responsable() {
-        return this.cod_responsable;
+    public String getResponsable_area() {
+        return this.responsable_area;
     }
 
-    public void setCod_responsable(String cod_responsable) {
-        this.cod_responsable = cod_responsable;
+    public void setResponsable_area(String responsable_area) {
+        this.responsable_area = responsable_area;
     }
 
     public String getTxt_descripcion() {
@@ -221,20 +217,36 @@ public class MantenimientoTableView {
         this.palabra_clave = palabra_clave;
     }
 
-    public String getUnidad_cod_silcon_solicitante_aux_aux() {
-        return this.unidad_cod_silcon_solicitante_aux_aux;
-    }
-
-    public void setUnidad_cod_silcon_solicitante_aux_aux(String unidad_cod_silcon_solicitante_aux_aux) {
-        this.unidad_cod_silcon_solicitante_aux_aux = unidad_cod_silcon_solicitante_aux_aux;
-    }
-
-    public String getCod_procedencia() {
+    public String getProcedencia() {
         return this.procedencia;
     }
 
-    public void setCod_procedencia(String procedencia) {
+    public void setProcedencia(String procedencia) {
         this.procedencia = procedencia;
+    }
+
+    public String getEstado() {
+        return this.estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+    public String getResponsable_unidad() {
+        return this.responsable_unidad;
+    }
+
+    public void setResponsable_unidad(String responsable_unidad) {
+        this.responsable_unidad = responsable_unidad;
+    }
+
+    public String getResponsable_auxiliar() {
+        return this.responsable_auxiliar;
+    }
+
+    public void setResponsable_auxiliar(String responsable_auxiliar) {
+        this.responsable_auxiliar = responsable_auxiliar;
     }
 
     public List<DetalleMantenimiento> getDetalles() {
@@ -267,6 +279,24 @@ public class MantenimientoTableView {
 
     public void setUnidad(String unidad) {
         this.unidad = unidad;
+    }
+
+    @Override
+    public String toString() {
+        return "{" + " 'id':'" + getId() + "'" + ", 'cod_expediente':'" + getCod_expediente() + "'"
+                + ", 'cod_contrato':'" + getCod_contrato() + "'" + ", 'responsable_area':'" + getResponsable_area()
+                + "'" + ", 'txt_descripcion':'" + getTxt_descripcion() + "'" + ", 'des_empresa':'" + getDes_empresa()
+                + "'" + ", 'num_importe':'" + getNum_importe() + "'" + ", 'fe_ini_contrato':'" + getFe_ini_contrato()
+                + "'" + ", 'fe_fin_contrato':'" + getFe_fin_contrato() + "'" + ", 'chk_prorroga':'" + getChk_prorroga()
+                + "'" + ", 'fe_ini_prorroga':'" + getFe_ini_prorroga() + "'" + ", 'fe_fin_prorroga':'"
+                + getFe_fin_prorroga() + "'" + ", 'txt_observaciones':'" + getTxt_observaciones() + "'"
+                + ", 'chk_activo':'" + getChk_activo() + "'" + ", 'fe_crea_reg':'" + getFe_crea_reg() + "'"
+                + ", 'fe_modi_reg':'" + getFe_modi_reg() + "'" + ", 'cod_mod_usu':'" + getCod_mod_usu() + "'"
+                + ", 'palabra_clave':'" + getPalabra_clave() + "'" + ", 'procedencia':'" + getProcedencia() + "'"
+                + ", 'estado':'" + getEstado() + "'" + ", 'responsable_unidad':'" + getResponsable_unidad() + "'"
+                + ", 'responsable_auxiliar':'" + getResponsable_auxiliar() + "'" + ", 'detalles':'" + getDetalles()
+                + "'" + ", 'tipo':'" + getTipo() + "'" + ", 'departamento':'" + getDepartamento() + "'" + ", 'unidad':'"
+                + getUnidad() + "'" + "}";
     }
 
     private String processEstado() {
@@ -306,23 +336,6 @@ public class MantenimientoTableView {
             list.add(neew);
         }
         return list;
-    }
-
-    @Override
-    public String toString() {
-        return "{" + " 'id':'" + getId() + "'" + ", 'cod_expediente':'" + getCod_expediente() + "'"
-                + ", 'cod_contrato':'" + getCod_contrato() + "'" + ", 'cod_responsable':'" + getCod_responsable() + "'"
-                + ", 'txt_descripcion':'" + getTxt_descripcion() + "'" + ", 'des_empresa':'" + getDes_empresa() + "'"
-                + ", 'num_importe':'" + getNum_importe() + "'" + ", 'fe_ini_contrato':'" + getFe_ini_contrato() + "'"
-                + ", 'fe_fin_contrato':'" + getFe_fin_contrato() + "'" + ", 'chk_prorroga':'" + getChk_prorroga() + "'"
-                + ", 'fe_ini_prorroga':'" + getFe_ini_prorroga() + "'" + ", 'fe_fin_prorroga':'" + getFe_fin_prorroga()
-                + "'" + ", 'txt_observaciones':'" + getTxt_observaciones() + "'" + ", 'chk_activo':'" + getChk_activo()
-                + "'" + ", 'fe_crea_reg':'" + getFe_crea_reg() + "'" + ", 'fe_modi_reg':'" + getFe_modi_reg() + "'"
-                + ", 'cod_mod_usu':'" + getCod_mod_usu() + "'" + ", 'palabra_clave':'" + getPalabra_clave() + "'"
-                + ", 'unidad_cod_silcon_solicitante_aux_aux':'" + getUnidad_cod_silcon_solicitante_aux_aux() + "'"
-                + ", 'procedencia':'" + getCod_procedencia() + "'" + ", 'detalles':'" + getDetalles() + "'"
-                + ", 'tipo':'" + getTipo() + "'" + ", 'departamento':'" + getDepartamento() + "'" + ", 'unidad':'"
-                + getUnidad() + "'" + "}";
     }
 
 }

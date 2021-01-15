@@ -12,6 +12,11 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+import org.hibernate.annotations.NotFound;
+import org.hibernate.annotations.NotFoundAction;
+
 @Entity(name = "MANTENIMIENTO")
 public class Mantenimiento {
 
@@ -19,7 +24,9 @@ public class Mantenimiento {
     @Column(name = "ID_MANTENIMIENTO")
     public int id;
 
-    @OneToOne
+    @Fetch(FetchMode.JOIN)
+    @NotFound(action = NotFoundAction.IGNORE)
+    @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "COD_TIPO_MTO", nullable = false)
     public TipoMantenimiento tipo;
 
@@ -29,20 +36,34 @@ public class Mantenimiento {
     @Column(name = "COD_CONTRATO", length = 25)
     public String cod_contrato;
 
-    @OneToOne
+    @Fetch(FetchMode.JOIN)
+    @NotFound(action = NotFoundAction.IGNORE)
+    @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "TIPO_PROCEDIMIENTO_ADJUDICADO", nullable = true)
     public TipoProcedimientoAdjudicado procedimiento;
 
-    @OneToOne
+    @Fetch(FetchMode.JOIN)
+    @NotFound(action = NotFoundAction.IGNORE)
+    @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "COD_DEPARTAMENTO", nullable = true)
     public Departamento departamento;
 
-    @OneToOne
-    @JoinColumn(name = "COD_UNIDAD", nullable = true)
-    public Unidad unidad;
+    // @NotFound(action = NotFoundAction.IGNORE)
+    // @OneToOne(fetch = FetchType.LAZY)
+    // @JoinColumn(name = "COD_UNIDAD", nullable = true)
+    // public UnidadEstructural unidad;
 
-    @Column(name = "COD_RESPONSABLE")
-    public String cod_responsable;
+    @Fetch(FetchMode.JOIN)
+    @NotFound(action = NotFoundAction.IGNORE)
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "COD_UNIDAD", nullable = true)
+    public UnidadEstructural unidad;
+
+    @Fetch(FetchMode.JOIN)
+    @NotFound(action = NotFoundAction.IGNORE)
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "COD_RESPONSABLE", nullable = true)
+    public PersonalNew responsable_area;
 
     @Column(name = "TXT_DESCRIPCION", length = 2000)
     public String txt_descripcion;
@@ -89,13 +110,21 @@ public class Mantenimiento {
     @Column(name = "UNIDAD_SOLICITANTE_AUX", length = 2000)
     public String unidad_solicitante_aux;
 
-    @Column(name = "COD_SILCON_SOLICITANTE_AUX", length = 8)
-    public String cod_silcon_solicitante_aux;
+    @Fetch(FetchMode.JOIN)
+    @NotFound(action = NotFoundAction.IGNORE)
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "COD_SILCON_SOLICITANTE_AUX", nullable = true)
+    public PersonalNew responsable_unidad;
 
-    @Column(name = "COD_SILCON_SOLICITANTE_AUX2", length = 8)
-    public String cod_silcon_solicitante_aux2;
+    @Fetch(FetchMode.JOIN)
+    @NotFound(action = NotFoundAction.IGNORE)
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "COD_SILCON_SOLICITANTE_AUX2", nullable = true)
+    public PersonalNew responsable_auxiliar;
 
-    @OneToOne
+    @Fetch(FetchMode.JOIN)
+    @NotFound(action = NotFoundAction.IGNORE)
+    @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "COD_PROCEDENCIA", nullable = true)
     public ProcedenciaInversion procedencia;
 
@@ -106,12 +135,12 @@ public class Mantenimiento {
     }
 
     public Mantenimiento(int id, TipoMantenimiento tipo, String cod_expediente, String cod_contrato,
-            TipoProcedimientoAdjudicado procedimiento, Departamento departamento, Unidad unidad, String cod_responsable,
-            String txt_descripcion, String des_empresa, String num_importe, Date fe_ini_contrato, Date fe_fin_contrato,
-            Character chk_prorroga, Date fe_ini_prorroga, Date fe_fin_prorroga, String txt_observaciones,
-            Character chk_activo, Date fe_crea_reg, Date fe_modi_reg, String cod_mod_usu, String palabra_clave,
-            String unidad_solicitante_aux, String cod_silcon_solicitante_aux, String cod_silcon_solicitante_aux2,
-            ProcedenciaInversion procedencia, List<DetalleMantenimiento> detalles) {
+            TipoProcedimientoAdjudicado procedimiento, Departamento departamento, UnidadEstructural unidad,
+            PersonalNew responsable_area, String txt_descripcion, String des_empresa, String num_importe,
+            Date fe_ini_contrato, Date fe_fin_contrato, Character chk_prorroga, Date fe_ini_prorroga,
+            Date fe_fin_prorroga, String txt_observaciones, Character chk_activo, Date fe_crea_reg, Date fe_modi_reg,
+            String cod_mod_usu, String palabra_clave, String unidad_solicitante_aux, PersonalNew responsable_unidad,
+            PersonalNew responsable_auxiliar, ProcedenciaInversion procedencia, List<DetalleMantenimiento> detalles) {
         this.id = id;
         this.tipo = tipo;
         this.cod_expediente = cod_expediente;
@@ -119,7 +148,7 @@ public class Mantenimiento {
         this.procedimiento = procedimiento;
         this.departamento = departamento;
         this.unidad = unidad;
-        this.cod_responsable = cod_responsable;
+        this.responsable_area = responsable_area;
         this.txt_descripcion = txt_descripcion;
         this.des_empresa = des_empresa;
         this.num_importe = num_importe;
@@ -135,8 +164,8 @@ public class Mantenimiento {
         this.cod_mod_usu = cod_mod_usu;
         this.palabra_clave = palabra_clave;
         this.unidad_solicitante_aux = unidad_solicitante_aux;
-        this.cod_silcon_solicitante_aux = cod_silcon_solicitante_aux;
-        this.cod_silcon_solicitante_aux2 = cod_silcon_solicitante_aux2;
+        this.responsable_unidad = responsable_unidad;
+        this.responsable_auxiliar = responsable_auxiliar;
         this.procedencia = procedencia;
         this.detalles = detalles;
     }
@@ -189,20 +218,20 @@ public class Mantenimiento {
         this.departamento = departamento;
     }
 
-    public Unidad getUnidad() {
+    public UnidadEstructural getUnidad() {
         return this.unidad;
     }
 
-    public void setUnidad(Unidad unidad) {
+    public void setUnidad(UnidadEstructural unidad) {
         this.unidad = unidad;
     }
 
-    public String getCod_responsable() {
-        return this.cod_responsable;
+    public PersonalNew getResponsable_area() {
+        return this.responsable_area;
     }
 
-    public void setCod_responsable(String cod_responsable) {
-        this.cod_responsable = cod_responsable;
+    public void setResponsable_area(PersonalNew responsable_area) {
+        this.responsable_area = responsable_area;
     }
 
     public String getTxt_descripcion() {
@@ -325,20 +354,20 @@ public class Mantenimiento {
         this.unidad_solicitante_aux = unidad_solicitante_aux;
     }
 
-    public String getCod_silcon_solicitante_aux() {
-        return this.cod_silcon_solicitante_aux;
+    public PersonalNew getResponsable_unidad() {
+        return this.responsable_unidad;
     }
 
-    public void setCod_silcon_solicitante_aux(String cod_silcon_solicitante_aux) {
-        this.cod_silcon_solicitante_aux = cod_silcon_solicitante_aux;
+    public void setResponsable_unidad(PersonalNew responsable_unidad) {
+        this.responsable_unidad = responsable_unidad;
     }
 
-    public String getCod_silcon_solicitante_aux2() {
-        return this.cod_silcon_solicitante_aux2;
+    public PersonalNew getResponsable_auxiliar() {
+        return this.responsable_auxiliar;
     }
 
-    public void setCod_silcon_solicitante_aux2(String cod_silcon_solicitante_aux2) {
-        this.cod_silcon_solicitante_aux2 = cod_silcon_solicitante_aux2;
+    public void setResponsable_auxiliar(PersonalNew responsable_auxiliar) {
+        this.responsable_auxiliar = responsable_auxiliar;
     }
 
     public ProcedenciaInversion getProcedencia() {
@@ -362,7 +391,7 @@ public class Mantenimiento {
         return "{" + " 'id':'" + getId() + "'" + ", 'tipo':'" + getTipo() + "'" + ", 'cod_expediente':'"
                 + getCod_expediente() + "'" + ", 'cod_contrato':'" + getCod_contrato() + "'" + ", 'procedimiento':'"
                 + getProcedimiento() + "'" + ", 'departamento':'" + getDepartamento() + "'" + ", 'unidad':'"
-                + getUnidad() + "'" + ", 'cod_responsable':'" + getCod_responsable() + "'" + ", 'txt_descripcion':'"
+                + getUnidad() + "'" + ", 'responsable_area':'" + getResponsable_area() + "'" + ", 'txt_descripcion':'"
                 + getTxt_descripcion() + "'" + ", 'des_empresa':'" + getDes_empresa() + "'" + ", 'num_importe':'"
                 + getNum_importe() + "'" + ", 'fe_ini_contrato':'" + getFe_ini_contrato() + "'"
                 + ", 'fe_fin_contrato':'" + getFe_fin_contrato() + "'" + ", 'chk_prorroga':'" + getChk_prorroga() + "'"
@@ -370,10 +399,9 @@ public class Mantenimiento {
                 + "'" + ", 'txt_observaciones':'" + getTxt_observaciones() + "'" + ", 'chk_activo':'" + getChk_activo()
                 + "'" + ", 'fe_crea_reg':'" + getFe_crea_reg() + "'" + ", 'fe_modi_reg':'" + getFe_modi_reg() + "'"
                 + ", 'cod_mod_usu':'" + getCod_mod_usu() + "'" + ", 'palabra_clave':'" + getPalabra_clave() + "'"
-                + ", 'unidad_solicitante_aux':'" + getUnidad_solicitante_aux() + "'"
-                + ", 'cod_silcon_solicitante_aux':'" + getCod_silcon_solicitante_aux() + "'"
-                + ", 'cod_silcon_solicitante_aux2':'" + getCod_silcon_solicitante_aux2() + "'" + ", 'procedencia':'"
-                + getProcedencia() + "'" + ", 'detalles':'" + getDetalles() + "'" + "}";
+                + ", 'unidad_solicitante_aux':'" + getUnidad_solicitante_aux() + "'" + ", 'responsable_unidad':'"
+                + getResponsable_unidad() + "'" + ", 'responsable_auxiliar':'" + getResponsable_auxiliar() + "'"
+                + ", 'procedencia':'" + getProcedencia() + "'" + ", 'detalles':'" + getDetalles() + "'" + "}";
     }
 
 }

@@ -414,8 +414,8 @@ function timeValueAndUnit(date) {
     }
     return date;
 }
-function getUrl(url, getData) {
-    const base = document.querySelector("base").href;
+function getUrl(url, getData, newBase) {
+    const base = newBase ? newBase : document.querySelector("base").href;
     let completeUrl = "";
     let dataUrl = "";
 

@@ -1,16 +1,24 @@
 package com.free.project1.main.model.mantenimiento;
 
 import java.util.Date;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+import org.hibernate.annotations.NotFound;
+import org.hibernate.annotations.NotFoundAction;
 
 @Entity(name = "DETALLE_MANTENIMIENTO")
 public class DetalleMantenimiento {
@@ -20,11 +28,13 @@ public class DetalleMantenimiento {
     int id_detalle_mto;// NUMBER NOT NULL
 
     @JsonIgnore
+    @Fetch(FetchMode.JOIN)
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "ID_MANTENIMIENTO")
     Mantenimiento mantenimiento;
 
-    @OneToOne
+    @NotFound(action = NotFoundAction.IGNORE)
+    @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "COD_ESTADO_MTO", nullable = false)
     EstadoMantenimiento estado;
 
@@ -68,7 +78,7 @@ public class DetalleMantenimiento {
     String cod_mod_usu;// VARCHAR(8)
 
     @Column(name = "COD_ESTADONUEVOEXP")
-    String cod_estadonuevoexp;// NUMBER
+    String cod_estadonuevoexp;
 
     @Column(name = "AÑOSPRORROGA")
     String añosprorroga;// NUMBER
@@ -136,7 +146,62 @@ public class DetalleMantenimiento {
     @Column(name = "FE_FORMALIZACION")
     Date fe_formalizacion;// DATE
 
+    @OneToMany(mappedBy = "detalle_mantenimiento", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    public List<CicloMantenimiento> ciclos;
+
     public DetalleMantenimiento() {
+    }
+
+    public DetalleMantenimiento(int id_detalle_mto, Mantenimiento mantenimiento, EstadoMantenimiento estado,
+            String des_empresa, String num_importe, Date fe_ini_contrato, Date fe_fin_contrato, Character chk_prorroga,
+            Date fe_ini_prorroga, Date fe_fin_prorroga, String cod_expediente, String cod_contrato,
+            Character chk_activo, Date fe_crea_reg, Date fe_modi_reg, String cod_mod_usu, String cod_estadonuevoexp,
+            String añosprorroga, Date fe_sol_adq, Date fe_env_org_col, Date fe_recp_mem, Date fe_env_val,
+            Date fe_recp_val, Date fe_ultdia_valmem, Date fe_mem_val, Date fe_tram_cotec, Date fe_ultdia_ofertas,
+            Date fe_recp_ofertas, Date fe_aviso_jefes, Date fe_aviso_ofertasvalidadas, Date fe_respuesta_ofertas,
+            Date fe_ult_diaexpdate, Date fe_inimto_garantia_prevista, Date fe_finmto_garantia_prevista,
+            Date fe_informevalidacion, Date fe_adjudicacionformalizacion, String num_importe_contratacion,
+            String cod_estado_rrhh, Date fe_formalizacion, List<CicloMantenimiento> ciclos) {
+        this.id_detalle_mto = id_detalle_mto;
+        this.mantenimiento = mantenimiento;
+        this.estado = estado;
+        this.des_empresa = des_empresa;
+        this.num_importe = num_importe;
+        this.fe_ini_contrato = fe_ini_contrato;
+        this.fe_fin_contrato = fe_fin_contrato;
+        this.chk_prorroga = chk_prorroga;
+        this.fe_ini_prorroga = fe_ini_prorroga;
+        this.fe_fin_prorroga = fe_fin_prorroga;
+        this.cod_expediente = cod_expediente;
+        this.cod_contrato = cod_contrato;
+        this.chk_activo = chk_activo;
+        this.fe_crea_reg = fe_crea_reg;
+        this.fe_modi_reg = fe_modi_reg;
+        this.cod_mod_usu = cod_mod_usu;
+        this.cod_estadonuevoexp = cod_estadonuevoexp;
+        this.añosprorroga = añosprorroga;
+        this.fe_sol_adq = fe_sol_adq;
+        this.fe_env_org_col = fe_env_org_col;
+        this.fe_recp_mem = fe_recp_mem;
+        this.fe_env_val = fe_env_val;
+        this.fe_recp_val = fe_recp_val;
+        this.fe_ultdia_valmem = fe_ultdia_valmem;
+        this.fe_mem_val = fe_mem_val;
+        this.fe_tram_cotec = fe_tram_cotec;
+        this.fe_ultdia_ofertas = fe_ultdia_ofertas;
+        this.fe_recp_ofertas = fe_recp_ofertas;
+        this.fe_aviso_jefes = fe_aviso_jefes;
+        this.fe_aviso_ofertasvalidadas = fe_aviso_ofertasvalidadas;
+        this.fe_respuesta_ofertas = fe_respuesta_ofertas;
+        this.fe_ult_diaexpdate = fe_ult_diaexpdate;
+        this.fe_inimto_garantia_prevista = fe_inimto_garantia_prevista;
+        this.fe_finmto_garantia_prevista = fe_finmto_garantia_prevista;
+        this.fe_informevalidacion = fe_informevalidacion;
+        this.fe_adjudicacionformalizacion = fe_adjudicacionformalizacion;
+        this.num_importe_contratacion = num_importe_contratacion;
+        this.cod_estado_rrhh = cod_estado_rrhh;
+        this.fe_formalizacion = fe_formalizacion;
+        this.ciclos = ciclos;
     }
 
     public int getId_detalle_mto() {
@@ -451,7 +516,14 @@ public class DetalleMantenimiento {
         this.fe_formalizacion = fe_formalizacion;
     }
 
-    @Override
+    public List<CicloMantenimiento> getCiclos() {
+        return this.ciclos;
+    }
+
+    public void setCiclos(List<CicloMantenimiento> ciclos) {
+        this.ciclos = ciclos;
+    }
+
     public String toString() {
         return "{" + " 'id_detalle_mto':'" + getId_detalle_mto() + "'" + ", 'estado':'" + getEstado() + "'"
                 + ", 'des_empresa':'" + getDes_empresa() + "'" + ", 'num_importe':'" + getNum_importe() + "'"

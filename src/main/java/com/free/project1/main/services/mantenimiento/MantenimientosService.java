@@ -2,7 +2,9 @@ package com.free.project1.main.services.mantenimiento;
 
 import java.util.List;
 
+import com.free.project1.main.interfaces.mantenimiento.IDetalleMantenimiento;
 import com.free.project1.main.interfaces.mantenimiento.IMantenimiento;
+import com.free.project1.main.model.mantenimiento.DetalleMantenimiento;
 import com.free.project1.main.model.mantenimiento.Mantenimiento;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,6 +32,9 @@ public class MantenimientosService {
     @Autowired
     private IMantenimiento imnt;
 
+    @Autowired
+    private IDetalleMantenimiento idet_mnt;
+
     @GetMapping("/all")
     public List<Mantenimiento> all(@RequestParam int page, @RequestParam int perPage) {
         Pageable limit = PageRequest.of(page, perPage, Sort.by(Direction.DESC, "id"));
@@ -39,6 +44,11 @@ public class MantenimientosService {
     @GetMapping("/total")
     public Long total() {
         return imnt.count();
+    }
+
+    @GetMapping("/getDetail")
+    public DetalleMantenimiento getDetalle(@RequestParam int id) {
+        return idet_mnt.findById(id).get();
     }
 
     @GetMapping("/search")

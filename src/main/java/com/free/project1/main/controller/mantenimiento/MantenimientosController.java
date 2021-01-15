@@ -6,6 +6,7 @@ import com.free.project1.main.interfaces.mantenimiento.IPersonalNew;
 import com.free.project1.main.interfaces.mantenimiento.ITipoMantenimiento;
 import com.free.project1.main.interfaces.mantenimiento.ITipoProcedimientoAdjudicado;
 import com.free.project1.main.interfaces.mantenimiento.IUnidad;
+import com.free.project1.main.interfaces.mantenimiento.IUnidadEstructural;
 import com.free.project1.main.model.mantenimiento.view.MantenimientoTableView;
 
 import org.slf4j.Logger;
@@ -34,22 +35,20 @@ public class MantenimientosController {
     private IDepartamento _dptos;
 
     @Autowired
-    private IUnidad _unidades;
+    private IUnidadEstructural _unidades;
 
     @Autowired
     private ITipoProcedimientoAdjudicado _procedimientos;
-
-    @Autowired
-    private IPersonalNew _personalnew;
 
     Logger LOG = LoggerFactory.getLogger(MantenimientosController.class);
 
     @GetMapping("/")
     public String home(Model model) {
-        Pageable limit = PageRequest.of(0, 100000, Sort.by(Direction.DESC, "id_mantenimiento"));
-        model.addAttribute("list", MantenimientoTableView.toView(_mnt.findAll(limit).getContent()));
+        Pageable mnt_limit = PageRequest.of(0, 100000, Sort.by(Direction.DESC, "id_mantenimiento"));
+        Pageable unidad_limit = PageRequest.of(0, 100000, Sort.by(Direction.ASC, "descripcion"));
+        model.addAttribute("list", MantenimientoTableView.toView(_mnt.findAll(mnt_limit).getContent()));
         model.addAttribute("dptos", _dptos.findAllByUnidad("NULL"));
-        model.addAttribute("unidades", _unidades.buscarUnidades());
+        model.addAttribute("unidades", _unidades.findAll(unidad_limit).getContent());
         model.addAttribute("details_url", "/details");
         model.addAttribute("search_url", "/search");
         model.addAttribute("add_url", "/add");
@@ -61,6 +60,7 @@ public class MantenimientosController {
 
     @GetMapping("/details")
     public String details(Model model, @RequestParam int id) {
+        model.addAttribute("get_detail_url", "/api/maintenances/getDetail");
         model.addAttribute("update_url", "/update");
         model.addAttribute("add_url", "/add");
         model.addAttribute("mnt", _mnt.findById(id).get());
@@ -70,7 +70,7 @@ public class MantenimientosController {
     @GetMapping("/add")
     public String add(Model model) {
         model.addAttribute("dptos", _dptos.findAllByUnidad("NULL"));
-        model.addAttribute("unidades", _unidades.buscarUnidades());
+        model.addAttribute("unidades", _unidades.findAll());
         model.addAttribute("procedimientos", _procedimientos.findAll());
         model.addAttribute("tipos", _tipo_mnt.findAll());
         model.addAttribute("update_url", "/update");

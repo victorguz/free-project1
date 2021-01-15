@@ -1,10 +1,12 @@
+-- Permitir que COD_TIPO_MTO tenga valores null
+
 ALTER TABLE MANTENIMIENTO MODIFY COD_TIPO_MTO NULL;
 
 -- Actualizar mantenimientos con cod_tipo_mto inexistente
 update mantenimiento set cod_tipo_mto = null where cod_tipo_mto not in (select id_tipo_mto from tipo_mantenimiento);
 
 -- Actualizar mantenimientos con cod_unidad inexistente
-update mantenimiento set cod_unidad = null where cod_unidad not in (select id_unidad from v_estructura_trabajo);
+-- update mantenimiento set cod_unidad = null where cod_unidad not in (select id_unidad from v_estructura_trabajo);
 
 -- Actualizar mantenimientos con cod_departamento inexistente
 update mantenimiento set cod_departamento = null where cod_departamento not in (select id_unidad from v_estructura_centro);
