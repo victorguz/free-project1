@@ -25,7 +25,16 @@
      background-color: #e7e7e7;
  }
 
- .contenedor .segment {
+ .ui.modal.content,
+ .ui.content.form {
+     background-color: #e7e7e7 !important;
+ }
+
+ .ui.tab.active {
+     background-color: #aaaaaa !important;
+ }
+
+ .ui.segment {
      background-color: #aaaaaa;
  }
 
