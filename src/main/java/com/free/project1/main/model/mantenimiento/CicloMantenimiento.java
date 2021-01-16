@@ -173,8 +173,8 @@ public class CicloMantenimiento {
                 + ", 'des_comentarios':'" + getDes_comentarios() + "'" + ", 'fe_tratamiento':'" + getFe_tratamiento()
                 + "'" + ", 'ruta_adjunto':'" + getRuta_adjunto() + "'" + ", 'fe_crea_reg':'" + getFe_crea_reg() + "'"
                 + ", 'fe_modi_reg':'" + getFe_modi_reg() + "'" + ", 'cod_mod_usu':'" + getCod_mod_usu() + "'"
-                + ", 'detalle_mantenimiento':'" + getDetalle_mantenimiento() + "'" + ", 'chk_activo':'"
-                + getChk_activo() + "'" + ", 'de_comentarios_publicos':'" + getDe_comentarios_publicos() + "'" + "}";
+                + ", 'chk_activo':'" + getChk_activo() + "'" + ", 'de_comentarios_publicos':'"
+                + getDe_comentarios_publicos() + "'" + "}";
     }
 
 }

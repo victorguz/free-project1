@@ -524,6 +524,7 @@ public class DetalleMantenimiento {
         this.ciclos = ciclos;
     }
 
+    @Override
     public String toString() {
         return "{" + " 'id_detalle_mto':'" + getId_detalle_mto() + "'" + ", 'estado':'" + getEstado() + "'"
                 + ", 'des_empresa':'" + getDes_empresa() + "'" + ", 'num_importe':'" + getNum_importe() + "'"
@@ -546,7 +547,8 @@ public class DetalleMantenimiento {
                 + getFe_finmto_garantia_prevista() + "'" + ", 'fe_informevalidacion':'" + getFe_informevalidacion()
                 + "'" + ", 'fe_adjudicacionformalizacion':'" + getFe_adjudicacionformalizacion() + "'"
                 + ", 'num_importe_contratacion':'" + getNum_importe_contratacion() + "'" + ", 'cod_estado_rrhh':'"
-                + getCod_estado_rrhh() + "'" + ", 'fe_formalizacion':'" + getFe_formalizacion() + "'" + "}";
+                + getCod_estado_rrhh() + "'" + ", 'fe_formalizacion':'" + getFe_formalizacion() + "'" + ", 'ciclos':'"
+                + getCiclos() + "'" + "}";
     }
 
 }

@@ -75,21 +75,21 @@ const buttons = [
         extend: 'colvis',
     },
     {
-        text: '<div class="dttable-button"><img src="../icons/pdf.png">Impr. PDF<div>',
+        text: '<div class="dttable-button"><img src="icons/pdf.png">Impr. PDF<div>',
         extend: 'print',
         exportOptions: {
             columns: ':visible'
         }
     },
     {
-        text: '<div class="dttable-button"><img src="../icons/excel.png">Excel<div>',
+        text: '<div class="dttable-button"><img src="icons/excel.png">Excel<div>',
         extend: 'excelHtml5',
         exportOptions: {
             columns: ':visible'
         }
     },
     {
-        text: '<div class="dttable-button"><img src="../icons/crystal.jpg">Crystal<div>',
+        text: '<div class="dttable-button"><img src="icons/crystal.jpg">Crystal<div>',
         extend: 'excelHtml5',
         exportOptions: {
             columns: [1, 6, 5, 4, 8, 9, 7]
@@ -223,6 +223,43 @@ function setModalDetailsData(id) {
             <label>Empresa adjudicada</label>
             <input type="text" readonly="true" placeholder="Empresa adjudicada" value='${dtl.des_empresa ? dtl.des_empresa : ""}'>
         </div>
+
+        <table class="ui selectable celled table" style="wid100%" id="details_datatable2">
+        <tbody>
+
+            <thead>
+                <tr>
+                    <th>Fecha tratamiento</th>
+                    <th>Observaciones QyA</th>
+                    <th>Observaciones detalle</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            `;
+
+    dtl.ciclos.forEach(cl => {
+        cl.id_detalle_mto = dtl.id_detalle_mto;
+        item += `
+                
+                <tr>
+                    <td>${dateFormat(cl.fe_tratamiento)}</td>
+                    <td>${cl.des_comentarios}</td>
+                    <td>${cl.de_comentarios_publicos}</td>
+                    <td>
+                        <a class="ui button icon" button-modal-cicle='${JSON.stringify(cl)}'>
+                            <i class="eye icon"></i>
+                        </a>
+                    </td>
+                </tr>
+                
+                
+                `
+    });
+
+
+    item += `
+        </tbody>
+        </table>
     </div>
 
     <div class="ui bottom attached tab segment" data-tab="dos">
@@ -427,55 +464,73 @@ function setModalDetailsData(id) {
             </div>
         </div>
     </div>
-    <div class="ui bottom attached tab segment" data-tab="cinco">
-        <table class="ui selectable celled table" style="width:100%" id="details_datatable2">
-        </table>
-    </div>
-
 
     `;
 
     document.querySelector(".tabs-detail-container").innerHTML = item;
 
-    setDataTable(null, columns, [], null, [], [0, "desc"], "details_datatable2")
+
+    $("[button-modal-cicle]").click(function (e) {
+        e.preventDefault();
+        openCicleModal(stringToJSON($(this).attr("button-modal-cicle"), true))
+    })
 
     $('.menu .item').tab();
-    // $('.ui .dropdown').dropdown();
-
-    // $('.ui.calendar').calendar({
-    //     type: 'date',
-    //     formatter: {
-    //         date: function (date, settings) {
-    //             if (!date) return '';
-    //             var day = date.getDate() + '';
-    //             if (day.length < 2) {
-    //                 day = '0' + day;
-    //             }
-    //             var month = (date.getMonth() + 1) + '';
-    //             if (month.length < 2) {
-    //                 month = '0' + month;
-    //             }
-    //             var year = date.getFullYear();
-    //             return year + '/' + month + '/' + day;
-    //         }
-    //     }
-    // })
 }
+function openCicleModal(cicle) {
+    if (cicle) {
+        console.log(cicle)
+        $("[modal-cicle-content]").html(`
+        
+            <div class="field">
+                <label>Inicio prorroga</label>
+                <div class="ui calendar">
+                    <div class="ui input right icon">
+                        <i class="calendar icon"></i>
+                        <input type="text" readonly="true" placeholder="Inicio prorroga" value='${cicle.fe_tratamiento}'>
+                    </div>
+                </div>
+            </div>
 
+            <div class="field">
+                <label>Observaciones QyA:</label>
+                <textarea name="descripcion" id="descripcion" rows="3" maxlength="2000"
+                    placeholder="Observaciones QyA">${cicle.des_comentarios}</textarea>
+            </div>
+
+            <div class="field">
+                <label>Observaciones detalle:</label>
+                <textarea name="observaciones" id="observaciones" rows="5" maxlength="2000"
+                    placeholder="Observaciones detalle">${cicle.de_comentarios_publicos}</textarea>
+            </div>
+
+            <div class="field">
+                <label>Ruta archivo adjunto:</label>
+                <div class="ui action input">
+                    <input type="text" placeholder="Ruta archivo adjunto" value='${cicle.ruta_adjunto}'>
+                    <a class="ui blue icon button" href='${cicle.ruta_adjunto}' download='${cicle.ruta_adjunto}'>
+                        <i class="download icon"></i>
+                        	&nbsp;&nbsp;Descargar archivo
+                    </a>
+                    <a class="ui green icon button">
+                        <i class="upload icon"></i>
+                        	&nbsp;&nbsp;Subir un archivo
+                    </a>
+                </div>
+            </div>
+
+        `);
+        $("[modal-cicle]").modal("show")
+        $("[modal-cicle-header]").html("Detalle #" + cicle.id_detalle_mto + " - Ciclo #" + cicle.id_ciclo)
+
+
+    }
+}
 
 function getDetails() {
     if (detailsList) {
         detailsList.forEach(detail => {
-            detail = detail.value.replaceAll("'", '"')
-            detail = JSON.parse(detail);
-            for (const key in detail) {
-                if (Object.hasOwnProperty.call(detail, key)) {
-                    if (detail[key] === "null") {
-                        detail[key] == "";
-                    }
-                }
-            }
-            details.push(detail)
+            details.push(stringToJSON(detail.value))
         });
     }
 }

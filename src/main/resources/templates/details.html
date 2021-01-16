@@ -136,8 +136,8 @@
                             placeholder="Observaciones" th:text="${mnt.txt_observaciones}"></textarea>
                     </div>
 
-                    <div th:each="item: ${mnt.detalles}">
-                        <input type="hidden" class="input-detalles" th:value="${item.toString()}">
+                    <div th:each="dtl: ${mnt.detalles}">
+                        <input type="hidden" class="input-detalles" th:value="${dtl!=null?dtl.toString():''}">
                     </div>
 
                     <input type="hidden" class="url-get-detail" th:value="${get_detail_url}">
@@ -204,7 +204,7 @@
                     <div class="ui dimmer inverted">
                         <div class="ui text loader">Cargando</div>
                     </div>
-                    <form class="ui modal modal-details">
+                    <div class="ui modal fullscreen modal-details">
                         <i class="close icon"></i>
                         <div class="header" modal-details-header>Detalles #{id}</div>
                         <div class="content ui form">
@@ -214,19 +214,36 @@
                                 <a class="item google-drive-opener" data-tab="tres">Control de ofertas</a>
                                 <a class="item google-drive-opener" data-tab="cuatro">Control de garantías,
                                     adjudicación y formalización</a>
-                                <a class="item google-drive-opener" data-tab="cinco">Tabla de datos e impresión</a>
                             </div>
 
                             <div class="tabs-detail-container"></div>
                         </div>
                         <div class="actions">
-                            <div class="ui primary approve button disabled">
+                            <!-- <div class="ui primary approve button disabled">
                                 <i class="save icon"></i>
                                 Guardar cambios
-                            </div>
+                            </div> -->
                             <div class="ui cancel button">Cancelar</div>
                         </div>
-                    </form>
+                    </div>
+
+                    <div class="ui modal small" modal-cicle>
+                        <i class="close icon"></i>
+                        <div class="header" modal-cicle-header>Ciclo #{id}</div>
+                        <div class="ui form content " modal-cicle-content>
+
+                            <div class="field">
+                                <input type="text" placeholder="">
+                            </div>
+
+                        </div>
+                        <div class="actions">
+                            <button class="ui cancel button">
+                                Cancelar
+                            </button>
+                        </div>
+                    </div>
+
 
                 </div>
 

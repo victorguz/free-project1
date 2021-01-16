@@ -1,17 +1,14 @@
 
-let table;
 function setDataTable(data = null, columns, columnDefs,
     buttons = [], order = [], elementId = "datatable", fixedColumns = null, pageLength = 5, createdRow = null) {
+    let table;
     if (data == null) {
         table = $('#' + elementId).DataTable({
             processing: true,
-            // data: data,
-            // columns: columns,
             columnDefs: columnDefs,
             lengthChange: false,
             buttons: buttons,
             pageLength: pageLength,
-            // scrollY: true,
             scrollX: true,
             order: order,
             fixedColumns: fixedColumns,
@@ -436,4 +433,32 @@ function getUrl(url, getData, newBase) {
     }
 
     return completeUrl;
+}
+
+function stringToJSON(string,
+    leaveDoubleQuotes) {
+    if (string) {
+        string = string
+            .replaceAll('00:00:00.0', "")
+            .replaceAll("'", '"')
+            .replaceAll("null", "")
+            .replaceAll("NULL", "")
+            .replaceAll('"[', '[')
+            .replaceAll(']"', ']')
+            .replaceAll(/(\r\n|\n|\r)/gm, " ")
+            .replaceAll(/\s+/g, " ")
+        if (!leaveDoubleQuotes) {
+            string.replaceAll('"', "")
+        }
+        string = JSON.parse(string);
+        for (const key in string) {
+            if (Object.hasOwnProperty.call(string, key)) {
+                if (string[key] === "null") {
+                    string[key] == "";
+                }
+            }
+        }
+        return string;
+    }
+    return null;
 }
