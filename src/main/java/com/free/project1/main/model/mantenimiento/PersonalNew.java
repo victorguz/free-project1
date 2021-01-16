@@ -4,9 +4,7 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.EntityNotFoundException;
 import javax.persistence.Id;
-import javax.persistence.PostLoad;
 
 @Entity(name = "PERSONAL_NEW")
 public class PersonalNew {

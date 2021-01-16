@@ -105,17 +105,24 @@ const buttons = [
         extend: 'colvis',
     },
     {
-        text: '<i class="print icon"></i>Impr. PDF',
+        text: '<div class="dttable-button"><img src="../icons/pdf.png">Impr. PDF<div>',
         extend: 'print',
         exportOptions: {
             columns: ':visible'
         }
     },
     {
-        text: '<i class="file excel outline icon"></i>Excel',
+        text: '<div class="dttable-button"><img src="../icons/excel.png">Excel<div>',
         extend: 'excelHtml5',
         exportOptions: {
             columns: ':visible'
+        }
+    },
+    {
+        text: '<div class="dttable-button"><img src="../icons/crystal.jpg">Crystal<div>',
+        extend: 'excelHtml5',
+        exportOptions: {
+            columns: [1, 6, 5, 4, 8, 9, 7]
         }
     },
 
@@ -123,8 +130,9 @@ const buttons = [
 const columnDefs = [
     // { targets: [4], width: '200px' },
     { targets: [4, 13], className: "td-width" },
+    { targets: [0, 18], className: "td-width-fixed" },
     { targets: [13, 14, 15, 16], visible: false },
-    { targets: [17], sortable: false }
+    { targets: [18], sortable: false }
 ]
 
 const fixedColumns = {

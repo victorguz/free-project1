@@ -2,9 +2,7 @@ package com.free.project1.main.controller.usuario;
 
 import java.util.List;
 
-import com.free.project1.main.interfaces.mantenimiento.IMantenimiento;
 import com.free.project1.main.interfaces.usuario.IUsuario;
-import com.free.project1.main.model.mantenimiento.Mantenimiento;
 import com.free.project1.main.model.usuario.Usuario;
 
 import org.springframework.beans.factory.annotation.Autowired;

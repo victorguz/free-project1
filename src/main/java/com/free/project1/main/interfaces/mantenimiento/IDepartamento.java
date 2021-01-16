@@ -5,7 +5,6 @@ import java.util.List;
 import com.free.project1.main.model.mantenimiento.Departamento;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
 
 public interface IDepartamento extends JpaRepository<Departamento, Integer> {
 

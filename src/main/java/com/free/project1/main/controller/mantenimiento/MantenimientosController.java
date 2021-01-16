@@ -2,10 +2,8 @@ package com.free.project1.main.controller.mantenimiento;
 
 import com.free.project1.main.interfaces.mantenimiento.IDepartamento;
 import com.free.project1.main.interfaces.mantenimiento.IMantenimiento;
-import com.free.project1.main.interfaces.mantenimiento.IPersonalNew;
 import com.free.project1.main.interfaces.mantenimiento.ITipoMantenimiento;
 import com.free.project1.main.interfaces.mantenimiento.ITipoProcedimientoAdjudicado;
-import com.free.project1.main.interfaces.mantenimiento.IUnidad;
 import com.free.project1.main.interfaces.mantenimiento.IUnidadEstructural;
 import com.free.project1.main.model.mantenimiento.view.MantenimientoTableView;
 
