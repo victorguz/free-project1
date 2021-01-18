@@ -164,38 +164,38 @@ function setModalDetailsData(id) {
 
         <div class="two fields">
             <div class="field">
-                <label>Inicio contrato</label>
+                <label>Fecha ini. contrato</label>
                 <div class="ui calendar">
                     <div class="ui input right icon">
                         <i class="calendar icon"></i>
-                        <input type="text" readonly="true" placeholder="Inicio contrato" value='${dtl.fe_ini_contrato ? dateFormat(dtl.fe_ini_contrato) : ""}'>
+                        <input type="text" readonly="true" placeholder="Fecha inicio contrato" value='${dtl.fe_ini_contrato ? dateFormat(dtl.fe_ini_contrato) : ""}'>
                     </div>
                 </div>
             </div>
             <div class="field">
-                <label>Fin contrato</label>
+                <label>Fecha fin contrato</label>
                 <div class="ui calendar">
                     <div class="ui input right icon">
                         <i class="calendar icon"></i>
-                        <input type="text" readonly="true" placeholder="Fin contrato" value='${dtl.fe_fin_contrato ? dateFormat(dtl.fe_fin_contrato) : ""}'>
+                        <input type="text" readonly="true" placeholder="Fecha fin contrato" value='${dtl.fe_fin_contrato ? dateFormat(dtl.fe_fin_contrato) : ""}'>
                     </div>
                 </div>
             </div>
             <div class="field">
-                <label>Inicio prorroga</label>
+                <label>Fecha ini. prorroga</label>
                 <div class="ui calendar">
                     <div class="ui input right icon">
                         <i class="calendar icon"></i>
-                        <input type="text" readonly="true" placeholder="Inicio prorroga" value='${dtl.fe_ini_prorroga ? dateFormat(dtl.fe_ini_prorroga) : ""}'>
+                        <input type="text" readonly="true" placeholder="Fecha inicio prorroga" value='${dtl.fe_ini_prorroga ? dateFormat(dtl.fe_ini_prorroga) : ""}'>
                     </div>
                 </div>
             </div>
             <div class="field">
-                <label>Fin prorroga</label>
+                <label>Fecha fin prorroga</label>
                 <div class="ui calendar">
                     <div class="ui input right icon">
                         <i class="calendar icon"></i>
-                        <input type="text" readonly="true" placeholder="Fin prorroga" value='${dtl.fe_fin_prorroga ? dateFormat(dtl.fe_fin_prorroga) : ""}'>
+                        <input type="text" readonly="true" placeholder="Fecha fin prorroga" value='${dtl.fe_fin_prorroga ? dateFormat(dtl.fe_fin_prorroga) : ""}'>
                     </div>
                 </div>
             </div>
@@ -229,6 +229,7 @@ function setModalDetailsData(id) {
 
             <thead>
                 <tr>
+                    <th>ID</th>
                     <th>Fecha tratamiento</th>
                     <th>Observaciones QyA</th>
                     <th>Observaciones detalle</th>
@@ -242,6 +243,7 @@ function setModalDetailsData(id) {
         item += `
                 
                 <tr>
+                    <td>${cl.id_ciclo}</td>
                     <td>${dateFormat(cl.fe_tratamiento)}</td>
                     <td>${cl.des_comentarios}</td>
                     <td>${cl.de_comentarios_publicos}</td>
@@ -263,41 +265,41 @@ function setModalDetailsData(id) {
     </div>
 
     <div class="ui bottom attached tab segment" data-tab="dos">
+        <h5 class="ui header dividing">Control de memorias</h5>
         <div class="two fields">
             <div class="field">
-                <label>Solicitud adquisición</label>
+                <label>Fecha solicitud adquisición</label>
                 <div class="ui calendar">
                     <div class="ui input right icon">
                         <i class="calendar icon"></i>
-                        <input type="text" readonly="true" placeholder="Solicitud adquisición" value='${dtl.fe_sol_adq ? dateFormat(dtl.fe_sol_adq) : ""}'>
+                        <input type="text" readonly="true" placeholder="Fecha solicitud adquisición" value='${dtl.fe_sol_adq ? dateFormat(dtl.fe_sol_adq) : ""}'>
                     </div>
                 </div>
             </div>
             <div class="field">
-                <label>Envío org. colegiados</label>
+                <label>Fecha envío org. colegiados</label>
                 <div class="ui calendar">
                     <div class="ui input right icon">
                         <i class="calendar icon"></i>
-                        <input type="text" readonly="true" placeholder="Envío org. colegiados" value='${dtl.fe_env_org_col ? dateFormat(dtl.fe_env_org_col) : ""}'>
+                        <input type="text" readonly="true" placeholder="Fecha envío org. colegiados" value='${dtl.fe_env_org_col ? dateFormat(dtl.fe_env_org_col) : ""}'>
                     </div>
                 </div>
             </div>
             <div class="field">
-                <label>Recepción de memoria</label>
+                <label>Fecha recepción de memoria</label>
                 <div class="ui calendar">
                     <div class="ui input right icon">
                         <i class="calendar icon"></i>
-                        <input type="text" readonly="true" placeholder="Recepción de memoria" value='${dtl.fe_recp_mem ? dateFormat(dtl.fe_recp_mem) : ""}'>
+                        <input type="text" readonly="true" placeholder="Fecha recepción de memoria" value='${dtl.fe_recp_mem ? dateFormat(dtl.fe_recp_mem) : ""}'>
                     </div>
                 </div>
             </div>
             <div class="field">
-                <label>Envío validación responsable</label>
+                <label>Fecha envío validación responsable</label>
                 <div class="ui calendar">
                     <div class="ui input right icon">
                         <i class="calendar icon"></i>
-                        <input type="text" readonly="true value='${dtl.fe_env_val ? dateFormat(dtl.fe_env_val) : ""}'"
-                            placeholder="Envío validación responsable">
+                        <input type="text" readonly="true" value='${dtl.fe_env_val ? dateFormat(dtl.fe_env_val) : ""}' placeholder="Fecha envío validación responsable">
                     </div>
                 </div>
 
@@ -305,12 +307,11 @@ function setModalDetailsData(id) {
         </div>
         <div class="two fields">
             <div class="field">
-                <label>Recepción validación responsable</label>
+                <label>Fecha recepción validación responsable</label>
                 <div class="ui calendar">
                     <div class="ui input right icon">
                         <i class="calendar icon"></i>
-                        <input type="text" readonly="" tru value='${dtl.fe_recp_val ? dateFormat(dtl.fe_recp_val) : ""}'e
-                            placeholder="Recepción validación responsable">
+                        <input type="text" readonly="" value='${dtl.fe_recp_val ? dateFormat(dtl.fe_recp_val) : ""}' placeholder="Fecha recepción validación responsable">
                     </div>
                 </div>
 
@@ -320,79 +321,80 @@ function setModalDetailsData(id) {
                 <div class="ui calendar">
                     <div class="ui input right icon">
                         <i class="calendar icon"></i>
-                        <input type="text" readonly="true value='${dtl.fe_ultdia_valmem ? dateFormat(dtl.fe_ultdia_valmem) : ""}'"
+                        <input type="text" readonly="true" value='${dtl.fe_ultdia_valmem ? dateFormat(dtl.fe_ultdia_valmem) : ""}'
                             placeholder="Último día de validación">
                     </div>
                 </div>
             </div>
             <div class="field">
-                <label>Memoria validada (Memorias Tec)</label>
+                <label>Fecha memoria validada (Memorias Tec)</label>
                 <div class="ui calendar">
                     <div class="ui input right icon">
                         <i class="calendar icon"></i>
-                        <input type="text" readonly="true" placeholder="Memoria validada" value='${dtl.fe_mem_val ? dateFormat(dtl.fe_mem_val) : ""}'>
+                        <input type="text" readonly="true" placeholder="Fecha memoria validada" value='${dtl.fe_mem_val ? dateFormat(dtl.fe_mem_val) : ""}'>
                     </div>
                 </div>
             </div>
             <div class="field">
-                <label>Terminación en COTEC</label>
+                <label>Fecha terminación en COTEC</label>
                 <div class="ui calendar">
                     <div class="ui input right icon">
                         <i class="calendar icon"></i>
-                        <input type="text" readonly="true" placeholder="Terminación en COTEC" value='${dtl.fe_tram_cotec ? dateFormat(dtl.fe_tram_cotec) : ""}'>
+                        <input type="text" readonly="true" placeholder="Fecha terminación en COTEC" value='${dtl.fe_tram_cotec ? dateFormat(dtl.fe_tram_cotec) : ""}'>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <div class="ui bottom attached tab segment" data-tab="tres">
+        <h5 class="ui header dividing">Control de ofertas</h5>
         <div class="two fields">
             <div class="field">
                 <label>Último día presentación ofertas</label>
                 <div class="ui calendar">
                     <div class="ui input right icon">
                         <i class="calendar icon"></i>
-                        <input type="text" readonly="true value='${dtl.fe_ultdia_ofertas ? dateFormat(dtl.fe_ultdia_ofertas) : ""}'"
+                        <input type="text" readonly="true" value='${dtl.fe_ultdia_ofertas ? dateFormat(dtl.fe_ultdia_ofertas) : ""}'
                             placeholder="Último día presentación ofertas">
                     </div>
                 </div>
             </div>
             <div class="field">
-                <label>Recepción de ofertas</label>
+                <label>Fecha recepción de ofertas</label>
                 <div class="ui calendar">
                     <div class="ui input right icon">
                         <i class="calendar icon"></i>
-                        <input type="text" readonly="true" placeholder="Recepción de ofertas" value='${dtl.fe_recp_ofertas ? dateFormat(dtl.fe_recp_ofertas) : ""}'>
+                        <input type="text" readonly="true" placeholder="Fecha recepción de ofertas" value='${dtl.fe_recp_ofertas ? dateFormat(dtl.fe_recp_ofertas) : ""}'>
                     </div>
                 </div>
             </div>
             <div class="field">
-                <label>Aviso a jefes</label>
+                <label>Fecha aviso a jefes</label>
                 <div class="ui calendar">
                     <div class="ui input right icon">
                         <i class="calendar icon"></i>
-                        <input type="text" readonly="true" placeholder="Aviso a jefes" value='${dtl.fe_aviso_jefes ? dateFormat(dtl.fe_aviso_jefes) : ""}'>
+                        <input type="text" readonly="true" placeholder="Fecha aviso a jefes" value='${dtl.fe_aviso_jefes ? dateFormat(dtl.fe_aviso_jefes) : ""}'>
                     </div>
                 </div>
             </div>
             <div class="field">
-                <label>Aviso ofertas validadas</label>
+                <label>Fecha aviso ofertas validadas</label>
                 <div class="ui calendar">
                     <div class="ui input right icon">
                         <i class="calendar icon"></i>
-                        <input type="text" readonly="true value='${dtl.fe_aviso_ofertasvalidadas ? dateFormat(dtl.fe_aviso_ofertasvalidadas) : ""}'"
-                            placeholder="Aviso ofertas validadas">
+                        <input type="text" readonly="true" value='${dtl.fe_aviso_ofertasvalidadas ? dateFormat(dtl.fe_aviso_ofertasvalidadas) : ""}'
+                            placeholder="Fecha aviso ofertas validadas">
                     </div>
                 </div>
             </div>
         </div>
         <div class="two fields">
             <div class="field">
-                <label>Respuesta de oferta</label>
+                <label>Fecha respuesta de oferta</label>
                 <div class="ui calendar">
                     <div class="ui input right icon">
                         <i class="calendar icon"></i>
-                        <input type="text" readonly="true" placeholder="Respuesta de oferta" value='${dtl.fe_respuesta_ofertas ? dateFormat(dtl.fe_respuesta_ofertas) : ""}'>
+                        <input type="text" readonly="true" placeholder="Fecha respuesta de oferta" value='${dtl.fe_respuesta_ofertas ? dateFormat(dtl.fe_respuesta_ofertas) : ""}'>
                     </div>
                 </div>
             </div>
@@ -401,47 +403,47 @@ function setModalDetailsData(id) {
                 <div class="ui calendar">
                     <div class="ui input right icon">
                         <i class="calendar icon"></i>
-                        <input type="text" readonly="true value='${dtl.fe_ult_diaexpdate ? dateFormat(dtl.fe_ult_diaexpdate) : ""}'"
+                        <input type="text" readonly="true" value='${dtl.fe_ult_diaexpdate ? dateFormat(dtl.fe_ult_diaexpdate) : ""}'
                             placeholder="Último día de validación">
                     </div>
                 </div>
             </div>
             <div class="field">
-                <label>Informe de validación</label>
+                <label>Fecha informe de validación</label>
                 <div class="ui calendar">
                     <div class="ui input right icon">
                         <i class="calendar icon"></i>
-                        <input type="text" readonly="true" placeholder="Informe de validación" value='${dtl.fe_informevalidacion ? dateFormat(dtl.fe_informevalidacion) : ""}'>
+                        <input type="text" readonly="true" placeholder="Fecha informe de validación" value='${dtl.fe_informevalidacion ? dateFormat(dtl.fe_informevalidacion) : ""}'>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <div class="ui bottom attached tab segment" data-tab="cuatro">
-        <h5 class="ui header dividing">Fechas control de garantías</h5>
+        <h5 class="ui header dividing">Control de garantías</h5>
         <div class="two fields">
             <div class="field">
-                <label>Inicio Mto/Garantía prevista</label>
+                <label>Fecha inicio Mto/Garantía prevista</label>
                 <div class="ui calendar">
                     <div class="ui input right icon">
                         <i class="calendar icon"></i>
                         <input type="text" readonly="" tru value='${dtl.fe_inimto_garantia_prevista ? dateFormat(dtl.fe_inimto_garantia_prevista) : ""}'e
-                            placeholder="Inicio Mto/Garantía prevista">
+                            placeholder="Fecha inicio Mto/Garantía prevista">
                     </div>
                 </div>
             </div>
             <div class="field">
-                <label>Fin Mto/Garantía prevista</label>
+                <label>Fecha fin Mto/Garantía prevista</label>
                 <div class="ui calendar">
                     <div class="ui input right icon">
                         <i class="calendar icon"></i>
-                        <input type="text" readonly="true value='${dtl.fe_finmto_garantia_prevista ? dateFormat(dtl.fe_finmto_garantia_prevista) : ""}'"
-                            placeholder="Fin Mto/Garantía prevista">
+                        <input type="text" readonly="true" value='${dtl.fe_finmto_garantia_prevista ? dateFormat(dtl.fe_finmto_garantia_prevista) : ""}'
+                            placeholder="Fecha fin Mto/Garantía prevista">
                     </div>
                 </div>
             </div>
         </div>
-        <h5 class="ui header dividing">Fechas control de adjudicación y
+        <h5 class="ui header dividing">Control de adjudicación y
             formalización</h5>
         <div class="two fields">
             <div class="field">
@@ -487,7 +489,7 @@ function openCicleModal(cicle) {
                 <div class="ui calendar">
                     <div class="ui input right icon">
                         <i class="calendar icon"></i>
-                        <input type="text" readonly="true" placeholder="Inicio prorroga" value='${cicle.fe_tratamiento}'>
+                        <input type="text" readonly="true" placeholder="Fecha inicio prorroga" value='${cicle.fe_tratamiento}'>
                     </div>
                 </div>
             </div>
@@ -520,10 +522,9 @@ function openCicleModal(cicle) {
             </div>
 
         `);
+
         $("[modal-cicle]").modal("show")
         $("[modal-cicle-header]").html("Detalle #" + cicle.id_detalle_mto + " - Ciclo #" + cicle.id_ciclo)
-
-
     }
 }
 
