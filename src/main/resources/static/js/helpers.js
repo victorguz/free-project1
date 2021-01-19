@@ -443,7 +443,7 @@ function stringToJSON(string,
             .replaceAll("'", '"')
             .replaceAll("null", "")
             .replaceAll("NULL", "")
-            .replaceAll('"[', '[')
+             .replaceAll('"[', '[')
             .replaceAll(']"', ']')
             .replaceAll(/(\r\n|\n|\r)/gm, " ")
             .replaceAll(/\s+/g, " ")

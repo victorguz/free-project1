@@ -5,7 +5,7 @@ import com.free.project1.main.interfaces.mantenimiento.IMantenimiento;
 import com.free.project1.main.interfaces.mantenimiento.ITipoMantenimiento;
 import com.free.project1.main.interfaces.mantenimiento.ITipoProcedimientoAdjudicado;
 import com.free.project1.main.interfaces.mantenimiento.IUnidadEstructural;
-import com.free.project1.main.model.mantenimiento.view.MantenimientoTableView;
+import com.free.project1.main.model.mantenimiento.view.MantenimientoView;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -44,7 +44,7 @@ public class MantenimientosController {
     public String home(Model model) {
         Pageable mnt_limit = PageRequest.of(0, 100000, Sort.by(Direction.DESC, "id_mantenimiento"));
         Pageable unidad_limit = PageRequest.of(0, 100000, Sort.by(Direction.ASC, "descripcion"));
-        model.addAttribute("list", MantenimientoTableView.toView(_mnt.findAll(mnt_limit).getContent()));
+        model.addAttribute("list", MantenimientoView.toList(_mnt.findAll(mnt_limit).getContent()));
         model.addAttribute("dptos", _dptos.findAllByUnidad("NULL"));
         model.addAttribute("unidades", _unidades.findAll(unidad_limit).getContent());
         model.addAttribute("details_url", "/details");
@@ -61,7 +61,7 @@ public class MantenimientosController {
         model.addAttribute("get_detail_url", "/api/maintenances/getDetail");
         model.addAttribute("update_url", "/update");
         model.addAttribute("add_url", "/add");
-        model.addAttribute("mnt", _mnt.findById(id).get());
+        model.addAttribute("mnt", new MantenimientoView(_mnt.findById(id).get()));
         return "details";
     }
 

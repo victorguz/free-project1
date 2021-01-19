@@ -9,12 +9,12 @@ const columns = [
     // { name: "Estado", title: "Estado", data: "estado" },
     // {
     //     name: "Inicio", title: "Inicio",
-    //     render: function (undefined, filter, data, meta) { return dateFormat(data.fe_ini_contrato) }
+    //     render: function (undefined, filter, data, meta) { return data.fe_ini_contrato }
     // },
     // {
     //     name: "Fin", title: "Fin",
     //     render: function (undefined, filter, data, meta) {
-    //         return dateFormat(data.fe_fin_contrato)
+    //         return data.fe_fin_contrato
     //     }
     // },
     // { name: "Expediente", title: "Expediente", data: "cod_expediente" },
@@ -29,40 +29,40 @@ const columns = [
     // {
     //     name: "Inicio prorroga", title: "Inicio prorroga",
     //     render: function (undefined, filter, data, meta) {
-    //         return dateFormat(data.fe_ini_prorroga)
+    //         return data.fe_ini_prorroga
     //     }
     // },
     // {
     //     name: "Fin prorroga", title: "Fin prorroga",
     //     render: function (undefined, filter, data, meta) {
-    //         return dateFormat(data.fe_fin_prorroga)
+    //         return data.fe_fin_prorroga
     //     }
     // },
     // { name: "No. Importe", title: "No. Importe", data: "num_importe" },
     // { name: "Estado activo", title: "Estado activo", data: "chk_activo" },
     // { name: "Cod estado nuevo expediente", title: "Cod estado nuevo expediente", data: "cod_estadonuevoexp" },
     // { name: "Años prorroga", title: "Años prorroga", data: "añosprorroga" },
-    // { name: "Solicitud de alquisición", title: "Solicitud de alquisición", render: function (undefined, filter, data, meta) { return dateFormat(data.fe_sol_adq) } },
-    // // { name: "fe_env_org_col", title: "fe_env_org_col", render: function (undefined, filter, data, meta) { return dateFormat(data.fe_env_org_col)} },
-    // { name: "Recepción memorando", title: "Recepción memorando", render: function (undefined, filter, data, meta) { return dateFormat(data.fe_recp_mem) } },
-    // { name: "Envío validación", title: "Envío validación", render: function (undefined, filter, data, meta) { return dateFormat(data.fe_env_val) } },
-    // { name: "Recepcion validación", title: "Recepcion validación", render: function (undefined, filter, data, meta) { return dateFormat(data.fe_recp_val) } },
-    // { name: "Ult. día validacion memorando", title: "Ult. día validacion memorando", render: function (undefined, filter, data, meta) { return dateFormat(data.fe_ultdia_valmem) } },
-    // { name: "Validación memorando", title: "Validación memorando", render: function (undefined, filter, data, meta) { return dateFormat(data.fe_mem_val) } },
-    // // { name: "fe_tram_cotec", title: "fe_tram_cotec", render: function (undefined, filter, data, meta) { return dateFormat(data.fe_tram_cotec)} },
-    // { name: "Ultimo día ofertas", title: "Ultimo día ofertas", render: function (undefined, filter, data, meta) { return dateFormat(data.fe_ultdia_ofertas) } },
-    // { name: "Recepción de ofertas", title: "Recepción de ofertas", render: function (undefined, filter, data, meta) { return dateFormat(data.fe_recp_ofertas) } },
-    // { name: "Aviso jefes", title: "Aviso jefes", render: function (undefined, filter, data, meta) { return dateFormat(data.fe_aviso_jefes) } },
-    // { name: "Aviso ofertas validadas", title: "Aviso ofertas validadas", render: function (undefined, filter, data, meta) { return dateFormat(data.fe_aviso_ofertasvalidadas) } },
-    // { name: "Respuesta a ofertas", title: "Respuesta a ofertas", render: function (undefined, filter, data, meta) { return dateFormat(data.fe_respuesta_ofertas) } },
-    // { name: "Ult. día expediente", title: "Ult. día expediente", render: function (undefined, filter, data, meta) { return dateFormat(data.fe_ult_diaexpdate) } },
-    // { name: "Ini. Mto. garantía prevista ", title: "Ini. Mto. garantía prevista ", render: function (undefined, filter, data, meta) { return dateFormat(data.fe_inimto_garantia_prevista) } },
-    // { name: "Fin Mto. garantía prevista", title: "Fin Mto. garantía prevista", render: function (undefined, filter, data, meta) { return dateFormat(data.fe_finmto_garantia_prevista) } },
-    // { name: "Informe validación", title: "Informe validación", render: function (undefined, filter, data, meta) { return dateFormat(data.fe_informevalidacion) } },
-    // { name: "Adjudicacion formalizacion", title: "Adjudicacion formalizacion", render: function (undefined, filter, data, meta) { return dateFormat(data.fe_adjudicacionformalizacion) } },
+    // { name: "Solicitud de alquisición", title: "Solicitud de alquisición", render: function (undefined, filter, data, meta) { return data.fe_sol_adq } },
+    // // { name: "fe_env_org_col", title: "fe_env_org_col", render: function (undefined, filter, data, meta) { return data.fe_env_org_col} },
+    // { name: "Recepción memorando", title: "Recepción memorando", render: function (undefined, filter, data, meta) { return data.fe_recp_mem } },
+    // { name: "Envío validación", title: "Envío validación", render: function (undefined, filter, data, meta) { return data.fe_env_val } },
+    // { name: "Recepcion validación", title: "Recepcion validación", render: function (undefined, filter, data, meta) { return data.fe_recp_val } },
+    // { name: "Ult. día validacion memorando", title: "Ult. día validacion memorando", render: function (undefined, filter, data, meta) { return data.fe_ultdia_valmem } },
+    // { name: "Validación memorando", title: "Validación memorando", render: function (undefined, filter, data, meta) { return data.fe_mem_val } },
+    // // { name: "fe_tram_cotec", title: "fe_tram_cotec", render: function (undefined, filter, data, meta) { return data.fe_tram_cotec} },
+    // { name: "Ultimo día ofertas", title: "Ultimo día ofertas", render: function (undefined, filter, data, meta) { return data.fe_ultdia_ofertas } },
+    // { name: "Recepción de ofertas", title: "Recepción de ofertas", render: function (undefined, filter, data, meta) { return data.fe_recp_ofertas } },
+    // { name: "Aviso jefes", title: "Aviso jefes", render: function (undefined, filter, data, meta) { return data.fe_aviso_jefes } },
+    // { name: "Aviso ofertas validadas", title: "Aviso ofertas validadas", render: function (undefined, filter, data, meta) { return data.fe_aviso_ofertasvalidadas } },
+    // { name: "Respuesta a ofertas", title: "Respuesta a ofertas", render: function (undefined, filter, data, meta) { return data.fe_respuesta_ofertas } },
+    // { name: "Ult. día expediente", title: "Ult. día expediente", render: function (undefined, filter, data, meta) { return data.fe_ult_diaexpdate } },
+    // { name: "Ini. Mto. garantía prevista ", title: "Ini. Mto. garantía prevista ", render: function (undefined, filter, data, meta) { return data.fe_inimto_garantia_prevista } },
+    // { name: "Fin Mto. garantía prevista", title: "Fin Mto. garantía prevista", render: function (undefined, filter, data, meta) { return data.fe_finmto_garantia_prevista } },
+    // { name: "Informe validación", title: "Informe validación", render: function (undefined, filter, data, meta) { return data.fe_informevalidacion } },
+    // { name: "Adjudicacion formalizacion", title: "Adjudicacion formalizacion", render: function (undefined, filter, data, meta) { return data.fe_adjudicacionformalizacion } },
     // { name: "Importe contratación", title: "Importe contratación", data: "num_importe_contratacion" },
     // { name: "Estado RRHH", title: "Estado RRHH", data: "cod_estado_rrhh" },
-    // { name: "Formalización", title: "Formalización", render: function (undefined, filter, data, meta) { return dateFormat(data.fe_formalizacion) } },
+    // { name: "Formalización", title: "Formalización", render: function (undefined, filter, data, meta) { return data.fe_formalizacion } },
 ];
 const columnDefs = [
     { targets: 0, width: '40px' },
@@ -100,17 +100,22 @@ const order = [[1, "desc"]]
 
 
 const createdRow = function (row, data, dataIndex) {
-    row.addEventListener("dblclick", function (e) {
-        e.preventDefault();
-        $('.ui.dimmer').dimmer('show');
-        setModalDetailsData(data[0]);
-    })
+    const vencimiento = timeValueAndUnit(data[11])
+    const prorroga = timeValueAndUnit(data[16])
+    if ((vencimiento && vencimiento.unit == "month" && vencimiento.value > 0 && vencimiento.value < 8)
+        || (prorroga && prorroga.unit == "month" && prorroga.value > 0 && prorroga.value < 4)) {
+        row.classList.add("yellow-row")
+    } else if (data[1] == "En vigor") {
+        row.classList.add("green-row")
+    } else if (data[1] == "Caducado") {
+        row.classList.add("red-row")
+    }
 }
 let details_datatable;
 let ciclos_datatable;
 $(document).ready(function () {
     details_datatable = setDataTable(null, columns, columnDefs, buttons,
-        order, "details_datatable", null, 10, null)
+        order, "details_datatable", null, 10, createdRow)
     $('.ui.dropdown').dropdown()
     $('.ui.checkbox').checkbox()
     $(".boolean").each(function () {
@@ -168,7 +173,7 @@ function setModalDetailsData(id) {
                 <div class="ui calendar">
                     <div class="ui input right icon">
                         <i class="calendar icon"></i>
-                        <input type="text" readonly="true" placeholder="Fecha inicio contrato" value='${dtl.fe_ini_contrato ? dateFormat(dtl.fe_ini_contrato) : ""}'>
+                        <input type="text" readonly="true" placeholder="Fecha inicio contrato" value='${dtl.fe_ini_contrato ? dtl.fe_ini_contrato : ""}'>
                     </div>
                 </div>
             </div>
@@ -177,7 +182,7 @@ function setModalDetailsData(id) {
                 <div class="ui calendar">
                     <div class="ui input right icon">
                         <i class="calendar icon"></i>
-                        <input type="text" readonly="true" placeholder="Fecha fin contrato" value='${dtl.fe_fin_contrato ? dateFormat(dtl.fe_fin_contrato) : ""}'>
+                        <input type="text" readonly="true" placeholder="Fecha fin contrato" value='${dtl.fe_fin_contrato ? dtl.fe_fin_contrato : ""}'>
                     </div>
                 </div>
             </div>
@@ -186,7 +191,7 @@ function setModalDetailsData(id) {
                 <div class="ui calendar">
                     <div class="ui input right icon">
                         <i class="calendar icon"></i>
-                        <input type="text" readonly="true" placeholder="Fecha inicio prorroga" value='${dtl.fe_ini_prorroga ? dateFormat(dtl.fe_ini_prorroga) : ""}'>
+                        <input type="text" readonly="true" placeholder="Fecha inicio prorroga" value='${dtl.fe_ini_prorroga ? dtl.fe_ini_prorroga : ""}'>
                     </div>
                 </div>
             </div>
@@ -195,7 +200,7 @@ function setModalDetailsData(id) {
                 <div class="ui calendar">
                     <div class="ui input right icon">
                         <i class="calendar icon"></i>
-                        <input type="text" readonly="true" placeholder="Fecha fin prorroga" value='${dtl.fe_fin_prorroga ? dateFormat(dtl.fe_fin_prorroga) : ""}'>
+                        <input type="text" readonly="true" placeholder="Fecha fin prorroga" value='${dtl.fe_fin_prorroga ? dtl.fe_fin_prorroga : ""}'>
                     </div>
                 </div>
             </div>
@@ -244,7 +249,7 @@ function setModalDetailsData(id) {
                 
                 <tr>
                     <td>${cl.id_ciclo}</td>
-                    <td>${dateFormat(cl.fe_tratamiento)}</td>
+                    <td>${cl.fe_tratamiento}</td>
                     <td>${cl.des_comentarios}</td>
                     <td>${cl.de_comentarios_publicos}</td>
                     <td>
@@ -272,7 +277,7 @@ function setModalDetailsData(id) {
                 <div class="ui calendar">
                     <div class="ui input right icon">
                         <i class="calendar icon"></i>
-                        <input type="text" readonly="true" placeholder="Fecha solicitud adquisición" value='${dtl.fe_sol_adq ? dateFormat(dtl.fe_sol_adq) : ""}'>
+                        <input type="text" readonly="true" placeholder="Fecha solicitud adquisición" value='${dtl.fe_sol_adq ? dtl.fe_sol_adq : ""}'>
                     </div>
                 </div>
             </div>
@@ -281,7 +286,7 @@ function setModalDetailsData(id) {
                 <div class="ui calendar">
                     <div class="ui input right icon">
                         <i class="calendar icon"></i>
-                        <input type="text" readonly="true" placeholder="Fecha envío org. colegiados" value='${dtl.fe_env_org_col ? dateFormat(dtl.fe_env_org_col) : ""}'>
+                        <input type="text" readonly="true" placeholder="Fecha envío org. colegiados" value='${dtl.fe_env_org_col ? dtl.fe_env_org_col : ""}'>
                     </div>
                 </div>
             </div>
@@ -290,7 +295,7 @@ function setModalDetailsData(id) {
                 <div class="ui calendar">
                     <div class="ui input right icon">
                         <i class="calendar icon"></i>
-                        <input type="text" readonly="true" placeholder="Fecha recepción de memoria" value='${dtl.fe_recp_mem ? dateFormat(dtl.fe_recp_mem) : ""}'>
+                        <input type="text" readonly="true" placeholder="Fecha recepción de memoria" value='${dtl.fe_recp_mem ? dtl.fe_recp_mem : ""}'>
                     </div>
                 </div>
             </div>
@@ -299,7 +304,7 @@ function setModalDetailsData(id) {
                 <div class="ui calendar">
                     <div class="ui input right icon">
                         <i class="calendar icon"></i>
-                        <input type="text" readonly="true" value='${dtl.fe_env_val ? dateFormat(dtl.fe_env_val) : ""}' placeholder="Fecha envío validación responsable">
+                        <input type="text" readonly="true" value='${dtl.fe_env_val ? dtl.fe_env_val : ""}' placeholder="Fecha envío validación responsable">
                     </div>
                 </div>
 
@@ -311,7 +316,7 @@ function setModalDetailsData(id) {
                 <div class="ui calendar">
                     <div class="ui input right icon">
                         <i class="calendar icon"></i>
-                        <input type="text" readonly="" value='${dtl.fe_recp_val ? dateFormat(dtl.fe_recp_val) : ""}' placeholder="Fecha recepción validación responsable">
+                        <input type="text" readonly="" value='${dtl.fe_recp_val ? dtl.fe_recp_val : ""}' placeholder="Fecha recepción validación responsable">
                     </div>
                 </div>
 
@@ -321,7 +326,7 @@ function setModalDetailsData(id) {
                 <div class="ui calendar">
                     <div class="ui input right icon">
                         <i class="calendar icon"></i>
-                        <input type="text" readonly="true" value='${dtl.fe_ultdia_valmem ? dateFormat(dtl.fe_ultdia_valmem) : ""}'
+                        <input type="text" readonly="true" value='${dtl.fe_ultdia_valmem ? dtl.fe_ultdia_valmem : ""}'
                             placeholder="Último día de validación">
                     </div>
                 </div>
@@ -331,7 +336,7 @@ function setModalDetailsData(id) {
                 <div class="ui calendar">
                     <div class="ui input right icon">
                         <i class="calendar icon"></i>
-                        <input type="text" readonly="true" placeholder="Fecha memoria validada" value='${dtl.fe_mem_val ? dateFormat(dtl.fe_mem_val) : ""}'>
+                        <input type="text" readonly="true" placeholder="Fecha memoria validada" value='${dtl.fe_mem_val ? dtl.fe_mem_val : ""}'>
                     </div>
                 </div>
             </div>
@@ -340,7 +345,7 @@ function setModalDetailsData(id) {
                 <div class="ui calendar">
                     <div class="ui input right icon">
                         <i class="calendar icon"></i>
-                        <input type="text" readonly="true" placeholder="Fecha terminación en COTEC" value='${dtl.fe_tram_cotec ? dateFormat(dtl.fe_tram_cotec) : ""}'>
+                        <input type="text" readonly="true" placeholder="Fecha terminación en COTEC" value='${dtl.fe_tram_cotec ? dtl.fe_tram_cotec : ""}'>
                     </div>
                 </div>
             </div>
@@ -354,7 +359,7 @@ function setModalDetailsData(id) {
                 <div class="ui calendar">
                     <div class="ui input right icon">
                         <i class="calendar icon"></i>
-                        <input type="text" readonly="true" value='${dtl.fe_ultdia_ofertas ? dateFormat(dtl.fe_ultdia_ofertas) : ""}'
+                        <input type="text" readonly="true" value='${dtl.fe_ultdia_ofertas ? dtl.fe_ultdia_ofertas : ""}'
                             placeholder="Último día presentación ofertas">
                     </div>
                 </div>
@@ -364,7 +369,7 @@ function setModalDetailsData(id) {
                 <div class="ui calendar">
                     <div class="ui input right icon">
                         <i class="calendar icon"></i>
-                        <input type="text" readonly="true" placeholder="Fecha recepción de ofertas" value='${dtl.fe_recp_ofertas ? dateFormat(dtl.fe_recp_ofertas) : ""}'>
+                        <input type="text" readonly="true" placeholder="Fecha recepción de ofertas" value='${dtl.fe_recp_ofertas ? dtl.fe_recp_ofertas : ""}'>
                     </div>
                 </div>
             </div>
@@ -373,7 +378,7 @@ function setModalDetailsData(id) {
                 <div class="ui calendar">
                     <div class="ui input right icon">
                         <i class="calendar icon"></i>
-                        <input type="text" readonly="true" placeholder="Fecha aviso a jefes" value='${dtl.fe_aviso_jefes ? dateFormat(dtl.fe_aviso_jefes) : ""}'>
+                        <input type="text" readonly="true" placeholder="Fecha aviso a jefes" value='${dtl.fe_aviso_jefes ? dtl.fe_aviso_jefes : ""}'>
                     </div>
                 </div>
             </div>
@@ -382,7 +387,7 @@ function setModalDetailsData(id) {
                 <div class="ui calendar">
                     <div class="ui input right icon">
                         <i class="calendar icon"></i>
-                        <input type="text" readonly="true" value='${dtl.fe_aviso_ofertasvalidadas ? dateFormat(dtl.fe_aviso_ofertasvalidadas) : ""}'
+                        <input type="text" readonly="true" value='${dtl.fe_aviso_ofertasvalidadas ? dtl.fe_aviso_ofertasvalidadas : ""}'
                             placeholder="Fecha aviso ofertas validadas">
                     </div>
                 </div>
@@ -394,7 +399,7 @@ function setModalDetailsData(id) {
                 <div class="ui calendar">
                     <div class="ui input right icon">
                         <i class="calendar icon"></i>
-                        <input type="text" readonly="true" placeholder="Fecha respuesta de oferta" value='${dtl.fe_respuesta_ofertas ? dateFormat(dtl.fe_respuesta_ofertas) : ""}'>
+                        <input type="text" readonly="true" placeholder="Fecha respuesta de oferta" value='${dtl.fe_respuesta_ofertas ? dtl.fe_respuesta_ofertas : ""}'>
                     </div>
                 </div>
             </div>
@@ -403,7 +408,7 @@ function setModalDetailsData(id) {
                 <div class="ui calendar">
                     <div class="ui input right icon">
                         <i class="calendar icon"></i>
-                        <input type="text" readonly="true" value='${dtl.fe_ult_diaexpdate ? dateFormat(dtl.fe_ult_diaexpdate) : ""}'
+                        <input type="text" readonly="true" value='${dtl.fe_ult_diaexpdate ? dtl.fe_ult_diaexpdate : ""}'
                             placeholder="Último día de validación">
                     </div>
                 </div>
@@ -413,7 +418,7 @@ function setModalDetailsData(id) {
                 <div class="ui calendar">
                     <div class="ui input right icon">
                         <i class="calendar icon"></i>
-                        <input type="text" readonly="true" placeholder="Fecha informe de validación" value='${dtl.fe_informevalidacion ? dateFormat(dtl.fe_informevalidacion) : ""}'>
+                        <input type="text" readonly="true" placeholder="Fecha informe de validación" value='${dtl.fe_informevalidacion ? dtl.fe_informevalidacion : ""}'>
                     </div>
                 </div>
             </div>
@@ -427,7 +432,7 @@ function setModalDetailsData(id) {
                 <div class="ui calendar">
                     <div class="ui input right icon">
                         <i class="calendar icon"></i>
-                        <input type="text" readonly="" tru value='${dtl.fe_inimto_garantia_prevista ? dateFormat(dtl.fe_inimto_garantia_prevista) : ""}'e
+                        <input type="text" readonly="" tru value='${dtl.fe_inimto_garantia_prevista ? dtl.fe_inimto_garantia_prevista : ""}'e
                             placeholder="Fecha inicio Mto/Garantía prevista">
                     </div>
                 </div>
@@ -437,7 +442,7 @@ function setModalDetailsData(id) {
                 <div class="ui calendar">
                     <div class="ui input right icon">
                         <i class="calendar icon"></i>
-                        <input type="text" readonly="true" value='${dtl.fe_finmto_garantia_prevista ? dateFormat(dtl.fe_finmto_garantia_prevista) : ""}'
+                        <input type="text" readonly="true" value='${dtl.fe_finmto_garantia_prevista ? dtl.fe_finmto_garantia_prevista : ""}'
                             placeholder="Fecha fin Mto/Garantía prevista">
                     </div>
                 </div>
@@ -451,7 +456,7 @@ function setModalDetailsData(id) {
                 <div class="ui calendar">
                     <div class="ui input right icon">
                         <i class="calendar icon"></i>
-                        <input type="text" readonly="true" placeholder="Fecha adjudicación" value='${dtl.fe_adjudicacionformalizacion ? dateFormat(dtl.fe_adjudicacionformalizacion) : ""}'>
+                        <input type="text" readonly="true" placeholder="Fecha adjudicación" value='${dtl.fe_adjudicacionformalizacion ? dtl.fe_adjudicacionformalizacion : ""}'>
                     </div>
                 </div>
             </div>
@@ -460,7 +465,7 @@ function setModalDetailsData(id) {
                 <div class="ui calendar">
                     <div class="ui input right icon">
                         <i class="calendar icon"></i>
-                        <input type="text" readonly="true" placeholder="Fecha formalización" value='${dtl.fe_formalizacion ? dateFormat(dtl.fe_formalizacion) : ""}'>
+                        <input type="text" readonly="true" placeholder="Fecha formalización" value='${dtl.fe_formalizacion ? dtl.fe_formalizacion : ""}'>
                     </div>
                 </div>
             </div>

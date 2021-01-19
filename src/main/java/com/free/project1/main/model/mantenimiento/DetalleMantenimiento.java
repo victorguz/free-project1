@@ -25,126 +25,126 @@ public class DetalleMantenimiento {
 
     @Id
     @Column(name = "ID_DETALLE_MTO", nullable = false)
-    int id_detalle_mto;// NUMBER NOT NULL
+    public int id_detalle_mto;// NUMBER NOT NULL
 
     @JsonIgnore
     @Fetch(FetchMode.JOIN)
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "ID_MANTENIMIENTO")
-    Mantenimiento mantenimiento;
+    public Mantenimiento mantenimiento;
 
     @NotFound(action = NotFoundAction.IGNORE)
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "COD_ESTADO_MTO", nullable = false)
-    EstadoMantenimiento estado;
+    public EstadoMantenimiento estado;
 
     @Column(name = "DES_EMPRESA")
-    String des_empresa;// VARCHAR(255)
+    public String des_empresa;// VARCHAR(255)
 
     @Column(name = "NUM_IMPORTE")
-    String num_importe;// NUMBER(12,2)
+    public String num_importe;// NUMBER(12,2)
 
     @Column(name = "FE_INI_CONTRATO")
-    Date fe_ini_contrato;// DATE
+    public Date fe_ini_contrato;// DATE
 
     @Column(name = "FE_FIN_CONTRATO")
-    Date fe_fin_contrato;// DATE
+    public Date fe_fin_contrato;// DATE
 
     @Column(name = "CHK_PRORROGA")
-    Character chk_prorroga;// CHAR(1)
+    public Character chk_prorroga;// CHAR(1)
 
     @Column(name = "FE_INI_PRORROGA")
-    Date fe_ini_prorroga;// DATE
+    public Date fe_ini_prorroga;// DATE
 
     @Column(name = "FE_FIN_PRORROGA")
-    Date fe_fin_prorroga;// DATE
+    public Date fe_fin_prorroga;// DATE
 
     @Column(name = "COD_EXPEDIENTE")
-    String cod_expediente;// VARCHAR(25)
+    public String cod_expediente;// VARCHAR(25)
 
     @Column(name = "COD_CONTRATO")
-    String cod_contrato;// VARCHAR(25)
+    public String cod_contrato;// VARCHAR(25)
 
     @Column(name = "CHK_ACTIVO")
-    Character chk_activo;// CHAR(1)
+    public Character chk_activo;// CHAR(1)
 
     @Column(name = "FE_CREA_REG")
-    Date fe_crea_reg;// DATE
+    public Date fe_crea_reg;// DATE
 
     @Column(name = "FE_MODI_REG")
-    Date fe_modi_reg;// DATE
+    public Date fe_modi_reg;// DATE
 
     @Column(name = "COD_MOD_USU")
-    String cod_mod_usu;// VARCHAR(8)
+    public String cod_mod_usu;// VARCHAR(8)
 
     @Column(name = "COD_ESTADONUEVOEXP")
-    String cod_estadonuevoexp;
+    public String cod_estadonuevoexp;
 
     @Column(name = "AÑOSPRORROGA")
-    String añosprorroga;// NUMBER
+    public String añosprorroga;// NUMBER
 
     @Column(name = "FE_SOL_ADQ")
-    Date fe_sol_adq;// DATE
+    public Date fe_sol_adq;// DATE
 
     @Column(name = "FE_ENV_ORG_COL")
-    Date fe_env_org_col;// DATE
+    public Date fe_env_org_col;// DATE
 
     @Column(name = "FE_RECP_MEM")
-    Date fe_recp_mem;// DATE
+    public Date fe_recp_mem;// DATE
 
     @Column(name = "FE_ENV_VAL")
-    Date fe_env_val;// DATE
+    public Date fe_env_val;// DATE
 
     @Column(name = "FE_RECP_VAL")
-    Date fe_recp_val;// DATE
+    public Date fe_recp_val;// DATE
 
     @Column(name = "FE_ULTDIA_VALMEM")
-    Date fe_ultdia_valmem;// DATE
+    public Date fe_ultdia_valmem;// DATE
 
     @Column(name = "FE_MEM_VAL")
-    Date fe_mem_val;// DATE
+    public Date fe_mem_val;// DATE
 
     @Column(name = "FE_TRAM_COTEC")
-    Date fe_tram_cotec;// DATE
+    public Date fe_tram_cotec;// DATE
 
     @Column(name = "FE_ULTDIA_OFERTAS")
-    Date fe_ultdia_ofertas;// DATE
+    public Date fe_ultdia_ofertas;// DATE
 
     @Column(name = "FE_RECP_OFERTAS")
-    Date fe_recp_ofertas;// DATE
+    public Date fe_recp_ofertas;// DATE
 
     @Column(name = "FE_AVISO_JEFES")
-    Date fe_aviso_jefes;// DATE
+    public Date fe_aviso_jefes;// DATE
 
     @Column(name = "FE_AVISO_OFERTASVALIDADAS")
-    Date fe_aviso_ofertasvalidadas;// DATE
+    public Date fe_aviso_ofertasvalidadas;// DATE
 
     @Column(name = "FE_RESPUESTA_OFERTAS")
-    Date fe_respuesta_ofertas;// DATE
+    public Date fe_respuesta_ofertas;// DATE
 
     @Column(name = "FE_ULT_DIAEXPDATE")
-    Date fe_ult_diaexpdate;// DATE
+    public Date fe_ult_diaexpdate;// DATE
 
     @Column(name = "FE_INIMTO_GARANTÍA_PREVISTA")
-    Date fe_inimto_garantia_prevista;// DATE
+    public Date fe_inimto_garantia_prevista;// DATE
 
     @Column(name = "FE_FINMTO_GARANTÍA_PREVISTA")
-    Date fe_finmto_garantia_prevista;// DATE
+    public Date fe_finmto_garantia_prevista;// DATE
 
     @Column(name = "FE_INFORMEVALIDACION")
-    Date fe_informevalidacion;// DATE
+    public Date fe_informevalidacion;// DATE
 
     @Column(name = "FE_ADJUDICACIÓNFORMALIZACION")
-    Date fe_adjudicacionformalizacion;// DATE
+    public Date fe_adjudicacionformalizacion;// DATE
 
     @Column(name = "NUM_IMPORTE_CONTRATACION")
-    String num_importe_contratacion;// NUMBER(11,2)
+    public String num_importe_contratacion;// NUMBER(11,2)
 
     @Column(name = "COD_ESTADO_RRHH")
-    String cod_estado_rrhh; // NUMBER
+    public String cod_estado_rrhh; // NUMBER
 
     @Column(name = "FE_FORMALIZACION")
-    Date fe_formalizacion;// DATE
+    public Date fe_formalizacion;// DATE
 
     @OneToMany(mappedBy = "detalle_mantenimiento", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     public List<CicloMantenimiento> ciclos;

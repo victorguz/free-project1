@@ -21,44 +21,44 @@ public class CicloMantenimiento {
 
     @Id
     @Column(name = "ID_CICLO")
-    int id_ciclo;
+    public int id_ciclo;
 
     @Column(name = "ID_MANTENIMIENTO", nullable = false)
-    int id_mantenimiento;
+    public int id_mantenimiento;
 
     @Column(name = "DES_COMENTARIOS", length = 2000)
-    String des_comentarios;
+    public String des_comentarios;
 
     @Column(name = "FE_TRATAMIENTO")
-    Date fe_tratamiento;
+    public Date fe_tratamiento;
 
     @Column(name = "RUTA_ADJUNTO", length = 255)
-    String ruta_adjunto;
+    public String ruta_adjunto;
 
     @Column(name = "FE_CREA_REG")
-    Date fe_crea_reg;
+    public Date fe_crea_reg;
 
     @Column(name = "FE_MODI_REG")
-    Date fe_modi_reg;
+    public Date fe_modi_reg;
 
     @Column(name = "COD_MOD_USU", length = 8)
-    String cod_mod_usu;
+    public String cod_mod_usu;
 
     // @Column(name = "ID_DETALLE_MTO", nullable = false)
-    // int ID_DETALLE_MTO;// NUMBER NOT NULL,
+    // public int ID_DETALLE_MTO;// NUMBER NOT NULL,
 
     @JsonIgnore
     @Fetch(FetchMode.JOIN)
     @NotFound(action = NotFoundAction.IGNORE)
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "ID_DETALLE_MTO")
-    DetalleMantenimiento detalle_mantenimiento;
+    public DetalleMantenimiento detalle_mantenimiento;
 
     @Column(name = "CHK_ACTIVO")
-    Character chk_activo;
+    public Character chk_activo;
 
     @Column(name = "DES_COMENTARIOS_PUBLICOS", length = 2000)
-    String de_comentarios_publicos;
+    public String de_comentarios_publicos;
 
     public CicloMantenimiento() {
     }

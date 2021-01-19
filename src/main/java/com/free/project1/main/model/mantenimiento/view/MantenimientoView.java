@@ -1,16 +1,12 @@
 package com.free.project1.main.model.mantenimiento.view;
 
-import java.text.NumberFormat;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
-import java.util.Locale;
 
-import com.free.project1.main.model.mantenimiento.DetalleMantenimiento;
+import com.free.project1.main.config.Functions;
 import com.free.project1.main.model.mantenimiento.Mantenimiento;
 
-public class MantenimientoTableView {
+public class MantenimientoView {
 
     public String id;
     public String cod_expediente;
@@ -34,81 +30,54 @@ public class MantenimientoTableView {
     public String estado;
     public String responsable_unidad;
     public String responsable_auxiliar;
-    List<DetalleMantenimiento> detalles;
+    List<DetalleMantenimientoView> detalles;
     public String tipo;
     public String departamento;
     public String unidad;
     public String empresa_adjudicada;
+    public String unidad_solicitante_aux;
+    public String procedimiento;
 
-    public MantenimientoTableView() {
+    public MantenimientoView() {
     }
 
-    public MantenimientoTableView(Mantenimiento mnt) {
-        this.id = mnt.id + "";
-        this.cod_expediente = mnt.cod_expediente;
-        this.cod_contrato = mnt.cod_contrato;
-        this.responsable_area = mnt.responsable_area == null ? "" : mnt.responsable_area.getFullName();
-        this.txt_descripcion = mnt.txt_descripcion;
-        this.des_empresa = mnt.des_empresa;
-        this.num_importe = mnt.num_importe;
-        this.fe_ini_contrato = processDate(mnt.fe_ini_contrato);
-        this.fe_fin_contrato = processDate(mnt.fe_fin_contrato);
-        this.chk_prorroga = mnt.chk_prorroga + "";
-        this.fe_ini_prorroga = processDate(mnt.fe_ini_prorroga);
-        this.fe_fin_prorroga = processDate(mnt.fe_fin_prorroga);
-        this.txt_observaciones = mnt.txt_observaciones;
-        this.chk_activo = mnt.chk_activo + "";
-        this.fe_crea_reg = processDate(mnt.fe_crea_reg);
-        this.fe_modi_reg = processDate(mnt.fe_modi_reg);
-        this.cod_mod_usu = mnt.cod_mod_usu;
-        this.palabra_clave = mnt.palabra_clave;
-        this.responsable_unidad = mnt.responsable_unidad == null ? "" : mnt.responsable_unidad.getFullName();
-        this.responsable_auxiliar = mnt.responsable_auxiliar == null ? "" : mnt.responsable_auxiliar.getFullName();
-        this.procedencia = mnt.procedencia == null ? "" : mnt.procedencia.getDes_procedencia();
+    public MantenimientoView(Mantenimiento mnt) {
+        if (mnt != null) {
 
-        this.detalles = mnt.detalles;
-        this.tipo = mnt.tipo == null ? "" : mnt.tipo.getDes_tipo_mto();
-        this.departamento = mnt.departamento == null ? "" : mnt.departamento.getDepartamento();
-        this.unidad = mnt.unidad == null ? "" : mnt.unidad.getDescripcion();
-        this.estado = processEstado();
-        this.num_importe = processCurrency();
-        this.empresa_adjudicada = processEmpresa();
-    }
+            this.id = mnt.id + "";
+            this.cod_expediente = mnt.cod_expediente;
+            this.cod_contrato = mnt.cod_contrato;
+            this.txt_descripcion = mnt.txt_descripcion;
+            this.des_empresa = mnt.des_empresa;
+            this.num_importe = mnt.num_importe;
+            this.fe_ini_contrato = Functions.processDate(mnt.fe_ini_contrato);
+            this.fe_fin_contrato = Functions.processDate(mnt.fe_fin_contrato);
+            this.chk_prorroga = mnt.chk_prorroga + "";
+            this.fe_ini_prorroga = Functions.processDate(mnt.fe_ini_prorroga);
+            this.fe_fin_prorroga = Functions.processDate(mnt.fe_fin_prorroga);
+            this.txt_observaciones = mnt.txt_observaciones;
+            this.chk_activo = mnt.chk_activo + "";
+            this.fe_crea_reg = Functions.processDate(mnt.fe_crea_reg);
+            this.fe_modi_reg = Functions.processDate(mnt.fe_modi_reg);
+            this.cod_mod_usu = mnt.cod_mod_usu;
+            this.palabra_clave = mnt.palabra_clave;
+            this.unidad_solicitante_aux = mnt.unidad_solicitante_aux;
 
-    public MantenimientoTableView(String id, String cod_expediente, String cod_contrato, String responsable_area,
-            String txt_descripcion, String des_empresa, String num_importe, String fe_ini_contrato,
-            String fe_fin_contrato, String chk_prorroga, String fe_ini_prorroga, String fe_fin_prorroga,
-            String txt_observaciones, String chk_activo, String fe_crea_reg, String fe_modi_reg, String cod_mod_usu,
-            String palabra_clave, String procedencia, String estado, String responsable_unidad,
-            String responsable_auxiliar, List<DetalleMantenimiento> detalles, String tipo, String departamento,
-            String unidad, String empresa_adjudicada) {
-        this.id = id;
-        this.cod_expediente = cod_expediente;
-        this.cod_contrato = cod_contrato;
-        this.responsable_area = responsable_area;
-        this.txt_descripcion = txt_descripcion;
-        this.des_empresa = des_empresa;
-        this.num_importe = num_importe;
-        this.fe_ini_contrato = fe_ini_contrato;
-        this.fe_fin_contrato = fe_fin_contrato;
-        this.chk_prorroga = chk_prorroga;
-        this.fe_ini_prorroga = fe_ini_prorroga;
-        this.fe_fin_prorroga = fe_fin_prorroga;
-        this.txt_observaciones = txt_observaciones;
-        this.chk_activo = chk_activo;
-        this.fe_crea_reg = fe_crea_reg;
-        this.fe_modi_reg = fe_modi_reg;
-        this.cod_mod_usu = cod_mod_usu;
-        this.palabra_clave = palabra_clave;
-        this.procedencia = procedencia;
-        this.estado = estado;
-        this.responsable_unidad = responsable_unidad;
-        this.responsable_auxiliar = responsable_auxiliar;
-        this.detalles = detalles;
-        this.tipo = tipo;
-        this.departamento = departamento;
-        this.unidad = unidad;
-        this.empresa_adjudicada = empresa_adjudicada;
+            this.responsable_unidad = mnt.responsable_unidad == null ? "" : mnt.responsable_unidad.getFullName();
+            this.responsable_auxiliar = mnt.responsable_auxiliar == null ? "" : mnt.responsable_auxiliar.getFullName();
+            this.responsable_area = mnt.responsable_area == null ? "" : mnt.responsable_area.getFullName();
+            this.procedencia = mnt.procedencia == null ? "" : mnt.procedencia.getDes_procedencia();
+            this.tipo = mnt.tipo == null ? "" : mnt.tipo.getDes_tipo_mto();
+            this.departamento = mnt.departamento == null ? "" : mnt.departamento.getDepartamento();
+            this.unidad = mnt.unidad == null ? "" : mnt.unidad.getDescripcion();
+            this.num_importe = Functions.processCurrency(mnt.num_importe);
+            this.procedimiento = mnt.procedimiento == null ? "" : mnt.procedimiento.getDes_proc_adj();
+
+            this.detalles = DetalleMantenimientoView.toList(mnt.detalles);
+            this.estado = processEstado();
+            this.empresa_adjudicada = processEmpresa();
+
+        }
     }
 
     public String getId() {
@@ -287,11 +256,11 @@ public class MantenimientoTableView {
         this.responsable_auxiliar = responsable_auxiliar;
     }
 
-    public List<DetalleMantenimiento> getDetalles() {
+    public List<DetalleMantenimientoView> getDetalles() {
         return this.detalles;
     }
 
-    public void setDetalles(List<DetalleMantenimiento> detalles) {
+    public void setDetalles(List<DetalleMantenimientoView> detalles) {
         this.detalles = detalles;
     }
 
@@ -327,6 +296,22 @@ public class MantenimientoTableView {
         this.empresa_adjudicada = empresa_adjudicada;
     }
 
+    public String getUnidad_solicitante_aux() {
+        return this.unidad_solicitante_aux;
+    }
+
+    public void setUnidad_solicitante_aux(String unidad_solicitante_aux) {
+        this.unidad_solicitante_aux = unidad_solicitante_aux;
+    }
+
+    public String getProcedimiento() {
+        return this.procedimiento;
+    }
+
+    public void setProcedimiento(String procedimiento) {
+        this.procedimiento = procedimiento;
+    }
+
     @Override
     public String toString() {
         return "{" + " 'id':'" + getId() + "'" + ", 'cod_expediente':'" + getCod_expediente() + "'"
@@ -342,16 +327,18 @@ public class MantenimientoTableView {
                 + ", 'estado':'" + getEstado() + "'" + ", 'responsable_unidad':'" + getResponsable_unidad() + "'"
                 + ", 'responsable_auxiliar':'" + getResponsable_auxiliar() + "'" + ", 'detalles':'" + getDetalles()
                 + "'" + ", 'tipo':'" + getTipo() + "'" + ", 'departamento':'" + getDepartamento() + "'" + ", 'unidad':'"
-                + getUnidad() + "'" + ", 'empresa_adjudicada':'" + getEmpresa_adjudicada() + "'" + "}";
+                + getUnidad() + "'" + ", 'empresa_adjudicada':'" + getEmpresa_adjudicada() + "'"
+                + ", 'unidad_solicitante_aux':'" + getUnidad_solicitante_aux() + "'" + ", 'procedimiento':'"
+                + getProcedimiento() + "'" + "}";
     }
 
     private String processEstado() {
         int lastId = 0;
         String est = "";
-        for (DetalleMantenimiento dtl : detalles) {
+        for (DetalleMantenimientoView dtl : detalles) {
             if (dtl.getId_detalle_mto() >= lastId) {
                 lastId = dtl.getId_detalle_mto();
-                est = dtl.getEstado().getDes_estado();
+                est = dtl.getEstado();
             }
         }
         return est;
@@ -360,7 +347,7 @@ public class MantenimientoTableView {
     private String processEmpresa() {
         int lastId = 0;
         String emp = "";
-        for (DetalleMantenimiento dtl : detalles) {
+        for (DetalleMantenimientoView dtl : detalles) {
             if (dtl.getId_detalle_mto() >= lastId) {
                 lastId = dtl.getId_detalle_mto();
                 emp = dtl.getDes_empresa();
@@ -369,28 +356,10 @@ public class MantenimientoTableView {
         return emp;
     }
 
-    private String processCurrency() {
-        if (this.num_importe != null) {
-            NumberFormat formatter = NumberFormat.getCurrencyInstance(Locale.US);
-            return formatter.format(Double.parseDouble(this.num_importe));
-        }
-        return "";
-    }
-
-    private String processDate(Date date) {
-        if (date != null) {
-            String pattern = "yyyy/MM/dd";
-            SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
-            String format = simpleDateFormat.format(date);
-            return format;
-        }
-        return "";
-    }
-
-    public static List<MantenimientoTableView> toView(List<Mantenimiento> mnt) {
-        List<MantenimientoTableView> list = new ArrayList<>();
+    public static List<MantenimientoView> toList(List<Mantenimiento> mnt) {
+        List<MantenimientoView> list = new ArrayList<>();
         for (Mantenimiento mantenimiento : mnt) {
-            MantenimientoTableView neew = new MantenimientoTableView(mantenimiento);
+            MantenimientoView neew = new MantenimientoView(mantenimiento);
             list.add(neew);
         }
         return list;

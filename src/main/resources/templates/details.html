@@ -74,16 +74,15 @@
 
                         <div class="field">
                             <label>Tipo</label>
-                            <input type="text" readonly="true" th:value="${mnt.tipo!=null ? mnt.tipo.des_tipo_mto:''}">
+                            <input type="text" readonly="true" th:value="${mnt.tipo!=null ? mnt.tipo:''}">
                         </div>
                         <div class="field">
                             <label>Departamento</label>
-                            <input type="text" readonly="true"
-                                th:value="${mnt.departamento!=null?mnt.departamento.departamento:''}">
+                            <input type="text" readonly="true" th:value="${mnt.departamento!=null?mnt.departamento:''}">
                         </div>
                         <div class="field">
                             <label>Unidad</label>
-                            <input type="text" readonly="true" th:value="${mnt.unidad!=null?mnt.unidad.descripcion:''}">
+                            <input type="text" readonly="true" th:value="${mnt.unidad!=null?mnt.unidad:''}">
                         </div>
                         <div class="field">
                             <label>Unidad auxiliar:</label>
@@ -96,28 +95,27 @@
                         <div class="field">
                             <label>Procedimiento</label>
                             <input type="text" readonly="true"
-                                th:value="${mnt.procedimiento!=null? mnt.procedimiento.des_proc_adj:''}">
+                                th:value="${mnt.procedimiento!=null? mnt.procedimiento:''}">
                         </div>
                         <div class="field">
                             <label>Responsable de área:</label>
                             <input type="text" readonly="true"
-                                th:value="${mnt.responsable_area!=null?mnt.responsable_area.getFullName():''}">
+                                th:value="${mnt.responsable_area!=null?mnt.responsable_area:''}">
                         </div>
                         <div class="field">
                             <label>Responsable de unidad:</label>
                             <input type="text" readonly="true"
-                                th:value="${mnt.responsable_unidad!=null?mnt.responsable_unidad.getFullName():''}">
+                                th:value="${mnt.responsable_unidad!=null?mnt.responsable_unidad:''}">
                         </div>
                         <div class="field">
                             <label>Responsable auxiliar:</label>
                             <input type="text" readonly="true"
-                                th:value="${mnt.responsable_auxiliar!=null?mnt.responsable_auxiliar.getFullName():''}">
+                                th:value="${mnt.responsable_auxiliar!=null?mnt.responsable_auxiliar:''}">
                         </div>
                     </div>
                     <div class="field">
                         <label>Unidad de seguimiento y ejec. cxto:</label>
-                        <input type="text" readonly="true"
-                            th:value="${mnt.procedencia!=null?mnt.procedencia.des_procedencia:''}">
+                        <input type="text" readonly="true" th:value="${mnt.procedencia!=null?mnt.procedencia:''}">
                     </div>
                     <div class="field">
                         <label>Palabra clave</label>
