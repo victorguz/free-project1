@@ -155,11 +155,11 @@ function setModalDetailsData(id) {
             </div>
             <div class="field">
                 <label>Estado nuevo expediente</label>
-                <input type="text" readonly="true" placeholder="Estado nuevo expediente" value='${dtl.cod_estadonuevoexp ? dtl.cod_estadonuevoexp : ""}'>
+                <input type="text" readonly="true" placeholder="Estado nuevo expediente" value='${dtl.estadonuevoexp ? dtl.estadonuevoexp : ""}'>
             </div>
             <div class="field">
                 <label>Estado RRHH</label>
-                <input type="text" readonly="true" placeholder="Estado RRHH" value='${dtl.cod_estado_rrhh ? dtl.cod_estado_rrhh : ""}'>
+                <input type="text" readonly="true" placeholder="Estado RRHH" value='${dtl.estado_rrhh ? dtl.estado_rrhh : ""}'>
             </div>
             <div class="field">
                 <label>Prorrogable</label>

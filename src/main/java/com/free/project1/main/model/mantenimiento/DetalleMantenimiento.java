@@ -25,7 +25,7 @@ public class DetalleMantenimiento {
 
     @Id
     @Column(name = "ID_DETALLE_MTO", nullable = false)
-    public int id_detalle_mto;// NUMBER NOT NULL
+    public int id_detalle_mto;
 
     @JsonIgnore
     @Fetch(FetchMode.JOIN)
@@ -39,169 +39,121 @@ public class DetalleMantenimiento {
     public EstadoMantenimiento estado;
 
     @Column(name = "DES_EMPRESA")
-    public String des_empresa;// VARCHAR(255)
+    public String des_empresa;
 
     @Column(name = "NUM_IMPORTE")
-    public String num_importe;// NUMBER(12,2)
+    public String num_importe;
 
     @Column(name = "FE_INI_CONTRATO")
-    public Date fe_ini_contrato;// DATE
+    public Date fe_ini_contrato;
 
     @Column(name = "FE_FIN_CONTRATO")
-    public Date fe_fin_contrato;// DATE
+    public Date fe_fin_contrato;
 
     @Column(name = "CHK_PRORROGA")
-    public Character chk_prorroga;// CHAR(1)
+    public Character chk_prorroga;
 
     @Column(name = "FE_INI_PRORROGA")
-    public Date fe_ini_prorroga;// DATE
+    public Date fe_ini_prorroga;
 
     @Column(name = "FE_FIN_PRORROGA")
-    public Date fe_fin_prorroga;// DATE
+    public Date fe_fin_prorroga;
 
     @Column(name = "COD_EXPEDIENTE")
-    public String cod_expediente;// VARCHAR(25)
+    public String cod_expediente;
 
     @Column(name = "COD_CONTRATO")
-    public String cod_contrato;// VARCHAR(25)
+    public String cod_contrato;
 
     @Column(name = "CHK_ACTIVO")
-    public Character chk_activo;// CHAR(1)
+    public Character chk_activo;
 
     @Column(name = "FE_CREA_REG")
-    public Date fe_crea_reg;// DATE
+    public Date fe_crea_reg;
 
     @Column(name = "FE_MODI_REG")
-    public Date fe_modi_reg;// DATE
+    public Date fe_modi_reg;
 
     @Column(name = "COD_MOD_USU")
-    public String cod_mod_usu;// VARCHAR(8)
-
-    @Column(name = "COD_ESTADONUEVOEXP")
-    public String cod_estadonuevoexp;
+    public String cod_mod_usu;
 
     @Column(name = "AÑOSPRORROGA")
-    public String añosprorroga;// NUMBER
+    public String añosprorroga;
 
     @Column(name = "FE_SOL_ADQ")
-    public Date fe_sol_adq;// DATE
+    public Date fe_sol_adq;
 
     @Column(name = "FE_ENV_ORG_COL")
-    public Date fe_env_org_col;// DATE
+    public Date fe_env_org_col;
 
     @Column(name = "FE_RECP_MEM")
-    public Date fe_recp_mem;// DATE
+    public Date fe_recp_mem;
 
     @Column(name = "FE_ENV_VAL")
-    public Date fe_env_val;// DATE
+    public Date fe_env_val;
 
     @Column(name = "FE_RECP_VAL")
-    public Date fe_recp_val;// DATE
+    public Date fe_recp_val;
 
     @Column(name = "FE_ULTDIA_VALMEM")
-    public Date fe_ultdia_valmem;// DATE
+    public Date fe_ultdia_valmem;
 
     @Column(name = "FE_MEM_VAL")
-    public Date fe_mem_val;// DATE
+    public Date fe_mem_val;
 
     @Column(name = "FE_TRAM_COTEC")
-    public Date fe_tram_cotec;// DATE
+    public Date fe_tram_cotec;
 
     @Column(name = "FE_ULTDIA_OFERTAS")
-    public Date fe_ultdia_ofertas;// DATE
+    public Date fe_ultdia_ofertas;
 
     @Column(name = "FE_RECP_OFERTAS")
-    public Date fe_recp_ofertas;// DATE
+    public Date fe_recp_ofertas;
 
     @Column(name = "FE_AVISO_JEFES")
-    public Date fe_aviso_jefes;// DATE
+    public Date fe_aviso_jefes;
 
     @Column(name = "FE_AVISO_OFERTASVALIDADAS")
-    public Date fe_aviso_ofertasvalidadas;// DATE
+    public Date fe_aviso_ofertasvalidadas;
 
     @Column(name = "FE_RESPUESTA_OFERTAS")
-    public Date fe_respuesta_ofertas;// DATE
+    public Date fe_respuesta_ofertas;
 
     @Column(name = "FE_ULT_DIAEXPDATE")
-    public Date fe_ult_diaexpdate;// DATE
+    public Date fe_ult_diaexpdate;
 
     @Column(name = "FE_INIMTO_GARANTÍA_PREVISTA")
-    public Date fe_inimto_garantia_prevista;// DATE
+    public Date fe_inimto_garantia_prevista;
 
     @Column(name = "FE_FINMTO_GARANTÍA_PREVISTA")
-    public Date fe_finmto_garantia_prevista;// DATE
+    public Date fe_finmto_garantia_prevista;
 
     @Column(name = "FE_INFORMEVALIDACION")
-    public Date fe_informevalidacion;// DATE
+    public Date fe_informevalidacion;
 
     @Column(name = "FE_ADJUDICACIÓNFORMALIZACION")
-    public Date fe_adjudicacionformalizacion;// DATE
+    public Date fe_adjudicacionformalizacion;
 
     @Column(name = "NUM_IMPORTE_CONTRATACION")
-    public String num_importe_contratacion;// NUMBER(11,2)
+    public String num_importe_contratacion;
 
-    @Column(name = "COD_ESTADO_RRHH")
-    public String cod_estado_rrhh; // NUMBER
+    @NotFound(action = NotFoundAction.IGNORE)
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "COD_ESTADONUEVOEXP", nullable = false)
+    public EstadoInversion estadonuevoexp;
+
+    @NotFound(action = NotFoundAction.IGNORE)
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "COD_ESTADO_RRHH", nullable = false)
+    public EstadoInversionRRHH estado_rrhh;
 
     @Column(name = "FE_FORMALIZACION")
-    public Date fe_formalizacion;// DATE
+    public Date fe_formalizacion;
 
     @OneToMany(mappedBy = "detalle_mantenimiento", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     public List<CicloMantenimiento> ciclos;
 
     public DetalleMantenimiento() {
-    }
-
-    public DetalleMantenimiento(int id_detalle_mto, Mantenimiento mantenimiento, EstadoMantenimiento estado,
-            String des_empresa, String num_importe, Date fe_ini_contrato, Date fe_fin_contrato, Character chk_prorroga,
-            Date fe_ini_prorroga, Date fe_fin_prorroga, String cod_expediente, String cod_contrato,
-            Character chk_activo, Date fe_crea_reg, Date fe_modi_reg, String cod_mod_usu, String cod_estadonuevoexp,
-            String añosprorroga, Date fe_sol_adq, Date fe_env_org_col, Date fe_recp_mem, Date fe_env_val,
-            Date fe_recp_val, Date fe_ultdia_valmem, Date fe_mem_val, Date fe_tram_cotec, Date fe_ultdia_ofertas,
-            Date fe_recp_ofertas, Date fe_aviso_jefes, Date fe_aviso_ofertasvalidadas, Date fe_respuesta_ofertas,
-            Date fe_ult_diaexpdate, Date fe_inimto_garantia_prevista, Date fe_finmto_garantia_prevista,
-            Date fe_informevalidacion, Date fe_adjudicacionformalizacion, String num_importe_contratacion,
-            String cod_estado_rrhh, Date fe_formalizacion, List<CicloMantenimiento> ciclos) {
-        this.id_detalle_mto = id_detalle_mto;
-        this.mantenimiento = mantenimiento;
-        this.estado = estado;
-        this.des_empresa = des_empresa;
-        this.num_importe = num_importe;
-        this.fe_ini_contrato = fe_ini_contrato;
-        this.fe_fin_contrato = fe_fin_contrato;
-        this.chk_prorroga = chk_prorroga;
-        this.fe_ini_prorroga = fe_ini_prorroga;
-        this.fe_fin_prorroga = fe_fin_prorroga;
-        this.cod_expediente = cod_expediente;
-        this.cod_contrato = cod_contrato;
-        this.chk_activo = chk_activo;
-        this.fe_crea_reg = fe_crea_reg;
-        this.fe_modi_reg = fe_modi_reg;
-        this.cod_mod_usu = cod_mod_usu;
-        this.cod_estadonuevoexp = cod_estadonuevoexp;
-        this.añosprorroga = añosprorroga;
-        this.fe_sol_adq = fe_sol_adq;
-        this.fe_env_org_col = fe_env_org_col;
-        this.fe_recp_mem = fe_recp_mem;
-        this.fe_env_val = fe_env_val;
-        this.fe_recp_val = fe_recp_val;
-        this.fe_ultdia_valmem = fe_ultdia_valmem;
-        this.fe_mem_val = fe_mem_val;
-        this.fe_tram_cotec = fe_tram_cotec;
-        this.fe_ultdia_ofertas = fe_ultdia_ofertas;
-        this.fe_recp_ofertas = fe_recp_ofertas;
-        this.fe_aviso_jefes = fe_aviso_jefes;
-        this.fe_aviso_ofertasvalidadas = fe_aviso_ofertasvalidadas;
-        this.fe_respuesta_ofertas = fe_respuesta_ofertas;
-        this.fe_ult_diaexpdate = fe_ult_diaexpdate;
-        this.fe_inimto_garantia_prevista = fe_inimto_garantia_prevista;
-        this.fe_finmto_garantia_prevista = fe_finmto_garantia_prevista;
-        this.fe_informevalidacion = fe_informevalidacion;
-        this.fe_adjudicacionformalizacion = fe_adjudicacionformalizacion;
-        this.num_importe_contratacion = num_importe_contratacion;
-        this.cod_estado_rrhh = cod_estado_rrhh;
-        this.fe_formalizacion = fe_formalizacion;
-        this.ciclos = ciclos;
     }
 
     public int getId_detalle_mto() {
@@ -332,12 +284,12 @@ public class DetalleMantenimiento {
         this.cod_mod_usu = cod_mod_usu;
     }
 
-    public String getCod_estadonuevoexp() {
-        return this.cod_estadonuevoexp;
+    public EstadoInversion getEstadonuevoexp() {
+        return this.estadonuevoexp;
     }
 
-    public void setCod_estadonuevoexp(String cod_estadonuevoexp) {
-        this.cod_estadonuevoexp = cod_estadonuevoexp;
+    public void setEstadonuevoexp(EstadoInversion estadonuevoexp) {
+        this.estadonuevoexp = estadonuevoexp;
     }
 
     public String getAñosprorroga() {
@@ -500,12 +452,12 @@ public class DetalleMantenimiento {
         this.num_importe_contratacion = num_importe_contratacion;
     }
 
-    public String getCod_estado_rrhh() {
-        return this.cod_estado_rrhh;
+    public EstadoInversionRRHH getEstado_rrhh() {
+        return this.estado_rrhh;
     }
 
-    public void setCod_estado_rrhh(String cod_estado_rrhh) {
-        this.cod_estado_rrhh = cod_estado_rrhh;
+    public void setEstado_rrhh(EstadoInversionRRHH estado_rrhh) {
+        this.estado_rrhh = estado_rrhh;
     }
 
     public Date getFe_formalizacion() {
@@ -533,8 +485,8 @@ public class DetalleMantenimiento {
                 + "'" + ", 'fe_fin_prorroga':'" + getFe_fin_prorroga() + "'" + ", 'cod_expediente':'"
                 + getCod_expediente() + "'" + ", 'cod_contrato':'" + getCod_contrato() + "'" + ", 'chk_activo':'"
                 + getChk_activo() + "'" + ", 'fe_crea_reg':'" + getFe_crea_reg() + "'" + ", 'fe_modi_reg':'"
-                + getFe_modi_reg() + "'" + ", 'cod_mod_usu':'" + getCod_mod_usu() + "'" + ", 'cod_estadonuevoexp':'"
-                + getCod_estadonuevoexp() + "'" + ", 'añosprorroga':'" + getAñosprorroga() + "'" + ", 'fe_sol_adq':'"
+                + getFe_modi_reg() + "'" + ", 'cod_mod_usu':'" + getCod_mod_usu() + "'" + ", 'estadonuevoexp':'"
+                + getEstadonuevoexp() + "'" + ", 'añosprorroga':'" + getAñosprorroga() + "'" + ", 'fe_sol_adq':'"
                 + getFe_sol_adq() + "'" + ", 'fe_env_org_col':'" + getFe_env_org_col() + "'" + ", 'fe_recp_mem':'"
                 + getFe_recp_mem() + "'" + ", 'fe_env_val':'" + getFe_env_val() + "'" + ", 'fe_recp_val':'"
                 + getFe_recp_val() + "'" + ", 'fe_ultdia_valmem':'" + getFe_ultdia_valmem() + "'" + ", 'fe_mem_val':'"
@@ -546,8 +498,8 @@ public class DetalleMantenimiento {
                 + getFe_inimto_garantia_prevista() + "'" + ", 'fe_finmto_garantia_prevista':'"
                 + getFe_finmto_garantia_prevista() + "'" + ", 'fe_informevalidacion':'" + getFe_informevalidacion()
                 + "'" + ", 'fe_adjudicacionformalizacion':'" + getFe_adjudicacionformalizacion() + "'"
-                + ", 'num_importe_contratacion':'" + getNum_importe_contratacion() + "'" + ", 'cod_estado_rrhh':'"
-                + getCod_estado_rrhh() + "'" + ", 'fe_formalizacion':'" + getFe_formalizacion() + "'" + ", 'ciclos':'"
+                + ", 'num_importe_contratacion':'" + getNum_importe_contratacion() + "'" + ", 'estado_rrhh':'"
+                + getEstado_rrhh() + "'" + ", 'fe_formalizacion':'" + getFe_formalizacion() + "'" + ", 'ciclos':'"
                 + getCiclos() + "'" + "}";
     }
 

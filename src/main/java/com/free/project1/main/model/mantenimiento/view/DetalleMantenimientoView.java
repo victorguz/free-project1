@@ -38,7 +38,7 @@ public class DetalleMantenimientoView {
 
     String cod_mod_usu;
 
-    String cod_estadonuevoexp;
+    String estadonuevoexp;
 
     String añosprorroga;
 
@@ -80,7 +80,7 @@ public class DetalleMantenimientoView {
 
     String num_importe_contratacion;
 
-    String cod_estado_rrhh;
+    String estado_rrhh;
 
     String fe_formalizacion;
 
@@ -106,7 +106,7 @@ public class DetalleMantenimientoView {
             this.fe_crea_reg = Functions.processDate(mnt.fe_crea_reg);
             this.fe_modi_reg = Functions.processDate(mnt.fe_modi_reg);
             this.cod_mod_usu = mnt.cod_mod_usu;
-            this.cod_estadonuevoexp = mnt.cod_estadonuevoexp;
+            this.estadonuevoexp = mnt.estadonuevoexp == null ? "" : mnt.estadonuevoexp.getDescripcion();
             this.añosprorroga = mnt.añosprorroga;
             this.fe_sol_adq = Functions.processDate(mnt.fe_sol_adq);
             this.fe_env_org_col = Functions.processDate(mnt.fe_env_org_col);
@@ -127,7 +127,7 @@ public class DetalleMantenimientoView {
             this.fe_informevalidacion = Functions.processDate(mnt.fe_informevalidacion);
             this.fe_adjudicacionformalizacion = Functions.processDate(mnt.fe_adjudicacionformalizacion);
             this.num_importe_contratacion = Functions.processCurrency(mnt.num_importe_contratacion);
-            this.cod_estado_rrhh = mnt.cod_estado_rrhh;
+            this.estado_rrhh = mnt.estado_rrhh == null ? "" : mnt.estado_rrhh.getDescripcion();
             this.fe_formalizacion = Functions.processDate(mnt.fe_formalizacion);
             this.ciclos = CicloMantenimientoView.toList(mnt.ciclos);
         }
@@ -253,12 +253,12 @@ public class DetalleMantenimientoView {
         this.cod_mod_usu = cod_mod_usu;
     }
 
-    public String getCod_estadonuevoexp() {
-        return this.cod_estadonuevoexp;
+    public String getEstadonuevoexp() {
+        return this.estadonuevoexp;
     }
 
-    public void setCod_estadonuevoexp(String cod_estadonuevoexp) {
-        this.cod_estadonuevoexp = cod_estadonuevoexp;
+    public void setEstadonuevoexp(String estadonuevoexp) {
+        this.estadonuevoexp = estadonuevoexp;
     }
 
     public String getAñosprorroga() {
@@ -421,12 +421,12 @@ public class DetalleMantenimientoView {
         this.num_importe_contratacion = num_importe_contratacion;
     }
 
-    public String getCod_estado_rrhh() {
-        return this.cod_estado_rrhh;
+    public String getEstado_rrhh() {
+        return this.estado_rrhh;
     }
 
-    public void setCod_estado_rrhh(String cod_estado_rrhh) {
-        this.cod_estado_rrhh = cod_estado_rrhh;
+    public void setEstado_rrhh(String estado_rrhh) {
+        this.estado_rrhh = estado_rrhh;
     }
 
     public String getFe_formalizacion() {
@@ -454,8 +454,8 @@ public class DetalleMantenimientoView {
                 + "'" + ", 'fe_fin_prorroga':'" + getFe_fin_prorroga() + "'" + ", 'cod_expediente':'"
                 + getCod_expediente() + "'" + ", 'cod_contrato':'" + getCod_contrato() + "'" + ", 'chk_activo':'"
                 + getChk_activo() + "'" + ", 'fe_crea_reg':'" + getFe_crea_reg() + "'" + ", 'fe_modi_reg':'"
-                + getFe_modi_reg() + "'" + ", 'cod_mod_usu':'" + getCod_mod_usu() + "'" + ", 'cod_estadonuevoexp':'"
-                + getCod_estadonuevoexp() + "'" + ", 'añosprorroga':'" + getAñosprorroga() + "'" + ", 'fe_sol_adq':'"
+                + getFe_modi_reg() + "'" + ", 'cod_mod_usu':'" + getCod_mod_usu() + "'" + ", 'estadonuevoexp':'"
+                + getEstadonuevoexp() + "'" + ", 'añosprorroga':'" + getAñosprorroga() + "'" + ", 'fe_sol_adq':'"
                 + getFe_sol_adq() + "'" + ", 'fe_env_org_col':'" + getFe_env_org_col() + "'" + ", 'fe_recp_mem':'"
                 + getFe_recp_mem() + "'" + ", 'fe_env_val':'" + getFe_env_val() + "'" + ", 'fe_recp_val':'"
                 + getFe_recp_val() + "'" + ", 'fe_ultdia_valmem':'" + getFe_ultdia_valmem() + "'" + ", 'fe_mem_val':'"
@@ -467,8 +467,8 @@ public class DetalleMantenimientoView {
                 + getFe_inimto_garantia_prevista() + "'" + ", 'fe_finmto_garantia_prevista':'"
                 + getFe_finmto_garantia_prevista() + "'" + ", 'fe_informevalidacion':'" + getFe_informevalidacion()
                 + "'" + ", 'fe_adjudicacionformalizacion':'" + getFe_adjudicacionformalizacion() + "'"
-                + ", 'num_importe_contratacion':'" + getNum_importe_contratacion() + "'" + ", 'cod_estado_rrhh':'"
-                + getCod_estado_rrhh() + "'" + ", 'fe_formalizacion':'" + getFe_formalizacion() + "'" + ", 'ciclos':'"
+                + ", 'num_importe_contratacion':'" + getNum_importe_contratacion() + "'" + ", 'estado_rrhh':'"
+                + getEstado_rrhh() + "'" + ", 'fe_formalizacion':'" + getFe_formalizacion() + "'" + ", 'ciclos':'"
                 + getCiclos() + "'" + "}";
     }
 
