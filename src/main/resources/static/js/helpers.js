@@ -438,3 +438,17 @@ function stringToJSON(string,
     }
     return null;
 }
+
+/**
+ * Metodo que devuelve un HTMLOption
+ * @param {String} value
+ * @param {String} description
+ */
+function createOption(value, description) {
+    let option = document.createElement("option");
+
+    option.value = value;
+    option.textContent = description;
+
+    return option;
+}

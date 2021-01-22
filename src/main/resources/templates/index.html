@@ -74,8 +74,7 @@
                             <select class="ui dropdown column_filter" data-column="7">
                                 <option value="">Departamento</option>
                                 <option value="-1" selected>Todos</option>
-                                <option th:each="dpto : ${dptos}" th:value="${dpto.departamento}"
-                                    th:text="${dpto.departamento}">
+                                <option th:each="dpto : ${dptos}" th:value="${dpto}" th:text="${dpto}">
                                 </option>
                             </select>
 
@@ -85,8 +84,7 @@
                             <select class="ui dropdown column_filter" data-column="8">
                                 <option value="">Unidad</option>
                                 <option value="-1" selected>Todas</option>
-                                <option th:each="unidad : ${unidades}" th:value="${unidad.descripcion}"
-                                    th:text="${unidad.descripcion}">
+                                <option th:each="unidad : ${unidades}" th:value="${unidad}" th:text="${unidad}">
                                 </option>
                             </select>
                         </div>
@@ -153,6 +151,8 @@
                 <input type="hidden" class="all-url" th:value="${all_url}">
                 <input type="hidden" class="total-url" th:value="${total_url}">
                 <input type="hidden" class="details-url" th:value="${details_url}">
+                <input type="hidden" class="unidades-url" th:value="${unidades_url}">
+                <input type="hidden" class="unidades-by-dpto-url" th:value="${unidades_by_dpto_url}">
 
                 <div class="ui segment datatable-container">
                     <table class="ui selectable celled table" style="width:100%" id="datatable">

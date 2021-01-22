@@ -2,6 +2,8 @@ const urlAll = document.querySelector(".all-url").value;
 const urlTotal = document.querySelector(".total-url").value;
 // const urlSearch = document.querySelector(".all-url").value;
 const urlDetails = document.querySelector(".details-url").value;
+const urlUnidades = document.querySelector(".unidades-url").value;
+const urlUnidadesPorDepartamento = document.querySelector(".unidades-by-dpto-url").value;
 let total;
 let page = 1;
 const perPage = 10000;
@@ -107,7 +109,33 @@ function setMethodsIndex() {
         }
     })
 
+    $(`[data-column="7"]`).on("change click", function (e) {
+        const value = $(this).val();
+        const select = document.querySelector(`[data-column="8"]`);
+        const defaultOption = createOption(-1, "Todas");
+        select.innerHTML = "";
+        if (value == -1) {
+            getRequest(getUrl(urlUnidades)).done(function (data) {
+                select.append(defaultOption);
+                data.forEach(unidad => {
+                    select.append(createOption(unidad, unidad))
+                });
+            }).fail(function (error) {
+                console.log(error)
+            })
+        } else {
+            getRequest(getUrl(urlUnidadesPorDepartamento, { dpto: value })).done(function (data) {
+                select.append(defaultOption);
+                data.forEach(unidad => {
+                    select.append(createOption(unidad, unidad))
+                });
+            }).fail(function (error) {
+                console.log(error)
+            })
+        }
+    })
 }
+
 function getLastDetail(details) {
     let lastId = 0;
     let detail = null;

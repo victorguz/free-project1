@@ -43,15 +43,18 @@ public class MantenimientosController {
     @GetMapping("/")
     public String home(Model model) {
         Pageable mnt_limit = PageRequest.of(0, 100000, Sort.by(Direction.DESC, "id_mantenimiento"));
-        Pageable unidad_limit = PageRequest.of(0, 100000, Sort.by(Direction.ASC, "descripcion"));
+        Pageable unity_limit = PageRequest.of(0, 100000, Sort.by(Direction.ASC, "unidad"));
+        Pageable dptos_limit = PageRequest.of(0, 100000, Sort.by(Direction.ASC, "departamento"));
         model.addAttribute("list", MantenimientoView.toList(_mnt.findAll(mnt_limit).getContent()));
-        model.addAttribute("dptos", _dptos.findAllByUnidad("NULL"));
-        model.addAttribute("unidades", _unidades.findAll(unidad_limit).getContent());
+        model.addAttribute("dptos", _dptos.selectAll(dptos_limit));
+        model.addAttribute("unidades", _dptos.selectUnidades(unity_limit));
         model.addAttribute("details_url", "/details");
         model.addAttribute("search_url", "/search");
         model.addAttribute("add_url", "/add");
         model.addAttribute("all_url", "/api/maintenances/all");
         model.addAttribute("total_url", "/api/maintenances/total");
+        model.addAttribute("unidades_url", "/api/maintenances/getUnidades");
+        model.addAttribute("unidades_by_dpto_url", "/api/maintenances/getUnidadesByDepartamento");
 
         return "index";
     }
@@ -67,7 +70,7 @@ public class MantenimientosController {
 
     @GetMapping("/add")
     public String add(Model model) {
-        model.addAttribute("dptos", _dptos.findAllByUnidad("NULL"));
+        model.addAttribute("dptos", _dptos.selectAll());
         model.addAttribute("unidades", _unidades.findAll());
         model.addAttribute("procedimientos", _procedimientos.findAll());
         model.addAttribute("tipos", _tipo_mnt.findAll());
