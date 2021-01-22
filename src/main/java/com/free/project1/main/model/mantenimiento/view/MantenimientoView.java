@@ -37,6 +37,7 @@ public class MantenimientoView {
     public String empresa_adjudicada;
     public String unidad_solicitante_aux;
     public String procedimiento;
+    public String aniosProrroga;
 
     public MantenimientoView() {
     }
@@ -77,7 +78,16 @@ public class MantenimientoView {
             this.estado = processEstado();
             this.empresa_adjudicada = processEmpresa();
 
+            this.aniosProrroga = Functions.dateDifference(mnt.fe_ini_contrato, mnt.fe_fin_contrato, "years") + "";
         }
+    }
+
+    public String getAniosProrroga() {
+        return this.aniosProrroga;
+    }
+
+    public void setAniosProrroga(String aniosProrroga) {
+        this.aniosProrroga = aniosProrroga;
     }
 
     public String getId() {

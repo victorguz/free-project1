@@ -4,11 +4,12 @@ import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
+import java.util.concurrent.TimeUnit;
 
 public class Functions {
 
     public static String processCurrency(String num_importe) {
-        if (num_importe != null) {
+        if (num_importe != null && !num_importe.isEmpty()) {
             double importe = Double.parseDouble(num_importe);
             NumberFormat germany = NumberFormat.getNumberInstance(Locale.GERMANY);
             return germany.format(importe);
@@ -25,4 +26,20 @@ public class Functions {
         }
         return "";
     }
+
+    public static String dateDifference(Date start, Date end, String type) {
+        if (start != null && end != null) {
+            long diffInMillies = Math.abs(start.getTime() - end.getTime());
+            long diff = TimeUnit.DAYS.convert(diffInMillies, TimeUnit.MILLISECONDS);
+            switch (type) {
+                case "years":
+                    return (diff / 365) + "";
+                case "months":
+                    return (diff / 30) + "";
+            }
+            return diff + "";
+        }
+        return "";
+    }
+
 }

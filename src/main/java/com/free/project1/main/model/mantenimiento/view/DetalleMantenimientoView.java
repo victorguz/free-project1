@@ -84,6 +84,8 @@ public class DetalleMantenimientoView {
 
     String fe_formalizacion;
 
+    String aniosProrroga;
+
     List<CicloMantenimientoView> ciclos;
 
     public DetalleMantenimientoView() {
@@ -97,7 +99,7 @@ public class DetalleMantenimientoView {
             this.num_importe = Functions.processCurrency(mnt.num_importe);
             this.fe_ini_contrato = Functions.processDate(mnt.fe_ini_contrato);
             this.fe_fin_contrato = Functions.processDate(mnt.fe_fin_contrato);
-            this.chk_prorroga = mnt.chk_prorroga + "";
+            this.chk_prorroga = mnt.chk_prorroga == null ? "" : (mnt.chk_prorroga.equals("0") ? "No" : "Si");
             this.fe_ini_prorroga = Functions.processDate(mnt.fe_ini_prorroga);
             this.fe_fin_prorroga = Functions.processDate(mnt.fe_fin_prorroga);
             this.cod_expediente = mnt.cod_expediente;
@@ -130,7 +132,16 @@ public class DetalleMantenimientoView {
             this.estado_rrhh = mnt.estado_rrhh == null ? "" : mnt.estado_rrhh.getDescripcion();
             this.fe_formalizacion = Functions.processDate(mnt.fe_formalizacion);
             this.ciclos = CicloMantenimientoView.toList(mnt.ciclos);
+            this.aniosProrroga = Functions.dateDifference(mnt.fe_ini_contrato, mnt.fe_fin_contrato, "years") + "";
         }
+    }
+
+    public String getAniosProrroga() {
+        return this.aniosProrroga;
+    }
+
+    public void setAniosProrroga(String aniosProrroga) {
+        this.aniosProrroga = aniosProrroga;
     }
 
     public int getId_detalle_mto() {
@@ -468,8 +479,8 @@ public class DetalleMantenimientoView {
                 + getFe_finmto_garantia_prevista() + "'" + ", 'fe_informevalidacion':'" + getFe_informevalidacion()
                 + "'" + ", 'fe_adjudicacionformalizacion':'" + getFe_adjudicacionformalizacion() + "'"
                 + ", 'num_importe_contratacion':'" + getNum_importe_contratacion() + "'" + ", 'estado_rrhh':'"
-                + getEstado_rrhh() + "'" + ", 'fe_formalizacion':'" + getFe_formalizacion() + "'" + ", 'ciclos':'"
-                + getCiclos() + "'" + "}";
+                + getEstado_rrhh() + "'" + ", 'fe_formalizacion':'" + getFe_formalizacion() + "'"
+                + ", 'aniosProrroga':'" + getAniosProrroga() + "'" + ", 'ciclos':'" + getCiclos() + "'" + "}";
     }
 
     public static List<DetalleMantenimientoView> toList(List<DetalleMantenimiento> mnt) {

@@ -51,7 +51,7 @@ public class DetalleMantenimiento {
     public Date fe_fin_contrato;
 
     @Column(name = "CHK_PRORROGA")
-    public Character chk_prorroga;
+    public String chk_prorroga;
 
     @Column(name = "FE_INI_PRORROGA")
     public Date fe_ini_prorroga;
@@ -66,7 +66,7 @@ public class DetalleMantenimiento {
     public String cod_contrato;
 
     @Column(name = "CHK_ACTIVO")
-    public Character chk_activo;
+    public String chk_activo;
 
     @Column(name = "FE_CREA_REG")
     public Date fe_crea_reg;
@@ -212,11 +212,11 @@ public class DetalleMantenimiento {
         this.fe_fin_contrato = fe_fin_contrato;
     }
 
-    public Character getChk_prorroga() {
+    public String getChk_prorroga() {
         return this.chk_prorroga;
     }
 
-    public void setChk_prorroga(Character chk_prorroga) {
+    public void setChk_prorroga(String chk_prorroga) {
         this.chk_prorroga = chk_prorroga;
     }
 
@@ -252,11 +252,11 @@ public class DetalleMantenimiento {
         this.cod_contrato = cod_contrato;
     }
 
-    public Character getChk_activo() {
+    public String getChk_activo() {
         return this.chk_activo;
     }
 
-    public void setChk_activo(Character chk_activo) {
+    public void setChk_activo(String chk_activo) {
         this.chk_activo = chk_activo;
     }
 

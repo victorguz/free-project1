@@ -316,47 +316,11 @@ function moneyFormat(number) {
 function timeAgo(date) {
     if (date) {
 
-        if (typeof date == "string") {
-            date = new Date(date);
-        }
-
-        const DATE_UNITS = {
-            year: 31536000,
-            month: 2629800,
-            day: 86400,
-            hour: 3600,
-            minute: 60,
-            second: 1
-        }
-
-        const isMayor = timestamp => timestamp > Date.now()
-        const getSecondsDiff = timestamp => (Date.now() - timestamp) / 1000
-
-        const getUnitAndValueDate = (secondsElapsed) => {
-
-            secondsElapsed = Math.abs(secondsElapsed);
-
-            for (const [unit, secondsInUnit] of Object.entries(DATE_UNITS)) {
-
-                if (secondsElapsed >= secondsInUnit || unit === "second") {
-
-                    const mayor = isMayor(date)
-
-                    const value = Math.floor(secondsElapsed / secondsInUnit) * (mayor ? 1 : -1)
-
-
-                    return { value, unit }
-                }
-
-            }
-
-        }
-
         const rtf = new Intl.RelativeTimeFormat("es")
 
-        const secondsElapsed = getSecondsDiff(date)
-        const { value, unit } = getUnitAndValueDate(secondsElapsed)
+        const { value, unit } = dateDifference(Date.now(), date)
         return rtf.format(value, unit)
+
     }
     return date;
 }
@@ -365,10 +329,22 @@ function timeAgo(date) {
  * This function returns date on "value" and "unit" format
  */
 function timeValueAndUnit(date) {
-    if (date) {
+    return dateDifference(Date.now(), date)
+}
 
-        if (typeof date == "string") {
-            date = new Date(date);
+
+/**
+ * Difference between two datetimes
+ */
+function dateDifference(start, end) {
+    if (start && end) {
+
+        if (typeof end == "string") {
+            end = new Date(end);
+        }
+
+        if (typeof start == "string") {
+            start = new Date(start);
         }
 
         const DATE_UNITS = {
@@ -380,8 +356,8 @@ function timeValueAndUnit(date) {
             second: 1
         }
 
-        const isMayor = timestamp => timestamp > Date.now()
-        const getSecondsDiff = timestamp => (Date.now() - timestamp) / 1000
+        const isMayor = timestamp => timestamp > start
+        const getSecondsDiff = timestamp => (start - timestamp) / 1000
 
         const getUnitAndValueDate = (secondsElapsed) => {
 
@@ -391,7 +367,7 @@ function timeValueAndUnit(date) {
 
                 if (secondsElapsed >= secondsInUnit || unit === "second") {
 
-                    const mayor = isMayor(date)
+                    const mayor = isMayor(end)
 
                     const value = Math.floor(secondsElapsed / secondsInUnit) * (mayor ? 1 : -1)
 
@@ -405,11 +381,11 @@ function timeValueAndUnit(date) {
 
         const rtf = new Intl.RelativeTimeFormat("es")
 
-        const secondsElapsed = getSecondsDiff(date)
+        const secondsElapsed = getSecondsDiff(end)
         const { value, unit } = getUnitAndValueDate(secondsElapsed)
         return { value: value, unit: unit }
     }
-    return date;
+    return null;
 }
 function getUrl(url, getData, newBase) {
     const base = newBase ? newBase : document.querySelector("base").href;
@@ -443,7 +419,7 @@ function stringToJSON(string,
             .replaceAll("'", '"')
             .replaceAll("null", "")
             .replaceAll("NULL", "")
-             .replaceAll('"[', '[')
+            .replaceAll('"[', '[')
             .replaceAll(']"', ']')
             .replaceAll(/(\r\n|\n|\r)/gm, " ")
             .replaceAll(/\s+/g, " ")

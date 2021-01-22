@@ -143,7 +143,7 @@ function setMethods() {
 function setModalDetailsData(id) {
     const dtl = findDetailById(id)
     $("[modal-details-header]").html("Detalle #" + dtl.id_detalle_mto)
-
+    console.log(dtl);
     let item = `
     
     
@@ -209,11 +209,11 @@ function setModalDetailsData(id) {
         <div class="two fields">
             <div class="field">
                 <label>Presupuesto base</label>
-                <input type="number" min="0" placeholder="Presupuesto base" value='${dtl.num_importe ? dtl.num_importe : ""}'>
+                <input type="text" min="0" placeholder="Presupuesto base" value='${dtl.num_importe ? dtl.num_importe : ""}'>
             </div>
             <div class="field">
                 <label>Importe adjudicado</label>
-                <input type="number" min="0" placeholder="Importe adjudicado" value='${dtl.num_importe_contratacion ? dtl.num_importe_contratacion : ""}'>
+                <input type="text" min="0" placeholder="Importe adjudicado" value='${dtl.num_importe_contratacion ? dtl.num_importe_contratacion : ""}'>
             </div>
             <div class="field">
                 <label>Expediente</label>
@@ -515,7 +515,7 @@ function openCicleModal(cicle) {
                 <label>Ruta archivo adjunto:</label>
                 <div class="ui action input">
                     <input type="text" placeholder="Ruta archivo adjunto" value='${cicle.ruta_adjunto}'>
-                    <a class="ui blue icon button" href='${cicle.ruta_adjunto}' download='${cicle.ruta_adjunto}'>
+                    <a class="ui blue icon button" href='uploads/ciclos_files/${cicle.ruta_adjunto}' download='${cicle.ruta_adjunto}'>
                         <i class="download icon"></i>
                         	&nbsp;&nbsp;Descargar archivo
                     </a>
